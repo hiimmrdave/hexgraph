@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+svg .cell {
+  stroke: black;
+  fill: #ccc;
+}
+
+fieldset {
+  background: white;
+}
