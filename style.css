@@ -12,3 +12,29 @@ svg .cell {
 fieldset {
   background: white;
 }
+
+header {
+  position: fixed;
+  background: black;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  float: left;
+  margin: 10px;
+}
+
+main {
+  padding: 1em;
+  padding-top: 2.5em;
+}
+
+svg {
+  padding: 0;
+  margin: 0;
+}
