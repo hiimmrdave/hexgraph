@@ -1,15 +1,18 @@
-/*const expect = require('chai').expect,
-  hex = require('../index'); */
 import { expect } from "chai";
-import * as hex from "../src/index";
+import * as Cell from "../src/cell";
+import { areEqual } from "../src/main"
+import { NodeType } from "../src/types"
 
-describe("Cell functions" ,function() {
+describe("Cell properties", function () {
 
-  const origin = hex.makeCell({q:0,r:0,s:0});
-  it("cell type should be Cell",() => {
-    expect(origin.type).to.equal(0);
+  const origin = Object.freeze(Cell.makeCell({ q: 0, r: 0, s: 0 }));
+
+  it("cell type should be Cell", () => {
+    expect(origin.type).to.equal(NodeType.Cell);
   });
-  it("{q:0,r:0,s:0} should equal origin",()=> {
-    expect(hex.areEqual(origin,{q:0,r:0,s:0})).to.be.true;
+
+  it("{q:0,r:0,s:0} should equal origin", () => {
+    expect(areEqual(origin, { q: 0, r: 0, s: 0 })).to.be.true;
   });
+
 });
