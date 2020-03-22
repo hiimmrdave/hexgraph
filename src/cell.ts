@@ -56,7 +56,7 @@ export function round({ q, r, s }: CubeVector): CubeVector {
 }
 
 export function cellLerp(a: CubeVector, b: CubeVector, t: number): CubeVector {
-  return { q: lerp(a.q, b.q, t), r: lerp(a.q, b.q, t), s: lerp(a.q, b.q, t) }
+  return { q: lerp(a.q, b.q, t), r: lerp(a.r, b.r, t), s: lerp(a.s, b.s, t) }
 }
 
 export function cells(cell: CubeVector): CubeVector[] {
