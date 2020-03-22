@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "author": "Dave Vogt",
   "license": "ISC",

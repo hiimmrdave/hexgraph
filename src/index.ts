@@ -131,6 +131,6 @@ function makeEdge({ q, r, s }: CubeVector): CubeVector {
 }
 
 module.exports = {
-  makeCell, makeEdge, makeVertex, makeNode, Cell, Vertex, Node,
+  makeCell, makeEdge, makeVertex, makeNode, Cell, Vertex, Edge,
   DIAGONALS, DIRECTIONS, lerp, thousandthRound, areEqual
 }

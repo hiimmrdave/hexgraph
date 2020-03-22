@@ -75,7 +75,6 @@ function makeEdge({ q, r, s }) {
 }
 module.exports = {
     makeCell, makeEdge, makeVertex, makeNode, Cell, Vertex, Edge,
-    DIAGONALS, DIRECTIONS, lerp, thousandthRound, areEqual,
-    PI_OVER_THREE, SQRT_THREE
+    DIAGONALS, DIRECTIONS, lerp, thousandthRound, areEqual
 };
 //# sourceMappingURL=index.js.map

@@ -9,5 +9,5 @@ describe("Cell functions" ,function() {
   });
   it("{q:0,r:0,s:0} should equal origin",()=> {
     expect(hex.areEqual(origin,{q:0,r:0,s:0})).to.be.true;
-  })
+  });
 });
