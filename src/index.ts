@@ -65,18 +65,6 @@ const
   SQRT_THREE = Math.sqrt(3);
 //#endregion magic math that is useful for hexagonal graphs
 
-const makeNode = ({ q, r, s }: CubeVector): CubeVector => {
-  const self = {
-    q,
-    r,
-    s,
-    id: `${q},${r},${s}`,
-    links: new WeakSet(),
-  }
-  if (q + r + s !== 0) { throw new TypeError("q+r+s must sum to zero") }
-  return self;
-};
-
 const
   Cell = {
     add: (a: CubeVector, b: CubeVector): CubeVector =>
@@ -114,18 +102,35 @@ const
   Edge = {},
   Vertex = {}
 
+function makeNode({ q, r, s }: CubeVector): CubeVector {
+  const self = {
+    q,
+    r,
+    s,
+    id: `${q},${r},${s}`,
+    links: new WeakSet(),
+  }
+  if (q + r + s !== 0) { throw new TypeError("q+r+s must sum to zero") }
+  return self;
+};
+
 function areEqual(a: CubeVector, b: CubeVector): boolean {
   return (a.q === b.q && a.r === b.r && a.s === b.s);
 }
 
-const makeCell = ({ q, r, s }: CubeVector): CubeVector => {
+function makeCell({ q, r, s }: CubeVector): CubeVector {
   return Object.assign(makeNode({ q, r, s }), { type: NodeType.Cell })
 }
 
-const makeVertex = ({ q, r, s }: CubeVector): CubeVector => {
+function makeVertex({ q, r, s }: CubeVector): CubeVector {
   return Object.assign(makeNode({ q, r, s }), { type: NodeType.Vertex })
 }
 
-const makeEdge = ({ q, r, s }: CubeVector): CubeVector => {
+function makeEdge({ q, r, s }: CubeVector): CubeVector {
   return Object.assign(makeNode({ q, r, s }), { type: NodeType.Edge })
+}
+
+module.exports = {
+  makeCell, makeEdge, makeVertex, makeNode, Cell, Vertex, Node,
+  DIAGONALS, DIRECTIONS, lerp, thousandthRound, areEqual
 }

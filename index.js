@@ -1,5 +1,5 @@
 function thousandthRound(n) {
-    return Math.round(n * 1000) / 1000 + 0;
+    return n.toFixed(3);
 }
 function lerp(m, n, t) {
     return m * (1 - t) + n * t;
@@ -19,9 +19,7 @@ const DIRECTIONS = [
     { q: -1, r: 2, s: -1 },
     { q: 1, r: 1, s: -2 }
 ], PI_OVER_THREE = Math.PI / 3, SQRT_THREE = Math.sqrt(3);
-const CubeNodeCompare = () => ({
-    areEqual: (a, b) => (a.q === b.q && a.r === b.r && a.s === b.s)
-}), Cell = {
+const Cell = {
     add: (a, b) => ({ q: a.q + b.q, r: a.r + b.r, s: a.s + b.s }),
     subtract: (a, b) => ({ q: a.q - b.q, r: a.r - b.r, s: a.s - b.s }),
     multiply: (cell, k) => ({ q: cell.q * k, r: cell.r * k, s: cell.s * k }),
@@ -45,12 +43,11 @@ const CubeNodeCompare = () => ({
             approx.s = -1 * approx.q - approx.r;
         }
         return approx;
-    }
+    },
+    cellLerp: (a, b, t) => ({ q: lerp(a.q, b.q, t), r: lerp(a.q, b.q, t), s: lerp(a.q, b.q, t) }),
+    cells: (cell) => DIRECTIONS.map((e) => Cell.add(cell, e)),
 }, Edge = {}, Vertex = {};
-Object.assign(Cell, CubeNodeCompare());
-Object.assign(Edge, CubeNodeCompare());
-Object.assign(Vertex, CubeNodeCompare());
-const makeNode = ({ q, r, s }) => {
+function makeNode({ q, r, s }) {
     const self = {
         q,
         r,
@@ -62,14 +59,23 @@ const makeNode = ({ q, r, s }) => {
         throw new TypeError("q+r+s must sum to zero");
     }
     return self;
-};
-const makeCell = ({ q, r, s }) => {
+}
+;
+function areEqual(a, b) {
+    return (a.q === b.q && a.r === b.r && a.s === b.s);
+}
+function makeCell({ q, r, s }) {
     return Object.assign(makeNode({ q, r, s }), { type: 0 });
-};
-const makeVertex = ({ q, r, s }) => {
+}
+function makeVertex({ q, r, s }) {
     return Object.assign(makeNode({ q, r, s }), { type: 2 });
-};
-const makeEdge = ({ q, r, s }) => {
+}
+function makeEdge({ q, r, s }) {
     return Object.assign(makeNode({ q, r, s }), { type: 1 });
+}
+module.exports = {
+    makeCell, makeEdge, makeVertex, makeNode, Cell, Vertex, Edge,
+    DIAGONALS, DIRECTIONS, lerp, thousandthRound, areEqual,
+    PI_OVER_THREE, SQRT_THREE
 };
 //# sourceMappingURL=index.js.map
