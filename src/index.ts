@@ -65,7 +65,7 @@ const
   SQRT_THREE = Math.sqrt(3);
 //#endregion magic math that is useful for hexagonal graphs
 
-const
+export const
   Cell = {
     add: (a: CubeVector, b: CubeVector): CubeVector =>
       ({ q: a.q + b.q, r: a.r + b.r, s: a.s + b.s }),
@@ -114,23 +114,18 @@ function makeNode({ q, r, s }: CubeVector): CubeVector {
   return self;
 };
 
-function areEqual(a: CubeVector, b: CubeVector): boolean {
+export function areEqual(a: CubeVector, b: CubeVector): boolean {
   return (a.q === b.q && a.r === b.r && a.s === b.s);
 }
 
-function makeCell({ q, r, s }: CubeVector): CubeVector {
+export function makeCell({ q, r, s }: CubeVector): CubeVector {
   return Object.assign(makeNode({ q, r, s }), { type: NodeType.Cell })
 }
 
-function makeVertex({ q, r, s }: CubeVector): CubeVector {
+export function makeVertex({ q, r, s }: CubeVector): CubeVector {
   return Object.assign(makeNode({ q, r, s }), { type: NodeType.Vertex })
 }
 
-function makeEdge({ q, r, s }: CubeVector): CubeVector {
+export function makeEdge({ q, r, s }: CubeVector): CubeVector {
   return Object.assign(makeNode({ q, r, s }), { type: NodeType.Edge })
-}
-
-module.exports = {
-  makeCell, makeEdge, makeVertex, makeNode, Cell, Vertex, Edge,
-  DIAGONALS, DIRECTIONS, lerp, thousandthRound, areEqual
 }

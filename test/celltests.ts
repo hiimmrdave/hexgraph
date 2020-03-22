@@ -1,5 +1,7 @@
-const expect = require('chai').expect,
-  hex = require('../index');
+/*const expect = require('chai').expect,
+  hex = require('../index'); */
+import { expect } from "chai";
+import * as hex from "../src/index";
 
 describe("Cell functions" ,function() {
 

@@ -1,14 +1,13 @@
 {
   "name": "yahgts",
+  "type": "module",
   "version": "0.0.1",
   "description": "yet another hex grid library in typescript",
-  "main": "index.js",
-  "module": "main.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/*.ts"
+    "test": "mocha -r esm -r ts-node/register test/**/*.ts"
   },
   "author": "Dave Vogt",
   "license": "ISC",
