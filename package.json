@@ -12,10 +12,10 @@
   "author": "Dave Vogt",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^13.9.2",
     "esm": "^3.2.25"
   },
   "devDependencies": {
+    "@types/node": "^13.9.3",
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
     "chai": "^4.2.0",
