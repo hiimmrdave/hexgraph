@@ -1,9 +1,9 @@
-import { CubeVector, HexNode, QRS } from "./types";
-import { cubeLerp } from "./math";
-import { makeNode } from "./main";
-import { NodeType } from "./types";
-import { makeEdge } from "./edge";
-import { makeVertex } from "./vertex";
+import { CubeVector, HexNode, QRS } from "./types.js";
+import { cubeLerp } from "./math.js";
+import { makeNode } from "./main.js";
+import { NodeType } from "./types.js";
+import { makeEdge } from "./edge.js";
+import { makeVertex } from "./vertex.js";
 
 export const DIRECTIONS: CubeVector[] = [
   { q: 1, r: 0, s: -1 },

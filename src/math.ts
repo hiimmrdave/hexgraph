@@ -1,4 +1,4 @@
-import { CubeVector } from "./types";
+import { CubeVector } from "./types.js";
 
 /**
  * pi/3 radians = 60 degrees, the interior angle of an equliateral triangle
