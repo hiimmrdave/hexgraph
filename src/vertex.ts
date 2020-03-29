@@ -1,5 +1,5 @@
-import { CubeVector, NodeType, HexNode } from "./types.js"
-import { makeNode } from "./main.js"
+import { CubeVector, NodeType, HexNode } from "./types"
+import { makeNode } from "./main"
 
 /**
  * 

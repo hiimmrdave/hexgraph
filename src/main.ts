@@ -9,10 +9,10 @@
  */
 
 //#region type setup
-import { CubeVector, HexNode, QRS } from "./types.js";
-import * as Cell from "./cell.js";
-import * as Edge from "./edge.js";
-import * as hexmath from "./math.js";
+import { CubeVector, HexNode, QRS } from "./types";
+import * as Cell from "./cell";
+import * as Edge from "./edge";
+import * as hexmath from "./math";
 //#endregion type descriptions
 
 /**

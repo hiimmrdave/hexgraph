@@ -1,5 +1,5 @@
-import { QRS, NodeType, HexNode } from "./types.js"
-import { makeNode } from "./main.js"
+import { QRS, NodeType, HexNode } from "./types"
+import { makeNode } from "./main"
 
 /**
  * 

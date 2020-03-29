@@ -3,6 +3,7 @@ import { it } from "mocha";
 import * as Cell from "../src/cell";
 import { areEqual } from "../src/main";
 import { NodeType } from "../src/types";
+import { makeEdge } from "../src/edge"
 
 describe("Cell properties", function () {
 
@@ -17,17 +18,21 @@ describe("Cell properties", function () {
   });
 
   it("diagonals to origin should equal DIAGONALS", () => {
-    expect(Cell.diagonals(origin)).to.deep.equal(Cell.DIAGONALS,"Diagonals are wrong");
+    let subject = Cell.diagonals(origin).map(e=>e.id);
+    let result = Cell.DIAGONALS.map(e=>Cell.makeCell(e).id);
+    expect(subject).to.deep.equal(result,"Diagonals are wrong");
   });
 
   it("neighbors to origin should equal DIRECTIONS", () =>{
-    expect(Cell.cells(origin)).to.deep.equal(Cell.DIRECTIONS,"Directions are wrong");
+    let subject = Cell.cells(origin).map(e=>e.id);
+    let result = Cell.DIRECTIONS.map(e=>Cell.makeCell(e).id);
+    expect(subject).to.deep.equal(result,"Directions are wrong");
   });
 
   it("edges should be half the coordinates of the edges",() =>{
-    expect(Cell.edges(origin)).to.deep.equal(
-      Cell.DIRECTIONS.map((e)=>Cell.multiply(e,0.5)),
-      "Edges are wrong");
+    let subject = Cell.edges(origin).map(e=>e.id);
+    let result = Cell.DIRECTIONS.map((e)=>makeEdge(Cell.multiply(e,0.5)).id);
+    expect(subject).to.deep.equal(result,"Edges are wrong");
   });
 
 });
