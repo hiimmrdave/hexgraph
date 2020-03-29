@@ -1,21 +1,29 @@
 /**
- * * graph vertices are called "nodes"
- * * graph edges are called "links"
+ * imports and exports the various functions
+ * @packageDocumentation
+/*
+ * graph vertices are called "nodes"
+ * graph edges are called "links"
  * this is to remove ambiguity with the related grid terms
- * * ⬢⬣
+ * ⬢⬣
  */
 
 //#region type setup
-import { NodeType, CubeVector, GridShape, CartesianVector } from "./types";
+import { CubeVector, HexNode, QRS } from "./types";
+import * as Cell from "./cell";
+import * as Edge from "./edge";
+import * as hexmath from "./math";
 //#endregion type descriptions
 
-//#region hexagon magic
-export const
-  PI_OVER_THREE = Math.PI / 3,
-  SQRT_THREE = Math.sqrt(3);
-//#endregion magic math that is useful for hexagonal graphs
-
-export function makeNode({ q, r, s }: CubeVector): CubeVector {
+/**
+ * this is used by makeCell, makeEdge, makeVertex to generate
+ * the common and coordinate-based properties of the node
+ * @param q - the `q` coordinate of the node
+ * @param r - the `r` coordinate of the node
+ * @param s - the `s` coordinate of the node
+ * @returns a HexNode object
+ */
+export function makeNode({ q, r, s }: CubeVector): HexNode {
   const self = {
     q,
     r,
@@ -27,6 +35,14 @@ export function makeNode({ q, r, s }: CubeVector): CubeVector {
   return self;
 };
 
-export function areEqual(a: CubeVector, b: CubeVector): boolean {
+/**
+ * Two hex nodes are equal if they have equal cube coordinates.
+ * @param a - a hex node
+ * @param b - a hex node to compare
+ * @returns whether a and b have the same coordinates
+ */
+export function areEqual(a: QRS, b: QRS): boolean {
   return (a.q === b.q && a.r === b.r && a.s === b.s);
 }
+
+console.log(Cell.makeCell({q:0,r:0,s:0}))

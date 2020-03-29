@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "es6",
+    "noImplicitAny": true,
+    "target": "ESNext",
+    "module": "ES6",
     "removeComments": true,
     "pretty": true,
     "sourceMap": true,
-    "outDir": "./"
+    "outDir": "./dist/"
   },
   "compileOnSave": true,
   "include":[
