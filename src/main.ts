@@ -44,5 +44,3 @@ export function makeNode({ q, r, s }: CubeVector): HexNode {
 export function areEqual(a: QRS, b: QRS): boolean {
   return (a.q === b.q && a.r === b.r && a.s === b.s);
 }
-
-console.log(Cell.makeCell({q:0,r:0,s:0}))

@@ -1,3 +1,7 @@
+/**
+ * a vector or coordinate in qrs space
+ * qrs is cubic space, which is confined here to a plane q+r+s==0
+ */
 export interface CubeVector {
   /**
    * q component of vector/coordinate
@@ -34,8 +38,17 @@ export interface HexNode extends CubeVector {
 
 export type QRS = CubeVector | HexNode;
 
+/**
+ * a vector or coordinate in 2-space
+ */
 export interface CartesianVector {
+  /**
+   * the x component of the coordinate/vector
+   */
   readonly x: number;
+  /**
+   * the y component of the coordinate/vector
+   */
   readonly y: number;
 }
 
@@ -61,8 +74,24 @@ export const enum NodeType {
  * the shape of the hexagon grid, which determines the grid generator function
  */
 export const enum GridShape {
+  /**
+   * a hexagonal grid
+   */
   Hexagon,
+  /**
+   * a triangular grid
+   */
   Triangle,
+  /**
+   * a six-pointed star shaped grid
+   */
   Star,
-  Parallelogram
+  /**
+   * a grid shape like a diamond or slanted rectangle, takes up to two size values
+   */
+  Parallelogram,
+  /**
+   * a grid shape like a rectangle, takes up to two size values
+   */
+  Rectangle,
 }
