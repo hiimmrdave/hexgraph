@@ -1,7 +1,7 @@
-import { cubeLerp } from "./math.js";
-import { makeNode } from "./main.js";
-import { makeEdge } from "./edge.js";
-import { makeVertex } from "./vertex.js";
+import { cubeLerp } from "./math";
+import { makeNode } from "./main";
+import { makeEdge } from "./edge";
+import { makeVertex } from "./vertex";
 export const DIRECTIONS = [
     { q: 1, r: 0, s: -1 },
     { q: 1, r: -1, s: 0 },

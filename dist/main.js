@@ -1,4 +1,3 @@
-import * as Cell from "./cell.js";
 export function makeNode({ q, r, s }) {
     const self = {
         q,
@@ -16,6 +15,4 @@ export function makeNode({ q, r, s }) {
 export function areEqual(a, b) {
     return (a.q === b.q && a.r === b.r && a.s === b.s);
 }
-console.log(Cell.makeCell({ q: 0, r: 0, s: 0 }));
-const myCell=Cell;
 //# sourceMappingURL=main.js.map
