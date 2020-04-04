@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;main&quot; | yahgts</title>
+	<title>&quot;orientation&quot; | yahgts</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,23 +56,16 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_main_.html">&quot;main&quot;</a>
+					<a href="_orientation_.html">&quot;orientation&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;main&quot;</h1>
+			<h1>Module &quot;orientation&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>imports and exports the various functions</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -80,8 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_main_.html#areequal" class="tsd-kind-icon">are<wbr>Equal</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_main_.html#makenode" class="tsd-kind-icon">make<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_orientation_.html#orientation" class="tsd-kind-icon">orientation</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,90 +82,97 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="areequal" class="tsd-anchor"></a>
-					<h3>are<wbr>Equal</h3>
+					<a name="orientation" class="tsd-anchor"></a>
+					<h3>orientation</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">are<wbr>Equal<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="_types_.html#qrs" class="tsd-signature-type">QRS</a>, b<span class="tsd-signature-symbol">: </span><a href="_types_.html#qrs" class="tsd-signature-type">QRS</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">orientation<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in main.ts:41</li>
+									<li>Defined in orientation.ts:9</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Two hex nodes are equal if they have equal cube coordinates.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <a href="_types_.html#qrs" class="tsd-signature-type">QRS</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>a hex node</p>
-									</div>
-								</li>
-								<li>
-									<h5>b: <a href="_types_.html#qrs" class="tsd-signature-type">QRS</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>a hex node to compare</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>whether a and b have the same coordinates</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="makenode" class="tsd-anchor"></a>
-					<h3>make<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">make<wbr>Node<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in main.ts:23</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>this is used by makeCell, makeEdge, makeVertex to generate
-									the common and coordinate-based properties of the node</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
-											<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>the <code>q</code> coordinate of the node</p>
-											</div>
-										</li>
-										<li class="tsd-parameter">
-											<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>the <code>r</code> coordinate of the node</p>
-											</div>
-										</li>
-										<li class="tsd-parameter">
-											<h5>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>the <code>s</code> coordinate of the node</p>
-											</div>
+											<h5>theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 										</li>
 									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></h4>
-							<p>a HexNode object</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -191,13 +190,13 @@
 					<li class=" tsd-kind-module">
 						<a href="_edge_.html">&quot;edge&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_main_.html">&quot;main&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="_math_.html">&quot;math&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_orientation_.html">&quot;orientation&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -211,10 +210,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_main_.html#areequal" class="tsd-kind-icon">are<wbr>Equal</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_main_.html#makenode" class="tsd-kind-icon">make<wbr>Node</a>
+						<a href="_orientation_.html#orientation" class="tsd-kind-icon">orientation</a>
 					</li>
 				</ul>
 			</nav>
