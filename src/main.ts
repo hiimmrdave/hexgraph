@@ -10,9 +10,6 @@
 
 //#region type setup
 import { CubeVector, HexNode, QRS } from "./types";
-import * as Cell from "./cell";
-import * as Edge from "./edge";
-import * as hexmath from "./math";
 //#endregion type descriptions
 
 /**
