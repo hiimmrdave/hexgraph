@@ -9,5 +9,5 @@ import { makeNode } from "./main"
  * @returns a Vertex-type HexNode
  */
 export function makeVertex({ q, r, s }: CubeVector): HexNode {
-  return Object.assign(makeNode({ q, r, s }), { nodetype: NodeType.Vertex })
+  return makeNode({ q, r, s }, NodeType.Vertex );
 }

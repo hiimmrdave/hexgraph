@@ -6,7 +6,7 @@ import {
   PI_OVER_THREE
 } from "./math";
 
-export function orientation({ theta = 0 } = {}) {
+export default function orientation({ theta = 0 } = {}) {
   return {
     f: {
       x: {

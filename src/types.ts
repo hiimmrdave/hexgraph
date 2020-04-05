@@ -19,9 +19,9 @@ export interface CubeVector {
 
 export interface HexNode extends CubeVector {
   /**
-   * the {@link NodeType} of the node
+   * the NodeType of the node
    */
-  readonly nodetype?: NodeType;
+  readonly nodetype: NodeType;
   /**
    * the cube coordinates of the node as a comma-separated string
    */
@@ -35,8 +35,6 @@ export interface HexNode extends CubeVector {
    */
   [prop: string]: any;
 }
-
-export type QRS = CubeVector | HexNode;
 
 /**
  * a vector or coordinate in 2-space

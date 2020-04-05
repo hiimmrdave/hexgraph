@@ -1,4 +1,4 @@
-import { CubeVector, HexNode, QRS } from "./types";
+import { CubeVector, HexNode } from "./types";
 import { cubeLerp } from "./math";
 import { makeNode } from "./main";
 import { NodeType } from "./types";
@@ -22,19 +22,36 @@ export const DIAGONALS: CubeVector[] = [
   { q: 1, r: 1, s: -2 }
 ];
 
-export function add(a: QRS, b: CubeVector): QRS {
-  return Object.assign({...a}, { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s });
+/**
+ *
+ * @param q - the `q` coordinate of the node
+ * @param r - the `r` coordinate of the node
+ * @param s - the `s` coordinate of the node
+ * @returns a Cell-type HexNode
+ */
+export function makeCell({ q, r, s }: CubeVector): HexNode {
+  return makeNode({ q, r, s }, NodeType.Cell);
 }
 
-export function subtract(a: QRS, b: CubeVector): QRS {
-  return Object.assign({...a}, { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s });
+export function add(a: CubeVector|HexNode, b: CubeVector): CubeVector {
+  return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
 }
 
-export function multiply(cell: QRS, k: number): QRS {
-  return Object.assign({...cell}, { q: cell.q * k, r: cell.r * k, s: cell.s * k });
+export function subtract(a: CubeVector|HexNode, b: CubeVector): CubeVector {
+  return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 
-export function round({ q, r, s }: QRS): HexNode {
+export function multiply(cell: CubeVector|HexNode, k: number): CubeVector {
+  return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
+}
+
+/**
+ * @param q - the absolute q coordinate to round to nearest cell
+ * @param r - the absolute q coordinate to round to nearest cell
+ * @param s - the absolute q coordinate to round to nearest cell
+ * @returns a cell with integer q,r,s coordinates nearest to the provided q,r,s point
+ */
+export function round({ q, r, s }: CubeVector|HexNode): HexNode {
   const approx = {
       q: Math.round(q),
       r: Math.round(r),
@@ -59,29 +76,35 @@ export function cellLerp(a: CubeVector, b: CubeVector, t: number): HexNode {
   return round(cubeLerp(a, b, t));
 }
 
-export function cells(cell: QRS): HexNode[] {
+/**
+ * @param cell - the cell of which to find neighbors
+ * @returns an array of 6 cells
+ */
+export function cells(cell: HexNode): HexNode[] {
   return DIRECTIONS.map(e => makeCell(add(cell, e)));
 }
 
-export function diagonals(cell: QRS): HexNode[] {
+/**
+ * @param cell - the cell of which to find diagonal neighbors
+ * @returns an array of 6 cells
+ */
+export function diagonals(cell: HexNode): HexNode[] {
   return DIAGONALS.map(e => makeCell(add(cell, e)));
 }
 
-export function edges(cell: QRS): HexNode[] {
+/**
+ * @param cell - the cell of which to find the edges
+ * @returns an array of 6 edges
+ */
+export function edges(cell: HexNode): HexNode[] {
   return DIRECTIONS.map(e => makeEdge(multiply(add(cell, e), 5e-1)));
-}
-// TODO: Write this function
-export function vertices(cell: QRS): HexNode[] {
-  return [].map(el => makeVertex(cell));
 }
 
 /**
- *
- * @param q - the `q` coordinate of the node
- * @param r - the `r` coordinate of the node
- * @param s - the `s` coordinate of the node
- * @returns a Cell-type HexNode
+ * @param cell - the cell of which to find the vertices
+ * @returns an array of 6 vertices
+ * TODO: write this function
  */
-export function makeCell({ q, r, s }: CubeVector): HexNode {
-  return Object.assign(makeNode({ q, r, s }), { nodetype: NodeType.Cell });
+export function vertices(cell: HexNode|CubeVector): HexNode[] {
+  return [].map(el => makeVertex(cell));
 }

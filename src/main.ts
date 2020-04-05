@@ -9,7 +9,8 @@
  */
 
 //#region type setup
-import { CubeVector, HexNode, QRS } from "./types";
+import { CubeVector, HexNode, NodeType } from "./types";
+import orientation from "./orientation";
 //#endregion type descriptions
 
 /**
@@ -18,19 +19,22 @@ import { CubeVector, HexNode, QRS } from "./types";
  * @param q - the `q` coordinate of the node
  * @param r - the `r` coordinate of the node
  * @param s - the `s` coordinate of the node
- * @returns a HexNode object
+ * @returns the node of the specified type at the specified coordinates
  */
-export function makeNode({ q, r, s }: CubeVector): HexNode {
+export function makeNode({ q, r, s }: CubeVector, nodetype: NodeType): HexNode {
   const self = {
     q,
     r,
     s,
     id: `${q},${r},${s}`,
     links: new WeakSet(),
+    nodetype
+  };
+  if (q + r + s !== 0) {
+    throw new TypeError("q+r+s must sum to zero");
   }
-  if (q + r + s !== 0) { throw new TypeError("q+r+s must sum to zero") }
   return self;
-};
+}
 
 /**
  * Two hex nodes are equal if they have equal cube coordinates.
@@ -38,6 +42,6 @@ export function makeNode({ q, r, s }: CubeVector): HexNode {
  * @param b - a hex node to compare
  * @returns whether a and b have the same coordinates
  */
-export function areEqual(a: QRS, b: QRS): boolean {
-  return (a.q === b.q && a.r === b.r && a.s === b.s);
+export function areEqual(a: Partial<HexNode>, b: Partial<HexNode>): boolean {
+  return a.q === b.q && a.r === b.r && a.s === b.s;
 }

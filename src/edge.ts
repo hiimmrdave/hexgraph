@@ -1,4 +1,4 @@
-import { QRS, NodeType, HexNode } from "./types"
+import { NodeType, HexNode } from "./types"
 import { makeNode } from "./main"
 
 /**
@@ -8,6 +8,6 @@ import { makeNode } from "./main"
  * @param s - the `s` coordinate of the node
  * @returns a Edge-type HexNode
  */
-export function makeEdge({ q, r, s }: QRS): HexNode {
-  return Object.assign(makeNode({ q, r, s }), { nodetype: NodeType.Edge })
+export function makeEdge({ q, r, s }: Partial<HexNode>): HexNode {
+  return makeNode({ q, r, s }, NodeType.Edge )
 }

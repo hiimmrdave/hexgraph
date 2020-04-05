@@ -1,7 +1,6 @@
 import { CubeVector } from "./types";
 
 /** pi/2 radians = 90 degrees, the utility of which should be self-evident */
-
 export const HALF_PI = Math.PI / 2;
 
 /** pi/3 radians = 60 degrees, the interior angle of an equliateral triangle */
