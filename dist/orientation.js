@@ -1,5 +1,5 @@
 import { thousandthRound, HALF_PI, PI_OVER_SIX, SQRT_THREE, PI_OVER_THREE } from "./math";
-export function orientation({ theta = 0 } = {}) {
+export default function orientation({ theta = 0 } = {}) {
     return {
         f: {
             x: {

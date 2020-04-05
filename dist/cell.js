@@ -18,14 +18,17 @@ export const DIAGONALS = [
     { q: -1, r: 2, s: -1 },
     { q: 1, r: 1, s: -2 }
 ];
+export function makeCell({ q, r, s }) {
+    return makeNode({ q, r, s }, 0);
+}
 export function add(a, b) {
-    return Object.assign({ ...a }, { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s });
+    return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
 }
 export function subtract(a, b) {
-    return Object.assign({ ...a }, { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s });
+    return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 export function multiply(cell, k) {
-    return Object.assign({ ...cell }, { q: cell.q * k, r: cell.r * k, s: cell.s * k });
+    return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
 export function round({ q, r, s }) {
     const approx = {
@@ -62,8 +65,5 @@ export function edges(cell) {
 }
 export function vertices(cell) {
     return [].map(el => makeVertex(cell));
-}
-export function makeCell({ q, r, s }) {
-    return Object.assign(makeNode({ q, r, s }), { nodetype: 0 });
 }
 //# sourceMappingURL=cell.js.map
