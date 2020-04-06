@@ -1,12 +1,6 @@
-import {
-  thousandthRound,
-  HALF_PI,
-  PI_OVER_SIX,
-  SQRT_THREE,
-  PI_OVER_THREE
-} from "./math";
+import { thousandthRound, HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math";
 
-export default function orientation({ theta = 0 } = {}) {
+export default function orientation(theta: number = 0) {
   return {
     f: {
       x: {
@@ -24,8 +18,8 @@ export default function orientation({ theta = 0 } = {}) {
         y: thousandthRound((Math.sin(theta) * -2) / 3)
       },
       r: {
-        x: thousandthRound((Math.cos(theta + PI_OVER_THREE) * -2) / 3),
-        y: thousandthRound((Math.sin(theta + PI_OVER_THREE) * 2) / 3)
+        x: thousandthRound((Math.cos(theta + 2 * PI_OVER_SIX) * -2) / 3),
+        y: thousandthRound((Math.sin(theta + 2 * PI_OVER_SIX) * 2) / 3)
       }
     },
     v: {
