@@ -3,9 +3,6 @@ import { CubeVector } from "./types";
 /** pi/2 radians = 90 degrees, the utility of which should be self-evident */
 export const HALF_PI = Math.PI / 2;
 
-/** pi/3 radians = 60 degrees, the interior angle of an equliateral triangle */
-export const PI_OVER_THREE = Math.PI / 3;
-
 /** pi/6 radians = 30 degrees, which is handy */
 export const PI_OVER_SIX = Math.PI / 6;
 
@@ -14,10 +11,10 @@ export const SQRT_THREE = Math.sqrt(3);
 
 /**
  * @param n a number, which will be rounded to 3 numbers after the decimal
- * @returns n, as a string, rounded to 3 decimal places
+ * @returns n rounded to 3 decimal places
  */
-export function thousandthRound(n: number): string {
-  return n.toFixed(3);
+export function thousandthRound(n: number): number {
+  return Math.round(n * 1e3)/1e3;
 }
 
 /**
