@@ -72,7 +72,7 @@ export function round({ q, r, s }: CubeVector|HexNode): HexNode {
   return makeCell(approx);
 }
 
-export function cellLerp(a: CubeVector, b: CubeVector, t: number): HexNode {
+export function cellLerp(a: CubeVector|HexNode, b: CubeVector|HexNode, t: number): HexNode {
   return round(cubeLerp(a, b, t));
 }
 
