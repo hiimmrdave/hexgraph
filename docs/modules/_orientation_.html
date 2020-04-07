@@ -85,27 +85,28 @@
 					<a name="orientation" class="tsd-anchor"></a>
 					<h3>orientation</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">orientation<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span></li>
+						<li class="tsd-signature tsd-kind-icon">orientation<span class="tsd-signature-symbol">(</span>theta<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in orientation.ts:9</li>
+									<li>Defined in orientation.ts:8</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-										</li>
-									</ul>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> theta: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the angle from center to point 0, ccw in multiples of pi/12</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span></h4>
+							<p>objectified transformation matricies for QRS-&gt;XY and XY-&gt;QRS</p>
 							<ul class="tsd-parameters">
 								<li class="tsd-parameter">
 									<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
@@ -114,10 +115,10 @@
 											<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
 											<ul class="tsd-parameters">
 												<li class="tsd-parameter">
-													<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 												</li>
 												<li class="tsd-parameter">
-													<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 												</li>
 											</ul>
 										</li>
@@ -125,10 +126,10 @@
 											<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
 											<ul class="tsd-parameters">
 												<li class="tsd-parameter">
-													<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 												</li>
 												<li class="tsd-parameter">
-													<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 												</li>
 											</ul>
 										</li>
@@ -141,10 +142,10 @@
 											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
 											<ul class="tsd-parameters">
 												<li class="tsd-parameter">
-													<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 												</li>
 												<li class="tsd-parameter">
-													<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 												</li>
 											</ul>
 										</li>
@@ -152,23 +153,12 @@
 											<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
 											<ul class="tsd-parameters">
 												<li class="tsd-parameter">
-													<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 												</li>
 												<li class="tsd-parameter">
-													<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 												</li>
 											</ul>
-										</li>
-									</ul>
-								</li>
-								<li class="tsd-parameter">
-									<h5>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 										</li>
 									</ul>
 								</li>

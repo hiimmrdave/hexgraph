@@ -150,7 +150,7 @@
 					<a name="celllerp" class="tsd-anchor"></a>
 					<h3>cell<wbr>Lerp</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">cell<wbr>Lerp<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></li>
+						<li class="tsd-signature tsd-kind-icon">cell<wbr>Lerp<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -162,10 +162,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a></h5>
+									<h5>a: <a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></h5>
 								</li>
 								<li>
-									<h5>b: <a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a></h5>
+									<h5>b: <a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></h5>
 								</li>
 								<li>
 									<h5>t: <span class="tsd-signature-type">number</span></h5>
@@ -185,7 +185,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in cell.ts:83</li>
+									<li>Defined in cell.ts:87</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -214,7 +214,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in cell.ts:91</li>
+									<li>Defined in cell.ts:95</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,7 +243,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in cell.ts:99</li>
+									<li>Defined in cell.ts:103</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -410,29 +410,31 @@
 					<a name="vertices" class="tsd-anchor"></a>
 					<h3>vertices</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">vertices<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">vertices<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in cell.ts:108</li>
+									<li>Defined in cell.ts:112</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>TODO: this function</p>
+								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cell: <a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a></h5>
+									<h5>cell: <a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the cell of which to find the vertices</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">[]</span></h4>
-							<p>an array of 6 vertices
-							TODO: write this function</p>
+							<p>an array of 6 vertices</p>
 						</li>
 					</ul>
 				</section>
