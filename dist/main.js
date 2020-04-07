@@ -1,11 +1,10 @@
-export function makeNode({ q, r, s }, nodetype) {
+export function makeNode({ q, r, s }) {
     const self = {
         q,
         r,
         s,
         id: `${q},${r},${s}`,
         links: new WeakSet(),
-        nodetype
     };
     if (q + r + s !== 0) {
         throw new TypeError("q+r+s must sum to zero");

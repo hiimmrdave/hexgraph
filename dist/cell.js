@@ -19,7 +19,7 @@ export const DIAGONALS = [
     { q: 1, r: 1, s: -2 }
 ];
 export function makeCell({ q, r, s }) {
-    return makeNode({ q, r, s }, 0);
+    return Object.apply(makeNode({ q, r, s }), { nodetype: 0 });
 }
 export function add(a, b) {
     return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };

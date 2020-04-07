@@ -2,7 +2,7 @@ import { makeNode } from "./main";
 import { makeCell } from "./cell";
 import { makeEdge } from "./edge";
 export function makeVertex({ q, r, s }) {
-    return makeNode({ q, r, s }, 2);
+    return Object.apply(makeNode({ q, r, s }), { nodetype: 2 });
 }
 export function cells(vertex) {
     return [makeCell(vertex)];
