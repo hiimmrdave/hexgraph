@@ -1,4 +1,4 @@
-import { CubeVector, HexNode } from "./types";
+import { CubeVector, HexNode, Cell, Edge, Vertex } from "./types";
 import { cubeLerp } from "./math";
 import { makeNode } from "./main";
 import { NodeType } from "./types";
@@ -29,8 +29,8 @@ export const DIAGONALS: CubeVector[] = [
  * @param s - the `s` coordinate of the node
  * @returns a Cell-type HexNode
  */
-export function makeCell({ q, r, s }: CubeVector): HexNode {
-  return makeNode({ q, r, s }, NodeType.Cell);
+export function makeCell({ q, r, s }: CubeVector): Cell {
+  return Object.apply(makeNode({ q, r, s }),{nodetype:NodeType.Cell});
 }
 
 export function add(a: CubeVector | HexNode, b: CubeVector): CubeVector {
@@ -84,7 +84,7 @@ export function cellLerp(
  * @param cell - the cell of which to find neighbors
  * @returns an array of 6 cells
  */
-export function cells(cell: HexNode): HexNode[] {
+export function cells(cell: HexNode): Cell[] {
   return DIRECTIONS.map(e => makeCell(add(cell, e)));
 }
 
@@ -92,7 +92,7 @@ export function cells(cell: HexNode): HexNode[] {
  * @param cell - the cell of which to find diagonal neighbors
  * @returns an array of 6 cells
  */
-export function diagonals(cell: HexNode): HexNode[] {
+export function diagonals(cell: HexNode): Cell[] {
   return DIAGONALS.map(e => makeCell(add(cell, e)));
 }
 
@@ -100,7 +100,7 @@ export function diagonals(cell: HexNode): HexNode[] {
  * @param cell - the cell of which to find the edges
  * @returns an array of 6 edges
  */
-export function edges(cell: HexNode): HexNode[] {
+export function edges(cell: HexNode): Edge[] {
   return DIRECTIONS.map(e => makeEdge(multiply(add(cell, e), 5e-1)));
 }
 
@@ -109,6 +109,6 @@ export function edges(cell: HexNode): HexNode[] {
  * @param cell - the cell of which to find the vertices
  * @returns an array of 6 vertices
  */
-export function vertices(cell: HexNode): HexNode[] {
+export function vertices(cell: HexNode): Vertex[] {
   return [].map(el => makeVertex(cell));
 }

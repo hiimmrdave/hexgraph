@@ -21,14 +21,13 @@ import orientation from "./orientation";
  * @param s - the `s` coordinate of the node
  * @returns the node of the specified type at the specified coordinates
  */
-export function makeNode({ q, r, s }: CubeVector, nodetype: NodeType): HexNode {
+export function makeNode({ q, r, s }: CubeVector): HexNode {
   const self = {
     q,
     r,
     s,
     id: `${q},${r},${s}`,
     links: new WeakSet(),
-    nodetype
   };
   if (q + r + s !== 0) {
     throw new TypeError("q+r+s must sum to zero");

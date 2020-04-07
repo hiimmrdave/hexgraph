@@ -15,13 +15,16 @@ export interface CubeVector {
    * s component of vector/coordinate
    */
   readonly s: number;
+  /**
+   * arbitrary additional properties
+   */
+  [prop: string]: any;
 }
 
+/**
+ * a node of the graph representation of the hexagonal grid
+ */
 export interface HexNode extends CubeVector {
-  /**
-   * the NodeType of the node
-   */
-  readonly nodetype: NodeType;
   /**
    * the cube coordinates of the node as a comma-separated string
    */
@@ -29,11 +32,22 @@ export interface HexNode extends CubeVector {
   /**
    * the set of nodes adjacent to this node. Adjacency is arbitrary.
    */
-  readonly links: WeakSet<HexNode>;
-  /**
-   * arbitrary additional properties
-   */
-  [prop: string]: any;
+  links: WeakSet<HexNode>;
+}
+
+/** a Cell node */
+export interface Cell extends HexNode {
+  readonly nodetype: NodeType.Cell;
+}
+
+/** an Edge node */
+export interface Edge extends HexNode {
+  readonly nodetype: NodeType.Edge;
+}
+
+/** a Vertex node */
+export interface Vertex extends HexNode {
+  readonly nodetype: NodeType.Vertex;
 }
 
 /**
@@ -55,15 +69,18 @@ export interface CartesianVector {
  */
 export const enum NodeType {
   /**
-   * the node is a cell, a hexagonal space
+   * the node is a cell, a hexagonal space  
+   * a cell has 6 adjacent cells, 6 adjacent edges, and 6 adjacent vertices
    */
   Cell,
   /**
-   * the node is an edge, a boundary between two cells
+   * the node is an edge, a boundary between two cells  
+   * an edge has 2 adjacent cells, 4 adjacent edges, and 2 adjacent vertices
    */
   Edge,
   /**
-   * the node is a vertex, a point at which three cells and three edges meet
+   * the node is a vertex, a point at which three cells and three edges meet  
+   * a vertex has 3 adjacent cells, 3 adjacent edges, and 3 adjacent vertices
    */
   Vertex
 }

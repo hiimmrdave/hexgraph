@@ -1,4 +1,4 @@
-import { CubeVector, NodeType, HexNode } from "./types";
+import { CubeVector, NodeType, HexNode, Edge, Cell, Vertex } from "./types";
 import { makeNode } from "./main";
 import { makeCell } from "./cell";
 import { makeEdge } from "./edge";
@@ -10,8 +10,8 @@ import { makeEdge } from "./edge";
  * @param s - the `s` coordinate of the node
  * @returns a Vertex-type HexNode
  */
-export function makeVertex({ q, r, s }: CubeVector): HexNode {
-  return makeNode({ q, r, s }, NodeType.Vertex);
+export function makeVertex({ q, r, s }: CubeVector): Vertex {
+  return Object.apply(makeNode({ q, r, s }),{nodetype:NodeType.Vertex});
 }
 
 /**
@@ -19,7 +19,7 @@ export function makeVertex({ q, r, s }: CubeVector): HexNode {
  * @param vertex - the vertex of which to find adjacent cells
  * @returns an array of 3 cells
  */
-export function cells(vertex: HexNode): HexNode[] {
+export function cells(vertex: HexNode): Cell[] {
   return [makeCell(vertex)];
 }
 
@@ -28,7 +28,7 @@ export function cells(vertex: HexNode): HexNode[] {
  * @param vertex - the vertex of which to find adjacent edges
  * @returns an array of 3 edges
  */
-export function edges(vertex: HexNode): HexNode[] {
+export function edges(vertex: HexNode): Edge[] {
   return [makeEdge(vertex)];
 }
 
@@ -37,6 +37,6 @@ export function edges(vertex: HexNode): HexNode[] {
  * @param vertex - the vertex of which to find adjacent vertices
  * @returns an array of 3 vertices
  */
-export function vertices(vertex: HexNode): HexNode[] {
+export function vertices(vertex: HexNode): Vertex[] {
   return [makeVertex(vertex)];
 }
