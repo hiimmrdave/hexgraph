@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CubeVector | yahgts</title>
+	<title>Edge | yahgts</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_types_.html">&quot;types&quot;</a>
 				</li>
 				<li>
-					<a href="_types_.cubevector.html">CubeVector</a>
+					<a href="_types_.edge.html">Edge</a>
 				</li>
 			</ul>
-			<h1>Interface CubeVector</h1>
+			<h1>Interface Edge</h1>
 		</div>
 	</div>
 </header>
@@ -72,8 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>a vector or coordinate in qrs space
-						qrs is cubic space, which is confined here to a plane q+r+s==0</p>
+						<p>an Edge node</p>
 					</div>
 				</div>
 			</section>
@@ -81,10 +80,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CubeVector</span>
+						<a href="_types_.hexnode.html" class="tsd-signature-type">HexNode</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="_types_.hexnode.html" class="tsd-signature-type">HexNode</a>
+								<span class="target">Edge</span>
 							</li>
 						</ul>
 					</li>
@@ -106,9 +105,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.cubevector.html#q" class="tsd-kind-icon">q</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.cubevector.html#r" class="tsd-kind-icon">r</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.cubevector.html#s" class="tsd-kind-icon">s</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.edge.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.edge.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.edge.html#nodetype" class="tsd-kind-icon">nodetype</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.edge.html#q" class="tsd-kind-icon">q</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.edge.html#r" class="tsd-kind-icon">r</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.edge.html#s" class="tsd-kind-icon">s</a></li>
 							</ul>
 						</section>
 					</div>
@@ -116,11 +118,54 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_types_.hexnode.html">HexNode</a>.<a href="_types_.hexnode.html#id">id</a></p>
+						<ul>
+							<li>Defined in types.ts:31</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the cube coordinates of the node as a comma-separated string</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="links" class="tsd-anchor"></a>
+					<h3>links</h3>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WeakSet</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_types_.hexnode.html">HexNode</a>.<a href="_types_.hexnode.html#links">links</a></p>
+						<ul>
+							<li>Defined in types.ts:35</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the set of nodes adjacent to this node. Adjacency is arbitrary.</p>
+						</div>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="nodetype" class="tsd-anchor"></a>
+					<h3>nodetype</h3>
+					<div class="tsd-signature tsd-kind-icon">nodetype<span class="tsd-signature-symbol">:</span> <a href="../enums/_types_.nodetype.html#edge" class="tsd-signature-type">Edge</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types.ts:45</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="q" class="tsd-anchor"></a>
 					<h3>q</h3>
 					<div class="tsd-signature tsd-kind-icon">q<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_types_.cubevector.html">CubeVector</a>.<a href="_types_.cubevector.html#q">q</a></p>
 						<ul>
 							<li>Defined in types.ts:9</li>
 						</ul>
@@ -131,11 +176,12 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="r" class="tsd-anchor"></a>
 					<h3>r</h3>
 					<div class="tsd-signature tsd-kind-icon">r<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_types_.cubevector.html">CubeVector</a>.<a href="_types_.cubevector.html#r">r</a></p>
 						<ul>
 							<li>Defined in types.ts:13</li>
 						</ul>
@@ -146,11 +192,12 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="s" class="tsd-anchor"></a>
 					<h3>s</h3>
 					<div class="tsd-signature tsd-kind-icon">s<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_types_.cubevector.html">CubeVector</a>.<a href="_types_.cubevector.html#s">s</a></p>
 						<ul>
 							<li>Defined in types.ts:17</li>
 						</ul>
@@ -206,27 +253,36 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_types_.cell.html" class="tsd-kind-icon">Cell</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_.cubevector.html" class="tsd-kind-icon">Cube<wbr>Vector</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.cubevector.html" class="tsd-kind-icon">Cube<wbr>Vector</a>
+						<a href="_types_.edge.html" class="tsd-kind-icon">Edge</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_.cubevector.html#q" class="tsd-kind-icon">q</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_types_.edge.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_types_.edge.html#links" class="tsd-kind-icon">links</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_.cubevector.html#r" class="tsd-kind-icon">r</a>
+								<a href="_types_.edge.html#nodetype" class="tsd-kind-icon">nodetype</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_.cubevector.html#s" class="tsd-kind-icon">s</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_types_.edge.html#q" class="tsd-kind-icon">q</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_types_.edge.html#r" class="tsd-kind-icon">r</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_types_.edge.html#s" class="tsd-kind-icon">s</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.edge.html" class="tsd-kind-icon">Edge</a>
-					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_types_.hexnode.html" class="tsd-kind-icon">Hex<wbr>Node</a>
 					</li>

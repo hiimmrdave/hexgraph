@@ -69,6 +69,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>a node of the graph representation of the hexagonal grid</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -77,6 +84,17 @@
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">HexNode</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="_types_.cell.html" class="tsd-signature-type">Cell</a>
+									</li>
+									<li>
+										<a href="_types_.edge.html" class="tsd-signature-type">Edge</a>
+									</li>
+									<li>
+										<a href="_types_.vertex.html" class="tsd-signature-type">Vertex</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -100,7 +118,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.hexnode.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.hexnode.html#links" class="tsd-kind-icon">links</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.hexnode.html#nodetype" class="tsd-kind-icon">nodetype</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.hexnode.html#q" class="tsd-kind-icon">q</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.hexnode.html#r" class="tsd-kind-icon">r</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.hexnode.html#s" class="tsd-kind-icon">s</a></li>
@@ -117,7 +134,7 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:28</li>
+							<li>Defined in types.ts:31</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -132,27 +149,12 @@
 					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WeakSet</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:32</li>
+							<li>Defined in types.ts:35</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>the set of nodes adjacent to this node. Adjacency is arbitrary.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="nodetype" class="tsd-anchor"></a>
-					<h3>nodetype</h3>
-					<div class="tsd-signature tsd-kind-icon">nodetype<span class="tsd-signature-symbol">:</span> <a href="../enums/_types_.nodetype.html" class="tsd-signature-type">NodeType</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in types.ts:24</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the NodeType of the node</p>
 						</div>
 					</div>
 				</section>
@@ -247,7 +249,13 @@
 						<a href="_types_.cartesianvector.html" class="tsd-kind-icon">Cartesian<wbr>Vector</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_.cell.html" class="tsd-kind-icon">Cell</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_types_.cubevector.html" class="tsd-kind-icon">Cube<wbr>Vector</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_.edge.html" class="tsd-kind-icon">Edge</a>
 					</li>
 				</ul>
 				<ul class="current">
@@ -259,9 +267,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_types_.hexnode.html#links" class="tsd-kind-icon">links</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_.hexnode.html#nodetype" class="tsd-kind-icon">nodetype</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="_types_.hexnode.html#q" class="tsd-kind-icon">q</a>
@@ -276,6 +281,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_.vertex.html" class="tsd-kind-icon">Vertex</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
