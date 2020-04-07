@@ -14,7 +14,7 @@ export const SQRT_THREE = Math.sqrt(3);
  * @returns n rounded to 3 decimal places
  */
 export function thousandthRound(n: number): number {
-  return Math.round(n * 1e3)/1e3;
+  return Math.round(n * 1e3) / 1e3;
 }
 
 /**

@@ -91,5 +91,5 @@ export const enum GridShape {
   /**
    * a grid shape like a rectangle, takes up to two size values
    */
-  Rectangle,
+  Rectangle
 }

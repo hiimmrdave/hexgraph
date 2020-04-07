@@ -33,15 +33,15 @@ export function makeCell({ q, r, s }: CubeVector): HexNode {
   return makeNode({ q, r, s }, NodeType.Cell);
 }
 
-export function add(a: CubeVector|HexNode, b: CubeVector): CubeVector {
+export function add(a: CubeVector | HexNode, b: CubeVector): CubeVector {
   return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
 }
 
-export function subtract(a: CubeVector|HexNode, b: CubeVector): CubeVector {
+export function subtract(a: CubeVector | HexNode, b: CubeVector): CubeVector {
   return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 
-export function multiply(cell: CubeVector|HexNode, k: number): CubeVector {
+export function multiply(cell: CubeVector | HexNode, k: number): CubeVector {
   return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
 
@@ -51,7 +51,7 @@ export function multiply(cell: CubeVector|HexNode, k: number): CubeVector {
  * @param s - the absolute q coordinate to round to nearest cell
  * @returns a cell with integer q,r,s coordinates nearest to the provided q,r,s point
  */
-export function round({ q, r, s }: CubeVector|HexNode): HexNode {
+export function round({ q, r, s }: CubeVector | HexNode): HexNode {
   const approx = {
       q: Math.round(q),
       r: Math.round(r),
@@ -72,7 +72,11 @@ export function round({ q, r, s }: CubeVector|HexNode): HexNode {
   return makeCell(approx);
 }
 
-export function cellLerp(a: CubeVector|HexNode, b: CubeVector|HexNode, t: number): HexNode {
+export function cellLerp(
+  a: CubeVector | HexNode,
+  b: CubeVector | HexNode,
+  t: number
+): HexNode {
   return round(cubeLerp(a, b, t));
 }
 
@@ -101,10 +105,10 @@ export function edges(cell: HexNode): HexNode[] {
 }
 
 /**
+ * TODO: this function
  * @param cell - the cell of which to find the vertices
  * @returns an array of 6 vertices
- * TODO: write this function
  */
-export function vertices(cell: HexNode|CubeVector): HexNode[] {
+export function vertices(cell: HexNode): HexNode[] {
   return [].map(el => makeVertex(cell));
 }
