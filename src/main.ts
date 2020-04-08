@@ -9,8 +9,7 @@
  */
 
 //#region type setup
-import { CubeVector, HexNode, NodeType } from "./types";
-import orientation from "./orientation";
+import { CubeVector, HexNode } from "./types";
 //#endregion type descriptions
 
 /**
