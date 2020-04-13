@@ -1,4 +1,4 @@
-import { NodeType, HexNode, Cell, Edge, Vertex } from "./types";
+import { NodeType, HexNode } from "./types";
 import { makeNode } from "./main";
 import { makeCell } from "./cell";
 import { makeVertex } from "./vertex";
@@ -10,13 +10,13 @@ import { makeVertex } from "./vertex";
  * @param s - the `s` coordinate of the node
  * @returns a Edge-type HexNode
  */
-export function makeEdge({ q, r, s }: Partial<HexNode>): Edge {
-  var edge: Edge = Object.apply(makeNode({ q, r, s }), {
+export function makeEdge({ q, r, s }: Partial<HexNode>): HexNode {
+  var edge: HexNode = Object.apply(makeNode({ q, r, s }), {
     nodetype: NodeType.Edge
   });
-  cells(edge).forEach(el => edge.links.add(el));
-  edges(edge).forEach(el => edge.links.add(el));
-  vertices(edge).forEach(el => edge.links.add(el));
+  //cells(edge).forEach(el => edge.links.add(el));
+  //edges(edge).forEach(el => edge.links.add(el));
+  //vertices(edge).forEach(el => edge.links.add(el));
   return edge;
 }
 
@@ -25,7 +25,7 @@ export function makeEdge({ q, r, s }: Partial<HexNode>): Edge {
  * @param edge - the edge of which to find the adjacent cells
  * @returns an array of 2 cells
  */
-export function cells(edge: HexNode): Cell[] {
+export function cells(edge: HexNode): HexNode[] {
   return [makeCell(edge)];
 }
 
@@ -34,7 +34,7 @@ export function cells(edge: HexNode): Cell[] {
  * @param edge  - the edge of which to find the adjacent edges
  * @returns an array of 4 edges
  */
-export function edges(edge: HexNode): Edge[] {
+export function edges(edge: HexNode): HexNode[] {
   return [makeEdge(edge)];
 }
 
@@ -43,6 +43,6 @@ export function edges(edge: HexNode): Edge[] {
  * @param edge  - the edge of which to find the adjacent vertices
  * @returns an array of 2 vertices
  */
-export function vertices(edge: HexNode): Vertex[] {
+export function vertices(edge: HexNode): HexNode[] {
   return [makeVertex(edge)];
 }

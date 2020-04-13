@@ -21,17 +21,16 @@ import { CubeVector, HexNode } from "./types";
  * @returns the node of the specified type at the specified coordinates
  */
 export function makeNode({ q, r, s }: CubeVector): HexNode {
-  const self = {
+  if (q + r + s > 1e-3) {
+    throw new TypeError("q+r+s must sum to zero");
+  }
+  return {
     q,
     r,
     s,
     id: `${q},${r},${s}`,
     links: new WeakSet()
   };
-  if (q + r + s !== 0) {
-    throw new TypeError("q+r+s must sum to zero");
-  }
-  return self;
 }
 
 /**
@@ -41,5 +40,5 @@ export function makeNode({ q, r, s }: CubeVector): HexNode {
  * @returns whether a and b have the same coordinates
  */
 export function areEqual(a: Partial<HexNode>, b: Partial<HexNode>): boolean {
-  return a.q === b.q && a.r === b.r && a.s === b.s;
+  return a.q === b.q && a.r === b.r && a.s === b.s && a.nodetype === b.nodetype;
 }

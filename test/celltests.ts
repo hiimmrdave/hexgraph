@@ -8,12 +8,9 @@ import { makeEdge } from "../src/edge";
 describe("Cell properties", function() {
   const origin = Object.freeze(Cell.makeCell({ q: 0, r: 0, s: 0 }));
 
-  it("cell type should be Cell", () => {
-    expect(origin.nodetype).to.equal(NodeType.Cell);
-  });
-
   it("{q:0,r:0,s:0} should equal origin", () => {
-    expect(areEqual(origin, { q: 0, r: 0, s: 0 })).to.be.true;
+    expect(areEqual(origin, { q: 0, r: 0, s: 0, nodetype: NodeType.Cell })).to
+      .be.true;
   });
 
   it("diagonals to origin should equal DIAGONALS", () => {

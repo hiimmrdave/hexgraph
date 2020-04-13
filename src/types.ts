@@ -35,21 +35,6 @@ export interface HexNode extends CubeVector {
   links: WeakSet<HexNode>;
 }
 
-/** a Cell node */
-export interface Cell extends HexNode {
-  readonly nodetype: NodeType.Cell;
-}
-
-/** an Edge node */
-export interface Edge extends HexNode {
-  readonly nodetype: NodeType.Edge;
-}
-
-/** a Vertex node */
-export interface Vertex extends HexNode {
-  readonly nodetype: NodeType.Vertex;
-}
-
 /**
  * a vector or coordinate in 2-space
  */
