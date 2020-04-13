@@ -4,7 +4,7 @@ export function makeNode({ q, r, s }) {
         r,
         s,
         id: `${q},${r},${s}`,
-        links: new WeakSet(),
+        links: new WeakSet()
     };
     if (q + r + s !== 0) {
         throw new TypeError("q+r+s must sum to zero");

@@ -18,8 +18,22 @@ export const DIAGONALS = [
     { q: -1, r: 2, s: -1 },
     { q: 1, r: 1, s: -2 }
 ];
+export const VERTICES = [
+    { q: 2 / 3, r: -1 / 3, s: -1 / 3 },
+    { q: 1 / 3, r: -2 / 3, s: 1 / 3 },
+    { q: -1 / 3, r: -1 / 3, s: 2 / 3 },
+    { q: -2 / 3, r: 1 / 3, s: 1 / 3 },
+    { q: -1 / 3, r: 2 / 3, s: -1 / 3 },
+    { q: 1 / 3, r: 1 / 3, s: -2 / 3 }
+];
 export function makeCell({ q, r, s }) {
-    return Object.apply(makeNode({ q, r, s }), { nodetype: 0 });
+    var cell = Object.apply(makeNode({ q, r, s }), {
+        nodetype: 0
+    });
+    cells(cell).forEach(el => cell.links.add(el));
+    edges(cell).forEach(el => cell.links.add(el));
+    vertices(cell).forEach(el => cell.links.add(el));
+    return cell;
 }
 export function add(a, b) {
     return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
@@ -64,6 +78,6 @@ export function edges(cell) {
     return DIRECTIONS.map(e => makeEdge(multiply(add(cell, e), 5e-1)));
 }
 export function vertices(cell) {
-    return [].map(el => makeVertex(cell));
+    return VERTICES.map(el => makeVertex(add(cell, el)));
 }
 //# sourceMappingURL=cell.js.map
