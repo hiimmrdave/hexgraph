@@ -1,6 +1,6 @@
 import { NodeType, HexNode } from "./types";
-import { makeNode } from "./main";
-import { makeCell } from "./cell";
+import * as main from "./main";
+import { makeCell, DIRECTIONS } from "./cell";
 import { makeVertex } from "./vertex";
 
 /**
@@ -11,31 +11,35 @@ import { makeVertex } from "./vertex";
  * @returns a Edge-type HexNode
  */
 export function makeEdge({ q, r, s }: Partial<HexNode>): HexNode {
-  var edge: HexNode = Object.apply(makeNode({ q, r, s }), {
+  var edge: HexNode = Object.assign(main.makeNode({ q, r, s }), {
     nodetype: NodeType.Edge
   });
-  //cells(edge).forEach(el => edge.links.add(el));
-  //edges(edge).forEach(el => edge.links.add(el));
-  //vertices(edge).forEach(el => edge.links.add(el));
   return edge;
 }
 
 /**
- * TODO: this function
  * @param edge - the edge of which to find the adjacent cells
  * @returns an array of 2 cells
  */
 export function cells(edge: HexNode): HexNode[] {
-  return [makeCell(edge)];
+  return DIRECTIONS.map(e =>
+    makeCell(main.add(edge, main.multiply(e, 0.5)))
+  ).filter(
+    e => Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s)
+  );
 }
 
 /**
- * TODO: this function
  * @param edge  - the edge of which to find the adjacent edges
  * @returns an array of 4 edges
  */
 export function edges(edge: HexNode): HexNode[] {
-  return [makeEdge(edge)];
+  return DIRECTIONS.map(e =>
+    makeEdge(main.add(edge, main.multiply(e, 0.5)))
+  ).filter(
+    e =>
+      !(Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s))
+  );
 }
 
 /**

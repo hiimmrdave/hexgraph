@@ -1,17 +1,17 @@
 import { CubeVector, HexNode } from "./types";
 import { cubeLerp } from "./math";
-import { makeNode } from "./main";
+import * as main from "./main";
 import { NodeType } from "./types";
 import { makeEdge } from "./edge";
 import { makeVertex } from "./vertex";
 
 export const DIRECTIONS: CubeVector[] = [
-  { q: 1, r: 0, s: -1 },
   { q: 1, r: -1, s: 0 },
   { q: 0, r: -1, s: 1 },
   { q: -1, r: 0, s: 1 },
   { q: -1, r: 1, s: 0 },
-  { q: 0, r: 1, s: -1 }
+  { q: 0, r: 1, s: -1 },
+  { q: 1, r: 0, s: -1 },
 ];
 export const DIAGONALS: CubeVector[] = [
   { q: 2, r: -1, s: -1 },
@@ -30,23 +30,8 @@ export const DIAGONALS: CubeVector[] = [
  * @returns a Cell-type HexNode
  */
 export function makeCell({ q, r, s }: CubeVector): HexNode {
-  var cell = Object.assign(makeNode({ q, r, s }), { nodetype: NodeType.Cell });
-  //cells(cell).forEach(el => cell.links.add(el));
-  edges(cell).forEach(el => cell.links.add(el));
-  vertices(cell).forEach(el => cell.links.add(el));
+  var cell = Object.assign(main.makeNode({ q, r, s }), { nodetype: NodeType.Cell });
   return cell;
-}
-
-export function add(a: CubeVector | HexNode, b: CubeVector): CubeVector {
-  return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
-}
-
-export function subtract(a: CubeVector | HexNode, b: CubeVector): CubeVector {
-  return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
-}
-
-export function multiply(cell: CubeVector | HexNode, k: number): CubeVector {
-  return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
 
 /**
@@ -90,7 +75,7 @@ export function cellLerp(
  * @returns an array of 6 cells
  */
 export function cells(cell: HexNode): HexNode[] {
-  return DIRECTIONS.map(e => makeCell(add(cell, e)));
+  return DIRECTIONS.map(e => makeCell(main.add(cell, e)));
 }
 
 /**
@@ -98,7 +83,7 @@ export function cells(cell: HexNode): HexNode[] {
  * @returns an array of 6 cells
  */
 export function diagonals(cell: HexNode): HexNode[] {
-  return DIAGONALS.map(e => makeCell(add(cell, e)));
+  return DIAGONALS.map(e => makeCell(main.add(cell, e)));
 }
 
 /**
@@ -106,7 +91,7 @@ export function diagonals(cell: HexNode): HexNode[] {
  * @returns an array of 6 edges
  */
 export function edges(cell: HexNode): HexNode[] {
-  return DIRECTIONS.map(e => makeEdge(add(multiply(e, 5e-1), cell)));
+  return DIRECTIONS.map(e => makeEdge(main.add(main.multiply(e, 5e-1), cell)));
 }
 
 /**
@@ -114,5 +99,5 @@ export function edges(cell: HexNode): HexNode[] {
  * @returns an array of 6 vertices
  */
 export function vertices(cell: HexNode): HexNode[] {
-  return DIAGONALS.map(e => makeVertex(add(cell, multiply(e, 1 / 3))));
+  return DIAGONALS.map(e => makeVertex(main.add(cell, main.multiply(e, 1 / 3))));
 }

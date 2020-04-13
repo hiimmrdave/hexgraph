@@ -26,10 +26,6 @@ export default function orientation(theta: number = 0) {
         x: thousandthRound((Math.cos(theta + 2 * PI_OVER_SIX) * -2) / 3),
         y: thousandthRound((Math.sin(theta + 2 * PI_OVER_SIX) * 2) / 3)
       }
-    } /*
-    v: {
-      x: thousandthRound(Math.cos(theta)),
-      y: thousandthRound(-1 * Math.sin(theta))
-    }*/
+    }
   };
 }

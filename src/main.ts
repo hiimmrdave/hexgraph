@@ -42,3 +42,17 @@ export function makeNode({ q, r, s }: CubeVector): HexNode {
 export function areEqual(a: Partial<HexNode>, b: Partial<HexNode>): boolean {
   return a.q === b.q && a.r === b.r && a.s === b.s && a.nodetype === b.nodetype;
 }
+
+
+
+export function add(a: CubeVector | HexNode, b: CubeVector): CubeVector {
+  return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
+}
+
+export function subtract(a: CubeVector | HexNode, b: CubeVector): CubeVector {
+  return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
+}
+
+export function multiply(cell: CubeVector | HexNode, k: number): CubeVector {
+  return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
+}

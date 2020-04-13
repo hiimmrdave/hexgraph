@@ -1,16 +1,15 @@
 import { expect } from "chai";
 import { it } from "mocha";
 import * as Cell from "../src/cell";
-import { areEqual } from "../src/main";
-import { NodeType } from "../src/types";
+import * as main from "../src/main";
 import { makeEdge } from "../src/edge";
+import { makeVertex } from "../src/vertex";
 
 describe("Cell properties", function() {
   const origin = Object.freeze(Cell.makeCell({ q: 0, r: 0, s: 0 }));
 
-  it("{q:0,r:0,s:0} should equal origin", () => {
-    expect(areEqual(origin, { q: 0, r: 0, s: 0, nodetype: NodeType.Cell })).to
-      .be.true;
+  it("{q:0,r:0,s:0,nodetype:0} should equal origin", () => {
+    expect(main.areEqual(origin, { q: 0, r: 0, s: 0, nodetype: 0 })).to.be.true;
   });
 
   it("diagonals to origin should equal DIAGONALS", () => {
@@ -42,6 +41,7 @@ describe("Cell properties", function() {
       s,
       nodetype
     }));
+    console.table(subject);
     let result = Cell.DIRECTIONS.map(e => {
       const each = Cell.makeCell(e);
       return {
@@ -55,7 +55,7 @@ describe("Cell properties", function() {
     expect(subject).to.deep.equal(result, "Directions are wrong");
   });
 
-  it("edges should be half the coordinates of the edges", () => {
+  it("edges should be half the coordinates of the neighbors", () => {
     let subject = Cell.edges(origin).map(({ id, q, r, s, nodetype }) => ({
       id,
       q,
@@ -63,8 +63,9 @@ describe("Cell properties", function() {
       s,
       nodetype
     }));
+    console.table(subject);
     let result = Cell.DIRECTIONS.map(e => {
-      const each = makeEdge(Cell.multiply(e, 0.5));
+      const each = makeEdge(main.multiply(e, 0.5));
       return {
         id: each.id,
         q: each.q,
@@ -74,5 +75,27 @@ describe("Cell properties", function() {
       };
     });
     expect(subject).to.deep.equal(result, "Edges are wrong");
+  });
+
+  it("vertices should be 1/3 the coordinates of the diagonals", () => {
+    let subject = Cell.vertices(origin).map(({ id, q, r, s, nodetype }) => ({
+      id,
+      q,
+      r,
+      s,
+      nodetype
+    }));
+    console.table(subject);
+    let result = Cell.DIAGONALS.map(e => {
+      const each = makeVertex(main.multiply(e, 1 / 3));
+      return {
+        id: each.id,
+        q: each.q,
+        r: each.r,
+        s: each.s,
+        nodetype: each.nodetype
+      };
+    });
+    expect(subject).to.deep.equal(result, "Vertices are wrong");
   });
 });
