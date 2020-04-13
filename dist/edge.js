@@ -5,9 +5,6 @@ export function makeEdge({ q, r, s }) {
     var edge = Object.apply(makeNode({ q, r, s }), {
         nodetype: 1
     });
-    cells(edge).forEach(el => edge.links.add(el));
-    edges(edge).forEach(el => edge.links.add(el));
-    vertices(edge).forEach(el => edge.links.add(el));
     return edge;
 }
 export function cells(edge) {

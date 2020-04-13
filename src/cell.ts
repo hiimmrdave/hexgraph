@@ -114,5 +114,5 @@ export function edges(cell: HexNode): HexNode[] {
  * @returns an array of 6 vertices
  */
 export function vertices(cell: HexNode): HexNode[] {
-  return DIAGONALS.map(el => makeVertex(add(cell, multiply(el, 1 / 3))));
+  return DIAGONALS.map(e => makeVertex(add(cell, multiply(e, 1 / 3))));
 }
