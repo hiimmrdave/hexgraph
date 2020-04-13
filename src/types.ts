@@ -65,21 +65,22 @@ export interface CartesianVector {
 }
 
 /**
- * the type of node of the hex graph, corresponding to which portion of the hex grid the node represents
+ * the type of node of the hex graph,
+ * corresponding to which portion of the hex grid the node represents
  */
 export const enum NodeType {
   /**
-   * the node is a cell, a hexagonal space  
+   * the node is a cell, a hexagonal space
    * a cell has 6 adjacent cells, 6 adjacent edges, and 6 adjacent vertices
    */
   Cell,
   /**
-   * the node is an edge, a boundary between two cells  
+   * the node is an edge, a boundary between two cells
    * an edge has 2 adjacent cells, 4 adjacent edges, and 2 adjacent vertices
    */
   Edge,
   /**
-   * the node is a vertex, a point at which three cells and three edges meet  
+   * the node is a vertex, a point at which three cells and three edges meet
    * a vertex has 3 adjacent cells, 3 adjacent edges, and 3 adjacent vertices
    */
   Vertex
@@ -102,11 +103,13 @@ export const enum GridShape {
    */
   Star,
   /**
-   * a grid shape like a diamond or slanted rectangle, takes up to two size values
+   * a grid shape like a diamond or slanted rectangle,
+   * takes up to two size values
    */
   Parallelogram,
   /**
-   * a grid shape like a rectangle, takes up to two size values
+   * a grid shape like a rectangle,
+   * takes up to two size values
    */
   Rectangle
 }

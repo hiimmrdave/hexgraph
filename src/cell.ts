@@ -21,6 +21,14 @@ export const DIAGONALS: CubeVector[] = [
   { q: -1, r: 2, s: -1 },
   { q: 1, r: 1, s: -2 }
 ];
+export const VERTICES: CubeVector[] = [
+  { q: 2 / 3, r: -1 / 3, s: -1 / 3 },
+  { q: 1 / 3, r: -2 / 3, s: 1 / 3 },
+  { q: -1 / 3, r: -1 / 3, s: 2 / 3 },
+  { q: -2 / 3, r: 1 / 3, s: 1 / 3 },
+  { q: -1 / 3, r: 2 / 3, s: -1 / 3 },
+  { q: 1 / 3, r: 1 / 3, s: -2 / 3 }
+];
 
 /**
  *
@@ -30,7 +38,13 @@ export const DIAGONALS: CubeVector[] = [
  * @returns a Cell-type HexNode
  */
 export function makeCell({ q, r, s }: CubeVector): Cell {
-  return Object.apply(makeNode({ q, r, s }),{nodetype:NodeType.Cell});
+  var cell: Cell = Object.apply(makeNode({ q, r, s }), {
+    nodetype: NodeType.Cell
+  });
+  cells(cell).forEach(el => cell.links.add(el));
+  edges(cell).forEach(el => cell.links.add(el));
+  vertices(cell).forEach(el => cell.links.add(el));
+  return cell;
 }
 
 export function add(a: CubeVector | HexNode, b: CubeVector): CubeVector {
@@ -49,7 +63,8 @@ export function multiply(cell: CubeVector | HexNode, k: number): CubeVector {
  * @param q - the absolute q coordinate to round to nearest cell
  * @param r - the absolute q coordinate to round to nearest cell
  * @param s - the absolute q coordinate to round to nearest cell
- * @returns a cell with integer q,r,s coordinates nearest to the provided q,r,s point
+ * @returns a cell with integer q,r,s coordinates
+ * nearest to the provided q,r,s point
  */
 export function round({ q, r, s }: CubeVector | HexNode): HexNode {
   const approx = {
@@ -105,10 +120,9 @@ export function edges(cell: HexNode): Edge[] {
 }
 
 /**
- * TODO: this function
  * @param cell - the cell of which to find the vertices
  * @returns an array of 6 vertices
  */
 export function vertices(cell: HexNode): Vertex[] {
-  return [].map(el => makeVertex(cell));
+  return VERTICES.map(el => makeVertex(add(cell, el)));
 }

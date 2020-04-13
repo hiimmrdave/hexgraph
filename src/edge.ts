@@ -11,7 +11,13 @@ import { makeVertex } from "./vertex";
  * @returns a Edge-type HexNode
  */
 export function makeEdge({ q, r, s }: Partial<HexNode>): Edge {
-  return Object.apply(makeNode({ q, r, s }),{nodetype:NodeType.Edge});
+  var edge: Edge = Object.apply(makeNode({ q, r, s }), {
+    nodetype: NodeType.Edge
+  });
+  cells(edge).forEach(el => edge.links.add(el));
+  edges(edge).forEach(el => edge.links.add(el));
+  vertices(edge).forEach(el => edge.links.add(el));
+  return edge;
 }
 
 /**

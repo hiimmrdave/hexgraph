@@ -11,7 +11,13 @@ import { makeEdge } from "./edge";
  * @returns a Vertex-type HexNode
  */
 export function makeVertex({ q, r, s }: CubeVector): Vertex {
-  return Object.apply(makeNode({ q, r, s }),{nodetype:NodeType.Vertex});
+  var vertex: Vertex = Object.apply(makeNode({ q, r, s }), {
+    nodetype: NodeType.Vertex
+  });
+  cells(vertex).forEach(el => vertex.links.add(el));
+  edges(vertex).forEach(el => vertex.links.add(el));
+  vertices(vertex).forEach(el => vertex.links.add(el));
+  return vertex;
 }
 
 /**
