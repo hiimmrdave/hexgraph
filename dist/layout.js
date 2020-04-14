@@ -6,7 +6,7 @@ export function cubeToPoint(c, theta, size, origin) {
 export function pointToCube(p, theta, size, origin) {
     const o = orientation(theta), pt = {
         x: (p.x - origin.x) / size.x,
-        y: (p.y - origin.y) / size.y
+        y: (p.y - origin.y) / size.y,
     }, q = o.b.q.x * pt.x + o.b.q.y * pt.y, r = o.b.r.x * pt.x + o.b.r.y * pt.y, s = -q - r;
     return { q, r, s };
 }

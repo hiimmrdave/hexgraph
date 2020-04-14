@@ -7,7 +7,7 @@ export function makeNode({ q, r, s }) {
         r,
         s,
         id: `${q},${r},${s}`,
-        links: new WeakSet()
+        links: new WeakSet(),
     };
 }
 export function areEqual(a, b) {
