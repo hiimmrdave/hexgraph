@@ -29,7 +29,7 @@ export function makeNode({ q, r, s }: CubeVector): HexNode {
     r,
     s,
     id: `${q},${r},${s}`,
-    links: new WeakSet()
+    links: new WeakSet(),
   };
 }
 
@@ -42,8 +42,6 @@ export function makeNode({ q, r, s }: CubeVector): HexNode {
 export function areEqual(a: Partial<HexNode>, b: Partial<HexNode>): boolean {
   return a.q === b.q && a.r === b.r && a.s === b.s && a.nodetype === b.nodetype;
 }
-
-
 
 export function add(a: CubeVector | HexNode, b: CubeVector): CubeVector {
   return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };

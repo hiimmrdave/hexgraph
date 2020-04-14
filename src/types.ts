@@ -72,7 +72,7 @@ export const enum NodeType {
    * the node is a vertex, a point at which three cells and three edges meet
    * a vertex has 3 adjacent cells, 3 adjacent edges, and 3 adjacent vertices
    */
-  Vertex
+  Vertex,
 }
 
 /**
@@ -100,5 +100,5 @@ export const enum GridShape {
    * a grid shape like a rectangle,
    * takes up to two size values
    */
-  Rectangle
+  Rectangle,
 }
