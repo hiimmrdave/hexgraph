@@ -1,18 +1,18 @@
 import { expect } from "chai";
 import { it } from "mocha";
-import * as Edge from "../src/edge";
+import { HexNode } from "../src/types";
 import { areEqual } from "../src/main";
 import { NodeType } from "../src/types";
 import * as Cell from "../src/cell";
-import { HexNode } from "../src/types";
+import * as Edge from "../src/edge";
 
 describe("Edge properties", function() {
-  const cellEdges: HexNode[] = Cell.edges(Cell.makeCell({ q: 0, r: 0, s: 0 }));
+  const cellEdges: HexNode[] = Cell.edges(Cell.make({ q: 0, r: 0, s: 0 }));
 
   it("Cell.edges(origin)[0] is 1/2, -1/2, 0 and an edge", () => {
     let subject = cellEdges[0];
     console.table(subject);
-    let result = Edge.makeEdge({ q: 0.5, r: -0.5, s: 0});
+    let result = Edge.make({ q: 0.5, r: -0.5, s: 0});
     expect(areEqual(subject, result));
   });
 

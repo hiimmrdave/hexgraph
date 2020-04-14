@@ -1,20 +1,20 @@
 import { expect } from "chai";
 import { it } from "mocha";
-import * as Vertex from "../src/vertex";
+import { HexNode } from "../src/types";
 import { areEqual } from "../src/main";
 import { NodeType } from "../src/types";
 import * as Cell from "../src/cell";
-import { HexNode } from "../src/types";
+import * as Vertex from "../src/vertex";
 
 describe("Vertex properties", function() {
   const cellVertices: HexNode[] = Cell.vertices(
-    Cell.makeCell({ q: 0, r: 0, s: 0 })
+    Cell.make({ q: 0, r: 0, s: 0 })
   );
 
   it("Cell.vertices(origin)[0] is 2/3, -1/3, -1/3 and a vertex", () => {
     let subject = cellVertices[0];
     console.table(subject);
-    let result = Vertex.makeVertex({ q: 2 / 3, r: -1 / 3, s: -1 / 3 });
+    let result = Vertex.make({ q: 2 / 3, r: -1 / 3, s: -1 / 3 });
     expect(areEqual(subject, result));
   });
 
