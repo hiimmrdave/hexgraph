@@ -4,16 +4,15 @@ import * as Edge from "../src/edge";
 import { areEqual } from "../src/main";
 import { NodeType } from "../src/types";
 import * as Cell from "../src/cell";
-import { makeVertex } from "../src/vertex";
 import { HexNode } from "../src/types";
 
 describe("Edge properties", function() {
   const cellEdges: HexNode[] = Cell.edges(Cell.makeCell({ q: 0, r: 0, s: 0 }));
 
-  it("Cell.edges(origin)[0] is 0.5,-0.5,0 and an edge", () => {
+  it("Cell.edges(origin)[0] is 1/2, -1/2, 0 and an edge", () => {
     let subject = cellEdges[0];
     console.table(subject);
-    let result = { q: 0.5, r: -0.5, s: 0, nodetype: 1 };
+    let result = Edge.makeEdge({ q: 0.5, r: -0.5, s: 0});
     expect(areEqual(subject, result));
   });
 
@@ -38,6 +37,12 @@ describe("Edge properties", function() {
   });
 
   it("an edge has two adjacent vertices",()=>{
-
+    let subject = Edge.vertices(cellEdges[0]);
+    console.table(subject);
+    let result = 2;
+    expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
+    subject.forEach(e => {
+      expect(e.nodetype).to.equal(NodeType.Vertex, "wrong adjacent node type");
+    });
   });
 });
