@@ -1,6 +1,6 @@
 import { NodeType, HexNode } from "./types";
 import * as main from "./main";
-import { makeCell, DIRECTIONS } from "./cell";
+import { makeCell, DIRECTIONS, DIAGONALS } from "./cell";
 import { makeVertex } from "./vertex";
 
 /**
@@ -47,6 +47,13 @@ export function edges(edge: HexNode): HexNode[] {
  * @param edge  - the edge of which to find the adjacent vertices
  * @returns an array of 2 vertices
  */
-export function vertices(edge: HexNode): HexNode[] {
-  return [makeVertex(edge)];
+export function vertices(edge: HexNode) {
+  return DIAGONALS.map(e =>
+    makeVertex(main.add(edge, main.multiply(e, 1 / 6)))
+  ).filter(
+    e =>
+      Number.isInteger(e.q * 3) &&
+      Number.isInteger(e.r * 3) &&
+      Number.isInteger(e.s * 3)
+  );
 }

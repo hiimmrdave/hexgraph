@@ -33,6 +33,10 @@ export interface HexNode extends CubeVector {
    * the set of nodes adjacent to this node. Adjacency is arbitrary.
    */
   links: WeakSet<HexNode>;
+  /**
+   * the NodeType of the node
+   */
+  nodetype?: NodeType;
 }
 
 /**
