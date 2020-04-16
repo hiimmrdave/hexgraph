@@ -1,5 +1,5 @@
 import { cubeLerp } from "./math";
-import * as main from "./main";
+import * as hex from "./hex";
 import * as Edge from "./edge";
 import * as Vertex from "./vertex";
 export const DIRECTIONS = [
@@ -19,7 +19,7 @@ export const DIAGONALS = [
     { q: 1, r: 1, s: -2 },
 ];
 export function make({ q, r, s }) {
-    var cell = Object.assign(main.makeNode({ q, r, s }), {
+    var cell = Object.assign(hex.makeNode({ q, r, s }), {
         nodetype: 0,
     });
     return cell;
@@ -49,15 +49,15 @@ export function cellLerp(a, b, t) {
     return round(cubeLerp(a, b, t));
 }
 export function cells(cell) {
-    return DIRECTIONS.map((e) => make(main.add(cell, e)));
+    return DIRECTIONS.map((e) => make(hex.add(cell, e)));
 }
 export function diagonals(cell) {
-    return DIAGONALS.map((e) => make(main.add(cell, e)));
+    return DIAGONALS.map((e) => make(hex.add(cell, e)));
 }
 export function edges(cell) {
-    return DIRECTIONS.map((e) => Edge.make(main.add(main.multiply(e, 5e-1), cell)));
+    return DIRECTIONS.map((e) => Edge.make(hex.add(hex.multiply(e, 5e-1), cell)));
 }
 export function vertices(cell) {
-    return DIAGONALS.map((e) => Vertex.make(main.add(cell, main.multiply(e, 1 / 3))));
+    return DIAGONALS.map((e) => Vertex.make(hex.add(cell, hex.multiply(e, 1 / 3))));
 }
 //# sourceMappingURL=cell.js.map
