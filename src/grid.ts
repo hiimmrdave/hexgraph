@@ -10,7 +10,7 @@ export function make({
   size?: CartesianVector;
   populate?: boolean;
 } = {}) {
-  var grid: Set<HexNode> = new Set();
+  var grid: Map<string, HexNode> = new Map();
   if (populate) {
     grid = populateGrid({ grid, shape, size });
   }
@@ -23,11 +23,11 @@ function populateGrid({
   size,
   emptyFirst = false,
 }: {
-  grid: Set<HexNode>;
+  grid: Map<string, HexNode>;
   shape: GridShape;
   size: CartesianVector;
   emptyFirst?: boolean;
-}): Set<HexNode> {
+}): Map<string, HexNode> {
   const gridPopulator: Array<any> = [
     populateHexagonGrid,
     populateTriangleGrid,
@@ -39,58 +39,86 @@ function populateGrid({
   return gridPopulator[shape](size, grid);
 }
 
-function populateHexagonGrid(size: CartesianVector, grid: Set<HexNode>) {
+function gridPush(
+  grid: Map<string, HexNode>,
+  q: number,
+  r: number,
+  s: number = -q-r,
+): Map<string, HexNode> {
+  const cell = Cell.make({ q, r, s });
+  grid.set(cell.id, cell);
+  Cell.vertices(cell).forEach((vertex) => {
+    grid.set(vertex.id, vertex);
+  });
+  Cell.edges(cell).forEach((edge) => {
+    grid.set(edge.id, edge);
+  });
+  return grid;
+}
+
+function populateHexagonGrid(
+  size: CartesianVector,
+  grid: Map<string, HexNode>
+) {
   var cellset = grid;
   for (let ia = -size.x; ia <= size.x; ia++) {
     for (let ib = -size.x; ib <= size.x; ib++) {
-      const ic = -ia - ib;
-      if (Math.abs(ia) + Math.abs(ib) + Math.abs(ic) < size.x * 2) {
-        cellset.add(Cell.make({ q: ia, r: ib, s: ic }));
+      if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size.x * 2) {
+        gridPush(cellset,ia,ib);
       }
     }
   }
   return cellset;
 }
 
-function populateTriangleGrid(size: CartesianVector, grid: Set<HexNode>) {
+function populateTriangleGrid(
+  size: CartesianVector,
+  grid: Map<string, HexNode>
+) {
   var cellset = grid;
   for (let ia = 0; ia <= size.x; ia++) {
     for (let ib = 0; ib <= size.x - ia; ib++) {
-      cellset.add(Cell.make({ q: ia, r: ib, s: -ia - ib }));
+      gridPush(cellset,ia,ib);
     }
   }
   return cellset;
 }
 
-function populateStarGrid(size: CartesianVector, grid: Set<HexNode>) {
+function populateStarGrid(size: CartesianVector, grid: Map<string, HexNode>) {
   var cellset = grid;
   for (let ia = -size.x; ia <= size.x; ia++) {
     for (let ib = -size.x; ib < this.size; ib++) {
       const ic = -ia - ib;
-      cellset.add(Cell.make({ q: ia, r: ib, s: ic }));
-      cellset.add(Cell.make({ q: ic, r: ib, s: ia }));
-      cellset.add(Cell.make({ q: ia, r: ic, s: ib }));
+      gridPush(cellset,ia,ib,ic);
+      gridPush(cellset,ic,ib,ia);
+      gridPush(cellset,ia,ic,ib);
     }
   }
   return cellset;
 }
 
-function populateParallelogramGrid(size: CartesianVector, grid: Set<HexNode>) {
+function populateParallelogramGrid(
+  size: CartesianVector,
+  grid: Map<string, HexNode>
+) {
   var cellset = grid;
   for (let ia = 0; ia <= size.x; ia++) {
     for (let ib = 0; ib <= size.y; ib++) {
-      cellset.add(Cell.make({ q: ia, r: ib, s: -ia - ib }));
+      gridPush(cellset,ia,ib);
     }
   }
   return cellset;
 }
 
-function populateRectangleGrid(size: CartesianVector, grid: Set<HexNode>) {
+function populateRectangleGrid(
+  size: CartesianVector,
+  grid: Map<string, HexNode>
+) {
   var cellset = grid;
   for (let ia = 0; ia <= size.x; ia++) {
-    const off = Math.floor(ia/2);
+    const off = Math.floor(ia / 2);
     for (let ib = -off; ib < size.y - off; ib++) {
-      cellset.add(Cell.make({ q: ia, r: ib, s: -ia - ib }));
+      gridPush(cellset,ia,ib);
     }
   }
   return cellset;
