@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { it } from "mocha";
 import { HexNode } from "../src/types";
-import { areEqual } from "../src/main";
+import { areEqual } from "../src/hex";
 import { NodeType } from "../src/types";
 import * as Cell from "../src/cell";
 import * as Vertex from "../src/vertex";

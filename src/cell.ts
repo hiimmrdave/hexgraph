@@ -1,6 +1,6 @@
 import { CubeVector, HexNode } from "./types";
 import { cubeLerp } from "./math";
-import * as main from "./main";
+import * as hex from "./hex";
 import { NodeType } from "./types";
 import * as Edge from "./edge";
 import * as Vertex from "./vertex";
@@ -30,7 +30,7 @@ export const DIAGONALS: CubeVector[] = [
  * @returns a Cell-type HexNode
  */
 export function make({ q, r, s }: CubeVector): HexNode {
-  var cell = Object.assign(main.makeNode({ q, r, s }), {
+  var cell = Object.assign(hex.makeNode({ q, r, s }), {
     nodetype: NodeType.Cell,
   });
   return cell;
@@ -77,7 +77,7 @@ export function cellLerp(
  * @returns an array of 6 cells
  */
 export function cells(cell: HexNode): HexNode[] {
-  return DIRECTIONS.map((e) => make(main.add(cell, e)));
+  return DIRECTIONS.map((e) => make(hex.add(cell, e)));
 }
 
 /**
@@ -85,7 +85,7 @@ export function cells(cell: HexNode): HexNode[] {
  * @returns an array of 6 cells
  */
 export function diagonals(cell: HexNode): HexNode[] {
-  return DIAGONALS.map((e) => make(main.add(cell, e)));
+  return DIAGONALS.map((e) => make(hex.add(cell, e)));
 }
 
 /**
@@ -94,7 +94,7 @@ export function diagonals(cell: HexNode): HexNode[] {
  */
 export function edges(cell: HexNode): HexNode[] {
   return DIRECTIONS.map((e) =>
-    Edge.make(main.add(main.multiply(e, 5e-1), cell))
+    Edge.make(hex.add(hex.multiply(e, 5e-1), cell))
   );
 }
 
@@ -104,6 +104,6 @@ export function edges(cell: HexNode): HexNode[] {
  */
 export function vertices(cell: HexNode): HexNode[] {
   return DIAGONALS.map((e) =>
-    Vertex.make(main.add(cell, main.multiply(e, 1 / 3)))
+    Vertex.make(hex.add(cell, hex.multiply(e, 1 / 3)))
   );
 }

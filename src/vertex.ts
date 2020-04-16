@@ -1,5 +1,5 @@
 import { CubeVector, NodeType, HexNode } from "./types";
-import * as main from "./main";
+import * as hex from "./hex";
 import * as Cell from "./cell";
 import * as Edge from "./edge";
 
@@ -11,7 +11,7 @@ import * as Edge from "./edge";
  * @returns a Vertex-type HexNode
  */
 export function make({ q, r, s }: CubeVector): HexNode {
-  var vertex: HexNode = Object.assign(main.makeNode({ q, r, s }), {
+  var vertex: HexNode = Object.assign(hex.makeNode({ q, r, s }), {
     nodetype: NodeType.Vertex,
   });
   return vertex;
@@ -23,7 +23,7 @@ export function make({ q, r, s }: CubeVector): HexNode {
  */
 export function cells(vertex: HexNode): HexNode[] {
   return Cell.DIAGONALS.map((e) =>
-    Cell.make(main.add(vertex, main.multiply(e, 1 / 3)))
+    Cell.make(hex.add(vertex, hex.multiply(e, 1 / 3)))
   ).filter(
     (e) =>
       Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s)
@@ -36,7 +36,7 @@ export function cells(vertex: HexNode): HexNode[] {
  */
 export function edges(vertex: HexNode): HexNode[] {
   return Cell.DIAGONALS.map((e) =>
-    Edge.make(main.add(vertex, main.multiply(e, 1 / 6)))
+    Edge.make(hex.add(vertex, hex.multiply(e, 1 / 6)))
   ).filter(
     (e) =>
       Number.isInteger(e.q * 2) &&
@@ -51,7 +51,7 @@ export function edges(vertex: HexNode): HexNode[] {
  */
 export function vertices(vertex: HexNode): HexNode[] {
   return Cell.DIAGONALS.map((e) =>
-    make(main.add(vertex, main.multiply(e, 1 / 3)))
+    make(hex.add(vertex, hex.multiply(e, 1 / 3)))
   ).filter(
     (e) =>
       !(Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s))
