@@ -10,6 +10,7 @@
 
 //#region type setup
 import { CubeVector, HexNode } from "./types";
+import { thousandthRound } from "./math";
 //#endregion type descriptions
 
 /**
@@ -28,7 +29,7 @@ export function makeNode({ q, r, s }: CubeVector): HexNode {
     q,
     r,
     s,
-    id: `${q},${r},${s}`,
+    id: `${thousandthRound(q)},${thousandthRound(r)},${thousandthRound(s)}`,
     links: new WeakSet(),
   };
 }
