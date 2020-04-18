@@ -73,7 +73,10 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#cellpoints" class="tsd-kind-icon">cell<wbr>Points</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#cubetopoint" class="tsd-kind-icon">cube<wbr>ToPoint</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#layoutconfig" class="tsd-kind-icon">layout<wbr>Config</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#orientation" class="tsd-kind-icon">orientation</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#pointtocube" class="tsd-kind-icon">point<wbr>ToCube</a></li>
 							</ul>
 						</section>
@@ -83,34 +86,240 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="cubetopoint" class="tsd-anchor"></a>
-					<h3>cube<wbr>ToPoint</h3>
+					<a name="cellpoints" class="tsd-anchor"></a>
+					<h3>cell<wbr>Points</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">cube<wbr>ToPoint<span class="tsd-signature-symbol">(</span>c<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a>, theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a>, origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a></li>
+						<li class="tsd-signature tsd-kind-icon">cell<wbr>Points<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">; </span>layout<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in layout.ts:4</li>
+									<li>Defined in layout.ts:66</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>c: <a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">; </span>layout<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>layout<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a></h5>
+										</li>
+									</ul>
 								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="cubetopoint" class="tsd-anchor"></a>
+					<h3>cube<wbr>ToPoint</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">cube<wbr>ToPoint<span class="tsd-signature-symbol">(</span>c<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">qrsVector</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in layout.ts:43</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>c: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">qrsVector</a></h5>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+													<ul class="tsd-parameters">
+														<li class="tsd-parameter">
+															<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter">
+																	<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+																<li class="tsd-parameter">
+																	<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+															</ul>
+														</li>
+														<li class="tsd-parameter">
+															<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter">
+																	<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+																<li class="tsd-parameter">
+																	<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li class="tsd-parameter">
+													<h5>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+													<ul class="tsd-parameters">
+														<li class="tsd-parameter">
+															<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter">
+																	<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+																<li class="tsd-parameter">
+																	<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+															</ul>
+														</li>
+														<li class="tsd-parameter">
+															<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter">
+																	<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+																<li class="tsd-parameter">
+																	<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>radius<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="layoutconfig" class="tsd-anchor"></a>
+					<h3>layout<wbr>Config</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">layout<wbr>Config<span class="tsd-signature-symbol">(</span>theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, radius<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a>, origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in layout.ts:35</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
 								<li>
 									<h5>theta: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>size: <a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a></h5>
+									<h5>radius: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
 								</li>
 								<li>
-									<h5>origin: <a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a></h5>
+									<h5>origin: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="orientation" class="tsd-anchor"></a>
+					<h3>orientation</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">orientation<span class="tsd-signature-symbol">(</span>theta<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in layout.ts:10</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> theta: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the angle from center to point 0, ccw in multiples of pi/12</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span></h4>
+							<p>objectified transformation matricies for QRS-&gt;XY and XY-&gt;QRS</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -118,31 +327,92 @@
 					<a name="pointtocube" class="tsd-anchor"></a>
 					<h3>point<wbr>ToCube</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">point<wbr>ToCube<span class="tsd-signature-symbol">(</span>p<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a>, theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a>, origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a></li>
+						<li class="tsd-signature tsd-kind-icon">point<wbr>ToCube<span class="tsd-signature-symbol">(</span>p<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">qrsVector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in layout.ts:16</li>
+									<li>Defined in layout.ts:52</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>p: <a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a></h5>
+									<h5>p: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
 								</li>
 								<li>
-									<h5>theta: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>size: <a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a></h5>
-								</li>
-								<li>
-									<h5>origin: <a href="../interfaces/_types_.cartesianvector.html" class="tsd-signature-type">CartesianVector</a></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+													<ul class="tsd-parameters">
+														<li class="tsd-parameter">
+															<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter">
+																	<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+																<li class="tsd-parameter">
+																	<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+															</ul>
+														</li>
+														<li class="tsd-parameter">
+															<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter">
+																	<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+																<li class="tsd-parameter">
+																	<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li class="tsd-parameter">
+													<h5>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+													<ul class="tsd-parameters">
+														<li class="tsd-parameter">
+															<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter">
+																	<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+																<li class="tsd-parameter">
+																	<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+															</ul>
+														</li>
+														<li class="tsd-parameter">
+															<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter">
+																	<h5>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+																<li class="tsd-parameter">
+																	<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>radius<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.cubevector.html" class="tsd-signature-type">CubeVector</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">qrsVector</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -173,7 +443,7 @@
 						<a href="_math_.html">&quot;math&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="_orientation_.html">&quot;orientation&quot;</a>
+						<a href="_renderer_.html">&quot;renderer&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="_types_.html">&quot;types&quot;</a>
@@ -186,7 +456,16 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_layout_.html#cellpoints" class="tsd-kind-icon">cell<wbr>Points</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_layout_.html#cubetopoint" class="tsd-kind-icon">cube<wbr>ToPoint</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_layout_.html#layoutconfig" class="tsd-kind-icon">layout<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_layout_.html#orientation" class="tsd-kind-icon">orientation</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_layout_.html#pointtocube" class="tsd-kind-icon">point<wbr>ToCube</a>
