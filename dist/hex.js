@@ -1,3 +1,4 @@
+import { thousandthRound } from "./math";
 export function makeNode({ q, r, s }) {
     if (q + r + s > 1e-3) {
         throw new TypeError("q+r+s must sum to zero");
@@ -6,7 +7,7 @@ export function makeNode({ q, r, s }) {
         q,
         r,
         s,
-        id: `${q},${r},${s}`,
+        id: `${thousandthRound(q)},${thousandthRound(r)},${thousandthRound(s)}`,
         links: new WeakSet(),
     };
 }

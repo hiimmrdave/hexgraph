@@ -22,9 +22,13 @@ function gridPush(grid, q, r, s = -q - r) {
     const cell = Cell.make({ q, r, s });
     grid.set(cell.id, cell);
     Cell.vertices(cell).forEach((vertex) => {
+        cell.links.add(vertex);
+        vertex.links.add(cell);
         grid.set(vertex.id, vertex);
     });
     Cell.edges(cell).forEach((edge) => {
+        cell.links.add(edge);
+        edge.links.add(cell);
         grid.set(edge.id, edge);
     });
     return grid;
@@ -52,10 +56,10 @@ function populateTriangleGrid(size, grid) {
 function populateStarGrid(size, grid) {
     var cellset = grid;
     for (let ia = -size.x; ia <= size.x; ia++) {
-        for (let ib = -size.x; ib < this.size; ib++) {
+        for (let ib = -size.x; ib < size.x; ib++) {
             const ic = -ia - ib;
-            gridPush(cellset, ia, ib, ic);
-            gridPush(cellset, ic, ib, ia);
+            gridPush(cellset, ia, ib);
+            gridPush(cellset, ic, ib);
             gridPush(cellset, ia, ic, ib);
         }
     }
