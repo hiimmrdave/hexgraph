@@ -11,14 +11,14 @@ describe("Edge properties", function() {
 
   it("Cell.edges(origin)[0] is 1/2, -1/2, 0 and an edge", () => {
     let subject = cellEdges[0];
-    console.table(subject);
+    //console.table(subject);
     let result = Edge.make({ q: 0.5, r: -0.5, s: 0});
     expect(areEqual(subject, result));
   });
 
   it("an edge has four adjacent edges", () => {
     let subject: HexNode[] = Edge.edges(cellEdges[0]);
-    console.table(subject);
+    //console.table(subject);
     let result = 4;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
     subject.forEach(e => {
@@ -28,7 +28,7 @@ describe("Edge properties", function() {
 
   it("an edge has two adjacent cells", () => {
     let subject: HexNode[] = Edge.cells(cellEdges[0]);
-    console.table(subject);
+    //console.table(subject);
     let result = 2;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
     subject.forEach(e => {
@@ -38,7 +38,7 @@ describe("Edge properties", function() {
 
   it("an edge has two adjacent vertices",()=>{
     let subject = Edge.vertices(cellEdges[0]);
-    console.table(subject);
+    //console.table(subject);
     let result = 2;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
     subject.forEach(e => {

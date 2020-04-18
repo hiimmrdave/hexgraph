@@ -41,7 +41,7 @@ describe("Cell properties", function() {
       s,
       nodetype
     }));
-    console.table(subject);
+    //console.table(subject);
     let result = Cell.DIRECTIONS.map(e => {
       const each = Cell.make(e);
       return {
@@ -63,7 +63,7 @@ describe("Cell properties", function() {
       s,
       nodetype
     }));
-    console.table(subject);
+    //console.table(subject);
     let result = Cell.DIRECTIONS.map(e => {
       const each = Edge.make(hex.multiply(e, 0.5));
       return {
@@ -85,7 +85,7 @@ describe("Cell properties", function() {
       s,
       nodetype
     }));
-    console.table(subject);
+    //console.table(subject);
     let result = Cell.DIAGONALS.map(e => {
       const each = Vertex.make(hex.multiply(e, 1 / 3));
       return {

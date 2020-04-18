@@ -13,14 +13,14 @@ describe("Vertex properties", function() {
 
   it("Cell.vertices(origin)[0] is 2/3, -1/3, -1/3 and a vertex", () => {
     let subject = cellVertices[0];
-    console.table(subject);
+    //console.table(subject);
     let result = Vertex.make({ q: 2 / 3, r: -1 / 3, s: -1 / 3 });
     expect(areEqual(subject, result));
   });
 
   it("a vertex has three adjacent vertices", () => {
     let subject: HexNode[] = Vertex.vertices(cellVertices[0]);
-    console.table(subject);
+    //console.table(subject);
     let result = 3;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
     subject.forEach(e => {
@@ -30,7 +30,7 @@ describe("Vertex properties", function() {
 
   it("a vertex has three adjacent cells", () => {
     let subject: HexNode[] = Vertex.cells(cellVertices[0]);
-    console.table(subject);
+    //console.table(subject);
     let result = 3;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
     subject.forEach(e => {
@@ -40,7 +40,7 @@ describe("Vertex properties", function() {
 
   it("a vertex has three adjacent edges", () => {
     let subject: HexNode[] = Vertex.edges(cellVertices[0]);
-    console.table(subject);
+    //console.table(subject);
     let result = 3;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
     subject.forEach(e => {
