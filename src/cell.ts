@@ -1,11 +1,11 @@
-import { CubeVector, HexNode } from "./types";
+import { qrsVector, HexNode } from "./types";
 import { cubeLerp } from "./math";
 import * as hex from "./hex";
 import { NodeType } from "./types";
 import * as Edge from "./edge";
 import * as Vertex from "./vertex";
 
-export const DIRECTIONS: CubeVector[] = [
+export const DIRECTIONS: qrsVector[] = [
   { q: 1, r: -1, s: 0 },
   { q: 0, r: -1, s: 1 },
   { q: -1, r: 0, s: 1 },
@@ -13,7 +13,7 @@ export const DIRECTIONS: CubeVector[] = [
   { q: 0, r: 1, s: -1 },
   { q: 1, r: 0, s: -1 },
 ];
-export const DIAGONALS: CubeVector[] = [
+export const DIAGONALS: qrsVector[] = [
   { q: 2, r: -1, s: -1 },
   { q: 1, r: -2, s: 1 },
   { q: -1, r: -1, s: 2 },
@@ -29,7 +29,7 @@ export const DIAGONALS: CubeVector[] = [
  * @param s - the `s` coordinate of the node
  * @returns a Cell-type HexNode
  */
-export function make({ q, r, s }: CubeVector): HexNode {
+export function make({ q, r, s }: qrsVector): HexNode {
   var cell = Object.assign(hex.makeNode({ q, r, s }), {
     nodetype: NodeType.Cell,
   });
@@ -43,7 +43,7 @@ export function make({ q, r, s }: CubeVector): HexNode {
  * @returns a cell with integer q,r,s coordinates
  * nearest to the provided q,r,s point
  */
-export function round({ q, r, s }: CubeVector | HexNode): HexNode {
+export function round({ q, r, s }: qrsVector): HexNode {
   const approx = {
       q: Math.round(q),
       r: Math.round(r),
@@ -65,8 +65,8 @@ export function round({ q, r, s }: CubeVector | HexNode): HexNode {
 }
 
 export function cellLerp(
-  a: CubeVector | HexNode,
-  b: CubeVector | HexNode,
+  a: qrsVector,
+  b: qrsVector,
   t: number
 ): HexNode {
   return round(cubeLerp(a, b, t));
@@ -76,7 +76,7 @@ export function cellLerp(
  * @param cell - the cell of which to find neighbors
  * @returns an array of 6 cells
  */
-export function cells(cell: HexNode): HexNode[] {
+export function cells(cell: qrsVector): HexNode[] {
   return DIRECTIONS.map((e) => make(hex.add(cell, e)));
 }
 
@@ -84,7 +84,7 @@ export function cells(cell: HexNode): HexNode[] {
  * @param cell - the cell of which to find diagonal neighbors
  * @returns an array of 6 cells
  */
-export function diagonals(cell: HexNode): HexNode[] {
+export function diagonals(cell: qrsVector): HexNode[] {
   return DIAGONALS.map((e) => make(hex.add(cell, e)));
 }
 
@@ -92,7 +92,7 @@ export function diagonals(cell: HexNode): HexNode[] {
  * @param cell - the cell of which to find the edges
  * @returns an array of 6 edges
  */
-export function edges(cell: HexNode): HexNode[] {
+export function edges(cell: qrsVector): HexNode[] {
   return DIRECTIONS.map((e) =>
     Edge.make(hex.add(hex.multiply(e, 5e-1), cell))
   );
@@ -102,7 +102,7 @@ export function edges(cell: HexNode): HexNode[] {
  * @param cell - the cell of which to find the vertices
  * @returns an array of 6 vertices
  */
-export function vertices(cell: HexNode): HexNode[] {
+export function vertices(cell: qrsVector): HexNode[] {
   return DIAGONALS.map((e) =>
     Vertex.make(hex.add(cell, hex.multiply(e, 1 / 3)))
   );

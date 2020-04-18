@@ -1,4 +1,4 @@
-import { NodeType, HexNode } from "./types";
+import { NodeType, HexNode, qrsVector } from "./types";
 import * as hex from "./hex";
 import * as Cell from "./cell";
 import * as Vertex from "./vertex";
@@ -10,7 +10,7 @@ import * as Vertex from "./vertex";
  * @param s - the `s` coordinate of the node
  * @returns a Edge-type HexNode
  */
-export function make({ q, r, s }: Partial<HexNode>): HexNode {
+export function make({ q, r, s }: qrsVector): HexNode {
   var edge: HexNode = Object.assign(hex.makeNode({ q, r, s }), {
     nodetype: NodeType.Edge,
   });
@@ -21,7 +21,7 @@ export function make({ q, r, s }: Partial<HexNode>): HexNode {
  * @param edge - the edge of which to find the adjacent cells
  * @returns an array of 2 cells
  */
-export function cells(edge: HexNode): HexNode[] {
+export function cells(edge: qrsVector): HexNode[] {
   return Cell.DIRECTIONS.map((e) =>
     Cell.make(hex.add(edge, hex.multiply(e, 0.5)))
   ).filter(
@@ -34,7 +34,7 @@ export function cells(edge: HexNode): HexNode[] {
  * @param edge  - the edge of which to find the adjacent edges
  * @returns an array of 4 edges
  */
-export function edges(edge: HexNode): HexNode[] {
+export function edges(edge: qrsVector): HexNode[] {
   return Cell.DIRECTIONS.map((e) =>
     make(hex.add(edge, hex.multiply(e, 0.5)))
   ).filter(
@@ -48,7 +48,7 @@ export function edges(edge: HexNode): HexNode[] {
  * @param edge  - the edge of which to find the adjacent vertices
  * @returns an array of 2 vertices
  */
-export function vertices(edge: HexNode) {
+export function vertices(edge: qrsVector): HexNode[] {
   return Cell.DIAGONALS.map((e) =>
     Vertex.make(hex.add(edge, hex.multiply(e, 1 / 6)))
   ).filter(

@@ -9,7 +9,7 @@
  */
 
 //#region type setup
-import { CubeVector, HexNode } from "./types";
+import { qrsVector, HexNode } from "./types";
 import { thousandthRound } from "./math";
 //#endregion type descriptions
 
@@ -21,7 +21,7 @@ import { thousandthRound } from "./math";
  * @param s - the `s` coordinate of the node
  * @returns the node of the specified type at the specified coordinates
  */
-export function makeNode({ q, r, s }: CubeVector): HexNode {
+export function makeNode({ q, r, s }: qrsVector): HexNode {
   if (q + r + s > 1e-3) {
     throw new TypeError("q+r+s must sum to zero");
   }
@@ -44,14 +44,14 @@ export function areEqual(a: Partial<HexNode>, b: Partial<HexNode>): boolean {
   return a.q === b.q && a.r === b.r && a.s === b.s && a.nodetype === b.nodetype;
 }
 
-export function add(a: CubeVector | HexNode, b: CubeVector): CubeVector {
+export function add(a: qrsVector | HexNode, b: qrsVector): qrsVector {
   return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
 }
 
-export function subtract(a: CubeVector | HexNode, b: CubeVector): CubeVector {
+export function subtract(a: qrsVector | HexNode, b: qrsVector): qrsVector {
   return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 
-export function multiply(cell: CubeVector | HexNode, k: number): CubeVector {
+export function multiply(cell: qrsVector | HexNode, k: number): qrsVector {
   return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }

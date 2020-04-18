@@ -2,7 +2,7 @@
  * a vector or coordinate in qrs space
  * qrs is cubic space, which is confined here to a plane q+r+s==0
  */
-export interface CubeVector {
+export interface qrsVector {
   /**
    * q component of vector/coordinate
    */
@@ -24,7 +24,7 @@ export interface CubeVector {
 /**
  * a node of the graph representation of the hexagonal grid
  */
-export interface HexNode extends CubeVector {
+export interface HexNode extends qrsVector {
   /**
    * the cube coordinates of the node as a comma-separated string
    */
@@ -42,7 +42,7 @@ export interface HexNode extends CubeVector {
 /**
  * a vector or coordinate in 2-space
  */
-export interface CartesianVector {
+export interface xyVector {
   /**
    * the x component of the coordinate/vector
    */
@@ -51,6 +51,19 @@ export interface CartesianVector {
    * the y component of the coordinate/vector
    */
   readonly y: number;
+}
+
+/**
+ * a set of values to convert from CubeVector grid coordinates to
+ * CartesianVector screen coodrinates
+ */
+export interface Layout {
+  orientation: {
+    f: { x: { q: number; r: number }; y: { q: number; r: number } };
+    b: { q: { x: number; y: number }; r: { x: number; y: number } };
+  };
+  radius: xyVector;
+  origin: xyVector;
 }
 
 /**

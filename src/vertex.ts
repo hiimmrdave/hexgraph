@@ -1,4 +1,4 @@
-import { CubeVector, NodeType, HexNode } from "./types";
+import { qrsVector, NodeType, HexNode } from "./types";
 import * as hex from "./hex";
 import * as Cell from "./cell";
 import * as Edge from "./edge";
@@ -10,7 +10,7 @@ import * as Edge from "./edge";
  * @param s - the `s` coordinate of the node
  * @returns a Vertex-type HexNode
  */
-export function make({ q, r, s }: CubeVector): HexNode {
+export function make({ q, r, s }: qrsVector): HexNode {
   var vertex: HexNode = Object.assign(hex.makeNode({ q, r, s }), {
     nodetype: NodeType.Vertex,
   });
