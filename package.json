@@ -8,7 +8,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha -r esm -r ts-node/register test/**/*.ts"
+    "test": "mocha -r esm -r ts-node/register test/**/*.ts",
+    "build-docs": "typedoc --out ./docs ./src"
   },
   "author": "Dave Vogt",
   "license": "ISC",
