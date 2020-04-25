@@ -82,6 +82,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_renderer_.html#buildcell" class="tsd-kind-icon">build<wbr>Cell</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_renderer_.html#cellpath" class="tsd-kind-icon">cell<wbr>Path</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_renderer_.html#makesvgelement" class="tsd-kind-icon">make<wbr>Svg<wbr>Element</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_renderer_.html#makesvgroot" class="tsd-kind-icon">make<wbr>Svg<wbr>Root</a></li>
 							</ul>
 						</section>
 					</div>
@@ -106,13 +107,13 @@
 					<a name="buildcell" class="tsd-anchor"></a>
 					<h3>build<wbr>Cell</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">build<wbr>Cell<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a>, layoutParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SVGElement</span></li>
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Cell<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a>, layoutParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SVGPathElement</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in renderer.ts:29</li>
+									<li>Defined in renderer.ts:41</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -124,7 +125,7 @@
 									<h5>layoutParams: <a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SVGElement</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SVGPathElement</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -138,7 +139,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in renderer.ts:18</li>
+									<li>Defined in renderer.ts:14</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -148,7 +149,7 @@
 								<li>
 									<h5>cell: <a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the hexagon to draw</p>
+										<p>the hexagon to draw.</p>
 									</div>
 								</li>
 								<li>
@@ -172,7 +173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in renderer.ts:9</li>
+									<li>Defined in renderer.ts:21</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -182,6 +183,37 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SVGElement</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="makesvgroot" class="tsd-anchor"></a>
+					<h3>make<wbr>Svg<wbr>Root</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">make<wbr>Svg<wbr>Root<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SVGSVGElement</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in renderer.ts:25</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SVGSVGElement</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -235,6 +267,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_renderer_.html#makesvgelement" class="tsd-kind-icon">make<wbr>Svg<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_renderer_.html#makesvgroot" class="tsd-kind-icon">make<wbr>Svg<wbr>Root</a>
 					</li>
 				</ul>
 			</nav>
