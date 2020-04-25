@@ -64,6 +64,7 @@ export interface Layout {
   };
   radius: xyVector;
   origin: xyVector;
+  size: xyVector;
 }
 
 /**

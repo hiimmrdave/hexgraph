@@ -35,9 +35,10 @@ export function orientation(theta: number = 0) {
 export function layoutConfig(
   theta: number,
   radius: xyVector,
-  origin: xyVector
+  origin: xyVector,
+  size: xyVector,
 ): Layout {
-  return { orientation: orientation(theta), radius, origin };
+  return { orientation: orientation(theta), radius, origin, size };
 }
 
 export function cubeToPoint(
