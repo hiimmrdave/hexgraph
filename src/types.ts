@@ -67,6 +67,8 @@ export interface Layout {
   size: xyVector;
 }
 
+export type GridMap = Map<string, HexNode>;
+
 /**
  * the type of node of the hex graph,
  * corresponding to which portion of the hex grid the node represents

@@ -1,4 +1,4 @@
-import { HexNode, GridShape, xyVector } from "./types";
+import { GridMap, GridShape, xyVector } from "./types";
 import * as Cell from "./cell";
 
 export function make({
@@ -10,7 +10,7 @@ export function make({
   size?: xyVector;
   populate?: boolean;
 } = {}) {
-  var grid: Map<string, HexNode> = new Map();
+  var grid: GridMap = new Map();
   if (populate) {
     grid = populateGrid({ grid, shape, size });
   }
@@ -23,12 +23,15 @@ function populateGrid({
   size,
   emptyFirst = false,
 }: {
-  grid: Map<string, HexNode>;
+  grid: GridMap;
   shape: GridShape;
   size: xyVector;
   emptyFirst?: boolean;
-}): Map<string, HexNode> {
-  const gridPopulator: Array<any> = [
+}): GridMap {
+  const gridPopulator: ((
+    size: xyVector,
+    grid: GridMap
+  ) => GridMap)[] = [
     populateHexagonGrid,
     populateTriangleGrid,
     populateStarGrid,
@@ -40,11 +43,11 @@ function populateGrid({
 }
 
 function gridPush(
-  grid: Map<string, HexNode>,
+  grid: GridMap,
   q: number,
   r: number,
   s: number = -q - r
-): Map<string, HexNode> {
+): GridMap {
   const cell = Cell.make({ q, r, s });
   grid.set(cell.id, cell);
   Cell.vertices(cell).forEach((vertex) => {
@@ -60,10 +63,7 @@ function gridPush(
   return grid;
 }
 
-function populateHexagonGrid(
-  size: xyVector,
-  grid: Map<string, HexNode>
-) {
+function populateHexagonGrid(size: xyVector, grid: GridMap) {
   var cellset = grid;
   for (let ia = -size.x; ia <= size.x; ia++) {
     for (let ib = -size.x; ib <= size.x; ib++) {
@@ -75,10 +75,7 @@ function populateHexagonGrid(
   return cellset;
 }
 
-function populateTriangleGrid(
-  size: xyVector,
-  grid: Map<string, HexNode>
-) {
+function populateTriangleGrid(size: xyVector, grid: GridMap) {
   var cellset = grid;
   for (let ia = 0; ia <= size.x; ia++) {
     for (let ib = 0; ib <= size.x - ia; ib++) {
@@ -88,7 +85,7 @@ function populateTriangleGrid(
   return cellset;
 }
 
-function populateStarGrid(size: xyVector, grid: Map<string, HexNode>) {
+function populateStarGrid(size: xyVector, grid: GridMap) {
   var cellset = grid;
   for (let ia = -size.x; ia <= size.x; ia++) {
     for (let ib = -size.x; ib < size.x; ib++) {
@@ -101,10 +98,7 @@ function populateStarGrid(size: xyVector, grid: Map<string, HexNode>) {
   return cellset;
 }
 
-function populateParallelogramGrid(
-  size: xyVector,
-  grid: Map<string, HexNode>
-) {
+function populateParallelogramGrid(size: xyVector, grid: GridMap) {
   var cellset = grid;
   for (let ia = 0; ia <= size.x; ia++) {
     for (let ib = 0; ib <= size.y; ib++) {
@@ -114,10 +108,7 @@ function populateParallelogramGrid(
   return cellset;
 }
 
-function populateRectangleGrid(
-  size: xyVector,
-  grid: Map<string, HexNode>
-) {
+function populateRectangleGrid(size: xyVector, grid: GridMap) {
   var cellset = grid;
   for (let ia = 0; ia <= size.x; ia++) {
     const off = Math.floor(ia / 2);
