@@ -7,7 +7,7 @@ import { Layout, HexNode, qrsVector, xyVector } from "./types";
 const SVGNS: string = "http://www.w3.org/2000/svg";
 
 /**
- *
+ * construct an SVG path describing the borders of a cell
  * @param cell - the hexagon to draw.
  * @param layoutParams - the Layout object describing the world to draw in
  */
@@ -18,6 +18,10 @@ export function cellPath(cell: HexNode, layoutParams: Layout): string {
     .join(" L")}z`;
 }
 
+/**
+ * create an SVG element
+ * @param elementName - the name of the SVG element to create
+ */
 export function makeSvgElement(elementName: string) {
   return document.createElementNS(SVGNS, elementName) as SVGElement;
 }

@@ -59,8 +59,8 @@ export interface xyVector {
  */
 export interface Layout {
   orientation: {
-    f: { x: { q: number; r: number }; y: { q: number; r: number } };
-    b: { q: { x: number; y: number }; r: { x: number; y: number } };
+    f: { q: xyVector; r: xyVector };
+    b: { q: xyVector; r: xyVector };
   };
   radius: xyVector;
   origin: xyVector;
