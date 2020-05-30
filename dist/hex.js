@@ -23,4 +23,7 @@ export function subtract(a, b) {
 export function multiply(cell, k) {
     return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
+export function length({ q, r, s }) {
+    return Math.max(Math.abs(q), Math.abs(r), Math.abs(s));
+}
 //# sourceMappingURL=hex.js.map
