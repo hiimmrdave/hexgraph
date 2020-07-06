@@ -55,3 +55,7 @@ export function subtract(a: qrsVector | HexNode, b: qrsVector): qrsVector {
 export function multiply(cell: qrsVector | HexNode, k: number): qrsVector {
   return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
+
+export function length({ q, r, s }: qrsVector): number {
+  return Math.max(Math.abs(q), Math.abs(r), Math.abs(s));
+}
