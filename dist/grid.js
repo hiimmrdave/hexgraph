@@ -1,5 +1,5 @@
 import * as Cell from "./cell";
-export function make({ shape = 0, size = { x: 3, y: 1 }, populate = false, } = {}) {
+export function make({ shape = "Hexagon", size = { x: 3, y: 1 }, populate = false, } = {}) {
     var grid = new Map();
     if (populate) {
         grid = populateGrid({ grid, shape, size });
@@ -7,13 +7,13 @@ export function make({ shape = 0, size = { x: 3, y: 1 }, populate = false, } = {
     return grid;
 }
 function populateGrid({ grid, shape, size, emptyFirst = false, }) {
-    const gridPopulator = [
-        populateHexagonGrid,
-        populateTriangleGrid,
-        populateStarGrid,
-        populateParallelogramGrid,
-        populateRectangleGrid,
-    ];
+    const gridPopulator = {
+        Hexagon: populateHexagonGrid,
+        Triangle: populateTriangleGrid,
+        Star: populateStarGrid,
+        Parallelogram: populateParallelogramGrid,
+        Rectangle: populateRectangleGrid,
+    };
     if (emptyFirst)
         grid.clear();
     return gridPopulator[shape](size, grid);

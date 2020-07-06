@@ -20,7 +20,7 @@ export const DIAGONALS = [
 ];
 export function make({ q, r, s }) {
     var cell = Object.assign(hex.makeNode({ q, r, s }), {
-        nodetype: 0,
+        nodetype: "Cell",
     });
     return cell;
 }

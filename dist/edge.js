@@ -3,7 +3,7 @@ import * as Cell from "./cell";
 import * as Vertex from "./vertex";
 export function make({ q, r, s }) {
     var edge = Object.assign(hex.makeNode({ q, r, s }), {
-        nodetype: 1,
+        nodetype: "Edge",
     });
     return edge;
 }
