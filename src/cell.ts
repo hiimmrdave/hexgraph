@@ -64,11 +64,7 @@ export function round({ q, r, s }: qrsVector): HexNode {
   return make(approx);
 }
 
-export function cellLerp(
-  a: qrsVector,
-  b: qrsVector,
-  t: number
-): HexNode {
+export function cellLerp(a: qrsVector, b: qrsVector, t: number): HexNode {
   return round(cubeLerp(a, b, t));
 }
 
@@ -93,9 +89,7 @@ export function diagonals(cell: qrsVector): HexNode[] {
  * @returns an array of 6 edges
  */
 export function edges(cell: qrsVector): HexNode[] {
-  return DIRECTIONS.map((e) =>
-    Edge.make(hex.add(hex.multiply(e, 5e-1), cell))
-  );
+  return DIRECTIONS.map((e) => Edge.make(hex.add(hex.multiply(e, 5e-1), cell)));
 }
 
 /**

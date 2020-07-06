@@ -78,17 +78,17 @@ export const enum NodeType {
    * the node is a cell, a hexagonal space
    * a cell has 6 adjacent cells, 6 adjacent edges, and 6 adjacent vertices
    */
-  Cell,
+  Cell = "Cell",
   /**
    * the node is an edge, a boundary between two cells
    * an edge has 2 adjacent cells, 4 adjacent edges, and 2 adjacent vertices
    */
-  Edge,
+  Edge = "Edge",
   /**
    * the node is a vertex, a point at which three cells and three edges meet
    * a vertex has 3 adjacent cells, 3 adjacent edges, and 3 adjacent vertices
    */
-  Vertex,
+  Vertex = "Vertex",
 }
 
 /**
@@ -98,23 +98,23 @@ export const enum GridShape {
   /**
    * a hexagonal grid
    */
-  Hexagon,
+  Hexagon = "Hexagon",
   /**
    * a triangular grid
    */
-  Triangle,
+  Triangle = "Triangle",
   /**
    * a six-pointed star shaped grid
    */
-  Star,
+  Star = "Star",
   /**
    * a grid shape like a diamond or slanted rectangle,
    * takes up to two size values
    */
-  Parallelogram,
+  Parallelogram = "Parallelogram",
   /**
    * a grid shape like a rectangle,
    * takes up to two size values
    */
-  Rectangle,
+  Rectangle = "Rectangle",
 }

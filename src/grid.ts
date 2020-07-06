@@ -28,16 +28,15 @@ function populateGrid({
   size: xyVector;
   emptyFirst?: boolean;
 }): GridMap {
-  const gridPopulator: ((
-    size: xyVector,
-    grid: GridMap
-  ) => GridMap)[] = [
-    populateHexagonGrid,
-    populateTriangleGrid,
-    populateStarGrid,
-    populateParallelogramGrid,
-    populateRectangleGrid,
-  ];
+  const gridPopulator: {
+    [prop: string]: (size: xyVector, grid: GridMap) => GridMap;
+  } = {
+    Hexagon: populateHexagonGrid,
+    Triangle: populateTriangleGrid,
+    Star: populateStarGrid,
+    Parallelogram: populateParallelogramGrid,
+    Rectangle: populateRectangleGrid,
+  };
   if (emptyFirst) grid.clear();
   return gridPopulator[shape](size, grid);
 }
