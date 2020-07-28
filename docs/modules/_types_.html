@@ -80,16 +80,19 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.hexnode.html" class="tsd-kind-icon">Hex<wbr>Node</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.layout.html" class="tsd-kind-icon">Layout</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.qrsvector.html" class="tsd-kind-icon">qrs<wbr>Vector</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.xyvector.html" class="tsd-kind-icon">xy<wbr>Vector</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.qrsvector.html" class="tsd-kind-icon">QRSVector</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_.xyvector.html" class="tsd-kind-icon">XYVector</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a></li>
 							</ul>
 						</section>
 					</div>
@@ -100,12 +103,27 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="gridmap" class="tsd-anchor"></a>
 					<h3>Grid<wbr>Map</h3>
-					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:70</li>
+							<li>Defined in types.ts:111</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="hexnode" class="tsd-anchor"></a>
+					<h3>Hex<wbr>Node</h3>
+					<div class="tsd-signature tsd-kind-icon">Hex<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types.ts:81</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>a node of the graph representation of the hexagonal grid</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -153,19 +171,28 @@
 						<a href="../enums/_types_.nodetype.html" class="tsd-kind-icon">Node<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.hexnode.html" class="tsd-kind-icon">Hex<wbr>Node</a>
+						<a href="../interfaces/_types_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_types_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_types_.layout.html" class="tsd-kind-icon">Layout</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.qrsvector.html" class="tsd-kind-icon">qrs<wbr>Vector</a>
+						<a href="../interfaces/_types_.qrsvector.html" class="tsd-kind-icon">QRSVector</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.xyvector.html" class="tsd-kind-icon">xy<wbr>Vector</a>
+						<a href="../interfaces/_types_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_types_.xyvector.html" class="tsd-kind-icon">XYVector</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_types_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a>
 					</li>
 				</ul>
 			</nav>

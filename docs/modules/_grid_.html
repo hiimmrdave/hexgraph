@@ -124,7 +124,7 @@
 					<a name="make" class="tsd-anchor"></a>
 					<h3>make</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">make<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="../enums/_types_.gridshape.html" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">make<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="../enums/_types_.gridshape.html" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -158,7 +158,7 @@
 									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -166,7 +166,7 @@
 					<a name="populategrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>emptyFirst<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="../enums/_types_.gridshape.html" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>emptyFirst<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="../enums/_types_.gridshape.html" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -178,19 +178,19 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>emptyFirst<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="../enums/_types_.gridshape.html" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>emptyFirst<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="../enums/_types_.gridshape.html" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5>empty<wbr>First<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 										</li>
 										<li class="tsd-parameter">
-											<h5>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></h5>
+											<h5>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h5>
 										</li>
 										<li class="tsd-parameter">
 											<h5>shape<span class="tsd-signature-symbol">: </span><a href="../enums/_types_.gridshape.html" class="tsd-signature-type">GridShape</a></h5>
 										</li>
 										<li class="tsd-parameter">
-											<h5>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+											<h5>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
 										</li>
 									</ul>
 								</li>
@@ -203,7 +203,7 @@
 					<a name="populatehexagongrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Hexagon<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Hexagon<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Hexagon<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -215,13 +215,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
 								</li>
 								<li>
 									<h5>grid: <a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -229,7 +229,7 @@
 					<a name="populateparallelogramgrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Parallelogram<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Parallelogram<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Parallelogram<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -241,13 +241,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
 								</li>
 								<li>
 									<h5>grid: <a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -255,7 +255,7 @@
 					<a name="populaterectanglegrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Rectangle<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Rectangle<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Rectangle<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -267,13 +267,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
 								</li>
 								<li>
 									<h5>grid: <a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -281,7 +281,7 @@
 					<a name="populatestargrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Star<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Star<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Star<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -293,13 +293,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
 								</li>
 								<li>
 									<h5>grid: <a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -307,7 +307,7 @@
 					<a name="populatetrianglegrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Triangle<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Triangle<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Triangle<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">: </span><a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -319,13 +319,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">xyVector</a></h5>
+									<h5>size: <a href="../interfaces/_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
 								</li>
 								<li>
 									<h5>grid: <a href="_types_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
