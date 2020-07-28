@@ -2,7 +2,7 @@
  * a vector or coordinate in qrs space
  * qrs is cubic space, which is confined here to a plane q+r+s==0
  */
-export interface qrsVector {
+export interface QRSVector {
   /**
    * q component of vector/coordinate
    */
@@ -24,7 +24,7 @@ export interface qrsVector {
 /**
  * a node of the graph representation of the hexagonal grid
  */
-export interface HexNode extends qrsVector {
+export interface CellNode extends QRSVector {
   /**
    * the cube coordinates of the node as a comma-separated string
    */
@@ -36,13 +36,54 @@ export interface HexNode extends qrsVector {
   /**
    * the NodeType of the node
    */
-  nodetype?: NodeType;
+  nodetype: NodeType.Cell;
 }
+
+/**
+ * a node of the graph representation of the hexagonal grid
+ */
+export interface EdgeNode extends QRSVector {
+  /**
+   * the cube coordinates of the node as a comma-separated string
+   */
+  readonly id: string;
+  /**
+   * the set of nodes adjacent to this node. Adjacency is arbitrary.
+   */
+  links: WeakSet<HexNode>;
+  /**
+   * the NodeType of the node
+   */
+  nodetype: NodeType.Edge;
+}
+
+/**
+ * a node of the graph representation of the hexagonal grid
+ */
+export interface VertexNode extends QRSVector {
+  /**
+   * the cube coordinates of the node as a comma-separated string
+   */
+  readonly id: string;
+  /**
+   * the set of nodes adjacent to this node. Adjacency is arbitrary.
+   */
+  links: WeakSet<HexNode>;
+  /**
+   * the NodeType of the node
+   */
+  nodetype: NodeType.Vertex;
+}
+
+/**
+ * a node of the graph representation of the hexagonal grid
+ */
+export type HexNode = CellNode | EdgeNode | VertexNode;
 
 /**
  * a vector or coordinate in 2-space
  */
-export interface xyVector {
+export interface XYVector {
   /**
    * the x component of the coordinate/vector
    */
@@ -59,12 +100,12 @@ export interface xyVector {
  */
 export interface Layout {
   orientation: {
-    f: { q: xyVector; r: xyVector };
-    b: { q: xyVector; r: xyVector };
+    f: { q: XYVector; r: XYVector };
+    b: { q: XYVector; r: XYVector };
   };
-  radius: xyVector;
-  origin: xyVector;
-  size: xyVector;
+  radius: XYVector;
+  origin: XYVector;
+  size: XYVector;
 }
 
 export type GridMap = Map<string, HexNode>;

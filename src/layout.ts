@@ -1,6 +1,6 @@
 import { thousandthRound, HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math";
-import { xyVector, qrsVector, Layout, HexNode } from "./types";
-import * as Cell from "./cell"
+import { XYVector, QRSVector, Layout, HexNode } from "./types";
+import * as Cell from "./cell";
 
 /**
  *
@@ -13,11 +13,11 @@ export function orientation(theta: number = 0) {
       q: {
         x: Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
         y: Math.sin(theta + 5 * PI_OVER_SIX) * SQRT_THREE,
-      }, 
+      },
       r: {
         x: Math.cos(theta - HALF_PI) * SQRT_THREE,
         y: Math.sin(theta + HALF_PI) * SQRT_THREE,
-      }
+      },
     },
     b: {
       q: {
@@ -34,26 +34,26 @@ export function orientation(theta: number = 0) {
 
 export function layoutConfig(
   theta: number,
-  radius: xyVector,
-  origin: xyVector,
-  size: xyVector,
+  radius: XYVector,
+  origin: XYVector,
+  size: XYVector
 ): Layout {
   return { orientation: orientation(theta), radius, origin, size };
 }
 
 export function cubeToPoint(
-  c: qrsVector,
+  c: QRSVector,
   { orientation: o, radius, origin }: Layout
-): xyVector {
+): XYVector {
   const x = (o.f.q.x * c.q + o.f.r.x * c.r) * radius.x + origin.x,
     y = (o.f.q.y * c.q + o.f.r.y * c.r) * radius.y + origin.y;
   return { x, y };
 }
 
 export function pointToCube(
-  p: xyVector,
+  p: XYVector,
   { orientation: o, radius, origin }: Layout
-): qrsVector {
+): QRSVector {
   const pt = {
       x: (p.x - origin.x) / radius.x,
       y: (p.y - origin.y) / radius.y,
@@ -70,6 +70,6 @@ export function cellPoints({
 }: {
   cell: HexNode;
   layout: Layout;
-}): xyVector[] {
-  return Cell.vertices(cell).map(vertex=>cubeToPoint(vertex,layout))
+}): XYVector[] {
+  return Cell.vertices(cell).map((vertex) => cubeToPoint(vertex, layout));
 }

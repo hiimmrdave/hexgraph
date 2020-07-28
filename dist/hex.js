@@ -1,15 +1,26 @@
 import { thousandthRound } from "./math";
-export function makeNode({ q, r, s }) {
+export function makeNode({ q, r, s }, kind) {
     if (q + r + s > 1e-3) {
         throw new TypeError("q+r+s must sum to zero");
     }
-    return {
+    let result = {
         q,
         r,
         s,
         id: `${thousandthRound(q)},${thousandthRound(r)},${thousandthRound(s)}`,
         links: new WeakSet(),
+        nodetype: kind,
     };
+    switch (kind) {
+        case "Cell":
+            return result;
+        case "Edge":
+            return result;
+        case "Vertex":
+            return result;
+        default:
+            return result;
+    }
 }
 export function areEqual(a, b) {
     return a.q === b.q && a.r === b.r && a.s === b.s && a.nodetype === b.nodetype;

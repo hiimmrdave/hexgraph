@@ -1,4 +1,4 @@
-import { qrsVector } from "./types";
+import { QRSVector } from "./types";
 
 /**
  * pi/2 radians = 90 degrees, the utility of which should be self-evident
@@ -39,6 +39,6 @@ export function lerp(m: number, n: number, t: number): number {
  * @param t the portion of distance from a to b ( 0 <= t <= 1 )
  * @returns a set of cube coordinates t of the way between a and b
  */
-export function cubeLerp(a: qrsVector, b: qrsVector, t: number): qrsVector {
+export function cubeLerp(a: QRSVector, b: QRSVector, t: number): QRSVector {
   return { q: lerp(a.q, b.q, t), r: lerp(a.r, b.r, t), s: lerp(a.s, b.s, t) };
 }

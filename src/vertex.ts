@@ -1,5 +1,5 @@
-import { qrsVector, NodeType, HexNode } from "./types";
-import * as hex from "./hex";
+import { QRSVector, NodeType, HexNode, VertexNode } from "./types";
+import * as Hex from "./hex";
 import * as Cell from "./cell";
 import * as Edge from "./edge";
 
@@ -10,11 +10,9 @@ import * as Edge from "./edge";
  * @param s - the `s` coordinate of the node
  * @returns a Vertex-type HexNode
  */
-export function make({ q, r, s }: qrsVector): HexNode {
-  var vertex: HexNode = Object.assign(hex.makeNode({ q, r, s }), {
-    nodetype: NodeType.Vertex,
-  });
-  return vertex;
+export function make({ q, r, s }: QRSVector): HexNode {
+  var vertex = Hex.makeNode({ q, r, s }, NodeType.Vertex);
+  return vertex as VertexNode;
 }
 
 /**
@@ -23,7 +21,7 @@ export function make({ q, r, s }: qrsVector): HexNode {
  */
 export function cells(vertex: HexNode): HexNode[] {
   return Cell.DIAGONALS.map((e) =>
-    Cell.make(hex.add(vertex, hex.multiply(e, 1 / 3)))
+    Cell.make(Hex.add(vertex, Hex.multiply(e, 1 / 3)))
   ).filter(
     (e) =>
       Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s)
@@ -36,7 +34,7 @@ export function cells(vertex: HexNode): HexNode[] {
  */
 export function edges(vertex: HexNode): HexNode[] {
   return Cell.DIAGONALS.map((e) =>
-    Edge.make(hex.add(vertex, hex.multiply(e, 1 / 6)))
+    Edge.make(Hex.add(vertex, Hex.multiply(e, 1 / 6)))
   ).filter(
     (e) =>
       Number.isInteger(e.q * 2) &&
@@ -51,7 +49,7 @@ export function edges(vertex: HexNode): HexNode[] {
  */
 export function vertices(vertex: HexNode): HexNode[] {
   return Cell.DIAGONALS.map((e) =>
-    make(hex.add(vertex, hex.multiply(e, 1 / 3)))
+    make(Hex.add(vertex, Hex.multiply(e, 1 / 3)))
   ).filter(
     (e) =>
       !(Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s))

@@ -2,7 +2,7 @@ import * as math from "./math";
 import * as hex from "./hex";
 import * as grid from "./grid";
 import * as layout from "./layout";
-import { Layout, HexNode, qrsVector, xyVector } from "./types";
+import { Layout, HexNode, QRSVector, XYVector } from "./types";
 
 const SVGNS: string = "http://www.w3.org/2000/svg";
 
@@ -45,7 +45,7 @@ export function makeSvgRoot(id: string, { size }: Layout): SVGSVGElement {
 export function buildCell(cell: HexNode, layoutParams: Layout): SVGPathElement {
   const path = makeSvgElement("path") as SVGPathElement;
   path.classList.add("cell");
-  const c: xyVector = layout.cubeToPoint(cell, layoutParams);
+  const c: XYVector = layout.cubeToPoint(cell, layoutParams);
   path.style.transformOrigin = `${c.x}px ${c.y}px`;
   path.setAttribute("d", cellPath(cell, layoutParams));
   Object.assign(path.dataset, { q: cell.q, r: cell.r, s: cell.s });
