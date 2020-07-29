@@ -1,5 +1,5 @@
 import { HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math";
-import * as Cell from "./cell";
+import * as Hex from "./hex";
 export function orientation(theta = 0) {
     return {
         f: {
@@ -10,7 +10,7 @@ export function orientation(theta = 0) {
             r: {
                 x: Math.cos(theta - HALF_PI) * SQRT_THREE,
                 y: Math.sin(theta + HALF_PI) * SQRT_THREE,
-            }
+            },
         },
         b: {
             q: {
@@ -39,6 +39,6 @@ export function pointToCube(p, { orientation: o, radius, origin }) {
     return { q, r, s };
 }
 export function cellPoints({ cell, layout, }) {
-    return Cell.vertices(cell).map(vertex => cubeToPoint(vertex, layout));
+    return Hex.vertices(cell).map((vertex) => cubeToPoint(vertex, layout));
 }
 //# sourceMappingURL=layout.js.map

@@ -1,4 +1,4 @@
-import * as Cell from "./cell";
+import * as Hex from "./hex";
 export function make({ shape = "Hexagon", size = { x: 3, y: 1 }, populate = false, } = {}) {
     var grid = new Map();
     if (populate) {
@@ -19,14 +19,14 @@ function populateGrid({ grid, shape, size, emptyFirst = false, }) {
     return gridPopulator[shape](size, grid);
 }
 function gridPush(grid, q, r, s = -q - r) {
-    const cell = Cell.make({ q, r, s });
+    const cell = Hex.makeNode({ q, r, s }, "Cell");
     grid.set(cell.id, cell);
-    Cell.vertices(cell).forEach((vertex) => {
+    Hex.vertices(cell).forEach((vertex) => {
         cell.links.add(vertex);
         vertex.links.add(cell);
         grid.set(vertex.id, vertex);
     });
-    Cell.edges(cell).forEach((edge) => {
+    Hex.edges(cell).forEach((edge) => {
         cell.links.add(edge);
         edge.links.add(cell);
         grid.set(edge.id, edge);
