@@ -70,9 +70,8 @@ export function makeNode({ q, r, s }: QRSVector, nodetype: NodeType): HexNode {
 
 /**
  * @param node - the graph node of which to find adjacent cells
- * @returns an array of cells
  */
-export function cells(node: HexNode): CellNode[] {
+export function cells(node: HexNode) {
   switch (node.nodetype) {
     case NodeType.Cell:
       return DIRECTIONS.map((e) =>
@@ -103,9 +102,8 @@ export function cells(node: HexNode): CellNode[] {
 
 /**
  * @param node - the graph node of which to find adjacent edges
- * @returns an array of edges
  */
-export function edges(node: HexNode): EdgeNode[] {
+export function edges(node: HexNode) {
   switch (node.nodetype) {
     case NodeType.Cell:
       return DIRECTIONS.map((e) =>
@@ -138,9 +136,8 @@ export function edges(node: HexNode): EdgeNode[] {
 
 /**
  * @param node - the graph node of which to find adjacent vertices
- * @returns an array of vertices
  */
-export function vertices(node: HexNode): VertexNode[] {
+export function vertices(node: HexNode) {
   switch (node.nodetype) {
     case NodeType.Cell:
       return DIAGONALS.map((e) =>
@@ -177,7 +174,7 @@ export function vertices(node: HexNode): VertexNode[] {
  * @param b - a hex node to compare
  * @returns whether a and b have the same coordinates
  */
-export function areEqual(a: QRSVector, b: QRSVector): boolean {
+export function areEqual(a: QRSVector, b: QRSVector) {
   return a.q === b.q && a.r === b.r && a.s === b.s && a.nodetype === b.nodetype;
 }
 
@@ -186,18 +183,18 @@ export function areEqual(a: QRSVector, b: QRSVector): boolean {
  * @param a  - a QRS vector (or Hex Node)
  * @param b - another QRS vector
  */
-export function add(a: QRSVector, b: QRSVector): QRSVector {
+export function add(a: QRSVector, b: QRSVector) {
   return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
 }
 
-export function subtract(a: QRSVector, b: QRSVector): QRSVector {
+export function subtract(a: QRSVector, b: QRSVector) {
   return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 
-export function multiply(cell: QRSVector, k: number): QRSVector {
+export function multiply(cell: QRSVector, k: number) {
   return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
 
-export function length({ q, r, s }: QRSVector): number {
+export function length({ q, r, s }: QRSVector) {
   return Math.max(Math.abs(q), Math.abs(r), Math.abs(s));
 }

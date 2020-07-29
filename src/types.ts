@@ -15,7 +15,7 @@ export interface QRSVector {
    * s component of vector/coordinate
    */
   readonly s: number;
-    /**
+  /**
    * the cube coordinates of the node as a comma-separated string
    */
   readonly id?: string;
@@ -90,7 +90,7 @@ export interface XYVector {
  * a set of values to convert from CubeVector grid coordinates to
  * CartesianVector screen coodrinates
  */
-export interface Layout {
+export interface LayoutConfig {
   orientation: {
     f: { q: XYVector; r: XYVector };
     b: { q: XYVector; r: XYVector };

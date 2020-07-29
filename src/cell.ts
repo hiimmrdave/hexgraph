@@ -2,23 +2,6 @@ import { QRSVector, HexNode, NodeType } from "./types";
 import { cubeLerp } from "./math";
 import * as Hex from "./hex";
 
-export const DIRECTIONS: QRSVector[] = [
-  { q: 1, r: -1, s: 0 },
-  { q: 0, r: -1, s: 1 },
-  { q: -1, r: 0, s: 1 },
-  { q: -1, r: 1, s: 0 },
-  { q: 0, r: 1, s: -1 },
-  { q: 1, r: 0, s: -1 },
-];
-export const DIAGONALS: QRSVector[] = [
-  { q: 2, r: -1, s: -1 },
-  { q: 1, r: -2, s: 1 },
-  { q: -1, r: -1, s: 2 },
-  { q: -2, r: 1, s: 1 },
-  { q: -1, r: 2, s: -1 },
-  { q: 1, r: 1, s: -2 },
-];
-
 /**
  * @param q - the absolute q coordinate to round to nearest cell
  * @param r - the absolute q coordinate to round to nearest cell
@@ -56,5 +39,7 @@ export function lerp(a: QRSVector, b: QRSVector, t: number): HexNode {
  * @returns an array of 6 cells
  */
 export function diagonals(cell: QRSVector): HexNode[] {
-  return DIAGONALS.map((e) => Hex.makeNode(Hex.add(cell, e), NodeType.Cell));
+  return Hex.DIAGONALS.map((e) =>
+    Hex.makeNode(Hex.add(cell, e), NodeType.Cell)
+  );
 }

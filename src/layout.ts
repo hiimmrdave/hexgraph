@@ -1,5 +1,5 @@
 import { HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math";
-import { XYVector, QRSVector, Layout, HexNode } from "./types";
+import { XYVector, QRSVector, LayoutConfig, CellNode } from "./types";
 import * as Hex from "./hex";
 
 /**
@@ -37,13 +37,13 @@ export function layoutConfig(
   radius: XYVector,
   origin: XYVector,
   size: XYVector
-): Layout {
+): LayoutConfig {
   return { orientation: orientation(theta), radius, origin, size };
 }
 
 export function cubeToPoint(
   c: QRSVector,
-  { orientation: o, radius, origin }: Layout
+  { orientation: o, radius, origin }: LayoutConfig
 ): XYVector {
   const x = (o.f.q.x * c.q + o.f.r.x * c.r) * radius.x + origin.x,
     y = (o.f.q.y * c.q + o.f.r.y * c.r) * radius.y + origin.y;
@@ -52,7 +52,7 @@ export function cubeToPoint(
 
 export function pointToCube(
   p: XYVector,
-  { orientation: o, radius, origin }: Layout
+  { orientation: o, radius, origin }: LayoutConfig
 ): QRSVector {
   const pt = {
       x: (p.x - origin.x) / radius.x,
@@ -68,8 +68,8 @@ export function cellPoints({
   cell,
   layout,
 }: {
-  cell: HexNode;
-  layout: Layout;
+  cell: CellNode;
+  layout: LayoutConfig;
 }): XYVector[] {
   return Hex.vertices(cell).map((vertex) => cubeToPoint(vertex, layout));
 }
