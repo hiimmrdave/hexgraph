@@ -2,7 +2,7 @@ import * as math from "./math";
 import * as hex from "./hex";
 import * as grid from "./grid";
 import * as layout from "./layout";
-import { Layout, HexNode, QRSVector, XYVector } from "./types";
+import { Layout, HexNode, XYVector } from "./types";
 
 const SVGNS: string = "http://www.w3.org/2000/svg";
 

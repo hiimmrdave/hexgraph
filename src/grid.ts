@@ -1,5 +1,5 @@
-import { GridMap, GridShape, XYVector } from "./types";
-import * as Cell from "./cell";
+import { GridMap, GridShape, XYVector, NodeType } from "./types";
+import * as Hex from "./hex";
 
 export function make({
   shape = GridShape.Hexagon,
@@ -47,14 +47,14 @@ function gridPush(
   r: number,
   s: number = -q - r
 ): GridMap {
-  const cell = Cell.make({ q, r, s });
+  const cell = Hex.makeNode({ q, r, s }, NodeType.Cell);
   grid.set(cell.id, cell);
-  Cell.vertices(cell).forEach((vertex) => {
+  Hex.vertices(cell).forEach((vertex) => {
     cell.links.add(vertex);
     vertex.links.add(cell);
     grid.set(vertex.id, vertex);
   });
-  Cell.edges(cell).forEach((edge) => {
+  Hex.edges(cell).forEach((edge) => {
     cell.links.add(edge);
     edge.links.add(cell);
     grid.set(edge.id, edge);

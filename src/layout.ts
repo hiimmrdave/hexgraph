@@ -1,6 +1,6 @@
-import { thousandthRound, HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math";
+import { HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math";
 import { XYVector, QRSVector, Layout, HexNode } from "./types";
-import * as Cell from "./cell";
+import * as Hex from "./hex";
 
 /**
  *
@@ -71,5 +71,5 @@ export function cellPoints({
   cell: HexNode;
   layout: Layout;
 }): XYVector[] {
-  return Cell.vertices(cell).map((vertex) => cubeToPoint(vertex, layout));
+  return Hex.vertices(cell).map((vertex) => cubeToPoint(vertex, layout));
 }
