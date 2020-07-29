@@ -1,8 +1,7 @@
-import * as layout from "./layout";
+import * as Layout from "./layout";
 const SVGNS = "http://www.w3.org/2000/svg";
-export function cellPath(cell, layoutParams) {
-    return `M${layout
-        .cellPoints({ cell, layout: layoutParams })
+export function cellPath(cell, layout) {
+    return `M${Layout.cellPoints({ cell, layout })
         .map((e) => `${e.x},${e.y}`)
         .join(" L")}z`;
 }
@@ -24,12 +23,12 @@ export function makeSvgRoot(id, { size }) {
     svgRoot.id = id;
     return svgRoot;
 }
-export function buildCell(cell, layoutParams) {
+export function buildCell(cell, layout) {
     const path = makeSvgElement("path");
     path.classList.add("cell");
-    const c = layout.cubeToPoint(cell, layoutParams);
+    const c = Layout.cubeToPoint(cell, layout);
     path.style.transformOrigin = `${c.x}px ${c.y}px`;
-    path.setAttribute("d", cellPath(cell, layoutParams));
+    path.setAttribute("d", cellPath(cell, layout));
     Object.assign(path.dataset, { q: cell.q, r: cell.r, s: cell.s });
     return path;
 }

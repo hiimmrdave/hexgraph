@@ -1,21 +1,5 @@
 import { cubeLerp } from "./math";
 import * as Hex from "./hex";
-export const DIRECTIONS = [
-    { q: 1, r: -1, s: 0 },
-    { q: 0, r: -1, s: 1 },
-    { q: -1, r: 0, s: 1 },
-    { q: -1, r: 1, s: 0 },
-    { q: 0, r: 1, s: -1 },
-    { q: 1, r: 0, s: -1 },
-];
-export const DIAGONALS = [
-    { q: 2, r: -1, s: -1 },
-    { q: 1, r: -2, s: 1 },
-    { q: -1, r: -1, s: 2 },
-    { q: -2, r: 1, s: 1 },
-    { q: -1, r: 2, s: -1 },
-    { q: 1, r: 1, s: -2 },
-];
 export function round({ q, r, s }) {
     const approx = {
         q: Math.round(q),
@@ -41,6 +25,6 @@ export function lerp(a, b, t) {
     return round(cubeLerp(a, b, t));
 }
 export function diagonals(cell) {
-    return DIAGONALS.map((e) => Hex.makeNode(Hex.add(cell, e), "Cell"));
+    return Hex.DIAGONALS.map((e) => Hex.makeNode(Hex.add(cell, e), "Cell"));
 }
 //# sourceMappingURL=cell.js.map
