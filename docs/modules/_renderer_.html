@@ -96,7 +96,7 @@
 					<div class="tsd-signature tsd-kind-icon">SVGNS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;http://www.w3.org/2000/svg&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in renderer.ts:7</li>
+							<li>Defined in renderer.ts:6</li>
 						</ul>
 					</aside>
 				</section>
@@ -107,22 +107,22 @@
 					<a name="buildcell" class="tsd-anchor"></a>
 					<h3>build<wbr>Cell</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">build<wbr>Cell<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a>, layoutParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SVGPathElement</span></li>
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Cell<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a>, layout<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layoutconfig.html" class="tsd-signature-type">LayoutConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SVGPathElement</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in renderer.ts:45</li>
+									<li>Defined in renderer.ts:43</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cell: <a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
+									<h5>cell: <a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
 								</li>
 								<li>
-									<h5>layoutParams: <a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a></h5>
+									<h5>layout: <a href="../interfaces/_types_.layoutconfig.html" class="tsd-signature-type">LayoutConfig</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SVGPathElement</span></h4>
@@ -133,13 +133,13 @@
 					<a name="cellpath" class="tsd-anchor"></a>
 					<h3>cell<wbr>Path</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">cell<wbr>Path<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a>, layoutParams<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">cell<wbr>Path<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a>, layout<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.layoutconfig.html" class="tsd-signature-type">LayoutConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in renderer.ts:14</li>
+									<li>Defined in renderer.ts:13</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -150,16 +150,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cell: <a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
+									<h5>cell: <a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the hexagon to draw.</p>
 									</div>
 								</li>
 								<li>
-									<h5>layoutParams: <a href="../interfaces/_types_.layout.html" class="tsd-signature-type">Layout</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the Layout object describing the world to draw in</p>
-									</div>
+									<h5>layout: <a href="../interfaces/_types_.layoutconfig.html" class="tsd-signature-type">LayoutConfig</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -176,7 +173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in renderer.ts:25</li>
+									<li>Defined in renderer.ts:23</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -207,7 +204,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in renderer.ts:29</li>
+									<li>Defined in renderer.ts:27</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
