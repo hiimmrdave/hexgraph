@@ -24,7 +24,7 @@ export function orientation(theta = 0) {
         },
     };
 }
-export function layoutConfig(theta, radius, origin, size) {
+export function config(theta, radius, origin, size) {
     return { orientation: orientation(theta), radius, origin, size };
 }
 export function cubeToPoint(c, { orientation: o, radius, origin }) {
@@ -39,6 +39,6 @@ export function pointToCube(p, { orientation: o, radius, origin }) {
     return { q, r, s };
 }
 export function cellPoints({ cell, layout, }) {
-    return Hex.vertices(cell).map((vertex) => cubeToPoint(vertex, layout));
+    return Hex.vertices(cell).map(vertex => cubeToPoint(vertex, layout));
 }
 //# sourceMappingURL=layout.js.map

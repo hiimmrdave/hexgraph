@@ -1,5 +1,11 @@
 import { HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math";
-import { XYVector, QRSVector, LayoutConfig, CellNode } from "./types";
+import {
+  XYVector,
+  QRSVector,
+  LayoutConfig,
+  CellNode,
+  Orientation,
+} from "./types";
 import * as Hex from "./hex";
 
 /**
@@ -7,7 +13,7 @@ import * as Hex from "./hex";
  * @param theta the angle from center to point 0, ccw in multiples of pi/12
  * @returns objectified transformation matricies for QRS->XY and XY->QRS
  */
-export function orientation(theta: number = 0) {
+export function orientation(theta = 0): Orientation {
   return {
     f: {
       q: {
@@ -32,7 +38,7 @@ export function orientation(theta: number = 0) {
   };
 }
 
-export function layoutConfig(
+export function config(
   theta: number,
   radius: XYVector,
   origin: XYVector,
@@ -71,5 +77,5 @@ export function cellPoints({
   cell: CellNode;
   layout: LayoutConfig;
 }): XYVector[] {
-  return Hex.vertices(cell).map((vertex) => cubeToPoint(vertex, layout));
+  return Hex.vertices(cell).map(vertex => cubeToPoint(vertex, layout));
 }

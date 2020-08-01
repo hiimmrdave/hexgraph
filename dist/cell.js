@@ -25,6 +25,6 @@ export function lerp(a, b, t) {
     return round(cubeLerp(a, b, t));
 }
 export function diagonals(cell) {
-    return Hex.DIAGONALS.map((e) => Hex.makeNode(Hex.add(cell, e), "Cell"));
+    return Hex.DIAGONALS.map(e => Hex.makeNode(Hex.add(cell, e), "Cell"));
 }
 //# sourceMappingURL=cell.js.map

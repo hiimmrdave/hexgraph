@@ -19,7 +19,7 @@ export function makeNode({ q, r, s }, nodetype) {
     if (q + r + s > 1e-3) {
         throw new TypeError("q+r+s must sum to zero");
     }
-    let result = {
+    const result = {
         q,
         r,
         s,
@@ -41,13 +41,13 @@ export function makeNode({ q, r, s }, nodetype) {
 export function cells(node) {
     switch (node.nodetype) {
         case "Cell":
-            return DIRECTIONS.map((e) => makeNode(add(node, e), "Cell"));
+            return DIRECTIONS.map(e => makeNode(add(node, e), "Cell"));
         case "Edge":
-            return DIRECTIONS.map((e) => makeNode(add(node, multiply(e, 0.5)), "Cell")).filter((e) => Number.isInteger(e.q) &&
+            return DIRECTIONS.map(e => makeNode(add(node, multiply(e, 0.5)), "Cell")).filter(e => Number.isInteger(e.q) &&
                 Number.isInteger(e.r) &&
                 Number.isInteger(e.s));
         case "Vertex":
-            return DIAGONALS.map((e) => makeNode(add(node, multiply(e, 1 / 3)), "Cell")).filter((e) => Number.isInteger(e.q) &&
+            return DIAGONALS.map(e => makeNode(add(node, multiply(e, 1 / 3)), "Cell")).filter(e => Number.isInteger(e.q) &&
                 Number.isInteger(e.r) &&
                 Number.isInteger(e.s));
         default:
@@ -57,13 +57,13 @@ export function cells(node) {
 export function edges(node) {
     switch (node.nodetype) {
         case "Cell":
-            return DIRECTIONS.map((e) => makeNode(add(multiply(e, 5e-1), node), "Edge"));
+            return DIRECTIONS.map(e => makeNode(add(multiply(e, 5e-1), node), "Edge"));
         case "Edge":
-            return DIRECTIONS.map((e) => makeNode(add(node, multiply(e, 0.5)), "Edge")).filter((e) => !(Number.isInteger(e.q) &&
+            return DIRECTIONS.map(e => makeNode(add(node, multiply(e, 0.5)), "Edge")).filter(e => !(Number.isInteger(e.q) &&
                 Number.isInteger(e.r) &&
                 Number.isInteger(e.s)));
         case "Vertex":
-            return DIAGONALS.map((e) => makeNode(add(node, multiply(e, 1 / 6)), "Edge")).filter((e) => Number.isInteger(e.q * 2) &&
+            return DIAGONALS.map(e => makeNode(add(node, multiply(e, 1 / 6)), "Edge")).filter(e => Number.isInteger(e.q * 2) &&
                 Number.isInteger(e.r * 2) &&
                 Number.isInteger(e.s * 2));
         default:
@@ -73,13 +73,13 @@ export function edges(node) {
 export function vertices(node) {
     switch (node.nodetype) {
         case "Cell":
-            return DIAGONALS.map((e) => makeNode(add(node, multiply(e, 1 / 3)), "Vertex"));
+            return DIAGONALS.map(e => makeNode(add(node, multiply(e, 1 / 3)), "Vertex"));
         case "Edge":
-            return DIAGONALS.map((e) => makeNode(add(node, multiply(e, 1 / 6)), "Vertex")).filter((e) => Number.isInteger(e.q * 3) &&
+            return DIAGONALS.map(e => makeNode(add(node, multiply(e, 1 / 6)), "Vertex")).filter(e => Number.isInteger(e.q * 3) &&
                 Number.isInteger(e.r * 3) &&
                 Number.isInteger(e.s * 3));
         case "Vertex":
-            return DIAGONALS.map((e) => makeNode(add(node, multiply(e, 1 / 3)), "Vertex")).filter((e) => !(Number.isInteger(e.q) &&
+            return DIAGONALS.map(e => makeNode(add(node, multiply(e, 1 / 3)), "Vertex")).filter(e => !(Number.isInteger(e.q) &&
                 Number.isInteger(e.r) &&
                 Number.isInteger(e.s)));
         default:

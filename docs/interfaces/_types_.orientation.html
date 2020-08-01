@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NodeType | yahgts</title>
+	<title>Orientation | yahgts</title>
 	<meta name="description" content="Documentation for yahgts">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_types_.html">&quot;types&quot;</a>
 				</li>
 				<li>
-					<a href="_types_.nodetype.html">NodeType</a>
+					<a href="_types_.orientation.html">Orientation</a>
 				</li>
 			</ul>
-			<h1>Enumeration NodeType</h1>
+			<h1>Interface Orientation</h1>
 		</div>
 	</div>
 </header>
@@ -72,74 +72,74 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>the type of node of the hex graph,
-						corresponding to which portion of the hex grid the node represents</p>
+						<p>a matrix to convert from QRS to XY space</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Orientation</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_types_.nodetype.html#cell" class="tsd-kind-icon">Cell</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_types_.nodetype.html#edge" class="tsd-kind-icon">Edge</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_types_.nodetype.html#vertex" class="tsd-kind-icon">Vertex</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.orientation.html#b" class="tsd-kind-icon">b</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.orientation.html#f" class="tsd-kind-icon">f</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="cell" class="tsd-anchor"></a>
-					<h3>Cell</h3>
-					<div class="tsd-signature tsd-kind-icon">Cell<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Cell&quot;</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="b" class="tsd-anchor"></a>
+					<h3>b</h3>
+					<div class="tsd-signature tsd-kind-icon">b<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><a href="_types_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><a href="_types_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:119</li>
+							<li>Defined in types.ts:94</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the node is a cell, a hexagonal space
-							a cell has 6 adjacent cells, 6 adjacent edges, and 6 adjacent vertices</p>
-						</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>q<span class="tsd-signature-symbol">: </span><a href="_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>r<span class="tsd-signature-symbol">: </span><a href="_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
+							</li>
+						</ul>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="edge" class="tsd-anchor"></a>
-					<h3>Edge</h3>
-					<div class="tsd-signature tsd-kind-icon">Edge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Edge&quot;</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="f" class="tsd-anchor"></a>
+					<h3>f</h3>
+					<div class="tsd-signature tsd-kind-icon">f<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><a href="_types_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><a href="_types_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:124</li>
+							<li>Defined in types.ts:93</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the node is an edge, a boundary between two cells
-							an edge has 2 adjacent cells, 4 adjacent edges, and 2 adjacent vertices</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="vertex" class="tsd-anchor"></a>
-					<h3>Vertex</h3>
-					<div class="tsd-signature tsd-kind-icon">Vertex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Vertex&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in types.ts:129</li>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>q<span class="tsd-signature-symbol">: </span><a href="_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>r<span class="tsd-signature-symbol">: </span><a href="_types_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
+							</li>
 						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the node is a vertex, a point at which three cells and three edges meet
-							a vertex has 3 adjacent cells, 3 adjacent edges, and 3 adjacent vertices</p>
-						</div>
 					</div>
 				</section>
 			</section>
@@ -176,46 +176,43 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="_types_.gridshape.html" class="tsd-kind-icon">Grid<wbr>Shape</a>
+						<a href="../enums/_types_.gridshape.html" class="tsd-kind-icon">Grid<wbr>Shape</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_types_.nodetype.html" class="tsd-kind-icon">Node<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_.layoutconfig.html" class="tsd-kind-icon">Layout<wbr>Config</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-module">
-						<a href="_types_.nodetype.html" class="tsd-kind-icon">Node<wbr>Type</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_.orientation.html" class="tsd-kind-icon">Orientation</a>
 						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_types_.nodetype.html#cell" class="tsd-kind-icon">Cell</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_types_.orientation.html#b" class="tsd-kind-icon">b</a>
 							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_types_.nodetype.html#edge" class="tsd-kind-icon">Edge</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_types_.nodetype.html#vertex" class="tsd-kind-icon">Vertex</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_types_.orientation.html#f" class="tsd-kind-icon">f</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a>
+						<a href="_types_.qrsvector.html" class="tsd-kind-icon">QRSVector</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
+						<a href="_types_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.layoutconfig.html" class="tsd-kind-icon">Layout<wbr>Config</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.orientation.html" class="tsd-kind-icon">Orientation</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.qrsvector.html" class="tsd-kind-icon">QRSVector</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_.xyvector.html" class="tsd-kind-icon">XYVector</a>
+						<a href="_types_.xyvector.html" class="tsd-kind-icon">XYVector</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="../modules/_types_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a>
@@ -238,10 +235,11 @@
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 		</div>
 	</div>

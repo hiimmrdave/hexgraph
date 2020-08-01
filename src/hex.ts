@@ -48,7 +48,7 @@ export function makeNode({ q, r, s }: QRSVector, nodetype: NodeType): HexNode {
   if (q + r + s > 1e-3) {
     throw new TypeError("q+r+s must sum to zero");
   }
-  let result = {
+  const result = {
     q,
     r,
     s,
@@ -71,26 +71,26 @@ export function makeNode({ q, r, s }: QRSVector, nodetype: NodeType): HexNode {
 /**
  * @param node - the graph node of which to find adjacent cells
  */
-export function cells(node: HexNode) {
+export function cells(node: HexNode): Array<CellNode> {
   switch (node.nodetype) {
     case NodeType.Cell:
-      return DIRECTIONS.map((e) =>
+      return DIRECTIONS.map(e =>
         makeNode(add(node, e), NodeType.Cell)
       ) as CellNode[];
     case NodeType.Edge:
-      return DIRECTIONS.map((e) =>
+      return DIRECTIONS.map(e =>
         makeNode(add(node, multiply(e, 0.5)), NodeType.Cell)
       ).filter(
-        (e) =>
+        e =>
           Number.isInteger(e.q) &&
           Number.isInteger(e.r) &&
           Number.isInteger(e.s)
       ) as CellNode[];
     case NodeType.Vertex:
-      return DIAGONALS.map((e) =>
+      return DIAGONALS.map(e =>
         makeNode(add(node, multiply(e, 1 / 3)), NodeType.Cell)
       ).filter(
-        (e) =>
+        e =>
           Number.isInteger(e.q) &&
           Number.isInteger(e.r) &&
           Number.isInteger(e.s)
@@ -103,17 +103,17 @@ export function cells(node: HexNode) {
 /**
  * @param node - the graph node of which to find adjacent edges
  */
-export function edges(node: HexNode) {
+export function edges(node: HexNode): Array<EdgeNode> {
   switch (node.nodetype) {
     case NodeType.Cell:
-      return DIRECTIONS.map((e) =>
+      return DIRECTIONS.map(e =>
         makeNode(add(multiply(e, 5e-1), node), NodeType.Edge)
       ) as EdgeNode[];
     case NodeType.Edge:
-      return DIRECTIONS.map((e) =>
+      return DIRECTIONS.map(e =>
         makeNode(add(node, multiply(e, 0.5)), NodeType.Edge)
       ).filter(
-        (e) =>
+        e =>
           !(
             Number.isInteger(e.q) &&
             Number.isInteger(e.r) &&
@@ -121,10 +121,10 @@ export function edges(node: HexNode) {
           )
       ) as EdgeNode[];
     case NodeType.Vertex:
-      return DIAGONALS.map((e) =>
+      return DIAGONALS.map(e =>
         makeNode(add(node, multiply(e, 1 / 6)), NodeType.Edge)
       ).filter(
-        (e) =>
+        e =>
           Number.isInteger(e.q * 2) &&
           Number.isInteger(e.r * 2) &&
           Number.isInteger(e.s * 2)
@@ -137,26 +137,26 @@ export function edges(node: HexNode) {
 /**
  * @param node - the graph node of which to find adjacent vertices
  */
-export function vertices(node: HexNode) {
+export function vertices(node: HexNode): Array<VertexNode> {
   switch (node.nodetype) {
     case NodeType.Cell:
-      return DIAGONALS.map((e) =>
+      return DIAGONALS.map(e =>
         makeNode(add(node, multiply(e, 1 / 3)), NodeType.Vertex)
       ) as VertexNode[];
     case NodeType.Edge:
-      return DIAGONALS.map((e) =>
+      return DIAGONALS.map(e =>
         makeNode(add(node, multiply(e, 1 / 6)), NodeType.Vertex)
       ).filter(
-        (e) =>
+        e =>
           Number.isInteger(e.q * 3) &&
           Number.isInteger(e.r * 3) &&
           Number.isInteger(e.s * 3)
       ) as VertexNode[];
     case NodeType.Vertex:
-      return DIAGONALS.map((e) =>
+      return DIAGONALS.map(e =>
         makeNode(add(node, multiply(e, 1 / 3)), NodeType.Vertex)
       ).filter(
-        (e) =>
+        e =>
           !(
             Number.isInteger(e.q) &&
             Number.isInteger(e.r) &&
@@ -174,7 +174,7 @@ export function vertices(node: HexNode) {
  * @param b - a hex node to compare
  * @returns whether a and b have the same coordinates
  */
-export function areEqual(a: QRSVector, b: QRSVector) {
+export function areEqual(a: QRSVector, b: QRSVector): boolean {
   return a.q === b.q && a.r === b.r && a.s === b.s && a.nodetype === b.nodetype;
 }
 
@@ -183,18 +183,18 @@ export function areEqual(a: QRSVector, b: QRSVector) {
  * @param a  - a QRS vector (or Hex Node)
  * @param b - another QRS vector
  */
-export function add(a: QRSVector, b: QRSVector) {
+export function add(a: QRSVector, b: QRSVector): QRSVector {
   return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
 }
 
-export function subtract(a: QRSVector, b: QRSVector) {
+export function subtract(a: QRSVector, b: QRSVector): QRSVector {
   return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 
-export function multiply(cell: QRSVector, k: number) {
+export function multiply(cell: QRSVector, k: number): QRSVector {
   return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
 
-export function length({ q, r, s }: QRSVector) {
+export function length({ q, r, s }: QRSVector): number {
   return Math.max(Math.abs(q), Math.abs(r), Math.abs(s));
 }

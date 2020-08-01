@@ -1,99 +1,100 @@
 import { expect } from "chai";
 import { it } from "mocha";
-import * as hex from "../src/hex";
+import * as Hex from "../src/hex";
 import * as Cell from "../src/cell";
-import * as Edge from "../src/edge";
-import * as Vertex from "../src/vertex";
+import { NodeType } from "../src/types";
 
 describe("Cell properties", function() {
-  const origin = Object.freeze(Cell.make({ q: 0, r: 0, s: 0 }));
+  const origin = Object.freeze(
+    Hex.makeNode({ q: 0, r: 0, s: 0 }, NodeType.Cell)
+  );
 
   it("{q:0,r:0,s:0,nodetype:0} should equal origin", () => {
-    expect(hex.areEqual(origin, { q: 0, r: 0, s: 0, nodetype: 0 })).to.be.true;
+    expect(Hex.areEqual(origin, { q: 0, r: 0, s: 0, nodetype: 0 })).to.be.true;
   });
 
   it("diagonals to origin should equal DIAGONALS", () => {
-    let subject = Cell.diagonals(origin).map(({ id, q, r, s, nodetype }) => ({
+    const subject = Cell.diagonals(origin).map(({ id, q, r, s, nodetype }) => ({
       id,
       q,
       r,
       s,
-      nodetype
+      nodetype,
     }));
-    let result = Cell.DIAGONALS.map(e => {
-      const each = Cell.make(e);
+    const result = Hex.DIAGONALS.map(e => {
+      const each = Hex.makeNode(e, NodeType.Cell);
       return {
         id: each.id,
         q: each.q,
         r: each.r,
         s: each.s,
-        nodetype: each.nodetype
+        nodetype: each.nodetype,
       };
     });
     expect(subject).to.deep.equal(result, "Diagonals are wrong");
   });
 
   it("neighbors to origin should equal DIRECTIONS", () => {
-    let subject = Cell.cells(origin).map(({ id, q, r, s, nodetype }) => ({
+    const subject = Hex.cells(origin).map(({ id, q, r, s, nodetype }) => ({
       id,
       q,
       r,
       s,
-      nodetype
+      nodetype,
     }));
     //console.table(subject);
-    let result = Cell.DIRECTIONS.map(e => {
-      const each = Cell.make(e);
+    const result = Hex.DIRECTIONS.map(e => {
+      const each = Hex.makeNode(e, NodeType.Cell);
       return {
         id: each.id,
         q: each.q,
         r: each.r,
         s: each.s,
-        nodetype: each.nodetype
+        nodetype: each.nodetype,
       };
     });
     expect(subject).to.deep.equal(result, "Directions are wrong");
   });
 
   it("edges should be half the coordinates of the neighbors", () => {
-    let subject = Cell.edges(origin).map(({ id, q, r, s, nodetype }) => ({
+    const subject = Hex.edges(origin).map(({ id, q, r, s, nodetype }) => ({
       id,
       q,
       r,
       s,
-      nodetype
+      nodetype,
     }));
     //console.table(subject);
-    let result = Cell.DIRECTIONS.map(e => {
-      const each = Edge.make(hex.multiply(e, 0.5));
+    const result = Hex.DIRECTIONS.map(e => {
+      const each = Hex.makeNode(Hex.multiply(e, 0.5), NodeType.Edge);
       return {
         id: each.id,
         q: each.q,
         r: each.r,
         s: each.s,
-        nodetype: each.nodetype
+        nodetype: each.nodetype,
       };
     });
     expect(subject).to.deep.equal(result, "Edges are wrong");
   });
 
   it("vertices should be 1/3 the coordinates of the diagonals", () => {
-    let subject = Cell.vertices(origin).map(({ id, q, r, s, nodetype }) => ({
+    const subject = Hex.vertices(origin).map(({ id, q, r, s, nodetype }) => ({
       id,
       q,
       r,
       s,
-      nodetype
+      nodetype,
     }));
     //console.table(subject);
-    let result = Cell.DIAGONALS.map(e => {
-      const each = Vertex.make(hex.multiply(e, 1 / 3));
+    const result = Hex.DIAGONALS.map(e => {
+      const each = Hex.makeNode(Hex.multiply(e, 1 / 3), NodeType.Vertex);
       return {
         id: each.id,
         q: each.q,
         r: each.r,
         s: each.s,
-        nodetype: each.nodetype
+        nodetype: each.nodetype,
       };
     });
     expect(subject).to.deep.equal(result, "Vertices are wrong");

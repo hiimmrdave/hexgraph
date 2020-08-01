@@ -26,7 +26,7 @@ export interface QRSVector {
   /**
    * arbitrary additional properties
    */
-  [prop: string]: any;
+  [prop: string]: unknown;
 }
 
 /**
@@ -87,14 +87,19 @@ export interface XYVector {
 }
 
 /**
+ * a matrix to convert from QRS to XY space
+ */
+export interface Orientation {
+  f: { q: XYVector; r: XYVector };
+  b: { q: XYVector; r: XYVector };
+}
+
+/**
  * a set of values to convert from CubeVector grid coordinates to
  * CartesianVector screen coodrinates
  */
 export interface LayoutConfig {
-  orientation: {
-    f: { q: XYVector; r: XYVector };
-    b: { q: XYVector; r: XYVector };
-  };
+  orientation: Orientation;
   radius: XYVector;
   origin: XYVector;
   size: XYVector;

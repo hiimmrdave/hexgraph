@@ -39,7 +39,5 @@ export function lerp(a: QRSVector, b: QRSVector, t: number): HexNode {
  * @returns an array of 6 cells
  */
 export function diagonals(cell: QRSVector): HexNode[] {
-  return Hex.DIAGONALS.map((e) =>
-    Hex.makeNode(Hex.add(cell, e), NodeType.Cell)
-  );
+  return Hex.DIAGONALS.map(e => Hex.makeNode(Hex.add(cell, e), NodeType.Cell));
 }
