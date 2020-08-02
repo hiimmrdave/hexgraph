@@ -1,21 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #eee;
+  background-color: hsl(0, 0%, 93%);
 }
 
 svg .cell {
-  stroke: black;
-  fill: #ccc;
+  stroke: hsl(0, 0%, 0%);
+  fill: hsl(0, 0%, 80%);
 }
 
 fieldset {
-  background: white;
+  background: hsl(0, 0%, 100%);
 }
 
 header {
   position: fixed;
-  background: black;
+  background: hsl(0, 0%, 0%);
   width: 100%;
   margin: 0;
   padding: 0;
@@ -23,7 +23,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: white;
+  color: hsl(0, 0%, 100%);
   display: block;
   float: left;
   margin: 10px;

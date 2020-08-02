@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "target": "ESNext",
-    "module": "ES6",
+    "target": "ES2020",
+    "module": "ES2020",
     "removeComments": true,
     "pretty": true,
     "sourceMap": true,

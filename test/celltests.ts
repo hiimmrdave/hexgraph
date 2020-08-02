@@ -10,7 +10,8 @@ describe("Cell properties", function() {
   );
 
   it("{q:0,r:0,s:0,nodetype:0} should equal origin", () => {
-    expect(Hex.areEqual(origin, { q: 0, r: 0, s: 0, nodetype: 0 })).to.be.true;
+    expect(Hex.areEqual(origin, { q: 0, r: 0, s: 0, nodetype: NodeType.Cell }))
+      .to.be.true;
   });
 
   it("diagonals to origin should equal DIAGONALS", () => {
