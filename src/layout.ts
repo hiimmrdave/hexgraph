@@ -1,4 +1,4 @@
-import { HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math";
+import * as HexMath from "./math";
 import {
   XYVector,
   QRSVector,
@@ -17,12 +17,12 @@ export function orientation(theta = 0): Orientation {
   return {
     f: {
       q: {
-        x: Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
-        y: Math.sin(theta + 5 * PI_OVER_SIX) * SQRT_THREE,
+        x: Math.cos(theta - HexMath.PI_OVER_SIX) * HexMath.SQRT_THREE,
+        y: Math.sin(theta + 5 * HexMath.PI_OVER_SIX) * HexMath.SQRT_THREE,
       },
       r: {
-        x: Math.cos(theta - HALF_PI) * SQRT_THREE,
-        y: Math.sin(theta + HALF_PI) * SQRT_THREE,
+        x: Math.cos(theta - HexMath.HALF_PI) * HexMath.SQRT_THREE,
+        y: Math.sin(theta + HexMath.HALF_PI) * HexMath.SQRT_THREE,
       },
     },
     b: {
@@ -31,8 +31,8 @@ export function orientation(theta = 0): Orientation {
         y: (Math.sin(theta) * -2) / 3,
       },
       r: {
-        x: (Math.cos(theta + 2 * PI_OVER_SIX) * -2) / 3,
-        y: (Math.sin(theta + 2 * PI_OVER_SIX) * 2) / 3,
+        x: (Math.cos(theta + 2 * HexMath.PI_OVER_SIX) * -2) / 3,
+        y: (Math.sin(theta + 2 * HexMath.PI_OVER_SIX) * 2) / 3,
       },
     },
   };

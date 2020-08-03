@@ -9,13 +9,14 @@
   },
   "scripts": {
     "test": "mocha -r esm -r ts-node/register test/**/*.ts",
-    "build-docs": "typedoc --out ./docs ./src"
+    "build:docs": "typedoc --out ./docs ./src",
+    "lint": "eslint --fix ./src/*",
+    "prebuild": "npm run lint",
+    "build": "npm run build:docs & tsc && eslint --fix ./dist/*.js --no-ignore"
   },
   "author": "Dave Vogt",
   "license": "ISC",
-  "dependencies": {
-    "esm": "^3.2.25"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@microsoft/tsdoc": "^0.12.20",
     "@types/chai": "^4.2.12",
@@ -27,8 +28,10 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "esm": "^3.2.25",
     "mocha": "^7.2.0",
     "prettier": "^1.19.1",
+    "terser": "^5.0.0",
     "ts-loader": "^6.2.2",
     "ts-node": "^8.10.2",
     "typedoc": "^0.17.8",
