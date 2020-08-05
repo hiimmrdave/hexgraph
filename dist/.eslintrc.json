@@ -1,7 +1,0 @@
-{
-  "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
-  "rules": {
-    "@typescript-eslint/explicit-module-boundary-types": "off"
-  }
-}
