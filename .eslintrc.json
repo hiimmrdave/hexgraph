@@ -1,7 +1,7 @@
 {
     "env": {
         "browser": true,
-        "es6": true,
+        "es2020": true,
         "node": true
     },
     "plugins": [
@@ -25,5 +25,14 @@
     "parserOptions": {
         "ecmaVersion": 2020,
         "sourceType": "module"
-    }
+    },
+    "overrides": [
+      {
+        "files": "./dist/*",
+        "rules": {
+          "@typescript-eslint/explicit-module-boundary-types": "off"
+        }
+
+      }
+    ]
 }
