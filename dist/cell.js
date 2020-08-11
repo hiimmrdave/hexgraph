@@ -1,5 +1,5 @@
-import { cubeLerp } from "./math";
-import * as Hex from "./hex";
+import { cubeLerp } from "./math.js";
+import * as Hex from "./hex.js";
 export function round({ q, r, s }) {
   const approx = {
       q: Math.round(q),

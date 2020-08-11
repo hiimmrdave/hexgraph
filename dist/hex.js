@@ -1,4 +1,4 @@
-import { thousandthRound } from "./math";
+import { thousandthRound } from "./math.js";
 export const DIRECTIONS = [
   { q: 1, r: -1, s: 0 },
   { q: 0, r: -1, s: 1 },

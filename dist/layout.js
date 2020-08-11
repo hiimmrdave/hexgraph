@@ -1,5 +1,5 @@
-import * as HexMath from "./math";
-import * as Hex from "./hex";
+import * as HexMath from "./math.js";
+import * as Hex from "./hex.js";
 export function orientation(theta = 0) {
   return {
     f: {

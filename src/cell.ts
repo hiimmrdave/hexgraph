@@ -1,6 +1,6 @@
-import { QRSVector, HexNode, NodeType } from "./types";
-import { cubeLerp } from "./math";
-import * as Hex from "./hex";
+import { QRSVector, HexNode, NodeType } from "./types.js";
+import { cubeLerp } from "./math.js";
+import * as Hex from "./hex.js";
 
 /**
  * @param q - the absolute q coordinate to round to nearest cell

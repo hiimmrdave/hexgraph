@@ -1,4 +1,4 @@
-import * as Layout from "./layout";
+import * as Layout from "./layout.js";
 const SVGNS = "http://www.w3.org/2000/svg";
 export function cellPath(cell, layout) {
   return `M${Layout.cellPoints({ cell, layout })
@@ -19,6 +19,7 @@ export function makeSvgRoot({ size }) {
     height: size.y.toString(10),
     padding: "0",
     margin: "0",
+    border: "1px solid green",
   });
   return svgRoot;
 }

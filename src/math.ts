@@ -1,4 +1,4 @@
-import { QRSVector } from "./types";
+import { QRSVector } from "./types.js";
 
 /**
  * pi/2 radians = 90 degrees, the utility of which should be self-evident

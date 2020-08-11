@@ -1,12 +1,12 @@
-import * as HexMath from "./math";
+import * as HexMath from "./math.js";
 import {
   XYVector,
   QRSVector,
   LayoutConfig,
   CellNode,
   Orientation,
-} from "./types";
-import * as Hex from "./hex";
+} from "./types.js";
+import * as Hex from "./hex.js";
 
 /**
  *

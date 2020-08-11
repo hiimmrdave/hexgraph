@@ -1,4 +1,4 @@
-import * as Hex from "./hex";
+import * as Hex from "./hex.js";
 export function make({
   shape = "Hexagon",
   size = { x: 3, y: 1 },

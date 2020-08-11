@@ -16,8 +16,8 @@ import {
   CellNode,
   EdgeNode,
   VertexNode,
-} from "./types";
-import { thousandthRound } from "./math";
+} from "./types.js";
+import { thousandthRound } from "./math.js";
 //#endregion type descriptions
 
 export const DIRECTIONS: QRSVector[] = [

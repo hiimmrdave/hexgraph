@@ -1,7 +1,13 @@
 // import * as Hex from "./hex";
 // import * as Grid from "./grid";
-import * as Layout from "./layout";
-import { LayoutConfig, CellNode, XYVector, GridMap, NodeType } from "./types";
+import * as Layout from "./layout.js";
+import {
+  LayoutConfig,
+  CellNode,
+  XYVector,
+  GridMap,
+  NodeType,
+} from "./types.js";
 
 const SVGNS = "http://www.w3.org/2000/svg";
 
@@ -35,6 +41,7 @@ export function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
     height: size.y.toString(10),
     padding: "0",
     margin: "0",
+    border: "1px solid green",
   });
   return svgRoot;
 }

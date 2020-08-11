@@ -1,5 +1,5 @@
-import { GridMap, GridShape, XYVector, NodeType } from "./types";
-import * as Hex from "./hex";
+import { GridMap, GridShape, XYVector, NodeType } from "./types.js";
+import * as Hex from "./hex.js";
 
 export function make({
   shape = GridShape.Hexagon,
