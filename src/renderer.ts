@@ -67,7 +67,7 @@ export function render(
   const targetElem = document.getElementById(targetId);
   const svgRoot = makeSvgRoot(layout);
   grid.forEach((node): void => {
-    if (node.nodetype === NodeType.Cell) {
+    if (node.kind === NodeType.Cell) {
       svgRoot.appendChild(buildCell(node, layout));
     }
   });

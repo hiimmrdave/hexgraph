@@ -44,7 +44,7 @@ export const DIAGONALS: QRSVector[] = [
  * @param s - the `s` coordinate of the node
  * @returns the node of the specified type at the specified coordinates
  */
-export function makeNode({ q, r, s }: QRSVector, nodetype: NodeType): HexNode {
+export function makeNode({ q, r, s }: QRSVector, kind: NodeType): HexNode {
   if (q + r + s > 1e-3) {
     throw new TypeError("q+r+s must sum to zero");
   }
@@ -54,9 +54,9 @@ export function makeNode({ q, r, s }: QRSVector, nodetype: NodeType): HexNode {
     s,
     id: `${thousandthRound(q)},${thousandthRound(r)},${thousandthRound(s)}`,
     links: new WeakSet(),
-    nodetype,
+    kind,
   };
-  switch (nodetype) {
+  switch (kind) {
     case NodeType.Cell:
       return result as CellNode;
     case NodeType.Edge:
@@ -72,7 +72,7 @@ export function makeNode({ q, r, s }: QRSVector, nodetype: NodeType): HexNode {
  * @param node - the graph node of which to find adjacent cells
  */
 export function cells(node: HexNode): Array<CellNode> {
-  switch (node.nodetype) {
+  switch (node.kind) {
     case NodeType.Cell:
       return DIRECTIONS.map(e =>
         makeNode(add(node, e), NodeType.Cell)
@@ -104,7 +104,7 @@ export function cells(node: HexNode): Array<CellNode> {
  * @param node - the graph node of which to find adjacent edges
  */
 export function edges(node: HexNode): Array<EdgeNode> {
-  switch (node.nodetype) {
+  switch (node.kind) {
     case NodeType.Cell:
       return DIRECTIONS.map(e =>
         makeNode(add(multiply(e, 5e-1), node), NodeType.Edge)
@@ -138,7 +138,7 @@ export function edges(node: HexNode): Array<EdgeNode> {
  * @param node - the graph node of which to find adjacent vertices
  */
 export function vertices(node: HexNode): Array<VertexNode> {
-  switch (node.nodetype) {
+  switch (node.kind) {
     case NodeType.Cell:
       return DIAGONALS.map(e =>
         makeNode(add(node, multiply(e, 1 / 3)), NodeType.Vertex)

@@ -36,7 +36,7 @@ export interface CellNode extends QRSVector {
   /**
    * the NodeType of the node
    */
-  nodetype: NodeType.Cell;
+  kind: NodeType.Cell;
 }
 
 /**
@@ -46,7 +46,7 @@ export interface EdgeNode extends QRSVector {
   /**
    * the NodeType of the node
    */
-  nodetype: NodeType.Edge;
+  kind: NodeType.Edge;
 }
 
 /**
@@ -64,7 +64,7 @@ export interface VertexNode extends QRSVector {
   /**
    * the NodeType of the node
    */
-  nodetype: NodeType.Vertex;
+  kind: NodeType.Vertex;
 }
 
 /**

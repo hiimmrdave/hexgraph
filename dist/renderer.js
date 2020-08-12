@@ -36,7 +36,7 @@ export function render(targetId, layout, grid) {
   const targetElem = document.getElementById(targetId);
   const svgRoot = makeSvgRoot(layout);
   grid.forEach(node => {
-    if (node.nodetype === "Cell") {
+    if (node.kind === "Cell") {
       svgRoot.appendChild(buildCell(node, layout));
     }
   });

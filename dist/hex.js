@@ -15,7 +15,7 @@ export const DIAGONALS = [
   { q: -1, r: 2, s: -1 },
   { q: 1, r: 1, s: -2 },
 ];
-export function makeNode({ q, r, s }, nodetype) {
+export function makeNode({ q, r, s }, kind) {
   if (q + r + s > 1e-3) {
     throw new TypeError("q+r+s must sum to zero");
   }
@@ -25,9 +25,9 @@ export function makeNode({ q, r, s }, nodetype) {
     s,
     id: `${thousandthRound(q)},${thousandthRound(r)},${thousandthRound(s)}`,
     links: new WeakSet(),
-    nodetype,
+    kind,
   };
-  switch (nodetype) {
+  switch (kind) {
     case "Cell":
       return result;
     case "Edge":
@@ -39,7 +39,7 @@ export function makeNode({ q, r, s }, nodetype) {
   }
 }
 export function cells(node) {
-  switch (node.nodetype) {
+  switch (node.kind) {
     case "Cell":
       return DIRECTIONS.map(e => makeNode(add(node, e), "Cell"));
     case "Edge":
@@ -65,7 +65,7 @@ export function cells(node) {
   }
 }
 export function edges(node) {
-  switch (node.nodetype) {
+  switch (node.kind) {
     case "Cell":
       return DIRECTIONS.map(e =>
         makeNode(add(multiply(e, 5e-1), node), "Edge")
@@ -95,7 +95,7 @@ export function edges(node) {
   }
 }
 export function vertices(node) {
-  switch (node.nodetype) {
+  switch (node.kind) {
     case "Cell":
       return DIAGONALS.map(e =>
         makeNode(add(node, multiply(e, 1 / 3)), "Vertex")

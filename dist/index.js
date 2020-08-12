@@ -1,15 +1,42 @@
 import * as Render from "./renderer.js";
 import * as Layout from "./layout.js";
 import * as Grid from "./grid.js";
-const gridTarget = "hg",
-  layout = Layout.config(
-    0,
-    { x: 10, y: 10 },
-    { x: 250, y: 250 },
-    { x: 500, y: 500 }
-  ),
-  grid = Grid.make({ populate: true });
-document.addEventListener("DOMContentLoaded", () => {
-  Render.render(gridTarget, layout, grid);
-});
+export const gridTarget = "hg",
+  renderContext = document.getElementById(gridTarget),
+  inputs = document.querySelector('form[id="params"]'),
+  getIntValue = elementId => {
+    const input = document.getElementById(elementId);
+    return parseInt(input.value, 10);
+  },
+  getRadioValue = elementName => {
+    const input = document.querySelector(
+      `input[name="${elementName}"]:checked`
+    );
+    return input.value;
+  },
+  getForm = () => {
+    return [
+      gridTarget,
+      Layout.config(
+        (getIntValue("orientation") * Math.PI) / 12,
+        { x: getIntValue("hsx"), y: getIntValue("hsy") },
+        { x: getIntValue("orx"), y: getIntValue("ory") },
+        { x: getIntValue("csx"), y: getIntValue("csy") }
+      ),
+      Grid.make({
+        shape: getRadioValue("shape"),
+        size: { x: getIntValue("gs1"), y: getIntValue("gs1") },
+        populate: true,
+      }),
+    ];
+  },
+  rend = () => {
+    let last;
+    while ((last = renderContext.lastChild)) {
+      renderContext.removeChild(last);
+    }
+    Render.render(...getForm());
+  };
+document.addEventListener("DOMContentLoaded", rend);
+inputs.addEventListener("input", rend);
 //# sourceMappingURL=index.js.map
