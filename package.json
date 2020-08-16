@@ -10,10 +10,12 @@
   "scripts": {
     "test": "mocha -r esm -r ts-node/register -r ts-mocha test/**/*.ts",
     "lint": "eslint --fix ./src/*",
+    "prebuild:docs": "npm run clean:docs",
     "build:docs": "typedoc --out ./docs ./src",
-    "prebuild": "npm run lint & npm run clean",
+    "prebuild": "npm run lint & npm run clean:dist",
     "build": "npm run build:docs & tsc && eslint --fix ./dist/*.js --no-ignore",
-    "clean": "rimraf dist/* & rimraf docs/*"
+    "clean:dist": "rimraf dist/*",
+    "clean:docs": "rimraf docs/*"
   },
   "author": "Dave Vogt",
   "license": "ISC",
