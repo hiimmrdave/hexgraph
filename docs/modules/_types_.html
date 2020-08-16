@@ -73,7 +73,6 @@
 						<section class="tsd-index-section ">
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_types_.gridshape.html" class="tsd-kind-icon">Grid<wbr>Shape</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_types_.nodetype.html" class="tsd-kind-icon">Node<wbr>Type</a></li>
 							</ul>
 						</section>
@@ -93,6 +92,7 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#gridshape" class="tsd-kind-icon">Grid<wbr>Shape</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a></li>
 							</ul>
 						</section>
@@ -107,9 +107,24 @@
 					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:108</li>
+							<li>Defined in types.ts:66</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="gridshape" class="tsd-anchor"></a>
+					<h3>Grid<wbr>Shape</h3>
+					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Shape<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Hexagon"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Triangle"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Star"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Parallelogram"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Rectangle"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types.ts:96</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the shape of the hexagon grid, which determines the grid generator function</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="hexnode" class="tsd-anchor"></a>
@@ -117,7 +132,7 @@
 					<div class="tsd-signature tsd-kind-icon">Hex<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:73</li>
+							<li>Defined in types.ts:39</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -163,9 +178,6 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/_types_.gridshape.html" class="tsd-kind-icon">Grid<wbr>Shape</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
 						<a href="../enums/_types_.nodetype.html" class="tsd-kind-icon">Node<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
@@ -191,6 +203,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_types_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#gridshape" class="tsd-kind-icon">Grid<wbr>Shape</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_types_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a>
