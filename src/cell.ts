@@ -1,4 +1,4 @@
-import { QRSVector, HexNode, NodeType } from "./types.js";
+import { QRSVector, HexNode } from "./types.js";
 import { cubeLerp } from "./math.js";
 import * as Hex from "./hex.js";
 
@@ -27,7 +27,7 @@ export function round({ q, r, s }: QRSVector): HexNode {
   } else {
     approx.s = -1 * approx.q - approx.r;
   }
-  return Hex.makeNode(approx, NodeType.Cell);
+  return Hex.makeNode(approx, "Cell");
 }
 
 export function lerp(a: QRSVector, b: QRSVector, t: number): HexNode {
@@ -39,5 +39,5 @@ export function lerp(a: QRSVector, b: QRSVector, t: number): HexNode {
  * @returns an array of 6 cells
  */
 export function diagonals(cell: QRSVector): HexNode[] {
-  return Hex.DIAGONALS.map(e => Hex.makeNode(Hex.add(cell, e), NodeType.Cell));
+  return Hex.DIAGONALS.map(e => Hex.makeNode(Hex.add(cell, e), "Cell"));
 }

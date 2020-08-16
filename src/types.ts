@@ -20,19 +20,19 @@ export interface QRSVector {
 /** a Cell node of the hexagonal grid */
 export interface CellNode extends QRSVector {
   /** the discriminant of the HexNode */
-  kind: NodeType.Cell;
+  kind: "Cell";
 }
 
 /** an Edge node of the hexagonal grid */
 export interface EdgeNode extends QRSVector {
   /** the discriminant of the HexNode */
-  kind: NodeType.Edge;
+  kind: "Edge";
 }
 
 /** a Vertex node of the hexagonal grid */
 export interface VertexNode extends QRSVector {
   /** the discriminant of the HexNode */
-  kind: NodeType.Vertex;
+  kind: "Vertex";
 }
 
 /** a node of the graph representation of the hexagonal grid */
@@ -69,26 +69,7 @@ export type GridMap = Map<string, HexNode>;
  * the type of node of the hex graph,
  * corresponding to which portion of the hex grid the node represents
  */
-export const enum NodeType {
-  /**
-   * the node is a cell, a hexagonal space
-   *
-   * a cell has 6 adjacent cells, 6 adjacent edges, and 6 adjacent vertices
-   */
-  Cell = "Cell",
-  /**
-   * the node is an edge, a boundary between two cells
-   *
-   * an edge has 2 adjacent cells, 4 adjacent edges, and 2 adjacent vertices
-   */
-  Edge = "Edge",
-  /**
-   * the node is a vertex, a point at which three cells and three edges meet
-   *
-   * a vertex has 3 adjacent cells, 3 adjacent edges, and 3 adjacent vertices
-   */
-  Vertex = "Vertex",
-}
+export type NodeType = "Cell" | "Edge" | "Vertex";
 
 /**
  * the shape of the hexagon grid, which determines the grid generator function

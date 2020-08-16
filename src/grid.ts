@@ -1,4 +1,4 @@
-import { GridMap, GridShape, XYVector, NodeType } from "./types.js";
+import { GridMap, GridShape, XYVector } from "./types.js";
 import * as Hex from "./hex.js";
 
 /**
@@ -63,7 +63,7 @@ function gridPush(
   s: number = -q - r
 ): GridMap {
   const cellset = new Map(grid),
-    cell = Hex.makeNode({ q, r, s }, NodeType.Cell);
+    cell = Hex.makeNode({ q, r, s }, "Cell");
   cellset.set(cell.id, cell);
   Hex.vertices(cell).forEach(vertex => {
     cell.links.add(vertex);

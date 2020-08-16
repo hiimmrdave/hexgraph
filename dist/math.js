@@ -1,6 +1,6 @@
-export const HALF_PI = Math.PI / 2;
-export const PI_OVER_SIX = Math.PI / 6;
-export const SQRT_THREE = Math.sqrt(3);
+export const HALF_PI = Math.PI / 2,
+  PI_OVER_SIX = Math.PI / 6,
+  SQRT_THREE = Math.sqrt(3);
 export function thousandthRound(n) {
   return Math.trunc(n * 1e3) / 1e3;
 }

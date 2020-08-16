@@ -1,13 +1,7 @@
 // import * as Hex from "./hex";
 // import * as Grid from "./grid";
 import * as Layout from "./layout.js";
-import {
-  LayoutConfig,
-  CellNode,
-  XYVector,
-  GridMap,
-  NodeType,
-} from "./types.js";
+import { LayoutConfig, CellNode, XYVector, GridMap } from "./types.js";
 
 const SVGNS = "http://www.w3.org/2000/svg";
 
@@ -16,7 +10,7 @@ const SVGNS = "http://www.w3.org/2000/svg";
  * @param cell - the hexagon to draw.
  * @param layoutParams - the Layout object describing the world to draw in
  */
-export function cellPath(cell: CellNode, layout: LayoutConfig): string {
+function cellPath(cell: CellNode, layout: LayoutConfig): string {
   return `M${Layout.cellPoints({ cell, layout })
     .map(e => `${e.x},${e.y}`)
     .join(" L")}z`;
@@ -26,11 +20,11 @@ export function cellPath(cell: CellNode, layout: LayoutConfig): string {
  * create an SVG element
  * @param elementName - the name of the SVG element to create
  */
-export function makeSvgElement(elementName: string): SVGElement {
+function makeSvgElement(elementName: string): SVGElement {
   return document.createElementNS(SVGNS, elementName) as SVGElement;
 }
 
-export function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
+function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
   const svgRoot = makeSvgElement("svg") as SVGSVGElement;
   svgRoot.setAttribute("xmlns", svgRoot.namespaceURI);
   svgRoot.setAttribute("viewBox", `0 0 ${size.x} ${size.y}`);
@@ -46,10 +40,7 @@ export function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
   return svgRoot;
 }
 
-export function buildCell(
-  cell: CellNode,
-  layout: LayoutConfig
-): SVGPathElement {
+function buildCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
   const path = makeSvgElement("path") as SVGPathElement;
   path.classList.add("cell");
   const c: XYVector = Layout.cubeToPoint(cell, layout);
@@ -67,7 +58,7 @@ export function render(
   const targetElem = document.getElementById(targetId);
   const svgRoot = makeSvgRoot(layout);
   grid.forEach((node): void => {
-    if (node.kind === NodeType.Cell) {
+    if (node.kind === "Cell") {
       svgRoot.appendChild(buildCell(node, layout));
     }
   });

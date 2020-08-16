@@ -1,19 +1,8 @@
 import { QRSVector } from "./types.js";
 
-/**
- * pi/2 radians = 90 degrees, the utility of which should be self-evident
- */
-export const HALF_PI = Math.PI / 2;
-
-/**
- *  pi/6 radians = 30 degrees, which is handy
- */
-export const PI_OVER_SIX = Math.PI / 6;
-
-/**
- * √3 is the distance between opposite sides of a regular hexagon of radius 1
- */
-export const SQRT_THREE = Math.sqrt(3);
+export const HALF_PI = Math.PI / 2,
+  PI_OVER_SIX = Math.PI / 6,
+  SQRT_THREE = Math.sqrt(3);
 
 /**
  * @param n a number, which will be rounded to 3 numbers after the decimal

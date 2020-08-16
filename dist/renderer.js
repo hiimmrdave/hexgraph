@@ -1,14 +1,14 @@
 import * as Layout from "./layout.js";
 const SVGNS = "http://www.w3.org/2000/svg";
-export function cellPath(cell, layout) {
+function cellPath(cell, layout) {
   return `M${Layout.cellPoints({ cell, layout })
     .map(e => `${e.x},${e.y}`)
     .join(" L")}z`;
 }
-export function makeSvgElement(elementName) {
+function makeSvgElement(elementName) {
   return document.createElementNS(SVGNS, elementName);
 }
-export function makeSvgRoot({ size }) {
+function makeSvgRoot({ size }) {
   const svgRoot = makeSvgElement("svg");
   svgRoot.setAttribute("xmlns", svgRoot.namespaceURI);
   svgRoot.setAttribute("viewBox", `0 0 ${size.x} ${size.y}`);
@@ -23,7 +23,7 @@ export function makeSvgRoot({ size }) {
   });
   return svgRoot;
 }
-export function buildCell(cell, layout) {
+function buildCell(cell, layout) {
   const path = makeSvgElement("path");
   path.classList.add("cell");
   const c = Layout.cubeToPoint(cell, layout);

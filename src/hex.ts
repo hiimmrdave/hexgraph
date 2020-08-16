@@ -8,7 +8,6 @@
  * ⬢⬣
  */
 
-//#region type setup
 import {
   QRSVector,
   HexNode,
@@ -18,7 +17,6 @@ import {
   VertexNode,
 } from "./types.js";
 import { thousandthRound } from "./math.js";
-//#endregion type descriptions
 
 export const DIRECTIONS: QRSVector[] = [
   { q: 1, r: -1, s: 0 },
@@ -57,11 +55,11 @@ export function makeNode({ q, r, s }: QRSVector, kind: NodeType): HexNode {
     kind,
   };
   switch (kind) {
-    case NodeType.Cell:
+    case "Cell":
       return result as CellNode;
-    case NodeType.Edge:
+    case "Edge":
       return result as EdgeNode;
-    case NodeType.Vertex:
+    case "Vertex":
       return result as VertexNode;
     default:
       return result as never;
@@ -73,22 +71,20 @@ export function makeNode({ q, r, s }: QRSVector, kind: NodeType): HexNode {
  */
 export function cells(node: HexNode): Array<CellNode> {
   switch (node.kind) {
-    case NodeType.Cell:
+    case "Cell":
+      return DIRECTIONS.map(e => makeNode(add(node, e), "Cell")) as CellNode[];
+    case "Edge":
       return DIRECTIONS.map(e =>
-        makeNode(add(node, e), NodeType.Cell)
-      ) as CellNode[];
-    case NodeType.Edge:
-      return DIRECTIONS.map(e =>
-        makeNode(add(node, multiply(e, 0.5)), NodeType.Cell)
+        makeNode(add(node, multiply(e, 0.5)), "Cell")
       ).filter(
         e =>
           Number.isInteger(e.q) &&
           Number.isInteger(e.r) &&
           Number.isInteger(e.s)
       ) as CellNode[];
-    case NodeType.Vertex:
+    case "Vertex":
       return DIAGONALS.map(e =>
-        makeNode(add(node, multiply(e, 1 / 3)), NodeType.Cell)
+        makeNode(add(node, multiply(e, 1 / 3)), "Cell")
       ).filter(
         e =>
           Number.isInteger(e.q) &&
@@ -105,13 +101,13 @@ export function cells(node: HexNode): Array<CellNode> {
  */
 export function edges(node: HexNode): Array<EdgeNode> {
   switch (node.kind) {
-    case NodeType.Cell:
+    case "Cell":
       return DIRECTIONS.map(e =>
-        makeNode(add(multiply(e, 5e-1), node), NodeType.Edge)
+        makeNode(add(multiply(e, 5e-1), node), "Edge")
       ) as EdgeNode[];
-    case NodeType.Edge:
+    case "Edge":
       return DIRECTIONS.map(e =>
-        makeNode(add(node, multiply(e, 0.5)), NodeType.Edge)
+        makeNode(add(node, multiply(e, 0.5)), "Edge")
       ).filter(
         e =>
           !(
@@ -120,9 +116,9 @@ export function edges(node: HexNode): Array<EdgeNode> {
             Number.isInteger(e.s)
           )
       ) as EdgeNode[];
-    case NodeType.Vertex:
+    case "Vertex":
       return DIAGONALS.map(e =>
-        makeNode(add(node, multiply(e, 1 / 6)), NodeType.Edge)
+        makeNode(add(node, multiply(e, 1 / 6)), "Edge")
       ).filter(
         e =>
           Number.isInteger(e.q * 2) &&
@@ -139,22 +135,22 @@ export function edges(node: HexNode): Array<EdgeNode> {
  */
 export function vertices(node: HexNode): Array<VertexNode> {
   switch (node.kind) {
-    case NodeType.Cell:
+    case "Cell":
       return DIAGONALS.map(e =>
-        makeNode(add(node, multiply(e, 1 / 3)), NodeType.Vertex)
+        makeNode(add(node, multiply(e, 1 / 3)), "Vertex")
       ) as VertexNode[];
-    case NodeType.Edge:
+    case "Edge":
       return DIAGONALS.map(e =>
-        makeNode(add(node, multiply(e, 1 / 6)), NodeType.Vertex)
+        makeNode(add(node, multiply(e, 1 / 6)), "Vertex")
       ).filter(
         e =>
           Number.isInteger(e.q * 3) &&
           Number.isInteger(e.r * 3) &&
           Number.isInteger(e.s * 3)
       ) as VertexNode[];
-    case NodeType.Vertex:
+    case "Vertex":
       return DIAGONALS.map(e =>
-        makeNode(add(node, multiply(e, 1 / 3)), NodeType.Vertex)
+        makeNode(add(node, multiply(e, 1 / 3)), "Vertex")
       ).filter(
         e =>
           !(
