@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { it } from "mocha";
-import { XYVector, GridShape } from "../src/types";
+import { XYVector } from "../src/types";
 import * as Grid from "../src/grid";
 
 describe("grid functions", function() {
@@ -8,7 +8,7 @@ describe("grid functions", function() {
 
   it("start with a hex grid", () => {
     const hexgrid = Grid.make({
-      shape: GridShape.Hexagon,
+      shape: "Hexagon",
       size,
       populate: true,
     });
@@ -18,7 +18,7 @@ describe("grid functions", function() {
 
   it("start with a triangle grid", () => {
     const hexgrid = Grid.make({
-      shape: GridShape.Triangle,
+      shape: "Triangle",
       size,
       populate: true,
     });
@@ -27,14 +27,14 @@ describe("grid functions", function() {
   });
 
   it("start with a star grid", () => {
-    const hexgrid = Grid.make({ shape: GridShape.Star, size, populate: true });
+    const hexgrid = Grid.make({ shape: "Star", size, populate: true });
     hexgrid.forEach((val, key) => console.log(`${val.nodetype}:\t${key}`));
     expect(hexgrid.size).to.equal(457);
   });
 
   it("start with a parallelogram grid", () => {
     const hexgrid = Grid.make({
-      shape: GridShape.Parallelogram,
+      shape: "Parallelogram",
       size,
       populate: true,
     });
@@ -44,7 +44,7 @@ describe("grid functions", function() {
 
   it("start with a rectangle grid", () => {
     const hexgrid = Grid.make({
-      shape: GridShape.Rectangle,
+      shape: "Rectangle",
       size,
       populate: true,
     });
