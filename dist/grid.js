@@ -2,7 +2,7 @@ import * as Hex from "./hex.js";
 export function make({
   shape = "Hexagon",
   size = { x: 3, y: 1 },
-  populate = false,
+  populate = true,
 } = {}) {
   let grid = new Map();
   if (populate) {
@@ -10,7 +10,7 @@ export function make({
   }
   return grid;
 }
-export function populateGrid({ grid, shape, size, emptyFirst = false }) {
+function populateGrid({ grid, shape, size, emptyFirst = false }) {
   const gridPopulator = {
     Hexagon: populateHexagonGrid,
     Triangle: populateTriangleGrid,
@@ -21,9 +21,9 @@ export function populateGrid({ grid, shape, size, emptyFirst = false }) {
   if (emptyFirst) grid.clear();
   return gridPopulator[shape](size, grid);
 }
-export function gridPush(grid, q, r, s = -q - r) {
-  const cell = Hex.makeNode({ q, r, s }, "Cell");
-  const cellset = new Map(grid);
+function gridPush(grid, q, r, s = -q - r) {
+  const cellset = new Map(grid),
+    cell = Hex.makeNode({ q, r, s }, "Cell");
   cellset.set(cell.id, cell);
   Hex.vertices(cell).forEach(vertex => {
     cell.links.add(vertex);
@@ -38,52 +38,52 @@ export function gridPush(grid, q, r, s = -q - r) {
   return cellset;
 }
 function populateHexagonGrid(size, grid) {
-  const cellset = new Map(grid);
+  let cellset = new Map(grid);
   for (let ia = -size.x; ia <= size.x; ia++) {
     for (let ib = -size.x; ib <= size.x; ib++) {
       if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size.x * 2) {
-        gridPush(cellset, ia, ib);
+        cellset = gridPush(cellset, ia, ib);
       }
     }
   }
   return cellset;
 }
 function populateTriangleGrid(size, grid) {
-  const cellset = new Map(grid);
+  let cellset = new Map(grid);
   for (let ia = 0; ia <= size.x; ia++) {
     for (let ib = 0; ib <= size.x - ia; ib++) {
-      gridPush(cellset, ia, ib);
+      cellset = gridPush(cellset, ia, ib);
     }
   }
   return cellset;
 }
 function populateStarGrid(size, grid) {
-  const cellset = new Map(grid);
+  let cellset = new Map(grid);
   for (let ia = -size.x; ia <= size.x; ia++) {
-    for (let ib = -size.x; ib < size.x; ib++) {
+    for (let ib = -size.x; ib <= size.x; ib++) {
       const ic = -ia - ib;
-      gridPush(cellset, ia, ib);
-      gridPush(cellset, ic, ib);
-      gridPush(cellset, ia, ic, ib);
+      cellset = gridPush(cellset, ia, ib);
+      cellset = gridPush(cellset, ic, ib);
+      cellset = gridPush(cellset, ia, ic, ib);
     }
   }
   return cellset;
 }
 function populateParallelogramGrid(size, grid) {
-  const cellset = new Map(grid);
+  let cellset = new Map(grid);
   for (let ia = 0; ia <= size.x; ia++) {
     for (let ib = 0; ib <= size.y; ib++) {
-      gridPush(cellset, ia, ib);
+      cellset = gridPush(cellset, ia, ib);
     }
   }
   return cellset;
 }
 function populateRectangleGrid(size, grid) {
-  const cellset = new Map(grid);
+  let cellset = new Map(grid);
   for (let ia = 0; ia <= size.x; ia++) {
     const off = Math.floor(ia / 2);
     for (let ib = -off; ib < size.y - off; ib++) {
-      gridPush(cellset, ia, ib);
+      cellset = gridPush(cellset, ia, ib);
     }
   }
   return cellset;
