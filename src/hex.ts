@@ -194,3 +194,7 @@ export function multiply(cell: QRSVector, k: number): QRSVector {
 export function length({ q, r, s }: QRSVector): number {
   return Math.max(Math.abs(q), Math.abs(r), Math.abs(s));
 }
+
+export function distance(a: QRSVector, b: QRSVector): number {
+  return length(subtract(a, b));
+}

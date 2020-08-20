@@ -1,0 +1,1 @@
+export const HALF_PI=Math.PI/2,PI_OVER_SIX=Math.PI/6,SQRT_THREE=Math.sqrt(3);export function thousandthRound(r){return Math.trunc(1e3*r)/1e3}export function lerp(r,t,e){return r*(1-e)+t*e}export function cubeLerp(r,t,e){return{q:lerp(r.q,t.q,e),r:lerp(r.r,t.r,e),s:lerp(r.s,t.s,e)}}export function rollDie(r){return Math.ceil(Math.random()*r)}

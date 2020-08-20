@@ -5,7 +5,7 @@
     "module": "ES2020",
     "removeComments": true,
     "pretty": true,
-    "sourceMap": true,
+    "inlineSourceMap": true,
     "outDir": "./dist/"
   },
   "compileOnSave": true,

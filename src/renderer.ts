@@ -41,9 +41,9 @@ function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
 }
 
 function buildCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
-  const path = makeSvgElement("path") as SVGPathElement;
+  const path = makeSvgElement("path") as SVGPathElement,
+    c: XYVector = Layout.cubeToPoint(cell, layout);
   path.classList.add("cell");
-  const c: XYVector = Layout.cubeToPoint(cell, layout);
   path.style.transformOrigin = `${c.x}px ${c.y}px`;
   path.setAttribute("d", cellPath(cell, layout));
   Object.assign(path.dataset, { q: cell.q, r: cell.r, s: cell.s });

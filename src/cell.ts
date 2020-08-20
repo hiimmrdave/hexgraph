@@ -1,4 +1,4 @@
-import { QRSVector, HexNode } from "./types.js";
+import { CellNode } from "./types.js";
 import { cubeLerp } from "./math.js";
 import * as Hex from "./hex.js";
 
@@ -9,7 +9,7 @@ import * as Hex from "./hex.js";
  * @returns a cell with integer q,r,s coordinates
  * nearest to the provided q,r,s point
  */
-export function round({ q, r, s }: QRSVector): HexNode {
+export function round({ q, r, s }: CellNode): CellNode {
   const approx = {
       q: Math.round(q),
       r: Math.round(r),
@@ -27,17 +27,19 @@ export function round({ q, r, s }: QRSVector): HexNode {
   } else {
     approx.s = -1 * approx.q - approx.r;
   }
-  return Hex.makeNode(approx, "Cell");
+  return Hex.makeNode(approx, "Cell") as CellNode;
 }
 
-export function lerp(a: QRSVector, b: QRSVector, t: number): HexNode {
-  return round(cubeLerp(a, b, t));
+export function lerp(a: CellNode, b: CellNode, t: number): CellNode {
+  return round(Hex.makeNode(cubeLerp(a, b, t), "Cell") as CellNode);
 }
 
 /**
  * @param cell - the cell of which to find diagonal neighbors
  * @returns an array of 6 cells
  */
-export function diagonals(cell: QRSVector): HexNode[] {
-  return Hex.DIAGONALS.map(e => Hex.makeNode(Hex.add(cell, e), "Cell"));
+export function diagonals(cell: CellNode): CellNode[] {
+  return Hex.DIAGONALS.map(
+    e => Hex.makeNode(Hex.add(cell, e), "Cell") as CellNode
+  );
 }

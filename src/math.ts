@@ -31,3 +31,7 @@ export function lerp(m: number, n: number, t: number): number {
 export function cubeLerp(a: QRSVector, b: QRSVector, t: number): QRSVector {
   return { q: lerp(a.q, b.q, t), r: lerp(a.r, b.r, t), s: lerp(a.s, b.s, t) };
 }
+
+export function rollDie(d: number): number {
+  return Math.ceil(Math.random() * d);
+}
