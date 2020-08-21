@@ -1,27 +1,25 @@
-export const HALF_PI = Math.PI / 2,
-  PI_OVER_SIX = Math.PI / 6,
-  SQRT_THREE = Math.sqrt(3);
+export const HALF_PI = Math.PI / 2, PI_OVER_SIX = Math.PI / 6, SQRT_THREE = Math.sqrt(3);
 export function thousandthRound(n) {
-  return Math.trunc(n * 1e3) / 1e3;
+    return Math.trunc(n * 1e3) / 1e3;
 }
 export function lerp(m, n, t) {
-  return m * (1 - t) + n * t;
+    return m * (1 - t) + n * t;
 }
 export function cubeLerp(a, b, t) {
-  return { q: lerp(a.q, b.q, t), r: lerp(a.r, b.r, t), s: lerp(a.s, b.s, t) };
+    return { q: lerp(a.q, b.q, t), r: lerp(a.r, b.r, t), s: lerp(a.s, b.s, t) };
 }
 export function randRange(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min) + min);
 }
 export function rollTable(table) {
-  const totalWeight = table.map(e => e.weight).reduce((acc, cur) => acc + cur);
-  const rand = randRange(0, totalWeight);
-  let curWeight = 0;
-  for (const val of table) {
-    curWeight += val.weight;
-    if (curWeight > rand) {
-      return val.value;
+    const totalWeight = table.map(e => e.weight).reduce((acc, cur) => acc + cur);
+    const rand = randRange(0, totalWeight);
+    let curWeight = 0;
+    for (const val of table) {
+        curWeight += val.weight;
+        if (curWeight > rand) {
+            return val.value;
+        }
     }
-  }
 }
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWF0aC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9tYXRoLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBLE1BQU0sQ0FBQyxNQUFNLE9BQU8sR0FBRyxJQUFJLENBQUMsRUFBRSxHQUFHLENBQUMsRUFDaEMsV0FBVyxHQUFHLElBQUksQ0FBQyxFQUFFLEdBQUcsQ0FBQyxFQUN6QixVQUFVLEdBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsQ0FBQztBQU01QixNQUFNLFVBQVUsZUFBZSxDQUFDLENBQVM7SUFDdkMsT0FBTyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUMsR0FBRyxHQUFHLENBQUMsR0FBRyxHQUFHLENBQUM7QUFDbkMsQ0FBQztBQVFELE1BQU0sVUFBVSxJQUFJLENBQUMsQ0FBUyxFQUFFLENBQVMsRUFBRSxDQUFTO0lBQ2xELE9BQU8sQ0FBQyxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsR0FBRyxDQUFDLENBQUM7QUFDN0IsQ0FBQztBQVFELE1BQU0sVUFBVSxRQUFRLENBQUMsQ0FBWSxFQUFFLENBQVksRUFBRSxDQUFTO0lBQzVELE9BQU8sRUFBRSxDQUFDLEVBQUUsSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsRUFBRSxDQUFDLEVBQUUsSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsRUFBRSxDQUFDLEVBQUUsSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsRUFBRSxDQUFDO0FBQzlFLENBQUM7QUFFRCxNQUFNLFVBQVUsU0FBUyxDQUFDLEdBQVcsRUFBRSxHQUFXO0lBQ2hELE9BQU8sSUFBSSxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsTUFBTSxFQUFFLEdBQUcsQ0FBQyxHQUFHLEdBQUcsR0FBRyxDQUFDLEdBQUcsR0FBRyxDQUFDLENBQUM7QUFDdkQsQ0FBQztBQUVELE1BQU0sVUFBVSxTQUFTLENBQUksS0FBcUM7SUFDaEUsTUFBTSxXQUFXLEdBQUcsS0FBSyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQyxNQUFNLENBQUMsQ0FBQyxNQUFNLENBQUMsQ0FBQyxHQUFHLEVBQUUsR0FBRyxFQUFFLEVBQUUsQ0FBQyxHQUFHLEdBQUcsR0FBRyxDQUFDLENBQUM7SUFDN0UsTUFBTSxJQUFJLEdBQUcsU0FBUyxDQUFDLENBQUMsRUFBRSxXQUFXLENBQUMsQ0FBQztJQUN2QyxJQUFJLFNBQVMsR0FBRyxDQUFDLENBQUM7SUFDbEIsS0FBSyxNQUFNLEdBQUcsSUFBSSxLQUFLLEVBQUU7UUFDdkIsU0FBUyxJQUFJLEdBQUcsQ0FBQyxNQUFNLENBQUM7UUFDeEIsSUFBSSxTQUFTLEdBQUcsSUFBSSxFQUFFO1lBQ3BCLE9BQU8sR0FBRyxDQUFDLEtBQUssQ0FBQztTQUNsQjtLQUNGO0FBQ0gsQ0FBQyJ9

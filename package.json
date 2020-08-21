@@ -12,14 +12,14 @@
     "lint": "eslint --fix ./src/*",
     "prebuild:docs": "npm run clean:docs",
     "build:docs": "typedoc --out ./docs ./src",
-    "prebuild": "npm run lint",
-    "build": "npm run build:docs & tsc",
+    "prebuild": "npm run lint && mkdir -p ./public/img & mkdir -p ./public/js ",
+    "build": "npm run build:docs & tsc ",
     "clean:dist": "rimraf dist/*",
     "clean:docs": "rimraf docs/*",
     "clean:public": "rimraf public/*",
     "clean": "npm run clean:dist & npm run clean:docs & npm run clean:public",
-    "predeploy": "npm run build && mkdir -p ./public/js && node tersify.js",
-    "deploy": "cp index.html style.css ./public/"
+    "predeploy": "npm run build && node tersify.js",
+    "deploy": "cp index.html style.css ./public/ && cp ./img/favicon.svg ./public/img/"
   },
   "author": "Dave Vogt",
   "license": "ISC",

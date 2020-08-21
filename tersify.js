@@ -3,7 +3,11 @@ import { promises as fs } from "fs";
 
 const inputdir = "./dist",
   outputdir = "./public/js",
-  options = { mangle: { module: true }, nameCache: {} },
+  options = {
+    mangle: { module: true },
+    nameCache: {},
+    sourceMap: { content: "inline", url: "inline" },
+  },
   dir = await fs.readdir(inputdir, { withFileTypes: true });
 
 for (const dirent of dir) {
