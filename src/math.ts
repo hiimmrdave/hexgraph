@@ -32,6 +32,18 @@ export function cubeLerp(a: QRSVector, b: QRSVector, t: number): QRSVector {
   return { q: lerp(a.q, b.q, t), r: lerp(a.r, b.r, t), s: lerp(a.s, b.s, t) };
 }
 
-export function rollDie(d: number): number {
-  return Math.ceil(Math.random() * d);
+export function randRange(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+export function rollTable<T>(table: [{ weight: number; value: T }]): T {
+  const totalWeight = table.map(e => e.weight).reduce((acc, cur) => acc + cur);
+  const rand = randRange(0, totalWeight);
+  let curWeight = 0;
+  for (const val of table) {
+    curWeight += val.weight;
+    if (curWeight > rand) {
+      return val.value;
+    }
+  }
 }
