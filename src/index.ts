@@ -1,7 +1,6 @@
 import * as Renderer from "./renderer.js";
-import * as Layout from "./layout.js";
-import * as Grid from "./grid.js";
-import { LayoutConfig, GridMap, GridShape } from "./types.js";
+import { LayoutConfig, config } from "./layout.js";
+import { GridMap, GridShape, make } from "./grid.js";
 
 /*
 function getFloat(elementId: string): number {
@@ -30,13 +29,13 @@ export const gridTarget = "hg",
   getForm = (): [string, LayoutConfig, GridMap] => {
     return [
       gridTarget,
-      Layout.config(
+      config(
         (getIntValue("orientation") * Math.PI) / 12,
         { x: getIntValue("hsx"), y: getIntValue("hsy") },
         { x: getIntValue("orx"), y: getIntValue("ory") },
         { x: getIntValue("csx"), y: getIntValue("csy") }
       ),
-      Grid.make({
+      make({
         shape: getRadioValue("shape") as GridShape,
         size: { x: getIntValue("gs1"), y: getIntValue("gs1") },
         populate: true,

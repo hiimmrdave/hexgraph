@@ -1,7 +1,9 @@
 // import * as Hex from "./hex";
 // import * as Grid from "./grid";
 import * as Layout from "./layout.js";
-import { LayoutConfig, CellNode, XYVector, GridMap } from "./types.js";
+import { CellNode } from "./hex.js";
+import { GridMap } from "./grid.js";
+import { XYVector, LayoutConfig } from "./layout.js";
 
 const SVGNS = "http://www.w3.org/2000/svg";
 

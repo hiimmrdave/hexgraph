@@ -1,4 +1,4 @@
-import { QRSVector } from "./types.js";
+import { QRSVector } from "./hex.js";
 
 export const HALF_PI = Math.PI / 2,
   PI_OVER_SIX = Math.PI / 6,

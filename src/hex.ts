@@ -1,22 +1,70 @@
 /**
  * imports and exports the various functions
  * @packageDocumentation
-/*
+ *
  * graph vertices are called "nodes"
  * graph edges are called "links"
  * this is to remove ambiguity with the related grid terms
  * ⬢⬣
  */
 
-import {
-  QRSVector,
-  HexNode,
-  NodeType,
-  CellNode,
-  EdgeNode,
-  VertexNode,
-} from "./types.js";
 import { thousandthRound } from "./math.js";
+
+/**
+ * the type of node of the hex graph,
+ * corresponding to which portion of the hex grid the node represents
+ */
+export type NodeType = "Cell" | "Edge" | "Vertex";
+
+/**
+ * a vector or coordinate in qrs space
+ * qrs is cubic space, which is confined here to a plane q+r+s==0
+ */
+export interface QRSVector {
+  /** q component of vector */
+  readonly q: number;
+  /** r component of vector */
+  readonly r: number;
+  /** s component of vector */
+  readonly s: number;
+  /** discriminant if this node is a HexNode */
+  kind?: NodeType;
+  /** arbitrary additional properties */
+  [prop: string]: unknown;
+}
+
+/** a Cell node of the hexagonal grid */
+export interface CellNode extends QRSVector {
+  /** the cube coordinates of the node as a comma-separated string */
+  id: string;
+  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
+  links: WeakSet<HexNode>;
+  /** the discriminant of the HexNode */
+  kind: "Cell";
+}
+
+/** an Edge node of the hexagonal grid */
+export interface EdgeNode extends QRSVector {
+  /** the cube coordinates of the node as a comma-separated string */
+  id: string;
+  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
+  links: WeakSet<HexNode>;
+  /** the discriminant of the HexNode */
+  kind: "Edge";
+}
+
+/** a Vertex node of the hexagonal grid */
+export interface VertexNode extends QRSVector {
+  /** the cube coordinates of the node as a comma-separated string */
+  id: string;
+  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
+  links: WeakSet<HexNode>;
+  /** the discriminant of the HexNode */
+  kind: "Vertex";
+}
+
+/** a node of the graph representation of the hexagonal grid */
+export type HexNode = CellNode | EdgeNode | VertexNode;
 
 export const DIRECTIONS: QRSVector[] = [
   { q: 1, r: -1, s: 0 },

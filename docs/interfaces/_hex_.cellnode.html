@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_types_.html">&quot;types&quot;</a>
+					<a href="../modules/_hex_.html">&quot;hex&quot;</a>
 				</li>
 				<li>
-					<a href="_types_.cellnode.html">CellNode</a>
+					<a href="_hex_.cellnode.html">CellNode</a>
 				</li>
 			</ul>
 			<h1>Interface CellNode</h1>
@@ -80,7 +80,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a>
+						<a href="_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">CellNode</span>
@@ -105,12 +105,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.cellnode.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.cellnode.html#kind" class="tsd-kind-icon">kind</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_.cellnode.html#links" class="tsd-kind-icon">links</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.cellnode.html#q" class="tsd-kind-icon">q</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.cellnode.html#r" class="tsd-kind-icon">r</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_types_.cellnode.html#s" class="tsd-kind-icon">s</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_hex_.cellnode.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite"><a href="_hex_.cellnode.html#kind" class="tsd-kind-icon">kind</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_hex_.cellnode.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_hex_.cellnode.html#q" class="tsd-kind-icon">q</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_hex_.cellnode.html#r" class="tsd-kind-icon">r</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_hex_.cellnode.html#s" class="tsd-kind-icon">s</a></li>
 							</ul>
 						</section>
 					</div>
@@ -124,7 +124,7 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:19</li>
+							<li>Defined in hex.ts:39</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -133,13 +133,14 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
 					<a name="kind" class="tsd-anchor"></a>
 					<h3>kind</h3>
 					<div class="tsd-signature tsd-kind-icon">kind<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Cell"</span></div>
 					<aside class="tsd-sources">
+						<p>Overrides <a href="_hex_.qrsvector.html">QRSVector</a>.<a href="_hex_.qrsvector.html#kind">kind</a></p>
 						<ul>
-							<li>Defined in types.ts:23</li>
+							<li>Defined in hex.ts:43</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -151,10 +152,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="links" class="tsd-anchor"></a>
 					<h3>links</h3>
-					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WeakSet</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_types_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WeakSet</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types.ts:21</li>
+							<li>Defined in hex.ts:41</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -168,9 +169,9 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> q</h3>
 					<div class="tsd-signature tsd-kind-icon">q<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_types_.qrsvector.html">QRSVector</a>.<a href="_types_.qrsvector.html#q">q</a></p>
+						<p>Inherited from <a href="_hex_.qrsvector.html">QRSVector</a>.<a href="_hex_.qrsvector.html#q">q</a></p>
 						<ul>
-							<li>Defined in types.ts:7</li>
+							<li>Defined in hex.ts:25</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -184,9 +185,9 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> r</h3>
 					<div class="tsd-signature tsd-kind-icon">r<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_types_.qrsvector.html">QRSVector</a>.<a href="_types_.qrsvector.html#r">r</a></p>
+						<p>Inherited from <a href="_hex_.qrsvector.html">QRSVector</a>.<a href="_hex_.qrsvector.html#r">r</a></p>
 						<ul>
-							<li>Defined in types.ts:9</li>
+							<li>Defined in hex.ts:27</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -200,9 +201,9 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> s</h3>
 					<div class="tsd-signature tsd-kind-icon">s<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_types_.qrsvector.html">QRSVector</a>.<a href="_types_.qrsvector.html#s">s</a></p>
+						<p>Inherited from <a href="_hex_.qrsvector.html">QRSVector</a>.<a href="_hex_.qrsvector.html#s">s</a></p>
 						<ul>
-							<li>Defined in types.ts:11</li>
+							<li>Defined in hex.ts:29</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -225,7 +226,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_grid_.html">&quot;grid&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_hex_.html">&quot;hex&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -243,9 +244,6 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_subset_.html">&quot;subset&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/_types_.html">&quot;types&quot;</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
@@ -253,59 +251,80 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a>
+						<a href="_hex_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_.cellnode.html#id" class="tsd-kind-icon">id</a>
+								<a href="_hex_.cellnode.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
+								<a href="_hex_.cellnode.html#kind" class="tsd-kind-icon">kind</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_.cellnode.html#kind" class="tsd-kind-icon">kind</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_.cellnode.html#links" class="tsd-kind-icon">links</a>
+								<a href="_hex_.cellnode.html#links" class="tsd-kind-icon">links</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="_types_.cellnode.html#q" class="tsd-kind-icon">q</a>
+								<a href="_hex_.cellnode.html#q" class="tsd-kind-icon">q</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="_types_.cellnode.html#r" class="tsd-kind-icon">r</a>
+								<a href="_hex_.cellnode.html#r" class="tsd-kind-icon">r</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="_types_.cellnode.html#s" class="tsd-kind-icon">s</a>
+								<a href="_hex_.cellnode.html#s" class="tsd-kind-icon">s</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
+						<a href="_hex_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.layoutconfig.html" class="tsd-kind-icon">Layout<wbr>Config</a>
+						<a href="_hex_.qrsvector.html" class="tsd-kind-icon">QRSVector</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.orientation.html" class="tsd-kind-icon">Orientation</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.qrsvector.html" class="tsd-kind-icon">QRSVector</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_.xyvector.html" class="tsd-kind-icon">XYVector</a>
+						<a href="_hex_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_types_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a>
+						<a href="../modules/_hex_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_types_.html#gridshape" class="tsd-kind-icon">Grid<wbr>Shape</a>
+						<a href="../modules/_hex_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_types_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#diagonals" class="tsd-kind-icon">DIAGONALS</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_types_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#directions" class="tsd-kind-icon">DIRECTIONS</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#add" class="tsd-kind-icon">add</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#areequal" class="tsd-kind-icon">are<wbr>Equal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#cells" class="tsd-kind-icon">cells</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#distance" class="tsd-kind-icon">distance</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#edges" class="tsd-kind-icon">edges</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#length" class="tsd-kind-icon">length</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#makenode" class="tsd-kind-icon">make<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#multiply" class="tsd-kind-icon">multiply</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#subtract" class="tsd-kind-icon">subtract</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#vertices" class="tsd-kind-icon">vertices</a>
 					</li>
 				</ul>
 			</nav>

@@ -78,6 +78,22 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_hex_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_hex_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_hex_.qrsvector.html" class="tsd-kind-icon">QRSVector</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_hex_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_hex_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_hex_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_hex_.html#diagonals" class="tsd-kind-icon">DIAGONALS</a></li>
@@ -103,24 +119,58 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="hexnode" class="tsd-anchor"></a>
+					<h3>Hex<wbr>Node</h3>
+					<div class="tsd-signature tsd-kind-icon">Hex<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_hex_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_hex_.vertexnode.html" class="tsd-signature-type">VertexNode</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in hex.ts:67</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>a node of the graph representation of the hexagonal grid</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="nodetype" class="tsd-anchor"></a>
+					<h3>Node<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">Node<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Cell"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Edge"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Vertex"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in hex.ts:17</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the type of node of the hex graph,
+							corresponding to which portion of the hex grid the node represents</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="diagonals" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> DIAGONALS</h3>
-					<div class="tsd-signature tsd-kind-icon">DIAGONALS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{ q: 2, r: -1, s: -1 },{ q: 1, r: -2, s: 1 },{ q: -1, r: -1, s: 2 },{ q: -2, r: 1, s: 1 },{ q: -1, r: 2, s: -1 },{ q: 1, r: 1, s: -2 },]</span></div>
+					<div class="tsd-signature tsd-kind-icon">DIAGONALS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{ q: 2, r: -1, s: -1 },{ q: 1, r: -2, s: 1 },{ q: -1, r: -1, s: 2 },{ q: -2, r: 1, s: 1 },{ q: -1, r: 2, s: -1 },{ q: 1, r: 1, s: -2 },]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in hex.ts:29</li>
+							<li>Defined in hex.ts:77</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="directions" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> DIRECTIONS</h3>
-					<div class="tsd-signature tsd-kind-icon">DIRECTIONS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{ q: 1, r: -1, s: 0 },{ q: 0, r: -1, s: 1 },{ q: -1, r: 0, s: 1 },{ q: -1, r: 1, s: 0 },{ q: 0, r: 1, s: -1 },{ q: 1, r: 0, s: -1 },]</span></div>
+					<div class="tsd-signature tsd-kind-icon">DIRECTIONS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{ q: 1, r: -1, s: 0 },{ q: 0, r: -1, s: 1 },{ q: -1, r: 0, s: 1 },{ q: -1, r: 1, s: 0 },{ q: 0, r: 1, s: -1 },{ q: 1, r: 0, s: -1 },]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in hex.ts:21</li>
+							<li>Defined in hex.ts:69</li>
 						</ul>
 					</aside>
 				</section>
@@ -131,13 +181,13 @@
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:182</li>
+									<li>Defined in hex.ts:230</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -148,19 +198,19 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>a: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>a QRS vector (or Hex Node)</p>
 									</div>
 								</li>
 								<li>
-									<h5>b: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>b: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>another QRS vector</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -168,13 +218,13 @@
 					<a name="areequal" class="tsd-anchor"></a>
 					<h3>are<wbr>Equal</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">are<wbr>Equal<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">are<wbr>Equal<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:173</li>
+									<li>Defined in hex.ts:221</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -185,13 +235,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>a: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>a hex node</p>
 									</div>
 								</li>
 								<li>
-									<h5>b: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>b: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>a hex node to compare</p>
 									</div>
@@ -206,13 +256,13 @@
 					<a name="cells" class="tsd-anchor"></a>
 					<h3>cells</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">cells<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">cells<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:72</li>
+									<li>Defined in hex.ts:120</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -220,13 +270,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
+									<h5>node: <a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the graph node of which to find adjacent cells</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_types_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -234,22 +284,22 @@
 					<a name="distance" class="tsd-anchor"></a>
 					<h3>distance</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">distance<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">distance<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:198</li>
+									<li>Defined in hex.ts:246</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>a: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 								</li>
 								<li>
-									<h5>b: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>b: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -260,13 +310,13 @@
 					<a name="edges" class="tsd-anchor"></a>
 					<h3>edges</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_hex_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:102</li>
+									<li>Defined in hex.ts:150</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -274,13 +324,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
+									<h5>node: <a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the graph node of which to find adjacent edges</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_types_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_hex_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -294,7 +344,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:194</li>
+									<li>Defined in hex.ts:242</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -322,13 +372,13 @@
 					<a name="makenode" class="tsd-anchor"></a>
 					<h3>make<wbr>Node</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">make<wbr>Node<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span>, kind<span class="tsd-signature-symbol">: </span><a href="_types_.html#nodetype" class="tsd-signature-type">NodeType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a></li>
+						<li class="tsd-signature tsd-kind-icon">make<wbr>Node<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span>, kind<span class="tsd-signature-symbol">: </span><a href="_hex_.html#nodetype" class="tsd-signature-type">NodeType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:45</li>
+									<li>Defined in hex.ts:93</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -362,10 +412,10 @@
 									</ul>
 								</li>
 								<li>
-									<h5>kind: <a href="_types_.html#nodetype" class="tsd-signature-type">NodeType</a></h5>
+									<h5>kind: <a href="_hex_.html#nodetype" class="tsd-signature-type">NodeType</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></h4>
 							<p>the node of the specified type at the specified coordinates</p>
 						</li>
 					</ul>
@@ -374,25 +424,25 @@
 					<a name="multiply" class="tsd-anchor"></a>
 					<h3>multiply</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">multiply<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, k<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></li>
+						<li class="tsd-signature tsd-kind-icon">multiply<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, k<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:190</li>
+									<li>Defined in hex.ts:238</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cell: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>cell: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 								</li>
 								<li>
 									<h5>k: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -400,25 +450,25 @@
 					<a name="subtract" class="tsd-anchor"></a>
 					<h3>subtract</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">subtract<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></li>
+						<li class="tsd-signature tsd-kind-icon">subtract<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:186</li>
+									<li>Defined in hex.ts:234</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>a: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 								</li>
 								<li>
-									<h5>b: <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>b: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -426,13 +476,13 @@
 					<a name="vertices" class="tsd-anchor"></a>
 					<h3>vertices</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">vertices<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">vertices<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_hex_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in hex.ts:136</li>
+									<li>Defined in hex.ts:184</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -440,13 +490,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <a href="_types_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
+									<h5>node: <a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the graph node of which to find adjacent vertices</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_types_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_hex_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -482,13 +532,28 @@
 					<li class=" tsd-kind-module">
 						<a href="_subset_.html">&quot;subset&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="_types_.html">&quot;types&quot;</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_hex_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_hex_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_hex_.qrsvector.html" class="tsd-kind-icon">QRSVector</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_hex_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_hex_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_hex_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
 						<a href="_hex_.html#diagonals" class="tsd-kind-icon">DIAGONALS</a>
 					</li>

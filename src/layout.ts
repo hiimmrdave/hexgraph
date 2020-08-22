@@ -1,12 +1,30 @@
 import * as HexMath from "./math.js";
-import {
-  XYVector,
-  QRSVector,
-  LayoutConfig,
-  CellNode,
-  Orientation,
-} from "./types.js";
-import * as Hex from "./hex.js";
+import { QRSVector, CellNode, vertices } from "./hex.js";
+
+/** a vector or coordinate in 2-space */
+export interface XYVector {
+  /** the x component of the vector */
+  readonly x: number;
+  /** the y component of the coordinate/vector */
+  readonly y: number;
+}
+
+/** a matrix to convert from QRS to XY space */
+export interface Orientation {
+  f: { q: XYVector; r: XYVector };
+  b: { q: XYVector; r: XYVector };
+}
+
+/**
+ * a set of values to convert from CubeVector grid coordinates to
+ * CartesianVector screen coodrinates
+ */
+export interface LayoutConfig {
+  orientation: Orientation;
+  radius: XYVector;
+  origin: XYVector;
+  size: XYVector;
+}
 
 /**
  *
@@ -77,5 +95,5 @@ export function cellPoints({
   cell: CellNode;
   layout: LayoutConfig;
 }): XYVector[] {
-  return Hex.vertices(cell).map(vertex => cubeToPoint(vertex, layout));
+  return vertices(cell).map(vertex => cubeToPoint(vertex, layout));
 }

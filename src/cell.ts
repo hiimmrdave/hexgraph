@@ -1,6 +1,5 @@
-import { CellNode } from "./types.js";
 import { cubeLerp } from "./math.js";
-import * as Hex from "./hex.js";
+import { CellNode, makeNode, DIAGONALS, add } from "./hex.js";
 
 /**
  * @param q - the absolute q coordinate to round to nearest cell
@@ -27,11 +26,11 @@ export function round({ q, r, s }: CellNode): CellNode {
   } else {
     approx.s = -1 * approx.q - approx.r;
   }
-  return Hex.makeNode(approx, "Cell") as CellNode;
+  return makeNode(approx, "Cell") as CellNode;
 }
 
 export function lerp(a: CellNode, b: CellNode, t: number): CellNode {
-  return round(Hex.makeNode(cubeLerp(a, b, t), "Cell") as CellNode);
+  return round(makeNode(cubeLerp(a, b, t), "Cell") as CellNode);
 }
 
 /**
@@ -39,7 +38,5 @@ export function lerp(a: CellNode, b: CellNode, t: number): CellNode {
  * @returns an array of 6 cells
  */
 export function diagonals(cell: CellNode): CellNode[] {
-  return Hex.DIAGONALS.map(
-    e => Hex.makeNode(Hex.add(cell, e), "Cell") as CellNode
-  );
+  return DIAGONALS.map(e => makeNode(add(cell, e), "Cell") as CellNode);
 }

@@ -1,5 +1,17 @@
-import { GridMap, GridShape, XYVector, CellNode } from "./types.js";
-import * as Hex from "./hex.js";
+import { XYVector } from "./layout.js";
+import { CellNode, HexNode, vertices, edges, makeNode } from "./hex.js";
+
+export type GridMap = Map<string, HexNode>;
+
+/**
+ * the shape of the hexagon grid, which determines the grid generator function
+ */
+export type GridShape =
+  | "Hexagon"
+  | "Triangle"
+  | "Star"
+  | "Parallelogram"
+  | "Rectangle";
 
 /**
  * Creates a GridMap and (optionally) adds the nodes
@@ -63,14 +75,14 @@ function gridPush(
   s: number = -q - r
 ): GridMap {
   const cellset = new Map(grid),
-    cell = Hex.makeNode({ q, r, s }, "Cell") as CellNode;
+    cell = makeNode({ q, r, s }, "Cell") as CellNode;
   cellset.set(cell.id, cell);
-  Hex.vertices(cell).forEach(vertex => {
+  vertices(cell).forEach(vertex => {
     cell.links.add(vertex);
     vertex.links.add(cell);
     cellset.set(vertex.id, vertex);
   });
-  Hex.edges(cell).forEach(edge => {
+  edges(cell).forEach(edge => {
     cell.links.add(edge);
     edge.links.add(cell);
     cellset.set(edge.id, edge);
