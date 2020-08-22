@@ -1,7 +1,5 @@
 /**
- * imports and exports the various functions
  * @packageDocumentation
- *
  * graph vertices are called "nodes"
  * graph edges are called "links"
  * this is to remove ambiguity with the related grid terms

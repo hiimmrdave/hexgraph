@@ -1,6 +1,4 @@
-// import * as Hex from "./hex";
-// import * as Grid from "./grid";
-import * as Layout from "./layout.js";
+import { cellPoints, cubeToPoint } from "./layout.js";
 import { CellNode } from "./hex.js";
 import { GridMap } from "./grid.js";
 import { XYVector, LayoutConfig } from "./layout.js";
@@ -13,7 +11,7 @@ const SVGNS = "http://www.w3.org/2000/svg";
  * @param layoutParams - the Layout object describing the world to draw in
  */
 function cellPath(cell: CellNode, layout: LayoutConfig): string {
-  return `M${Layout.cellPoints({ cell, layout })
+  return `M${cellPoints({ cell, layout })
     .map(e => `${e.x},${e.y}`)
     .join(" L")}z`;
 }
@@ -36,7 +34,7 @@ function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
 
 function buildCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
   const path = document.createElementNS(SVGNS, "path") as SVGPathElement,
-    c: XYVector = Layout.cubeToPoint(cell, layout);
+    c: XYVector = cubeToPoint(cell, layout);
   path.classList.add("cell");
   path.style.transformOrigin = `${c.x}px ${c.y}px`;
   path.setAttribute("d", cellPath(cell, layout));

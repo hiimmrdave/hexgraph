@@ -1,4 +1,4 @@
-import * as Renderer from "./renderer.js";
+import { render } from "./renderer.js";
 import { LayoutConfig, config } from "./layout.js";
 import { GridMap, GridShape, make } from "./grid.js";
 
@@ -48,7 +48,7 @@ export const gridTarget = "hg",
     while ((last = renderContext.lastChild)) {
       renderContext.removeChild(last);
     }
-    Renderer.render(...config);
+    render(...config);
   };
 
 document.addEventListener("DOMContentLoaded", rend);
