@@ -42,8 +42,9 @@ export function rollTable<T>(table: [{ weight: number; value: T }]): T {
   let curWeight = 0;
   for (const val of table) {
     curWeight += val.weight;
-    if (curWeight > rand) {
+    if (curWeight >= rand) {
       return val.value;
     }
   }
+  return "no" as never;
 }

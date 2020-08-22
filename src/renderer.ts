@@ -16,17 +16,9 @@ function cellPath(cell: CellNode, layout: LayoutConfig): string {
     .join(" L")}z`;
 }
 
-/**
- * create an SVG element
- * @param elementName - the name of the SVG element to create
- */
-function makeSvgElement(elementName: string): SVGElement {
-  return document.createElementNS(SVGNS, elementName) as SVGElement;
-}
-
 function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
-  const svgRoot = makeSvgElement("svg") as SVGSVGElement;
-  svgRoot.setAttribute("xmlns", svgRoot.namespaceURI);
+  const svgRoot = document.createElementNS(SVGNS, "svg") as SVGSVGElement;
+  svgRoot.setAttribute("xmlns", SVGNS);
   svgRoot.setAttribute("viewBox", `0 0 ${size.x} ${size.y}`);
   svgRoot.setAttribute("width", size.x.toString(10));
   svgRoot.setAttribute("height", size.y.toString(10));
@@ -41,7 +33,7 @@ function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
 }
 
 function buildCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
-  const path = makeSvgElement("path") as SVGPathElement,
+  const path = document.createElementNS(SVGNS, "path") as SVGPathElement,
     c: XYVector = Layout.cubeToPoint(cell, layout);
   path.classList.add("cell");
   path.style.transformOrigin = `${c.x}px ${c.y}px`;
@@ -56,7 +48,7 @@ export function render(
   layout: LayoutConfig,
   grid: GridMap
 ): void {
-  const targetElem = document.getElementById(targetId);
+  const targetElem = document.getElementById(targetId) as HTMLElement;
   const svgRoot = makeSvgRoot(layout);
   grid.forEach((node): void => {
     if (node.kind === "Cell") {

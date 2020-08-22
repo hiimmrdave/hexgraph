@@ -1,4 +1,4 @@
-import { GridMap, GridShape, XYVector } from "./types.js";
+import { GridMap, GridShape, XYVector, CellNode } from "./types.js";
 import * as Hex from "./hex.js";
 
 /**
@@ -63,7 +63,7 @@ function gridPush(
   s: number = -q - r
 ): GridMap {
   const cellset = new Map(grid),
-    cell = Hex.makeNode({ q, r, s }, "Cell");
+    cell = Hex.makeNode({ q, r, s }, "Cell") as CellNode;
   cellset.set(cell.id, cell);
   Hex.vertices(cell).forEach(vertex => {
     cell.links.add(vertex);
@@ -92,8 +92,8 @@ function populateHexagonGrid(size: XYVector, grid: GridMap): GridMap {
 
 function populateTriangleGrid(size: XYVector, grid: GridMap): GridMap {
   let cellset = new Map(grid);
-  for (let ia = 0; ia <= size.x; ia++) {
-    for (let ib = 0; ib <= size.x - ia; ib++) {
+  for (let ia = 0; ia < size.x; ia++) {
+    for (let ib = 0; ib < size.x - ia; ib++) {
       cellset = gridPush(cellset, ia, ib);
     }
   }
@@ -115,8 +115,8 @@ function populateStarGrid(size: XYVector, grid: GridMap): GridMap {
 
 function populateParallelogramGrid(size: XYVector, grid: GridMap): GridMap {
   let cellset = new Map(grid);
-  for (let ia = 0; ia <= size.x; ia++) {
-    for (let ib = 0; ib <= size.y; ib++) {
+  for (let ia = 0; ia < size.x; ia++) {
+    for (let ib = 0; ib < size.y; ib++) {
       cellset = gridPush(cellset, ia, ib);
     }
   }

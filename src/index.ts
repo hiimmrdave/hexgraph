@@ -15,8 +15,8 @@ function getCheckbox(elementId: string): boolean {
 */
 
 export const gridTarget = "hg",
-  renderContext = document.getElementById(gridTarget),
-  inputs = document.querySelector('form[id="params"]'),
+  renderContext = document.getElementById(gridTarget) as HTMLElement,
+  inputs = document.querySelector('form[id="params"]') as HTMLFormElement,
   getIntValue = (elementId: string): number => {
     const input = document.getElementById(elementId) as HTMLInputElement;
     return parseInt(input.value, 10);

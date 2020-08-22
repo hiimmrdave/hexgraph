@@ -9,28 +9,36 @@ export interface QRSVector {
   readonly r: number;
   /** s component of vector */
   readonly s: number;
-  /** the cube coordinates of the node as a comma-separated string */
-  readonly id?: string;
-  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
-  links?: WeakSet<HexNode>;
   /** arbitrary additional properties */
   [prop: string]: unknown;
 }
 
 /** a Cell node of the hexagonal grid */
 export interface CellNode extends QRSVector {
+  /** the cube coordinates of the node as a comma-separated string */
+  id: string;
+  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
+  links: WeakSet<HexNode>;
   /** the discriminant of the HexNode */
   kind: "Cell";
 }
 
 /** an Edge node of the hexagonal grid */
 export interface EdgeNode extends QRSVector {
+  /** the cube coordinates of the node as a comma-separated string */
+  id: string;
+  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
+  links: WeakSet<HexNode>;
   /** the discriminant of the HexNode */
   kind: "Edge";
 }
 
 /** a Vertex node of the hexagonal grid */
 export interface VertexNode extends QRSVector {
+  /** the cube coordinates of the node as a comma-separated string */
+  id: string;
+  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
+  links: WeakSet<HexNode>;
   /** the discriminant of the HexNode */
   kind: "Vertex";
 }
