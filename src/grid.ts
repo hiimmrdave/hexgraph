@@ -114,12 +114,12 @@ function populateTriangleGrid(size: XYVector, grid: GridMap): GridMap {
 
 function populateStarGrid(size: XYVector, grid: GridMap): GridMap {
   let cellset = new Map(grid);
-  for (let ia = -size.x; ia <= size.x; ia++) {
-    for (let ib = -size.x; ib <= size.x; ib++) {
+  for (let ia = -size.x + 1; ia < size.x; ia++) {
+    for (let ib = -size.x + 1; ib < size.x; ib++) {
       const ic = -ia - ib;
       cellset = gridPush(cellset, ia, ib);
       cellset = gridPush(cellset, ic, ib);
-      cellset = gridPush(cellset, ia, ic, ib);
+      cellset = gridPush(cellset, ia, ic);
     }
   }
   return cellset;

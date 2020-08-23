@@ -73,6 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_subset_.html#cone" class="tsd-kind-icon">cone</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_subset_.html#line" class="tsd-kind-icon">line</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_subset_.html#ring" class="tsd-kind-icon">ring</a></li>
 							</ul>
@@ -83,6 +84,35 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="cone" class="tsd-anchor"></a>
+					<h3>cone</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">cone<span class="tsd-signature-symbol">(</span>start<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a>, direction<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, range<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in subset.ts:48</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>start: <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+								</li>
+								<li>
+									<h5>direction: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+								</li>
+								<li>
+									<h5>range: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="line" class="tsd-anchor"></a>
 					<h3>line</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -92,19 +122,28 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:26</li>
+									<li>Defined in subset.ts:36</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>start: <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the Cell at the start of the line (inclusive)</p>
+									</div>
 								</li>
 								<li>
 									<h5>end: <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the Cell at the end of the line (inclusive)</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>an array of the cells along a line</p>
 						</li>
 					</ul>
 				</section>
@@ -118,16 +157,24 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:13</li>
+									<li>Defined in subset.ts:18</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>center: <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the center of the ring</p>
+									</div>
 								</li>
 								<li>
 									<h5>radius: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the number of steps from the center to a cell on the ring</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -170,6 +217,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_subset_.html#cone" class="tsd-kind-icon">cone</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_subset_.html#line" class="tsd-kind-icon">line</a>
 					</li>
