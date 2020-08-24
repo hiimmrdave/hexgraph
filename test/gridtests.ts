@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { it } from "mocha";
-import { XYVector } from "../src/types";
+import { XYVector } from "../src/layout";
 import * as Grid from "../src/grid";
 
 describe("grid functions", function() {
@@ -12,7 +12,7 @@ describe("grid functions", function() {
       size,
       populate: true,
     });
-    hexgrid.forEach((val, key) => console.log(`${val.nodetype}:\t${key}`));
+    hexgrid.forEach((val, key) => console.log(`${val.kind}:\t${key}`));
     expect(hexgrid.size).to.equal(145);
   });
 
@@ -22,13 +22,13 @@ describe("grid functions", function() {
       size,
       populate: true,
     });
-    hexgrid.forEach((val, key) => console.log(`${val.nodetype}:\t${key}`));
+    hexgrid.forEach((val, key) => console.log(`${val.kind}:\t${key}`));
     expect(hexgrid.size).to.equal(85);
   });
 
   it("start with a star grid", () => {
     const hexgrid = Grid.make({ shape: "Star", size, populate: true });
-    hexgrid.forEach((val, key) => console.log(`${val.nodetype}:\t${key}`));
+    hexgrid.forEach((val, key) => console.log(`${val.kind}:\t${key}`));
     expect(hexgrid.size).to.equal(457);
   });
 
@@ -38,7 +38,7 @@ describe("grid functions", function() {
       size,
       populate: true,
     });
-    hexgrid.forEach((val, key) => console.log(`${val.nodetype}:\t${key}`));
+    hexgrid.forEach((val, key) => console.log(`${val.kind}:\t${key}`));
     expect(hexgrid.size).to.equal(183);
   });
 
@@ -48,7 +48,7 @@ describe("grid functions", function() {
       size,
       populate: true,
     });
-    hexgrid.forEach((val, key) => console.log(`${val.nodetype}:\t${key}`));
+    hexgrid.forEach((val, key) => console.log(`${val.kind}:\t${key}`));
     expect(hexgrid.size).to.equal(155);
   });
 });

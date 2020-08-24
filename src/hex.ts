@@ -19,16 +19,13 @@ export type NodeType = "Cell" | "Edge" | "Vertex";
  * qrs is cubic space, which is confined here to a plane q+r+s==0
  */
 export interface QRSVector {
+  [prop: string]: unknown;
   /** q component of vector */
   readonly q: number;
   /** r component of vector */
   readonly r: number;
   /** s component of vector */
   readonly s: number;
-  /** discriminant if this node is a HexNode */
-  kind?: NodeType;
-  /** arbitrary additional properties */
-  [prop: string]: unknown;
 }
 
 /** a Cell node of the hexagonal grid */
@@ -216,8 +213,8 @@ export function vertices(node: HexNode): Array<VertexNode> {
  * @param b - a hex node to compare
  * @returns whether a and b have the same coordinates
  */
-export function areEqual(a: QRSVector, b: QRSVector): boolean {
-  return a.q === b.q && a.r === b.r && a.s === b.s && a.nodetype === b.nodetype;
+export function areEqual(a: HexNode, b: HexNode): boolean {
+  return a.q === b.q && a.r === b.r && a.s === b.s && a.kind === b.kind;
 }
 
 /**

@@ -1,4 +1,4 @@
-import { HALF_PI, PI_OVER_SIX, SQRT_THREE } from "./math.js";
+import { HALF_PI, PI_OVER_SIX, SQRT_THREE, thousandthRound } from "./math.js";
 import { QRSVector, CellNode, vertices } from "./hex.js";
 
 /** a vector or coordinate in 2-space */
@@ -71,7 +71,7 @@ export function cubeToPoint(
 ): XYVector {
   const x = (o.f.q.x * c.q + o.f.r.x * c.r) * radius.x + origin.x,
     y = (o.f.q.y * c.q + o.f.r.y * c.r) * radius.y + origin.y;
-  return { x, y };
+  return { x: thousandthRound(x), y: thousandthRound(y) };
 }
 
 export function pointToCube(

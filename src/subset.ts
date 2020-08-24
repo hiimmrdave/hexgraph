@@ -7,6 +7,8 @@ import {
   areEqual,
   cells,
   QRSVector,
+  makeNode,
+  subtract,
 } from "./hex.js";
 import { round } from "./cell.js";
 import { cubeLerp } from "./math.js";
@@ -46,65 +48,37 @@ export function line(start: CellNode, end: CellNode): CellNode[] {
 //! gosh this is ugly. ALSO: could be DRYer
 //TODO I should probably test this, since I made it up. uuuugggghhhhh
 export function cone(
-  start: CellNode,
+  source: CellNode,
   direction: QRSVector,
   range: number
 ): CellNode[] {
-  const toward = {
-      q: Math.abs(direction.q),
-      r: Math.abs(direction.r),
-      s: Math.abs(direction.s),
-    },
-    cone = [];
-  switch (Math.max(toward.q, toward.r, toward.s)) {
-    case direction.q:
-      for (let ia = 0; ia < range; ia++) {
-        for (let ib = 0; ib < range - ia; ib++) {
-          const ic = -(ia + ib);
-          cone.push(add(start, { q: -ic, r: -ia, s: -ib }));
-        }
-      }
-      break;
-    case -direction.r:
-      for (let ia = 0; ia < range; ia++) {
-        for (let ib = 0; ib < range - ia; ib++) {
-          const ic = -(ia + ib);
-          cone.push(add(start, { q: ib, r: ic, s: ia }));
-        }
-      }
-      break;
-    case direction.s:
-      for (let ia = 0; ia < range; ia++) {
-        for (let ib = 0; ib < range - ia; ib++) {
-          const ic = -(ia + ib);
-          cone.push(add(start, { q: -ia, r: -ib, s: -ic }));
-        }
-      }
-      break;
-    case -direction.q:
-      for (let ia = 0; ia < range; ia++) {
-        for (let ib = 0; ib < range - ia; ib++) {
-          const ic = -(ia + ib);
-          cone.push(add(start, { q: ic, r: ia, s: ib }));
-        }
-      }
-      break;
-    case direction.r:
-      for (let ia = 0; ia < range; ia++) {
-        for (let ib = 0; ib < range - ia; ib++) {
-          const ic = -(ia + ib);
-          cone.push(add(start, { q: -ib, r: -ic, s: -ia }));
-        }
-      }
-      break;
-    case -direction.s:
-      for (let ia = 0; ia < range; ia++) {
-        for (let ib = 0; ib < range - ia; ib++) {
-          const ic = -(ia + ib);
-          cone.push(add(start, { q: ia, r: ib, s: ic }));
-        }
-      }
-      break;
+  const hexCoords = ["q", "r", "s"],
+    toward = subtract(direction, source),
+    max = Math.max(Math.abs(toward.q), Math.abs(toward.r), Math.abs(toward.s)),
+    cone = [],
+    directionCoords = { ia: "", ib: "", ic: "" };
+  let directionSign = 0;
+  for (const key of hexCoords) {
+    if (max === Math.abs(toward[key] as number)) {
+      directionSign = max / (toward[key] as number);
+      directionCoords.ic = key;
+      directionCoords.ia =
+        hexCoords[hexCoords.indexOf(directionCoords.ic) + 1] ?? hexCoords[0];
+      directionCoords.ib =
+        hexCoords[hexCoords.indexOf(directionCoords.ia) + 1] ?? hexCoords[0];
+    }
   }
-  return [start];
+  for (let ia = 0; ia < range; ia++) {
+    for (let ib = 0; ib < range - ia; ib++) {
+      const ic = -(ia + ib),
+        newCell = {
+          [directionCoords.ia]: directionSign * ia,
+          [directionCoords.ib]: directionSign * ib,
+          [directionCoords.ic]: directionSign * ic,
+        } as QRSVector;
+      cone.push(makeNode(add(source, newCell), "Cell") as CellNode);
+    }
+  }
+
+  return cone;
 }
