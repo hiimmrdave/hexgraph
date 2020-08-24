@@ -1,7 +1,7 @@
 import { minify } from "terser";
 import { promises as fs } from "fs";
 
-const inputdir = "./dist",
+const inputdir = "./build",
   outputdir = "./public/js",
   options = {
     mangle: { module: true },

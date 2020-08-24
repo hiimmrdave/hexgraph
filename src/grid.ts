@@ -77,12 +77,12 @@ function gridPush(
   const cellset = new Map(grid),
     cell = makeNode({ q, r, s }, "Cell") as CellNode;
   cellset.set(cell.id, cell);
-  vertices(cell).forEach(vertex => {
+  vertices(cell).forEach((vertex) => {
     cell.links.add(vertex);
     vertex.links.add(cell);
     cellset.set(vertex.id, vertex);
   });
-  edges(cell).forEach(edge => {
+  edges(cell).forEach((edge) => {
     cell.links.add(edge);
     edge.links.add(cell);
     cellset.set(edge.id, edge);

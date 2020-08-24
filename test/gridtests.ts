@@ -3,7 +3,7 @@ import { it } from "mocha";
 import { XYVector } from "../src/layout";
 import * as Grid from "../src/grid";
 
-describe("grid functions", function() {
+describe("grid functions", function () {
   const size: XYVector = { x: 3, y: 5 };
 
   it("start with a hex grid", () => {

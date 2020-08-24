@@ -95,5 +95,5 @@ export function cellPoints({
   cell: CellNode;
   layout: LayoutConfig;
 }): XYVector[] {
-  return vertices(cell).map(vertex => cubeToPoint(vertex, layout));
+  return vertices(cell).map((vertex) => cubeToPoint(vertex, layout));
 }

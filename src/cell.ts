@@ -38,5 +38,5 @@ export function lerp(a: CellNode, b: CellNode, t: number): CellNode {
  * @returns an array of 6 cells
  */
 export function diagonals(cell: CellNode): CellNode[] {
-  return DIAGONALS.map(e => makeNode(add(cell, e), "Cell") as CellNode);
+  return DIAGONALS.map((e) => makeNode(add(cell, e), "Cell") as CellNode);
 }

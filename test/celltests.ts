@@ -3,7 +3,7 @@ import { it } from "mocha";
 import * as Hex from "../src/hex";
 import * as Cell from "../src/cell";
 
-describe("Cell properties", function() {
+describe("Cell properties", function () {
   const origin = Object.freeze(
     Hex.makeNode({ q: 0, r: 0, s: 0 }, "Cell")
   ) as Hex.CellNode;
@@ -21,7 +21,7 @@ describe("Cell properties", function() {
       s,
       kind,
     }));
-    const result = Hex.DIAGONALS.map(e => {
+    const result = Hex.DIAGONALS.map((e) => {
       const each = Hex.makeNode(e, "Cell");
       return {
         id: each.id,
@@ -43,7 +43,7 @@ describe("Cell properties", function() {
       kind,
     }));
     //console.table(subject);
-    const result = Hex.DIRECTIONS.map(e => {
+    const result = Hex.DIRECTIONS.map((e) => {
       const each = Hex.makeNode(e, "Cell");
       return {
         id: each.id,
@@ -65,7 +65,7 @@ describe("Cell properties", function() {
       kind,
     }));
     //console.table(subject);
-    const result = Hex.DIRECTIONS.map(e => {
+    const result = Hex.DIRECTIONS.map((e) => {
       const each = Hex.makeNode(Hex.multiply(e, 0.5), "Edge");
       return {
         id: each.id,
@@ -87,7 +87,7 @@ describe("Cell properties", function() {
       nodetype,
     }));
     //console.table(subject);
-    const result = Hex.DIAGONALS.map(e => {
+    const result = Hex.DIAGONALS.map((e) => {
       const each = Hex.makeNode(Hex.multiply(e, 1 / 3), "Vertex");
       return {
         id: each.id,

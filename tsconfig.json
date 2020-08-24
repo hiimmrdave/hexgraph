@@ -7,7 +7,7 @@
     "removeComments": true,
     "pretty": true,
     "inlineSourceMap": true,
-    "outDir": "./dist/"
+    "outDir": "./build/"
   },
   "compileOnSave": true,
   "include":[
@@ -15,7 +15,6 @@
   ],
   "exclude":[
     "node_modules",
-    "test",
-    "dist/**/*.js"
+    "test"
   ]
 }

@@ -14,7 +14,7 @@
     "build:docs": "typedoc --out ./docs ./src",
     "prebuild": "npm run lint && mkdir -p ./public/img & mkdir -p ./public/js ",
     "build": "tsc",
-    "clean:dist": "rimraf dist/*",
+    "clean:dist": "rimraf build/*",
     "clean:docs": "rimraf docs/*",
     "clean:public": "rimraf public/*",
     "clean": "npm run clean:dist && npm run clean:docs && npm run clean:public",

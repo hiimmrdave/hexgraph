@@ -37,7 +37,9 @@ export function randRange(min: number, max: number): number {
 }
 
 export function rollTable<T>(table: [{ weight: number; value: T }]): T {
-  const totalWeight = table.map(e => e.weight).reduce((acc, cur) => acc + cur);
+  const totalWeight = table
+    .map((e) => e.weight)
+    .reduce((acc, cur) => acc + cur);
   const rand = randRange(0, totalWeight);
   let curWeight = 0;
   for (const val of table) {

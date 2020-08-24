@@ -115,21 +115,23 @@ export function makeNode({ q, r, s }: QRSVector, kind: NodeType): HexNode {
 export function cells(node: HexNode): Array<CellNode> {
   switch (node.kind) {
     case "Cell":
-      return DIRECTIONS.map(e => makeNode(add(node, e), "Cell")) as CellNode[];
+      return DIRECTIONS.map((e) =>
+        makeNode(add(node, e), "Cell")
+      ) as CellNode[];
     case "Edge":
-      return DIRECTIONS.map(e =>
+      return DIRECTIONS.map((e) =>
         makeNode(add(node, multiply(e, 0.5)), "Cell")
       ).filter(
-        e =>
+        (e) =>
           Number.isInteger(e.q) &&
           Number.isInteger(e.r) &&
           Number.isInteger(e.s)
       ) as CellNode[];
     case "Vertex":
-      return DIAGONALS.map(e =>
+      return DIAGONALS.map((e) =>
         makeNode(add(node, multiply(e, 1 / 3)), "Cell")
       ).filter(
-        e =>
+        (e) =>
           Number.isInteger(e.q) &&
           Number.isInteger(e.r) &&
           Number.isInteger(e.s)
@@ -145,14 +147,14 @@ export function cells(node: HexNode): Array<CellNode> {
 export function edges(node: HexNode): Array<EdgeNode> {
   switch (node.kind) {
     case "Cell":
-      return DIRECTIONS.map(e =>
+      return DIRECTIONS.map((e) =>
         makeNode(add(multiply(e, 5e-1), node), "Edge")
       ) as EdgeNode[];
     case "Edge":
-      return DIRECTIONS.map(e =>
+      return DIRECTIONS.map((e) =>
         makeNode(add(node, multiply(e, 0.5)), "Edge")
       ).filter(
-        e =>
+        (e) =>
           !(
             Number.isInteger(e.q) &&
             Number.isInteger(e.r) &&
@@ -160,10 +162,10 @@ export function edges(node: HexNode): Array<EdgeNode> {
           )
       ) as EdgeNode[];
     case "Vertex":
-      return DIAGONALS.map(e =>
+      return DIAGONALS.map((e) =>
         makeNode(add(node, multiply(e, 1 / 6)), "Edge")
       ).filter(
-        e =>
+        (e) =>
           Number.isInteger(e.q * 2) &&
           Number.isInteger(e.r * 2) &&
           Number.isInteger(e.s * 2)
@@ -179,23 +181,23 @@ export function edges(node: HexNode): Array<EdgeNode> {
 export function vertices(node: HexNode): Array<VertexNode> {
   switch (node.kind) {
     case "Cell":
-      return DIAGONALS.map(e =>
+      return DIAGONALS.map((e) =>
         makeNode(add(node, multiply(e, 1 / 3)), "Vertex")
       ) as VertexNode[];
     case "Edge":
-      return DIAGONALS.map(e =>
+      return DIAGONALS.map((e) =>
         makeNode(add(node, multiply(e, 1 / 6)), "Vertex")
       ).filter(
-        e =>
+        (e) =>
           Number.isInteger(e.q * 3) &&
           Number.isInteger(e.r * 3) &&
           Number.isInteger(e.s * 3)
       ) as VertexNode[];
     case "Vertex":
-      return DIAGONALS.map(e =>
+      return DIAGONALS.map((e) =>
         makeNode(add(node, multiply(e, 1 / 3)), "Vertex")
       ).filter(
-        e =>
+        (e) =>
           !(
             Number.isInteger(e.q) &&
             Number.isInteger(e.r) &&

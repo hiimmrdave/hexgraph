@@ -3,7 +3,7 @@ import { it } from "mocha";
 import { HexNode } from "../src/hex";
 import * as Hex from "../src/hex";
 
-describe("Edge properties", function() {
+describe("Edge properties", function () {
   const cellEdges: HexNode[] = Hex.edges(
     Hex.makeNode({ q: 0, r: 0, s: 0 }, "Cell")
   );
@@ -20,7 +20,7 @@ describe("Edge properties", function() {
     //console.table(subject);
     const result = 4;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
-    subject.forEach(e => {
+    subject.forEach((e) => {
       expect(e.kind).to.equal("Edge", "wrong adjacent node type");
     });
   });
@@ -30,7 +30,7 @@ describe("Edge properties", function() {
     //console.table(subject);
     const result = 2;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
-    subject.forEach(e => {
+    subject.forEach((e) => {
       expect(e.kind).to.equal("Cell", "wrong adjacent node type");
     });
   });
@@ -40,7 +40,7 @@ describe("Edge properties", function() {
     //console.table(subject);
     const result = 2;
     expect(subject.length).to.equal(result, "wrong number of adjacent nodes");
-    subject.forEach(e => {
+    subject.forEach((e) => {
       expect(e.kind).to.equal("Vertex", "wrong adjacent node type");
     });
   });
