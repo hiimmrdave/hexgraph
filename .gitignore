@@ -4,4 +4,4 @@ haters
 .cache
 .DS_Store
 public
-dist
+build
