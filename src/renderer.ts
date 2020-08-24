@@ -12,7 +12,7 @@ const SVGNS = "http://www.w3.org/2000/svg";
  */
 function cellPath(cell: CellNode, layout: LayoutConfig): string {
   return `M${cellPoints({ cell, layout })
-    .map(e => `${e.x},${e.y}`)
+    .map((e) => `${e.x},${e.y}`)
     .join(" L")}z`;
 }
 
