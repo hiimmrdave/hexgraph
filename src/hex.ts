@@ -60,7 +60,9 @@ export interface VertexNode extends QRSVector {
 
 /** a node of the graph representation of the hexagonal grid */
 export type HexNode = CellNode | EdgeNode | VertexNode;
-
+/**
+ * ! I need documentation
+ */
 export const DIRECTIONS: QRSVector[] = [
   { q: 1, r: -1, s: 0 },
   { q: 0, r: -1, s: 1 },
@@ -69,6 +71,9 @@ export const DIRECTIONS: QRSVector[] = [
   { q: 0, r: 1, s: -1 },
   { q: 1, r: 0, s: -1 },
 ];
+/**
+ * ! I need documentation
+ */
 export const DIAGONALS: QRSVector[] = [
   { q: 2, r: -1, s: -1 },
   { q: 1, r: -2, s: 1 },

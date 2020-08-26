@@ -9,6 +9,10 @@ svg .cell {
   fill: hsl(0, 0%, 80%);
 }
 
+svg .cell.ring {
+  fill: red;
+}
+
 fieldset {
   background: hsl(0, 0%, 100%);
 }
