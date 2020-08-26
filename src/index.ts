@@ -1,8 +1,8 @@
 import { render } from "./renderer.js";
 import { LayoutConfig, config } from "./layout.js";
 import { GridMap, GridShape, make } from "./grid.js";
-import * as Subset from "./subset.js";
-import * as Hex from "./hex.js";
+//* import * as Subset from "./subset.js";
+//* import * as Hex from "./hex.js";
 
 /*
 function getFloat(elementId: string): number {
@@ -53,10 +53,10 @@ export const gridTarget = "hg",
     render(...config);
   };
 
-const aLine = Subset.line(
+/* const aLine = Subset.line(
   Hex.makeNode({ q: 0, r: -4, s: 4 }, "Cell") as Hex.CellNode,
   Hex.makeNode({ q: -2, r: 4, s: -2 }, "Cell") as Hex.CellNode
-);
+);*/
 
 document.addEventListener("DOMContentLoaded", () => {
   rend();
