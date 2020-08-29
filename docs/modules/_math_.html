@@ -82,7 +82,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_math_.html#cubelerp" class="tsd-kind-icon">cube<wbr>Lerp</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_math_.html#lerp" class="tsd-kind-icon">lerp</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_math_.html#lerp" class="tsd-kind-icon">lerp</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_math_.html#randrange" class="tsd-kind-icon">rand<wbr>Range</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_math_.html#rolltable" class="tsd-kind-icon">roll<wbr>Table</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_math_.html#thousandthround" class="tsd-kind-icon">thousandth<wbr>Round</a></li>
@@ -130,7 +130,7 @@
 					<a name="cubelerp" class="tsd-anchor"></a>
 					<h3>cube<wbr>Lerp</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">cube<wbr>Lerp<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></li>
+						<li class="tsd-signature tsd-kind-icon">cube<wbr>Lerp<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a>, b<span class="tsd-signature-symbol">: </span><a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -144,15 +144,15 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>a: <a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the starting {@linkcode CubeVector} of the linear interpolation</p>
+										<p>the start of the linear interpolation, in QRS space</p>
 									</div>
 								</li>
 								<li>
-									<h5>b: <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+									<h5>b: <a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the ending {@linkcode CubeVector} of the linear interpolation</p>
+										<p>the end of the linear interpolation, in QRS space</p>
 									</div>
 								</li>
 								<li>
@@ -162,15 +162,15 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a></h4>
 							<p>a set of cube coordinates t of the way between a and b</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="lerp" class="tsd-anchor"></a>
 					<h3>lerp</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<li class="tsd-signature tsd-kind-icon">lerp<span class="tsd-signature-symbol">(</span>m<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -319,6 +319,9 @@
 						<a href="_math_.html">&quot;math&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="_pubsub_.html">&quot;pubsub&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="_renderer_.html">&quot;renderer&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -340,7 +343,7 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_math_.html#cubelerp" class="tsd-kind-icon">cube<wbr>Lerp</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_math_.html#lerp" class="tsd-kind-icon">lerp</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
