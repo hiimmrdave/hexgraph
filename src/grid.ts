@@ -2,7 +2,8 @@ import { XYVector } from "./layout.js";
 import { CellNode, HexNode, vertices, edges, makeNode } from "./hex.js";
 
 /**
- * ! every export needs documention  */
+ * hash HexNode by id = `${q},${r},${s}
+ */
 export type GridMap = Map<string, HexNode>;
 
 /**
@@ -23,7 +24,7 @@ export type GridShape =
  * @param populate determines whether to run the grid populator or return an
  * empty grid
  */
-export function make({
+export function makeGrid({
   shape = "Hexagon",
   size = { x: 3, y: 1 } as XYVector,
   populate = true,

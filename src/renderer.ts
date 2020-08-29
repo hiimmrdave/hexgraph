@@ -43,7 +43,7 @@ function buildCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
   return path;
 }
 
-export function render(
+export function renderSVG(
   targetId: string,
   layout: LayoutConfig,
   grid: GridMap

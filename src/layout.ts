@@ -56,7 +56,7 @@ export function orientation(theta = 0): Orientation {
   };
 }
 
-export function config(
+export function configureLayout(
   theta: number,
   radius: XYVector,
   origin: XYVector,

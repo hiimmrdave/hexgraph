@@ -81,7 +81,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#gridpush" class="tsd-kind-icon">grid<wbr>Push</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_grid_.html#make" class="tsd-kind-icon">make</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_grid_.html#makegrid" class="tsd-kind-icon">make<wbr>Grid</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#populategrid" class="tsd-kind-icon">populate<wbr>Grid</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#populatehexagongrid" class="tsd-kind-icon">populate<wbr>Hexagon<wbr>Grid</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#populateparallelogramgrid" class="tsd-kind-icon">populate<wbr>Parallelogram<wbr>Grid</a></li>
@@ -101,12 +101,12 @@
 					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in grid.ts:6</li>
+							<li>Defined in grid.ts:7</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>! every export needs documention</p>
+							<p>hash HexNode by id = `${q},${r},${s}</p>
 						</div>
 					</div>
 				</section>
@@ -116,7 +116,7 @@
 					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Shape<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Hexagon"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Triangle"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Star"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Parallelogram"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Rectangle"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in grid.ts:11</li>
+							<li>Defined in grid.ts:12</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -138,7 +138,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:70</li>
+									<li>Defined in grid.ts:71</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -178,16 +178,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="make" class="tsd-anchor"></a>
-					<h3>make</h3>
+					<a name="makegrid" class="tsd-anchor"></a>
+					<h3>make<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">make<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridshape" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">make<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridshape" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:26</li>
+									<li>Defined in grid.ts:27</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -237,7 +237,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:41</li>
+									<li>Defined in grid.ts:42</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -271,7 +271,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:92</li>
+									<li>Defined in grid.ts:93</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -297,7 +297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:133</li>
+									<li>Defined in grid.ts:134</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -323,7 +323,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:146</li>
+									<li>Defined in grid.ts:147</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -349,7 +349,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:120</li>
+									<li>Defined in grid.ts:121</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -375,7 +375,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:107</li>
+									<li>Defined in grid.ts:108</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -437,7 +437,7 @@
 						<a href="_grid_.html#gridpush" class="tsd-kind-icon">grid<wbr>Push</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_grid_.html#make" class="tsd-kind-icon">make</a>
+						<a href="_grid_.html#makegrid" class="tsd-kind-icon">make<wbr>Grid</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_grid_.html#populategrid" class="tsd-kind-icon">populate<wbr>Grid</a>

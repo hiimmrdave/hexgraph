@@ -1,8 +1,6 @@
-import { render } from "./renderer.js";
-import { LayoutConfig, config } from "./layout.js";
-import { GridMap, GridShape, make } from "./grid.js";
-//* import * as Subset from "./subset.js";
-//* import * as Hex from "./hex.js";
+import { renderSVG } from "./renderer.js";
+import { LayoutConfig, configureLayout } from "./layout.js";
+import { GridMap, GridShape, makeGrid } from "./grid.js";
 
 /*
 function getFloat(elementId: string): number {
@@ -31,13 +29,13 @@ export const gridTarget = "hg",
   getForm = (): [string, LayoutConfig, GridMap] => {
     return [
       gridTarget,
-      config(
+      configureLayout(
         (getIntValue("orientation") * Math.PI) / 12,
         { x: getIntValue("hsx"), y: getIntValue("hsy") },
         { x: getIntValue("orx"), y: getIntValue("ory") },
         { x: getIntValue("csx"), y: getIntValue("csy") }
       ),
-      make({
+      makeGrid({
         shape: getRadioValue("shape") as GridShape,
         size: { x: getIntValue("gs1"), y: getIntValue("gs1") },
         populate: true,
@@ -50,7 +48,7 @@ export const gridTarget = "hg",
     while ((last = renderContext.lastChild)) {
       renderContext.removeChild(last);
     }
-    render(...config);
+    renderSVG(...config);
   };
 
 /* const aLine = Subset.line(
