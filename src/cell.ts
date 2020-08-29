@@ -1,4 +1,3 @@
-import { cubeLerp } from "./math.js";
 import { CellNode, makeNode, DIAGONALS, add } from "./hex.js";
 
 /**
@@ -27,10 +26,6 @@ export function round({ q, r, s }: CellNode): CellNode {
     approx.s = -1 * approx.q - approx.r;
   }
   return makeNode(approx, "Cell") as CellNode;
-}
-
-export function lerp(a: CellNode, b: CellNode, t: number): CellNode {
-  return round(makeNode(cubeLerp(a, b, t), "Cell") as CellNode);
 }
 
 /**

@@ -70,11 +70,19 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_grid_.gridpopparams.html" class="tsd-kind-icon">Grid<wbr>Pop<wbr>Params</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_grid_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#gridpopulator" class="tsd-kind-icon">Grid<wbr>Populator</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_grid_.html#gridshape" class="tsd-kind-icon">Grid<wbr>Shape</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_grid_.html#twosize" class="tsd-kind-icon">Two<wbr>Size</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -82,6 +90,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#gridpush" class="tsd-kind-icon">grid<wbr>Push</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_grid_.html#makegrid" class="tsd-kind-icon">make<wbr>Grid</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_grid_.html#maketwosize" class="tsd-kind-icon">make<wbr>Two<wbr>Size</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#populatehexagongrid" class="tsd-kind-icon">populate<wbr>Hexagon<wbr>Grid</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#populateparallelogramgrid" class="tsd-kind-icon">populate<wbr>Parallelogram<wbr>Grid</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_grid_.html#populaterectanglegrid" class="tsd-kind-icon">populate<wbr>Rectangle<wbr>Grid</a></li>
@@ -100,7 +109,7 @@
 					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in grid.ts:7</li>
+							<li>Defined in grid.ts:6</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -109,19 +118,71 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<a name="gridpopulator" class="tsd-anchor"></a>
+					<h3>Grid<wbr>Populator</h3>
+					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Populator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>arg0<span class="tsd-signature-symbol">: </span><a href="../interfaces/_grid_.gridpopparams.html" class="tsd-signature-type">GridPopParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in grid.ts:14</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>arg0<span class="tsd-signature-symbol">: </span><a href="../interfaces/_grid_.gridpopparams.html" class="tsd-signature-type">GridPopParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>arg0: <a href="../interfaces/_grid_.gridpopparams.html" class="tsd-signature-type">GridPopParams</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="gridshape" class="tsd-anchor"></a>
 					<h3>Grid<wbr>Shape</h3>
 					<div class="tsd-signature tsd-kind-icon">Grid<wbr>Shape<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Hexagon"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Triangle"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Star"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Parallelogram"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Rectangle"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in grid.ts:12</li>
+							<li>Defined in grid.ts:19</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>the shape of the hexagon grid, which determines the grid generator function</p>
 						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="twosize" class="tsd-anchor"></a>
+					<h3>Two<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">Two<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in grid.ts:8</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
 					</div>
 				</section>
 			</section>
@@ -137,7 +198,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:56</li>
+									<li>Defined in grid.ts:70</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -180,13 +241,47 @@
 					<a name="makegrid" class="tsd-anchor"></a>
 					<h3>make<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">make<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridshape" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">make<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridshape" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:27</li>
+									<li>Defined in grid.ts:41</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridshape" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>shape<span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridshape" class="tsd-signature-type">GridShape</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>size<span class="tsd-signature-symbol">: </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="maketwosize" class="tsd-anchor"></a>
+					<h3>make<wbr>Two<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">make<wbr>Two<wbr>Size<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in grid.ts:34</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -197,32 +292,14 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>shape<span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridshape" class="tsd-signature-type">GridShape</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>populate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>determines whether to run the grid populator or return an
-												empty grid</p>
-											</div>
-										</li>
-										<li class="tsd-parameter">
-											<h5>shape<span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridshape" class="tsd-signature-type">GridShape</a></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>determines which grid populator function is used build the grid</p>
-											</div>
-										</li>
-										<li class="tsd-parameter">
-											<h5>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>determines how many cells are in the grid passed as parameter to
-												populator, see details there</p>
-											</div>
-										</li>
-									</ul>
+									<h5>size: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>determines how many cells are in the grid passed as parameter to
+										populator, see details there</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -230,22 +307,27 @@
 					<a name="populatehexagongrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Hexagon<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Hexagon<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">?: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Hexagon<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:78</li>
+									<li>Defined in grid.ts:92</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> grid: <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
@@ -256,22 +338,27 @@
 					<a name="populateparallelogramgrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Parallelogram<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Parallelogram<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">?: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Parallelogram<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:113</li>
+									<li>Defined in grid.ts:130</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> grid: <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol"> = new Map()</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
@@ -282,22 +369,27 @@
 					<a name="populaterectanglegrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Rectangle<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Rectangle<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">?: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Rectangle<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:126</li>
+									<li>Defined in grid.ts:141</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> grid: <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol"> = new Map()</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
@@ -308,22 +400,27 @@
 					<a name="populatestargrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Star<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Star<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">?: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Star<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:100</li>
+									<li>Defined in grid.ts:116</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> grid: <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
@@ -334,22 +431,27 @@
 					<a name="populatetrianglegrid" class="tsd-anchor"></a>
 					<h3>populate<wbr>Triangle<wbr>Grid</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">populate<wbr>Triangle<wbr>Grid<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a>, grid<span class="tsd-signature-symbol">?: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">populate<wbr>Triangle<wbr>Grid<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in grid.ts:90</li>
+									<li>Defined in grid.ts:105</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> grid: <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>grid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
@@ -374,10 +476,10 @@
 						<a href="_hex_.html">&quot;hex&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="_index_.html">&quot;index&quot;</a>
+						<a href="_layout_.html">&quot;layout&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="_layout_.html">&quot;layout&quot;</a>
+						<a href="_main_.html">&quot;main&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="_math_.html">&quot;math&quot;</a>
@@ -395,17 +497,29 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_grid_.gridpopparams.html" class="tsd-kind-icon">Grid<wbr>Pop<wbr>Params</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_grid_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_grid_.html#gridpopulator" class="tsd-kind-icon">Grid<wbr>Populator</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_grid_.html#gridshape" class="tsd-kind-icon">Grid<wbr>Shape</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_grid_.html#twosize" class="tsd-kind-icon">Two<wbr>Size</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_grid_.html#gridpush" class="tsd-kind-icon">grid<wbr>Push</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_grid_.html#makegrid" class="tsd-kind-icon">make<wbr>Grid</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_grid_.html#maketwosize" class="tsd-kind-icon">make<wbr>Two<wbr>Size</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_grid_.html#populatehexagongrid" class="tsd-kind-icon">populate<wbr>Hexagon<wbr>Grid</a>

@@ -37,7 +37,7 @@ export const gridTarget = "hg",
       ),
       makeGrid({
         shape: getRadioValue("shape") as GridShape,
-        size: { x: getIntValue("gs1"), y: getIntValue("gs1") },
+        size: { a: getIntValue("gs1"), b: getIntValue("gs1") },
         populate: true,
       }),
     ];
@@ -51,15 +51,16 @@ export const gridTarget = "hg",
     renderSVG(...config);
   };
 
-/* const aLine = Subset.line(
-  Hex.makeNode({ q: 0, r: -4, s: 4 }, "Cell") as Hex.CellNode,
-  Hex.makeNode({ q: -2, r: 4, s: -2 }, "Cell") as Hex.CellNode
-);*/
+/**/
 
 document.addEventListener("DOMContentLoaded", () => {
   rend();
 
-  /*  aLine.forEach((val): void => {
+  /* const aLine = Subset.line(
+    Hex.makeNode({ q: 0, r: -4, s: 4 }, "Cell") as Hex.CellNode,
+    { q: -2, r: 4, s: -2 }
+  );
+  aLine.forEach((val): void => {
     const cell = document.getElementById(val.id);
     console.log([val.id, cell]);
     if (cell) {

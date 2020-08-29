@@ -9,24 +9,20 @@
 import { thousandthRound } from "./math.js";
 
 /**
- * the type of node of the hex graph,
- * corresponding to which portion of the hex grid the node represents
+ * the type of node of the hex graph, corresponding to which portion of the hex
+ * grid the node represents
  */
 export type NodeType = "Cell" | "Edge" | "Vertex";
 
 /**
- * a vector or coordinate in qrs space
- * qrs is cubic space, which is confined here to a plane q+r+s==0
+ * the set of valid coordinate labels
  */
-export interface QRSVector {
-  [prop: string]: unknown;
-  /** q component of vector */
-  readonly q: number;
-  /** r component of vector */
-  readonly r: number;
-  /** s component of vector */
-  readonly s: number;
-}
+type HexCoords = "q" | "r" | "s";
+/**
+ * a vector or coordinate in qrs space. qrs is cubic space, which is confined
+ * here to a plane q+r+s==0
+ */
+export type QRSVector = Record<HexCoords, number>;
 
 /** a Cell node of the hexagonal grid */
 export interface CellNode extends QRSVector {
@@ -61,7 +57,7 @@ export interface VertexNode extends QRSVector {
 /** a node of the graph representation of the hexagonal grid */
 export type HexNode = CellNode | EdgeNode | VertexNode;
 /**
- * ! I need documentation
+ * the coordinates of the cells sharing an edge and two vertices with the origin
  */
 export const DIRECTIONS: QRSVector[] = [
   { q: 1, r: -1, s: 0 },
@@ -72,7 +68,7 @@ export const DIRECTIONS: QRSVector[] = [
   { q: 1, r: 0, s: -1 },
 ];
 /**
- * ! I need documentation
+ * the coordinates of cells that share an edge only with the origin
  */
 export const DIAGONALS: QRSVector[] = [
   { q: 2, r: -1, s: -1 },
@@ -117,7 +113,7 @@ export function makeNode({ q, r, s }: QRSVector, kind: NodeType): HexNode {
 /**
  * @param node - the graph node of which to find adjacent cells
  */
-export function cells(node: HexNode): Array<CellNode> {
+export function cells(node: HexNode): CellNode[] {
   switch (node.kind) {
     case "Cell":
       return DIRECTIONS.map((e) =>
@@ -149,7 +145,7 @@ export function cells(node: HexNode): Array<CellNode> {
 /**
  * @param node - the graph node of which to find adjacent edges
  */
-export function edges(node: HexNode): Array<EdgeNode> {
+export function edges(node: HexNode): EdgeNode[] {
   switch (node.kind) {
     case "Cell":
       return DIRECTIONS.map((e) =>
@@ -183,7 +179,7 @@ export function edges(node: HexNode): Array<EdgeNode> {
 /**
  * @param node - the graph node of which to find adjacent vertices
  */
-export function vertices(node: HexNode): Array<VertexNode> {
+export function vertices(node: HexNode): VertexNode[] {
   switch (node.kind) {
     case "Cell":
       return DIAGONALS.map((e) =>
@@ -220,8 +216,8 @@ export function vertices(node: HexNode): Array<VertexNode> {
  * @param b - a hex node to compare
  * @returns whether a and b have the same coordinates
  */
-export function areEqual(a: HexNode, b: HexNode): boolean {
-  return a.q === b.q && a.r === b.r && a.s === b.s && a.kind === b.kind;
+export function areEqual(a: QRSVector, b: QRSVector): boolean {
+  return a.q === b.q && a.r === b.r && a.s === b.s;
 }
 
 /**
@@ -233,18 +229,26 @@ export function add(a: QRSVector, b: QRSVector): QRSVector {
   return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
 }
 
+/**
+ * ! explain every export */
 export function subtract(a: QRSVector, b: QRSVector): QRSVector {
   return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 
+/**
+ * ! explain every export */
 export function multiply(cell: QRSVector, k: number): QRSVector {
   return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
 
+/**
+ * ! explain every export */
 export function length({ q, r, s }: QRSVector): number {
   return Math.max(Math.abs(q), Math.abs(r), Math.abs(s));
 }
 
+/**
+ * ! explain every export */
 export function distance(a: QRSVector, b: QRSVector): number {
   return length(subtract(a, b));
 }

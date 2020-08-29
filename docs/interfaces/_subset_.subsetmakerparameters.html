@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>VertexNode | yahgts</title>
+	<title>SubsetMakerParameters | yahgts</title>
 	<meta name="description" content="Documentation for yahgts">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,36 +56,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_hex_.html">&quot;hex&quot;</a>
+					<a href="../modules/_subset_.html">&quot;subset&quot;</a>
 				</li>
 				<li>
-					<a href="_hex_.vertexnode.html">VertexNode</a>
+					<a href="_subset_.subsetmakerparameters.html">SubsetMakerParameters</a>
 				</li>
 			</ul>
-			<h1>Interface VertexNode</h1>
+			<h1>Interface SubsetMakerParameters</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>a Vertex node of the hexagonal grid</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-symbol">{}</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">VertexNode</span>
-							</li>
-						</ul>
+						<span class="target">SubsetMakerParameters</span>
 					</li>
 				</ul>
 			</section>
@@ -93,63 +81,48 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_hex_.vertexnode.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_hex_.vertexnode.html#kind" class="tsd-kind-icon">kind</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_hex_.vertexnode.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_subset_.subsetmakerparameters.html#origin" class="tsd-kind-icon">origin</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_subset_.subsetmakerparameters.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_subset_.subsetmakerparameters.html#toward" class="tsd-kind-icon">toward</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="origin" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> origin</h3>
+					<div class="tsd-signature tsd-kind-icon">origin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Hex.CellNode</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in hex.ts:50</li>
+							<li>Defined in subset.ts:7</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the cube coordinates of the node as a comma-separated string</p>
-						</div>
-					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="kind" class="tsd-anchor"></a>
-					<h3>kind</h3>
-					<div class="tsd-signature tsd-kind-icon">kind<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Vertex"</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="size" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> size</h3>
+					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in hex.ts:54</li>
+							<li>Defined in subset.ts:9</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the discriminant of the HexNode</p>
-						</div>
-					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="links" class="tsd-anchor"></a>
-					<h3>links</h3>
-					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WeakSet</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="toward" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> toward</h3>
+					<div class="tsd-signature tsd-kind-icon">toward<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Hex.QRSVector</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in hex.ts:52</li>
+							<li>Defined in subset.ts:8</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the set of nodes adjacent to this node. &quot;Adjacency&quot; is arbitrary.</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -165,7 +138,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_grid_.html">&quot;grid&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_hex_.html">&quot;hex&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -183,84 +156,60 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_renderer_.html">&quot;renderer&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_subset_.html">&quot;subset&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_hex_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_hex_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_hex_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_subset_.subsetmakerparameters.html" class="tsd-kind-icon">Subset<wbr>Maker<wbr>Parameters</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_hex_.vertexnode.html#id" class="tsd-kind-icon">id</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_subset_.subsetmakerparameters.html#origin" class="tsd-kind-icon">origin</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_hex_.vertexnode.html#kind" class="tsd-kind-icon">kind</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_subset_.subsetmakerparameters.html#size" class="tsd-kind-icon">size</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_hex_.vertexnode.html#links" class="tsd-kind-icon">links</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_subset_.subsetmakerparameters.html#toward" class="tsd-kind-icon">toward</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_hex_.html#hexcoords" class="tsd-kind-icon">Hex<wbr>Coords</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_subset_.html#cellone" class="tsd-kind-icon">CELLONE</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#qrsvector" class="tsd-kind-icon">QRSVector</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#diagonals" class="tsd-kind-icon">DIAGONALS</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#directions" class="tsd-kind-icon">DIRECTIONS</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_subset_.html#cellzero" class="tsd-kind-icon">CELLZERO</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#add" class="tsd-kind-icon">add</a>
+						<a href="../modules/_subset_.html#cone" class="tsd-kind-icon">cone</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_subset_.html#findwedge" class="tsd-kind-icon">find<wbr>Wedge</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#areequal" class="tsd-kind-icon">are<wbr>Equal</a>
+						<a href="../modules/_subset_.html#hexagon" class="tsd-kind-icon">hexagon</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#cells" class="tsd-kind-icon">cells</a>
+						<a href="../modules/_subset_.html#intersection" class="tsd-kind-icon">intersection</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#distance" class="tsd-kind-icon">distance</a>
+						<a href="../modules/_subset_.html#line" class="tsd-kind-icon">line</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_subset_.html#maketwosize" class="tsd-kind-icon">make<wbr>Two<wbr>Size</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#edges" class="tsd-kind-icon">edges</a>
+						<a href="../modules/_subset_.html#rhombus" class="tsd-kind-icon">rhombus</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#length" class="tsd-kind-icon">length</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#makenode" class="tsd-kind-icon">make<wbr>Node</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#multiply" class="tsd-kind-icon">multiply</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#subtract" class="tsd-kind-icon">subtract</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_hex_.html#vertices" class="tsd-kind-icon">vertices</a>
+						<a href="../modules/_subset_.html#ring" class="tsd-kind-icon">ring</a>
 					</li>
 				</ul>
 			</nav>

@@ -1,7 +1,6 @@
-import { cellPoints, cubeToPoint } from "./layout.js";
+import { XYVector, LayoutConfig, cellPoints, cubeToPoint } from "./layout.js";
 import { CellNode } from "./hex.js";
 import { GridMap } from "./grid.js";
-import { XYVector, LayoutConfig } from "./layout.js";
 
 const SVGNS = "http://www.w3.org/2000/svg";
 

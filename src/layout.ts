@@ -10,7 +10,7 @@ export interface XYVector {
 }
 
 /** a matrix to convert from QRS to XY space */
-export interface Orientation {
+interface Orientation {
   f: { q: XYVector; r: XYVector };
   b: { q: XYVector; r: XYVector };
 }

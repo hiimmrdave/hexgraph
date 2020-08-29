@@ -1,8 +1,13 @@
 import * as Hex from "./hex.js";
 import { round } from "./cell.js";
 import { cubeLerp } from "./math.js";
-import { GridMap } from "./grid.js";
-import { XYVector } from "./layout.js";
+import { GridMap, TwoSize } from "./grid.js";
+
+interface SubsetMakerParameters {
+  origin?: Hex.CellNode;
+  toward?: Hex.QRSVector;
+  size?: number | TwoSize;
+}
 
 const CELLZERO: Hex.CellNode = Object.freeze(
     Hex.makeNode({ q: 0, r: 0, s: 0 }, "Cell") as Hex.CellNode
@@ -10,34 +15,31 @@ const CELLZERO: Hex.CellNode = Object.freeze(
   CELLONE: Hex.CellNode = Object.freeze(
     Hex.makeNode({ q: 2, r: -1, s: -1 }, "Cell") as Hex.CellNode
   ),
-  xySize = function xySize(size: number | XYVector): XYVector {
+  makeTwoSize = function xySize(size: number | TwoSize): TwoSize {
     if (typeof size === "number") {
-      return { x: size, y: size };
+      return { a: size, b: size };
     }
     return size;
   },
   findWedge = function findWedge({
-    origin,
-    toward,
-  }: {
-    origin: Hex.CellNode;
-    toward: Hex.QRSVector;
-  }): {
-    dirs: { ia: string; ib: string; ic: string };
+    origin = CELLZERO,
+    toward = CELLONE,
+  }: SubsetMakerParameters): {
+    dirs: { ia: "q" | "r" | "s"; ib: "q" | "r" | "s"; ic: "q" | "r" | "s" };
     sign: -1 | 1;
   } {
-    const hexCoords = ["q", "r", "s"],
+    const hexCoords: ("q" | "r" | "s")[] = ["q", "r", "s"],
       dir = Hex.subtract(toward, origin),
-      max = Math.max(Math.abs(dir.q), Math.abs(dir.r), Math.abs(dir.s)),
-      directionCoords = { ia: "", ib: "", ic: "" };
-    for (const key of hexCoords) {
-      if (max === Math.abs(dir[key] as number)) {
-        const directionSign: -1 | 1 = -max / (dir[key] as number) > 0 ? 1 : -1;
-        directionCoords.ic = key;
-        directionCoords.ia =
-          hexCoords[hexCoords.indexOf(directionCoords.ic) + 1] ?? hexCoords[0];
-        directionCoords.ib =
-          hexCoords[hexCoords.indexOf(directionCoords.ia) + 1] ?? hexCoords[0];
+      max = Math.max(Math.abs(dir.q), Math.abs(dir.r), Math.abs(dir.s));
+    for (const coord of hexCoords) {
+      if (max === Math.abs(dir[coord])) {
+        const directionSign: -1 | 1 = -max / dir[coord] > 0 ? 1 : -1,
+          directionCoords = Object.fromEntries(
+            [
+              ...hexCoords.slice(hexCoords.indexOf(coord)),
+              ...hexCoords.slice(0, hexCoords.indexOf(coord)),
+            ].map((e, i) => [["ic", "ia", "ib"][i], e])
+          ) as Record<"ia" | "ib" | "ic", "q" | "r" | "s">;
         return { dirs: directionCoords, sign: directionSign };
       }
     }
@@ -50,18 +52,15 @@ const CELLZERO: Hex.CellNode = Object.freeze(
  * @returns a GridMap of the cells along a line
  */
 export function line({
-  start,
-  end,
-}: {
-  start: Hex.CellNode;
-  end: Hex.CellNode;
-}): GridMap {
-  if (Hex.areEqual(start, end)) return new Map().set(start.id, start);
-  const t = Hex.distance(start, end);
+  origin = CELLZERO,
+  toward = CELLONE,
+}: SubsetMakerParameters): GridMap {
+  if (Hex.areEqual(origin, toward)) return new Map().set(origin.id, origin);
+  const t = Hex.distance(origin, toward);
   const line = new Map();
   for (let ii = 0; ii <= t; ii++) {
     const newCell: Hex.CellNode = round(
-      cubeLerp(start, end, (1 / t) * ii) as Hex.CellNode
+      cubeLerp(origin, toward, (1 / t) * ii) as Hex.CellNode
     );
     line.set(newCell.id, newCell);
   }
@@ -79,20 +78,17 @@ export function line({
  */
 export function ring({
   origin = CELLZERO,
-  size = 1,
-}: {
-  origin: Hex.CellNode;
-  size: XYVector | number;
-}): GridMap {
-  size = xySize(size);
-  if (size.x < 1) return new Map().set(origin.id, origin);
+  size = 2,
+}: SubsetMakerParameters): GridMap {
+  size = makeTwoSize(size);
+  if (size.a < 1) return new Map().set(origin.id, origin);
   const ring = new Map();
   let ringCell = Hex.makeNode(
-    Hex.add(origin, Hex.multiply(Hex.DIRECTIONS[4], size.x)),
+    Hex.add(origin, Hex.multiply(Hex.DIRECTIONS[4], size.a)),
     "Cell"
   ) as Hex.CellNode;
   for (let ii = 0; ii < 6; ii++) {
-    for (let ij = 0; ij < size.x; ij++) {
+    for (let ij = 0; ij < size.a; ij++) {
       ring.set(ringCell.id, ringCell);
       ringCell = Hex.cells(ringCell)[ii];
     }
@@ -108,17 +104,13 @@ export function ring({
 export function cone({
   origin = CELLZERO,
   toward = CELLONE,
-  size = 2,
-}: {
-  origin: Hex.CellNode;
-  toward: Hex.QRSVector;
-  size: XYVector | number;
-}): GridMap {
+  size = 4,
+}: SubsetMakerParameters): GridMap {
   const cone: GridMap = new Map(),
     { dirs, sign } = findWedge({ origin, toward });
-  size = xySize(size);
-  for (let ia = 0; ia < size.x; ia++) {
-    for (let ib = 0; ib < size.x - ia; ib++) {
+  size = makeTwoSize(size);
+  for (let ia = 0; ia < size.a; ia++) {
+    for (let ib = 0; ib < size.a - ia; ib++) {
       const ic = -(ia + ib),
         newCell = Hex.makeNode(
           Hex.add(
@@ -144,15 +136,12 @@ export function cone({
 export function hexagon({
   origin = CELLZERO,
   size = 2,
-}: {
-  origin: Hex.CellNode;
-  size: XYVector | number;
-}): GridMap {
+}: SubsetMakerParameters): GridMap {
   const hexagon: GridMap = new Map();
-  size = xySize(size);
-  for (let ia = -size.x; ia <= size.x; ia++) {
-    for (let ib = -size.x; ib <= size.x; ib++) {
-      if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size.x * 2) {
+  size = makeTwoSize(size);
+  for (let ia = -size.a; ia <= size.a; ia++) {
+    for (let ib = -size.a; ib <= size.a; ib++) {
+      if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size.a * 2) {
         const ic = -(ia + ib),
           newNode = Hex.makeNode(
             Hex.add(origin, { q: ia, r: ib, s: ic }),
@@ -174,16 +163,12 @@ export function rhombus({
   origin = CELLZERO,
   toward = CELLONE,
   size = 2,
-}: {
-  origin: Hex.CellNode;
-  toward: Hex.QRSVector;
-  size: XYVector | number;
-}): GridMap {
+}: SubsetMakerParameters): GridMap {
   const rhombus: GridMap = new Map(),
     { dirs, sign } = findWedge({ origin, toward });
-  size = xySize(size);
-  for (let ia = 0; ia < size.x; ia++) {
-    for (let ib = 0; ib < size.y; ib++) {
+  size = makeTwoSize(size);
+  for (let ia = 0; ia < size.a; ia++) {
+    for (let ib = 0; ib < size.b; ib++) {
       const ic = -(ia + ib),
         newCell = Hex.makeNode(
           Hex.add(

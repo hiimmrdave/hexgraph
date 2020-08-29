@@ -18,13 +18,13 @@ export function thousandthRound(n: number): number {
  * @param t the portion from m to n ( 0 <= t <= 1 )
  * @returns a point that is t of the way from m to n
  */
-export function lerp(m: number, n: number, t: number): number {
+function lerp(m: number, n: number, t: number): number {
   return m * (1 - t) + n * t;
 }
 
 /**
- * @param a the starting {@linkcode CubeVector} of the linear interpolation
- * @param b the ending {@linkcode CubeVector} of the linear interpolation
+ * @param a the start of the linear interpolation, in QRS space
+ * @param b the end of the linear interpolation, in QRS space
  * @param t the portion of distance from a to b ( 0 <= t <= 1 )
  * @returns a set of cube coordinates t of the way between a and b
  */
@@ -48,5 +48,5 @@ export function rollTable<T>(table: [{ weight: number; value: T }]): T {
       return val.value;
     }
   }
-  return "no" as never;
+  return table as never;
 }
