@@ -87,6 +87,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_subset_.html#line" class="tsd-kind-icon">line</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_subset_.html#rhombus" class="tsd-kind-icon">rhombus</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_subset_.html#ring" class="tsd-kind-icon">ring</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_subset_.html#xysize" class="tsd-kind-icon">xy<wbr>Size</a></li>
 							</ul>
 						</section>
 					</div>
@@ -127,7 +128,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:104</li>
+									<li>Defined in subset.ts:108</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -145,6 +146,9 @@
 										</li>
 										<li class="tsd-parameter">
 											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
+											<div class="tsd-comment tsd-typography">
+												<p>the number of cells along a side of the triangle</p>
+											</div>
 										</li>
 										<li class="tsd-parameter">
 											<h5>toward<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
@@ -169,7 +173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:13</li>
+									<li>Defined in subset.ts:19</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -219,7 +223,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:142</li>
+									<li>Defined in subset.ts:144</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -255,7 +259,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:213</li>
+									<li>Defined in subset.ts:210</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -290,7 +294,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:46</li>
+									<li>Defined in subset.ts:52</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -330,13 +334,10 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:174</li>
+									<li>Defined in subset.ts:173</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>!document every export</p>
-								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -345,14 +346,21 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+											<div class="tsd-comment tsd-typography">
+												<p>cell forming one of the acute angles of the rhombus</p>
+											</div>
 										</li>
 										<li class="tsd-parameter">
 											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
 											<div class="tsd-comment tsd-typography">
+												<p>the number of cells along one edge of the rhombus</p>
 											</div>
 										</li>
 										<li class="tsd-parameter">
 											<h5>toward<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.qrsvector.html" class="tsd-signature-type">QRSVector</a></h5>
+											<div class="tsd-comment tsd-typography">
+												<p>a qrs vector within the desired rhombus &quot;wedge&quot;</p>
+											</div>
 										</li>
 									</ul>
 								</li>
@@ -371,7 +379,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in subset.ts:74</li>
+									<li>Defined in subset.ts:80</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -402,6 +410,29 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></h4>
 							<p>an array of CellNodes that are a given radius from the center cell</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="xysize" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> xy<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">xy<wbr>Size<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in subset.ts:13</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>size: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -467,6 +498,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_subset_.html#ring" class="tsd-kind-icon">ring</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_subset_.html#xysize" class="tsd-kind-icon">xy<wbr>Size</a>
 					</li>
 				</ul>
 			</nav>

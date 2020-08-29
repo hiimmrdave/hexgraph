@@ -10,6 +10,12 @@ const CELLZERO: Hex.CellNode = Object.freeze(
   CELLONE: Hex.CellNode = Object.freeze(
     Hex.makeNode({ q: 2, r: -1, s: -1 }, "Cell") as Hex.CellNode
   ),
+  xySize = function xySize(size: number | XYVector): XYVector {
+    if (typeof size === "number") {
+      return { x: size, y: size };
+    }
+    return size;
+  },
   findWedge = function findWedge({
     origin,
     toward,
@@ -78,11 +84,9 @@ export function ring({
   origin: Hex.CellNode;
   size: XYVector | number;
 }): GridMap {
-  if (size < 1) return new Map().set(origin.id, origin);
+  size = xySize(size);
+  if (size.x < 1) return new Map().set(origin.id, origin);
   const ring = new Map();
-  if (typeof size === "number") {
-    size = { x: size, y: size };
-  }
   let ringCell = Hex.makeNode(
     Hex.add(origin, Hex.multiply(Hex.DIRECTIONS[4], size.x)),
     "Cell"
@@ -99,7 +103,7 @@ export function ring({
 /**
  * @param origin the CellNode where the cone originates
  * @param toward a QRSVector within the cone
- * @param range the number of cells along a side of the triangle
+ * @param size the number of cells along a side of the triangle
  */
 export function cone({
   origin = CELLZERO,
@@ -112,9 +116,7 @@ export function cone({
 }): GridMap {
   const cone: GridMap = new Map(),
     { dirs, sign } = findWedge({ origin, toward });
-  if (typeof size === "number") {
-    size = { x: size, y: size };
-  }
+  size = xySize(size);
   for (let ia = 0; ia < size.x; ia++) {
     for (let ib = 0; ib < size.x - ia; ib++) {
       const ic = -(ia + ib),
@@ -147,9 +149,7 @@ export function hexagon({
   size: XYVector | number;
 }): GridMap {
   const hexagon: GridMap = new Map();
-  if (typeof size === "number") {
-    size = { x: size, y: size };
-  }
+  size = xySize(size);
   for (let ia = -size.x; ia <= size.x; ia++) {
     for (let ib = -size.x; ib <= size.x; ib++) {
       if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size.x * 2) {
@@ -166,10 +166,9 @@ export function hexagon({
 }
 
 /**
- * !document every export
- * @param origin
- * @param toward
- * @param size
+ * @param origin cell forming one of the acute angles of the rhombus
+ * @param toward a qrs vector within the desired rhombus "wedge"
+ * @param size the number of cells along one edge of the rhombus
  */
 export function rhombus({
   origin = CELLZERO,
@@ -182,9 +181,7 @@ export function rhombus({
 }): GridMap {
   const rhombus: GridMap = new Map(),
     { dirs, sign } = findWedge({ origin, toward });
-  if (typeof size === "number") {
-    size = { x: size, y: size };
-  }
+  size = xySize(size);
   for (let ia = 0; ia < size.x; ia++) {
     for (let ib = 0; ib < size.y; ib++) {
       const ic = -(ia + ib),
