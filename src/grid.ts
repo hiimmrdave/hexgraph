@@ -44,7 +44,7 @@ export function makeGrid({
   populate = true,
 }: {
   shape?: GridShape;
-  size?: TwoSize;
+  size?: TwoSize | number;
   populate?: boolean;
 } = {}): GridMap {
   const gridPopulator: Record<GridShape, GridPopulator> = {

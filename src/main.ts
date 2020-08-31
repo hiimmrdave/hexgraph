@@ -1,6 +1,8 @@
 import { renderSVG } from "./renderer.js";
 import { LayoutConfig, configureLayout } from "./layout.js";
 import { GridMap, GridShape, makeGrid } from "./grid.js";
+import * as Subset from "./subset.js";
+import * as Hex from "./hex.js";
 
 /*
 function getFloat(elementId: string): number {
@@ -12,9 +14,26 @@ function getCheckbox(elementId: string): boolean {
   return input.checked;
 }
 */
-
-export const gridTarget = "hg",
-  renderContext = document.getElementById(gridTarget) as HTMLElement,
+const gridTarget = "hg",
+  shapes = ["line", "ring", "hexagon", "cone", "rhombbus"],
+  shapesHolder = "shapes",
+  shapeLayoutConfig: LayoutConfig = configureLayout(
+    0,
+    { x: 5, y: 5 },
+    { x: 45, y: 45 },
+    { x: 90, y: 90 }
+  ),
+  shapeGrid: GridMap = makeGrid({ size: 5 }),
+  origin = Hex.makeNode({ q: 0, r: -0, s: 0 }, "Cell") as Hex.CellNode,
+  toward = { q: -2, r: 4, s: -2 },
+  subsets = [
+    Subset.line({ origin, toward }),
+    Subset.ring({ origin, size: 3 }),
+    Subset.hexagon({ origin, size: 2 }),
+    Subset.cone({ origin, toward, size: 4 }),
+    Subset.rhombus({ origin, toward, size: 2 }),
+  ];
+export const renderContext = document.getElementById(gridTarget) as HTMLElement,
   inputs = document.querySelector('form[id="params"]') as HTMLFormElement,
   getIntValue = (elementId: string): number => {
     const input = document.getElementById(elementId) as HTMLInputElement;
@@ -55,18 +74,25 @@ export const gridTarget = "hg",
 
 document.addEventListener("DOMContentLoaded", () => {
   rend();
+  const holder = document.getElementById(shapesHolder) as HTMLDivElement;
 
-  /* const aLine = Subset.line(
-    Hex.makeNode({ q: 0, r: -4, s: 4 }, "Cell") as Hex.CellNode,
-    { q: -2, r: 4, s: -2 }
-  );
-  aLine.forEach((val): void => {
-    const cell = document.getElementById(val.id);
-    console.log([val.id, cell]);
-    if (cell) {
-      cell.classList.toggle("ring");
-    }
-  });*/
+  console.log(holder);
+  shapes.forEach((shape, index) => {
+    const shapeContainer = document.createElement("div"),
+      subset = subsets[index];
+    shapeContainer.id = shape;
+    shapeContainer.style.display = "inline-block";
+    holder.appendChild(shapeContainer);
+    renderSVG(shape, shapeLayoutConfig, shapeGrid);
+    subset.forEach((e): void => {
+      const cell = document.querySelector(
+        `#${shape} [data-hex-node-id="${e.id}"]`
+      );
+      if (cell) {
+        cell.classList.toggle("hilit");
+      }
+    });
+  });
 });
 
 inputs.addEventListener("input", rend);

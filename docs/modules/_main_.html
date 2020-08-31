@@ -73,9 +73,15 @@
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_main_.html#gridtarget" class="tsd-kind-icon">grid<wbr>Target</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_main_.html#gridtarget" class="tsd-kind-icon">grid<wbr>Target</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_main_.html#inputs" class="tsd-kind-icon">inputs</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_main_.html#origin" class="tsd-kind-icon">origin</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_main_.html#rendercontext" class="tsd-kind-icon">render<wbr>Context</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_main_.html#shapegrid" class="tsd-kind-icon">shape<wbr>Grid</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_main_.html#shapelayoutconfig" class="tsd-kind-icon">shape<wbr>Layout<wbr>Config</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_main_.html#shapes" class="tsd-kind-icon">shapes</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_main_.html#shapesholder" class="tsd-kind-icon">shapes<wbr>Holder</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_main_.html#subsets" class="tsd-kind-icon">subsets</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -87,18 +93,24 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_main_.html#rend" class="tsd-kind-icon">rend</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported"><a href="_main_.html#toward" class="tsd-kind-icon">toward</a></li>
+							</ul>
+						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 					<a name="gridtarget" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> grid<wbr>Target</h3>
 					<div class="tsd-signature tsd-kind-icon">grid<wbr>Target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"hg"</span><span class="tsd-signature-symbol"> = &quot;hg&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in main.ts:16</li>
+							<li>Defined in main.ts:17</li>
 						</ul>
 					</aside>
 				</section>
@@ -108,7 +120,17 @@
 					<div class="tsd-signature tsd-kind-icon">inputs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLFormElement</span><span class="tsd-signature-symbol"> = document.querySelector(&#x27;form[id&#x3D;&quot;params&quot;]&#x27;) as HTMLFormElement</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in main.ts:18</li>
+							<li>Defined in main.ts:37</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="origin" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> origin</h3>
+					<div class="tsd-signature tsd-kind-icon">origin<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> = Hex.makeNode({ q: 0, r: -0, s: 0 }, &quot;Cell&quot;) as Hex.CellNode</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in main.ts:27</li>
 						</ul>
 					</aside>
 				</section>
@@ -118,7 +140,57 @@
 					<div class="tsd-signature tsd-kind-icon">render<wbr>Context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> = document.getElementById(gridTarget) as HTMLElement</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in main.ts:17</li>
+							<li>Defined in main.ts:36</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="shapegrid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> shape<wbr>Grid</h3>
+					<div class="tsd-signature tsd-kind-icon">shape<wbr>Grid<span class="tsd-signature-symbol">:</span> <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol"> = makeGrid({ size: 5 })</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in main.ts:26</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="shapelayoutconfig" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> shape<wbr>Layout<wbr>Config</h3>
+					<div class="tsd-signature tsd-kind-icon">shape<wbr>Layout<wbr>Config<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_layout_.layoutconfig.html" class="tsd-signature-type">LayoutConfig</a><span class="tsd-signature-symbol"> = configureLayout(0,{ x: 5, y: 5 },{ x: 45, y: 45 },{ x: 90, y: 90 })</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in main.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="shapes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> shapes</h3>
+					<div class="tsd-signature tsd-kind-icon">shapes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&quot;line&quot;, &quot;ring&quot;, &quot;hexagon&quot;, &quot;cone&quot;, &quot;rhombbus&quot;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in main.ts:18</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="shapesholder" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> shapes<wbr>Holder</h3>
+					<div class="tsd-signature tsd-kind-icon">shapes<wbr>Holder<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"shapes"</span><span class="tsd-signature-symbol"> = &quot;shapes&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in main.ts:19</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="subsets" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> subsets</h3>
+					<div class="tsd-signature tsd-kind-icon">subsets<span class="tsd-signature-symbol">:</span> <a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [Subset.line({ origin, toward }),Subset.ring({ origin, size: 3 }),Subset.hexagon({ origin, size: 2 }),Subset.cone({ origin, toward, size: 4 }),Subset.rhombus({ origin, toward, size: 2 }),]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in main.ts:29</li>
 						</ul>
 					</aside>
 				</section>
@@ -135,7 +207,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in main.ts:29</li>
+									<li>Defined in main.ts:48</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></h4>
@@ -152,7 +224,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in main.ts:19</li>
+									<li>Defined in main.ts:38</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -175,7 +247,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in main.ts:23</li>
+									<li>Defined in main.ts:42</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -198,12 +270,55 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in main.ts:45</li>
+									<li>Defined in main.ts:64</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
+					<a name="toward" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> toward</h3>
+					<div class="tsd-signature tsd-kind-icon">toward<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in main.ts:28</li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="toward.q" class="tsd-anchor"></a>
+						<h3>q</h3>
+						<div class="tsd-signature tsd-kind-icon">q<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = -2</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in main.ts:28</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="toward.r" class="tsd-anchor"></a>
+						<h3>r</h3>
+						<div class="tsd-signature tsd-kind-icon">r<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 4</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in main.ts:28</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="toward.s" class="tsd-anchor"></a>
+						<h3>s</h3>
+						<div class="tsd-signature tsd-kind-icon">s<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = -2</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in main.ts:28</li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -232,9 +347,6 @@
 						<a href="_math_.html">&quot;math&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="_pubsub_.html">&quot;pubsub&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="_renderer_.html">&quot;renderer&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -244,14 +356,32 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_main_.html#gridtarget" class="tsd-kind-icon">grid<wbr>Target</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
 						<a href="_main_.html#inputs" class="tsd-kind-icon">inputs</a>
 					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_main_.html#origin" class="tsd-kind-icon">origin</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
 						<a href="_main_.html#rendercontext" class="tsd-kind-icon">render<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_main_.html#shapegrid" class="tsd-kind-icon">shape<wbr>Grid</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_main_.html#shapelayoutconfig" class="tsd-kind-icon">shape<wbr>Layout<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_main_.html#shapes" class="tsd-kind-icon">shapes</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_main_.html#shapesholder" class="tsd-kind-icon">shapes<wbr>Holder</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_main_.html#subsets" class="tsd-kind-icon">subsets</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_main_.html#getform" class="tsd-kind-icon">get<wbr>Form</a>
@@ -265,6 +395,9 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_main_.html#rend" class="tsd-kind-icon">rend</a>
 					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_main_.html#toward" class="tsd-kind-icon">toward</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -275,6 +408,7 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>

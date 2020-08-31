@@ -9,7 +9,7 @@ svg .cell {
   fill: hsl(0, 0%, 80%);
 }
 
-svg .cell.ring {
+svg .cell.hilit {
   fill: red;
 }
 

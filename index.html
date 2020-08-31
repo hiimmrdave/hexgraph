@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="A demonstration of Yet Another Hex Grid" />
+    <link rel="preload" href="./js/grid.js" as="script" crossorigin="anonymous" />
+    <link rel="preload" href="./js/renderer.js" as="script" crossorigin="anonymous" />
+    <link rel="preload" href="/js/layout.js" as="script" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
     <script type="module" src="./js/main.js"></script>
@@ -13,6 +18,7 @@
     <div id="submain"></div>
     <main>
       <div id="st"><p>I felt like there should be a paragraph tag.</p></div>
+      <div id="shapes"></div>
       <div id="hg"></div>
       <form id="params" method="get">
         <fieldset>

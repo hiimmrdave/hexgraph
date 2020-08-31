@@ -37,7 +37,7 @@ function buildCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
   path.classList.add("cell");
   path.style.transformOrigin = `${c.x}px ${c.y}px`;
   path.setAttribute("d", cellPath(cell, layout));
-  path.id = cell.id;
+  path.dataset.hexNodeId = cell.id;
   Object.assign(path.dataset, { q: cell.q, r: cell.r, s: cell.s });
   return path;
 }

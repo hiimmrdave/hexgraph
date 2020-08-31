@@ -24,7 +24,9 @@
   },
   "author": "Dave Vogt",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "xstate": "^4.13.0"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.12",
     "@types/expect": "^24.3.0",
