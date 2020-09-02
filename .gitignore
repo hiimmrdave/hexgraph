@@ -3,6 +3,5 @@ node_modules
 haters
 .cache
 .DS_Store
-public
 build
 img/favicon.min.svg
