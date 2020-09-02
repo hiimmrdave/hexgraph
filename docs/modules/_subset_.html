@@ -128,7 +128,7 @@
 					<a name="cone" class="tsd-anchor"></a>
 					<h3>cone</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">cone<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">cone<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -142,18 +142,18 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>the CellNode where the cone originates</p>
-											</div>
-										</li>
 										<li class="tsd-parameter">
 											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
 											<div class="tsd-comment tsd-typography">
 												<p>the number of cells along a side of the triangle</p>
+											</div>
+										</li>
+										<li class="tsd-parameter">
+											<h5>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+											<div class="tsd-comment tsd-typography">
+												<p>the CellNode where the cone sourceates</p>
 											</div>
 										</li>
 										<li class="tsd-parameter">
@@ -173,7 +173,7 @@
 					<a name="findwedge" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> find<wbr>Wedge</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Wedge<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>dirs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>ia<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"q"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"r"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"s"</span><span class="tsd-signature-symbol">; </span>ib<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"q"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"r"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"s"</span><span class="tsd-signature-symbol">; </span>ic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"q"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"r"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"s"</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>sign<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">-1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> }</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Wedge<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>dirs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>ia<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"q"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"r"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"s"</span><span class="tsd-signature-symbol">; </span>ib<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"q"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"r"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"s"</span><span class="tsd-signature-symbol">; </span>ic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"q"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"r"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"s"</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>sign<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">-1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -185,10 +185,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
-											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+											<h5>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
 										</li>
 										<li class="tsd-parameter">
 											<h5>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
@@ -223,7 +223,7 @@
 					<a name="hexagon" class="tsd-anchor"></a>
 					<h3>hexagon</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">hexagon<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">hexagon<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -237,16 +237,16 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
-										</li>
 										<li class="tsd-parameter">
 											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
 											<div class="tsd-comment tsd-typography">
 												<p>the number of hex cells along each side of the hexagon</p>
 											</div>
+										</li>
+										<li class="tsd-parameter">
+											<h5>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
 										</li>
 									</ul>
 								</li>
@@ -294,7 +294,7 @@
 					<a name="line" class="tsd-anchor"></a>
 					<h3>line</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">line<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">line<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -308,10 +308,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
-											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+											<h5>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
 										</li>
 										<li class="tsd-parameter">
 											<h5>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
@@ -351,7 +351,7 @@
 					<a name="rhombus" class="tsd-anchor"></a>
 					<h3>rhombus</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">rhombus<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">rhombus<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -365,18 +365,18 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>toward<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>cell forming one of the acute angles of the rhombus</p>
-											</div>
-										</li>
 										<li class="tsd-parameter">
 											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
 											<div class="tsd-comment tsd-typography">
 												<p>the number of cells along one edge of the rhombus</p>
+											</div>
+										</li>
+										<li class="tsd-parameter">
+											<h5>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+											<div class="tsd-comment tsd-typography">
+												<p>cell forming one of the acute angles of the rhombus</p>
 											</div>
 										</li>
 										<li class="tsd-parameter">
@@ -396,7 +396,7 @@
 					<a name="ring" class="tsd-anchor"></a>
 					<h3>ring</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">ring<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">ring<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -414,18 +414,18 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>origin<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>the center of the ring</p>
-											</div>
-										</li>
 										<li class="tsd-parameter">
 											<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_grid_.html#twosize" class="tsd-signature-type">TwoSize</a></h5>
 											<div class="tsd-comment tsd-typography">
 												<p>the number of steps from the center to a cell on the ring</p>
+											</div>
+										</li>
+										<li class="tsd-parameter">
+											<h5>source<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></h5>
+											<div class="tsd-comment tsd-typography">
+												<p>the center of the ring</p>
 											</div>
 										</li>
 									</ul>

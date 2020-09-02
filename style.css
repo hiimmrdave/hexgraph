@@ -13,6 +13,10 @@ svg .cell.hilit {
   fill: red;
 }
 
+svg .cell.source {
+  fill: blue;
+}
+
 fieldset {
   background: hsl(0, 0%, 100%);
 }

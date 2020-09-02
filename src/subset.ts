@@ -4,7 +4,7 @@ import { cubeLerp } from "./math.js";
 import { GridMap, TwoSize } from "./grid.js";
 
 interface SubsetMakerParameters {
-  origin?: Hex.CellNode;
+  source?: Hex.CellNode;
   toward?: Hex.QRSVector;
   size?: number | TwoSize;
 }
@@ -22,14 +22,14 @@ const CELLZERO: Hex.CellNode = Object.freeze(
     return size;
   },
   findWedge = function findWedge({
-    origin = CELLZERO,
+    source = CELLZERO,
     toward = CELLONE,
   }: SubsetMakerParameters): {
     dirs: { ia: "q" | "r" | "s"; ib: "q" | "r" | "s"; ic: "q" | "r" | "s" };
     sign: -1 | 1;
   } {
     const hexCoords: ("q" | "r" | "s")[] = ["q", "r", "s"],
-      dir = Hex.subtract(toward, origin),
+      dir = Hex.subtract(toward, source),
       max = Math.max(Math.abs(dir.q), Math.abs(dir.r), Math.abs(dir.s));
     for (const coord of hexCoords) {
       if (max === Math.abs(dir[coord])) {
@@ -52,15 +52,15 @@ const CELLZERO: Hex.CellNode = Object.freeze(
  * @returns a GridMap of the cells along a line
  */
 export function line({
-  origin = CELLZERO,
+  source = CELLZERO,
   toward = CELLONE,
 }: SubsetMakerParameters): GridMap {
-  if (Hex.areEqual(origin, toward)) return new Map().set(origin.id, origin);
-  const t = Hex.distance(origin, toward);
+  if (Hex.areEqual(source, toward)) return new Map().set(source.id, source);
+  const t = Hex.distance(source, toward);
   const line = new Map();
   for (let ii = 0; ii <= t; ii++) {
     const newCell: Hex.CellNode = round(
-      cubeLerp(origin, toward, (1 / t) * ii) as Hex.CellNode
+      cubeLerp(source, toward, (1 / t) * ii) as Hex.CellNode
     );
     line.set(newCell.id, newCell);
   }
@@ -72,19 +72,19 @@ export function line({
  * ! magic number: DIRECTIONS[4]
  *
  * ? why does this work? Why do other indices not?
- * @param origin the center of the ring
+ * @param source the center of the ring
  * @param size the number of steps from the center to a cell on the ring
  * @returns an array of CellNodes that are a given radius from the center cell
  */
 export function ring({
-  origin = CELLZERO,
+  source = CELLZERO,
   size = 2,
 }: SubsetMakerParameters): GridMap {
   size = makeTwoSize(size);
-  if (size.a < 1) return new Map().set(origin.id, origin);
+  if (size.a < 1) return new Map().set(source.id, source);
   const ring = new Map();
   let ringCell = Hex.makeNode(
-    Hex.add(origin, Hex.multiply(Hex.DIRECTIONS[4], size.a)),
+    Hex.add(source, Hex.multiply(Hex.DIRECTIONS[4], size.a)),
     "Cell"
   ) as Hex.CellNode;
   for (let ii = 0; ii < 6; ii++) {
@@ -97,17 +97,17 @@ export function ring({
 }
 
 /**
- * @param origin the CellNode where the cone originates
+ * @param source the CellNode where the cone sourceates
  * @param toward a QRSVector within the cone
  * @param size the number of cells along a side of the triangle
  */
 export function cone({
-  origin = CELLZERO,
+  source = CELLZERO,
   toward = CELLONE,
   size = 4,
 }: SubsetMakerParameters): GridMap {
   const cone: GridMap = new Map(),
-    { dirs, sign } = findWedge({ origin, toward });
+    { dirs, sign } = findWedge({ source, toward });
   size = makeTwoSize(size);
   for (let ia = 0; ia < size.a; ia++) {
     for (let ib = 0; ib < size.a - ia; ib++) {
@@ -119,7 +119,7 @@ export function cone({
               [dirs.ib]: sign * ib,
               [dirs.ic]: sign * ic,
             } as Hex.QRSVector,
-            origin
+            source
           ),
           "Cell"
         ) as Hex.CellNode;
@@ -134,7 +134,7 @@ export function cone({
  * @param size the number of hex cells along each side of the hexagon
  */
 export function hexagon({
-  origin = CELLZERO,
+  source = CELLZERO,
   size = 2,
 }: SubsetMakerParameters): GridMap {
   const hexagon: GridMap = new Map();
@@ -144,7 +144,7 @@ export function hexagon({
       if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size.a * 2) {
         const ic = -(ia + ib),
           newNode = Hex.makeNode(
-            Hex.add(origin, { q: ia, r: ib, s: ic }),
+            Hex.add(source, { q: ia, r: ib, s: ic }),
             "Cell"
           ) as Hex.CellNode;
         hexagon.set(newNode.id, newNode);
@@ -155,17 +155,17 @@ export function hexagon({
 }
 
 /**
- * @param origin cell forming one of the acute angles of the rhombus
+ * @param source cell forming one of the acute angles of the rhombus
  * @param toward a qrs vector within the desired rhombus "wedge"
  * @param size the number of cells along one edge of the rhombus
  */
 export function rhombus({
-  origin = CELLZERO,
+  source = CELLZERO,
   toward = CELLONE,
   size = 2,
 }: SubsetMakerParameters): GridMap {
   const rhombus: GridMap = new Map(),
-    { dirs, sign } = findWedge({ origin, toward });
+    { dirs, sign } = findWedge({ source, toward });
   size = makeTwoSize(size);
   for (let ia = 0; ia < size.a; ia++) {
     for (let ib = 0; ib < size.b; ib++) {
@@ -177,7 +177,7 @@ export function rhombus({
               [dirs.ib]: sign * ib,
               [dirs.ic]: sign * ic,
             } as Hex.QRSVector,
-            origin
+            source
           ),
           "Cell"
         ) as Hex.CellNode;

@@ -24,14 +24,14 @@ const gridTarget = "hg",
     { x: 90, y: 90 }
   ),
   shapeGrid: GridMap = makeGrid({ size: 5 }),
-  origin = Hex.makeNode({ q: 0, r: -0, s: 0 }, "Cell") as Hex.CellNode,
+  source = Hex.makeNode({ q: 0, r: -0, s: 0 }, "Cell") as Hex.CellNode,
   toward = { q: -2, r: 4, s: -2 },
   subsets = [
-    Subset.line({ origin, toward }),
-    Subset.ring({ origin, size: 3 }),
-    Subset.hexagon({ origin, size: 2 }),
-    Subset.cone({ origin, toward, size: 4 }),
-    Subset.rhombus({ origin, toward, size: 2 }),
+    Subset.line({ source, toward }),
+    Subset.ring({ source, size: 3 }),
+    Subset.hexagon({ source, size: 3 }),
+    Subset.cone({ source, toward, size: 4 }),
+    Subset.rhombus({ source, toward, size: 3 }),
   ];
 export const renderContext = document.getElementById(gridTarget) as HTMLElement,
   inputs = document.querySelector('form[id="params"]') as HTMLFormElement,
@@ -78,18 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log(holder);
   shapes.forEach((shape, index) => {
-    const shapeContainer = document.createElement("div"),
+    const shapeContainer = document.createElement("div") as HTMLDivElement,
       subset = subsets[index];
     shapeContainer.id = shape;
     shapeContainer.style.display = "inline-block";
     holder.appendChild(shapeContainer);
     renderSVG(shape, shapeLayoutConfig, shapeGrid);
+    const source = shapeContainer.querySelector(`[data-hex-node-id="0,0,0"]`);
+    (source as SVGPathElement).classList.add("source");
     subset.forEach((e): void => {
       const cell = document.querySelector(
         `#${shape} [data-hex-node-id="${e.id}"]`
-      );
+      ) as SVGPathElement;
       if (cell) {
-        cell.classList.toggle("hilit");
+        cell.classList.add("hilit");
       }
     });
   });
