@@ -1,7 +1,17 @@
 import { QRSVector } from "./hex.js";
 
 export const HALF_PI = Math.PI / 2,
+  /**
+   * `Math.PI/6` ≈ 0.5235
+   * π/6 radians is 30°, the minimum rotation required to switch between
+   * flat-topped and pointy-topped hexagons
+   */
   PI_OVER_SIX = Math.PI / 6,
+  /**
+   * `Math.sqrt(3)` ≈ 1.7321
+   * [√3] is the diagonal length of a unit cube, or more directly, the
+   * distance between opposite sides of a unit hexagon.
+   */
   SQRT_THREE = Math.sqrt(3);
 
 /**

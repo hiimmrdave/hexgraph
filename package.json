@@ -24,6 +24,10 @@
   },
   "author": "Dave Vogt",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiimmrdave/hexgraph.git"
+  },
   "dependencies": {
     "xstate": "^4.13.0"
   },
