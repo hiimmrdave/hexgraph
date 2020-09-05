@@ -2,7 +2,7 @@ import { minify } from "terser";
 import { promises as fs } from "fs";
 
 const inputdir = "./build",
-  outputdir = "./public/js",
+  outputdir = "./js",
   options = {
     mangle: { module: true },
     nameCache: {},

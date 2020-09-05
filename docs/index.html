@@ -64,6 +64,77 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
+				<a href="#yet-another-hex-graph-in-typescript" id="yet-another-hex-graph-in-typescript" style="color: inherit; text-decoration: none;">
+					<h1>Yet Another Hex Graph, in typescript</h1>
+				</a>
+				<p>hexgraph is an implementation of <a href="https://www.redblobgames.com/">Amit Patel</a>&#39;s
+					<a href="https://www.redblobgames.com/grids/hexagons/">Hexagonal Grids</a> in TypeScript. I have built on the
+					<a href="https://www.redblobgames.com/grids/hexagons/implementation.html">implementation</a> with other ideas, including relationship graphs between
+				grid parts.</p>
+				<a href="#motivation" id="motivation" style="color: inherit; text-decoration: none;">
+					<h2>Motivation</h2>
+				</a>
+				<p>I love turn-based roleplaying and strategy games, and I wanted to learn a whole
+					bunch of things about programming and math all at once, so I thought &quot;let&#39;s
+					build a game library!&quot; I was intrigued by the hexagonal grid concept in Sid
+					Meier games and thought to use it to learn a language. The point of the exercise
+				is to build -- rather than to use -- the library, so YAGNI doesn&#39;t apply.</p>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting Started</h2>
+				</a>
+				<p>Clone the repo, <code>npm run dist &amp;&amp; npx http-server</code> to run the demo locally</p>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
+				<p>The concepts are <a href="https://www.redblobgames.com/grids/hexagons/">thoroughly discussed</a>, so I will stick to the hows
+				and whys of my implementation.</p>
+				<p>I wrote in TypeScript because that&#39;s what I&#39;m trying to learn. Typedoc output
+				is at <a href="./docs/">/docs</a>.</p>
+				<p>I&#39;ve chosen to use cube coordinates for algorithmic simplicity. All
+					coordinate-based functions accept cube coordinates, which allows passing
+				<code>HexNode</code>s around as parameters.</p>
+				<a href="#conventions" id="conventions" style="color: inherit; text-decoration: none;">
+					<h3>Conventions</h3>
+				</a>
+				<p><code>CONSTANTS</code> are in all caps. <code>Classes</code>, <code>Interfaces</code>, and <code>Enums</code> are in
+					PascalCase, and <code>variables</code> and <code>functions</code> are in camelCase. Eslint, prettier,
+					and typescript configuration are included. I use automatic style linting on all
+					my code, two space indentations, and hardwrap code at 80 characters. I am not
+				married to these decisions, but being consistent improves readability.</p>
+				<img src="directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
+				<img src="diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
+				<a href="#task-list" id="task-list" style="color: inherit; text-decoration: none;">
+					<h2>Task List</h2>
+				</a>
+				<ul>
+					<li>tests</li>
+					<li>cell labelling</li>
+					<li><del>cell groups</del><ul>
+							<li><del>line</del></li>
+							<li><del>ring</del></li>
+							<li><del>hexagon</del></li>
+							<li><del>cone (triangle with origin and direction)</del></li>
+						</ul>
+					</li>
+					<li><del>cell group overlaps</del></li>
+					<li>rotation</li>
+					<li>rounding<ul>
+							<li>nearest edge</li>
+							<li>nearest vertex</li>
+						</ul>
+					</li>
+					<li>state</li>
+					<li>pathing<ul>
+							<li>field of view</li>
+							<li>obstacles</li>
+							<li>range</li>
+						</ul>
+					</li>
+					<li>storage</li>
+				</ul>
+				<a href="#⬢⬣⬢⬣⬢⬣⬢⬣" id="⬢⬣⬢⬣⬢⬣⬢⬣" style="color: inherit; text-decoration: none;">
+					<h1>⬢⬣⬢⬣⬢⬣⬢⬣</h1>
+				</a>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

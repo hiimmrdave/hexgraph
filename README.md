@@ -13,6 +13,10 @@ build a game library!" I was intrigued by the hexagonal grid concept in Sid
 Meier games and thought to use it to learn a language. The point of the exercise
 is to build -- rather than to use -- the library, so YAGNI doesn't apply.
 
+## Getting Started
+
+Clone the repo, `npm run dist && npx http-server` to run the demo locally
+
 ## Documentation
 
 The concepts are [thoroughly discussed][hexgrid], so I will stick to the hows
@@ -38,6 +42,7 @@ married to these decisions, but being consistent improves readability.
 <img src="diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
 
 ## Task List
+ - tests
  - cell labelling
  - ~~cell groups~~
    - ~~line~~
