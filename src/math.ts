@@ -1,16 +1,26 @@
 import { QRSVector } from "./hex.js";
 
+export type ChanceItem<T> = {
+  weight: number;
+  event: T;
+};
+export type ChanceTable<T> = ChanceItem<T>[];
+
+/**
+ * `Math.PI / 2` ≈ 1.5708
+ * π/2 radians is 180°, which is useful for turning around.
+ */
 export const HALF_PI = Math.PI / 2,
   /**
-   * `Math.PI/6` ≈ 0.5235
-   * π/6 radians is 30°, the minimum rotation required to switch between
-   * flat-topped and pointy-topped hexagons
+   * `Math.PI / 6` ≈ 0.5235
+   * π/6 radians is 30°, the minimum rotation required to switch between flat-
+   * topped and pointy-topped hexagons
    */
   PI_OVER_SIX = Math.PI / 6,
   /**
    * `Math.sqrt(3)` ≈ 1.7321
-   * [√3] is the diagonal length of a unit cube, or more directly, the
-   * distance between opposite sides of a unit hexagon.
+   * √3 is the diagonal length of a unit cube, or more directly, the distance
+   * between opposite sides of a unit hexagon.
    */
   SQRT_THREE = Math.sqrt(3);
 
@@ -42,20 +52,27 @@ export function cubeLerp(a: QRSVector, b: QRSVector, t: number): QRSVector {
   return { q: lerp(a.q, b.q, t), r: lerp(a.r, b.r, t), s: lerp(a.s, b.s, t) };
 }
 
+/**
+ * Returns a random integer in the range of [min, max] (inclusive).
+ * @param min lowest possible number desired
+ * @param max highest possible number desired
+ */
 export function randRange(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-export function rollTable<T>(table: [{ weight: number; value: T }]): T {
-  const totalWeight = table
-    .map((e) => e.weight)
-    .reduce((acc, cur) => acc + cur);
+/**
+ * chooses a (pseudo)random event from a weighted probability table
+ * @param table a weighted list of all possible events
+ */
+export function rollTable<T>(table: ChanceTable<T>): T {
+  const totalWeight = table.reduce((acc, cur) => acc + cur.weight, 0);
   const rand = randRange(0, totalWeight);
   let curWeight = 0;
-  for (const val of table) {
-    curWeight += val.weight;
+  for (const chanceItem of table) {
+    curWeight += chanceItem.weight;
     if (curWeight >= rand) {
-      return val.value;
+      return chanceItem.event;
     }
   }
   return table as never;

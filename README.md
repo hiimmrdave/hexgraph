@@ -23,7 +23,7 @@ The concepts are [thoroughly discussed][hexgrid], so I will stick to the hows
 and whys of my implementation.
 
 I wrote in TypeScript because that's what I'm trying to learn. Typedoc output
-is at [/docs](./docs/).
+is at [/docs][docs].
 
 I've chosen to use cube coordinates for algorithmic simplicity. All
 coordinate-based functions accept cube coordinates, which allows passing
@@ -38,8 +38,8 @@ my code, two space indentations, and hardwrap code at 80 characters. I am not
 married to these decisions, but being consistent improves readability.
 
 
-<img src="directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
-<img src="diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
+<img src="./directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
+<img src="./diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
 
 ## Task List
  - tests
@@ -60,12 +60,11 @@ married to these decisions, but being consistent improves readability.
    - obstacles
    - range
  - storage
+ - formatter for html and css
 
 # ⬢⬣⬢⬣⬢⬣⬢⬣
 
 [redblob]: https://www.redblobgames.com/
 [hexgrid]: https://www.redblobgames.com/grids/hexagons/
 [heximp]: https://www.redblobgames.com/grids/hexagons/implementation.html
-[vscode]: https://code.visualstudio.com/
-[sqrt3]: https://en.wikipedia.org/wiki/Square_root_of_3#Geometry_and_trigonometry
-[pi]: https://en.wikipedia.org/wiki/Pi#Geometry_and_trigonometry
+[docs]: https://hiimmrdave.github.io/hexgraph/docs/
