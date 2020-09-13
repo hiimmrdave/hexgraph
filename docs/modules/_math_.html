@@ -71,6 +71,13 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter"><a href="_math_.html#chanceitem" class="tsd-kind-icon">Chance<wbr>Item</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter"><a href="_math_.html#chancetable" class="tsd-kind-icon">Chance<wbr>Table</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_math_.html#half_pi" class="tsd-kind-icon">HALF_<wbr>PI</a></li>
@@ -92,6 +99,52 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="chanceitem" class="tsd-anchor"></a>
+					<h3>Chance<wbr>Item</h3>
+					<div class="tsd-signature tsd-kind-icon">Chance<wbr>Item&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L3">math.ts:3</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+					</ul>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="chancetable" class="tsd-anchor"></a>
+					<h3>Chance<wbr>Table</h3>
+					<div class="tsd-signature tsd-kind-icon">Chance<wbr>Table&lt;T&gt;<span class="tsd-signature-symbol">:</span> <a href="_math_.html#chanceitem" class="tsd-signature-type">ChanceItem</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L7">math.ts:7</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="half_pi" class="tsd-anchor"></a>
@@ -99,9 +152,15 @@
 					<div class="tsd-signature tsd-kind-icon">HALF_<wbr>PI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = Math.PI / 2</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/36a2b29/src/math.ts#L3">math.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L13">math.ts:13</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><code>Math.PI / 2</code> ≈ 1.5708
+							π/2 radians is 180°, which is useful for turning around.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="pi_over_six" class="tsd-anchor"></a>
@@ -109,9 +168,15 @@
 					<div class="tsd-signature tsd-kind-icon">PI_<wbr>OVER_<wbr>SIX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = Math.PI / 6</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/36a2b29/src/math.ts#L9">math.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L19">math.ts:19</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><code>Math.PI / 2</code> ≈ 1.5708
+							π/2 radians is 180°, which is useful for turning around.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="sqrt_three" class="tsd-anchor"></a>
@@ -119,9 +184,15 @@
 					<div class="tsd-signature tsd-kind-icon">SQRT_<wbr>THREE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = Math.sqrt(3)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/36a2b29/src/math.ts#L15">math.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L25">math.ts:25</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><code>Math.PI / 2</code> ≈ 1.5708
+							π/2 radians is 180°, which is useful for turning around.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -136,7 +207,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/36a2b29/src/math.ts#L41">math.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L51">math.ts:51</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -177,7 +248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/36a2b29/src/math.ts#L31">math.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L41">math.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,16 +289,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/36a2b29/src/math.ts#L45">math.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L60">math.ts:60</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a random integer in the range of [min, max] (inclusive).</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>min: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>lowest possible number desired</p>
+									</div>
 								</li>
 								<li>
 									<h5>max: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>highest possible number desired</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -238,15 +320,20 @@
 					<a name="rolltable" class="tsd-anchor"></a>
 					<h3>roll<wbr>Table</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">roll<wbr>Table&lt;T&gt;<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">{ </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">roll<wbr>Table&lt;T&gt;<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><a href="_math_.html#chancetable" class="tsd-signature-type">ChanceTable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/36a2b29/src/math.ts#L49">math.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L68">math.ts:68</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>chooses a (pseudo)random event from a weighted probability table</p>
+								</div>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -256,7 +343,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>table: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">{ </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">]</span></h5>
+									<h5>table: <a href="_math_.html#chancetable" class="tsd-signature-type">ChanceTable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a weighted list of all possible events</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
@@ -273,7 +363,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/36a2b29/src/math.ts#L21">math.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/869bb7a/src/math.ts#L31">math.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -328,6 +418,12 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_math_.html#chanceitem" class="tsd-kind-icon">Chance<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_math_.html#chancetable" class="tsd-kind-icon">Chance<wbr>Table</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
 						<a href="_math_.html#half_pi" class="tsd-kind-icon">HALF_<wbr>PI</a>
 					</li>
@@ -367,6 +463,7 @@
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>

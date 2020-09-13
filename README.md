@@ -32,14 +32,14 @@ coordinate-based functions accept cube coordinates, which allows passing
 ### Conventions
 
 `CONSTANTS` are in all caps. `Classes`, `Interfaces`, and `Enums` are in
-PascalCase, and `variables` and `functions` are in camelCase. Eslint, prettier,
-and typescript configuration are included. I use automatic style linting on all
-my code, two space indentations, and hardwrap code at 80 characters. I am not
-married to these decisions, but being consistent improves readability.
+PascalCase, and `variables` and `functions` are in camelCase. I use automatic
+style linting on all my code, two space indentations, and hard wrap at 80
+characters; eslint, prettier, and typescript configuration are included. I am
+not married to these decisions, but being consistent improves readability.
 
 
-<img src="./directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
-<img src="./diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
+<img src="/img/directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
+<img src="/img/diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
 
 ## Task List
  - tests
