@@ -10,11 +10,11 @@ svg .cell {
 }
 
 svg .cell.hilit {
-  fill: red;
+  fill: hsl(0, 100%, 50%);
 }
 
 svg .cell.source {
-  fill: blue;
+  fill: hsl(240, 100%, 50%);
 }
 
 fieldset {

@@ -1,8 +1,4 @@
 /**
- * @packageDocumentation
- * graph vertices are called "nodes"
- * graph edges are called "links"
- * this is to remove ambiguity with the related grid terms
  * ⬢⬣
  */
 
@@ -18,6 +14,7 @@ export type NodeType = "Cell" | "Edge" | "Vertex";
  * the set of valid coordinate labels
  */
 type HexCoords = "q" | "r" | "s";
+
 /**
  * a vector or coordinate in qrs space. qrs is cubic space, which is confined
  * here to a plane q+r+s==0
@@ -56,6 +53,7 @@ export interface VertexNode extends QRSVector {
 
 /** a node of the graph representation of the hexagonal grid */
 export type HexNode = CellNode | EdgeNode | VertexNode;
+
 /**
  * the coordinates of the cells sharing an edge and two vertices with the origin
  */
