@@ -1,3 +1,8 @@
+/**
+ * gathers the library together into a working demo
+ * reveals weaknesses in usability and design
+ * provides interface for visual testing
+ */
 import { renderSVG } from "./renderer.js";
 import { LayoutConfig, configureLayout } from "./layout.js";
 import { GridMap, GridShape, makeGrid } from "./grid.js";
@@ -5,10 +10,6 @@ import * as Subset from "./subset.js";
 import * as Hex from "./hex.js";
 
 /*
-function getFloat(elementId: string): number {
-  const input = document.getElementById(elementId) as HTMLInputElement;
-  return parseFloat(input.value);
-}
 function getCheckbox(elementId: string): boolean {
   const input = document.getElementById(elementId) as HTMLInputElement;
   return input.checked;
@@ -35,6 +36,10 @@ const gridTarget = "hg",
   ];
 export const renderContext = document.getElementById(gridTarget) as HTMLElement,
   inputs = document.querySelector('form[id="params"]') as HTMLFormElement,
+  getFloatValue = (elementId: string): number => {
+    const input = document.getElementById(elementId) as HTMLInputElement;
+    return parseFloat(input.value);
+  },
   getIntValue = (elementId: string): number => {
     const input = document.getElementById(elementId) as HTMLInputElement;
     return parseInt(input.value, 10);
@@ -49,7 +54,7 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
     return [
       gridTarget,
       configureLayout(
-        (getIntValue("orientation") * Math.PI) / 12,
+        (getFloatValue("orientation") * Math.PI) / 12,
         { x: getIntValue("hsx"), y: getIntValue("hsy") },
         { x: getIntValue("orx"), y: getIntValue("ory") },
         { x: getIntValue("csx"), y: getIntValue("csy") }
@@ -75,8 +80,6 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
 document.addEventListener("DOMContentLoaded", () => {
   rend();
   const holder = document.getElementById(shapesHolder) as HTMLDivElement;
-
-  console.log(holder);
   shapes.forEach((shape, index) => {
     const shapeContainer = document.createElement("div") as HTMLDivElement,
       subset = subsets[index];
