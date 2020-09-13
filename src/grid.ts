@@ -1,3 +1,6 @@
+/**
+ * builds underlying grid areas
+ */
 import { CellNode, HexNode, vertices, edges, makeNode } from "./hex.js";
 
 /**

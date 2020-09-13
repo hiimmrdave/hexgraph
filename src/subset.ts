@@ -1,3 +1,7 @@
+/**
+ * creates groups of cells, for potential targets, search areas, etc.
+ * also provides `intersection` to compare groups of cells
+ */
 import * as Hex from "./hex.js";
 import { round } from "./cell.js";
 import { cubeLerp } from "./math.js";
