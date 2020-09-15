@@ -68,3 +68,15 @@ export function buildCanvas(
   targetElem.appendChild(canvasRoot);
   return ctx;
 }
+
+export function renderCanvasFrame(
+  ctx: CanvasRenderingContext2D,
+  layout: LayoutConfig,
+  grid: GridMap
+): void {
+  grid.forEach((node) => {
+    if (node.kind === "Cell") {
+      ctx.stroke(new Path2D(cellPath(node as CellNode, layout)));
+    }
+  });
+}
