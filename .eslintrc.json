@@ -25,14 +25,5 @@
     "parserOptions": {
         "ecmaVersion": 2020,
         "sourceType": "module"
-    },
-    "overrides": [
-      {
-        "files": "./dist/*",
-        "rules": {
-          "@typescript-eslint/explicit-module-boundary-types": "off"
-        }
-
-      }
-    ]
+    }
 }

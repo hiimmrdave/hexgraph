@@ -1,3 +1,6 @@
+/**
+ * provides methods for projecting a QRS grid into cartesian space
+ */
 import { PI_OVER_SIX, SQRT_THREE, thousandthRound } from "./math.js";
 import { QRSVector, CellNode, vertices } from "./hex.js";
 
