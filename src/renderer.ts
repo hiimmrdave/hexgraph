@@ -15,7 +15,7 @@ function cellPath(cell: CellNode, layout: LayoutConfig): string {
     .join(" L")}z`;
 }
 
-function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
+function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
   const svgRoot = document.createElementNS(SVGNS, "svg") as SVGSVGElement;
   svgRoot.setAttribute("xmlns", SVGNS);
   svgRoot.setAttribute("viewBox", `0 0 ${size.x} ${size.y}`);
@@ -26,12 +26,11 @@ function makeSvgRoot({ size }: LayoutConfig): SVGSVGElement {
     height: size.y.toString(10),
     padding: "0",
     margin: "0",
-    border: "1px solid green",
   });
   return svgRoot;
 }
 
-function buildCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
+function buildSvgCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
   const path = document.createElementNS(SVGNS, "path") as SVGPathElement,
     c: XYVector = cubeToPoint(cell, layout);
   path.classList.add("cell");
@@ -42,17 +41,30 @@ function buildCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
   return path;
 }
 
-export function renderSVG(
+export function renderSvg(
   targetId: string,
   layout: LayoutConfig,
   grid: GridMap
 ): void {
-  const targetElem = document.getElementById(targetId) as HTMLElement;
-  const svgRoot = makeSvgRoot(layout);
+  const targetElem = document.getElementById(targetId) as HTMLElement,
+    svgRoot = buildSvgRoot(layout);
   grid.forEach((node): void => {
     if (node.kind === "Cell") {
-      svgRoot.appendChild(buildCell(node, layout));
+      svgRoot.appendChild(buildSvgCell(node as CellNode, layout));
     }
   });
   targetElem.appendChild(svgRoot);
+}
+
+export function buildCanvas(
+  targetId: string,
+  layout: LayoutConfig
+): CanvasRenderingContext2D {
+  const targetElem = document.getElementById(targetId) as HTMLElement,
+    canvasRoot = document.createElement("canvas") as HTMLCanvasElement,
+    ctx = canvasRoot.getContext("2d") as CanvasRenderingContext2D;
+  canvasRoot.setAttribute("width", layout.size.x.toString(10));
+  canvasRoot.setAttribute("height", layout.size.y.toString(10));
+  targetElem.appendChild(canvasRoot);
+  return ctx;
 }
