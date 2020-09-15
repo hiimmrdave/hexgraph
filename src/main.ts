@@ -3,7 +3,7 @@
  * reveals weaknesses in usability and design
  * provides interface for visual testing
  */
-import { renderSVG } from "./renderer.js";
+import { renderSvg } from "./renderer.js";
 import { LayoutConfig, configureLayout } from "./layout.js";
 import { GridMap, GridShape, makeGrid } from "./grid.js";
 import * as Subset from "./subset.js";
@@ -78,7 +78,7 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
     while ((last = renderContext.lastChild)) {
       renderContext.removeChild(last);
     }
-    renderSVG(...config);
+    renderSvg(...config);
   };
 
 /**/
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     shapeContainer.id = shape;
     shapeContainer.style.display = "inline-block";
     holder.appendChild(shapeContainer);
-    renderSVG(shape, shapeLayoutConfig, shapeGrid);
+    renderSvg(shape, shapeLayoutConfig, shapeGrid);
     const sourceHex = shapeContainer.querySelector(
       `[data-hex-node-id="${source.id}"]`
     ) as SVGPathElement;
