@@ -3,7 +3,7 @@
  * reveals weaknesses in usability and design
  * provides interface for visual testing
  */
-import { renderSVG } from "./renderer.js";
+import { renderSvg } from "./renderer.js";
 import { LayoutConfig, configureLayout } from "./layout.js";
 import { GridMap, GridShape, makeGrid } from "./grid.js";
 import * as Subset from "./subset.js";
@@ -25,7 +25,7 @@ const gridTarget = "hg",
     { x: 90, y: 90 }
   ),
   shapeGrid: GridMap = makeGrid({ size: 5 }),
-  source = Hex.makeNode({ q: 0, r: -0, s: 0 }, "Cell") as Hex.CellNode,
+  source = Hex.makeNode({ q: 1, r: -1, s: 0 }, "Cell") as Hex.CellNode,
   toward = { q: -2, r: 4, s: -2 },
   subsets = [
     Subset.line({ source, toward }),
@@ -50,6 +50,10 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
     ) as HTMLInputElement;
     return input.value;
   },
+  getStringValue = (elementId: string): string => {
+    const input = document.getElementById(elementId) as HTMLInputElement;
+    return input.value;
+  },
   getForm = (): [string, LayoutConfig, GridMap] => {
     return [
       gridTarget,
@@ -61,18 +65,20 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
       ),
       makeGrid({
         shape: getRadioValue("shape") as GridShape,
-        size: { a: getIntValue("gs1"), b: getIntValue("gs1") },
+        size: { a: getIntValue("gs1"), b: getIntValue("gs2") },
         populate: true,
       }),
     ];
   },
   rend = (): void => {
-    const config = getForm();
+    const config = getForm(),
+      holder = document.getElementById("shapes") as HTMLDivElement;
     let last;
+    holder.style.width = `${getStringValue("csx")}px`;
     while ((last = renderContext.lastChild)) {
       renderContext.removeChild(last);
     }
-    renderSVG(...config);
+    renderSvg(...config);
   };
 
 /**/
@@ -86,9 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
     shapeContainer.id = shape;
     shapeContainer.style.display = "inline-block";
     holder.appendChild(shapeContainer);
-    renderSVG(shape, shapeLayoutConfig, shapeGrid);
-    const source = shapeContainer.querySelector(`[data-hex-node-id="0,0,0"]`);
-    (source as SVGPathElement).classList.add("source");
+    renderSvg(shape, shapeLayoutConfig, shapeGrid);
+    const sourceHex = shapeContainer.querySelector(
+      `[data-hex-node-id="${source.id}"]`
+    ) as SVGPathElement;
+    sourceHex.classList.add("source");
     subset.forEach((e): void => {
       const cell = document.querySelector(
         `#${shape} [data-hex-node-id="${e.id}"]`

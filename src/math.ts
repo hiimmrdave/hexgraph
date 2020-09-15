@@ -77,3 +77,10 @@ export function rollTable<T>(table: ChanceTable<T>): T {
   }
   return table as never;
 }
+
+/* eslint-disable */
+const matrixUses = [
+  "scalex",     "",           "",
+  "",           "scaley",     "",
+  "translatex", "translatey", "",
+];

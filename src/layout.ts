@@ -1,34 +1,33 @@
 /**
  * provides methods for projecting a QRS grid into cartesian space
  */
-
-import { HALF_PI, PI_OVER_SIX, SQRT_THREE, thousandthRound } from "./math.js";
+import { PI_OVER_SIX, SQRT_THREE, thousandthRound } from "./math.js";
 import { QRSVector, CellNode, vertices } from "./hex.js";
 
 /** a vector or coordinate in 2-space */
-export interface XYVector {
+export type XYVector = {
   /** the x component of the vector */
   readonly x: number;
   /** the y component of the coordinate/vector */
   readonly y: number;
-}
+};
 
-/** a matrix to convert from QRS to XY space */
-interface Orientation {
-  f: { q: XYVector; r: XYVector };
-  b: { q: XYVector; r: XYVector };
-}
+/** a matrix to convert between QRS and XY space */
+type Orientation = {
+  f: [number, number, number, number];
+  b: [number, number, number, number];
+};
 
 /**
  * a set of values to convert from CubeVector grid coordinates to
  * CartesianVector screen coodrinates
  */
-export interface LayoutConfig {
+export type LayoutConfig = {
   orientation: Orientation;
   radius: XYVector;
   origin: XYVector;
   size: XYVector;
-}
+};
 
 /**
  *
@@ -37,26 +36,18 @@ export interface LayoutConfig {
  */
 export function orientation(theta = 0): Orientation {
   return {
-    f: {
-      q: {
-        x: Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
-        y: Math.sin(theta + 5 * PI_OVER_SIX) * SQRT_THREE,
-      },
-      r: {
-        x: Math.cos(theta - HALF_PI) * SQRT_THREE,
-        y: Math.sin(theta + HALF_PI) * SQRT_THREE,
-      },
-    },
-    b: {
-      q: {
-        x: (Math.cos(theta) * 2) / 3,
-        y: (Math.sin(theta) * -2) / 3,
-      },
-      r: {
-        x: (Math.cos(theta + 2 * PI_OVER_SIX) * -2) / 3,
-        y: (Math.sin(theta + 2 * PI_OVER_SIX) * 2) / 3,
-      },
-    },
+    f: [
+      Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
+      Math.sin(theta) * SQRT_THREE,
+      -Math.sin(theta - PI_OVER_SIX) * SQRT_THREE,
+      Math.cos(theta) * SQRT_THREE,
+    ],
+    b: [
+      Math.cos(theta) * (2 / 3),
+      Math.sin(theta - PI_OVER_SIX) * (2 / 3),
+      -Math.sin(theta) * (2 / 3),
+      Math.cos(theta - PI_OVER_SIX) * (2 / 3),
+    ],
   };
 }
 
@@ -73,8 +64,8 @@ export function cubeToPoint(
   c: QRSVector,
   { orientation: o, radius, origin }: LayoutConfig
 ): XYVector {
-  const x = (o.f.q.x * c.q + o.f.r.x * c.r) * radius.x + origin.x,
-    y = (o.f.q.y * c.q + o.f.r.y * c.r) * radius.y + origin.y;
+  const x = (o.f[0] * c.q + o.f[1] * c.r) * radius.x + origin.x,
+    y = (o.f[2] * c.q + o.f[3] * c.r) * radius.y + origin.y;
   return { x: thousandthRound(x), y: thousandthRound(y) };
 }
 
@@ -86,8 +77,8 @@ export function pointToCube(
       x: (p.x - origin.x) / radius.x,
       y: (p.y - origin.y) / radius.y,
     },
-    q = o.b.q.x * pt.x + o.b.q.y * pt.y,
-    r = o.b.r.x * pt.x + o.b.r.y * pt.y,
+    q = o.b[0] * pt.x + o.b[1] * pt.y,
+    r = o.b[2] * pt.x + o.b[3] * pt.y,
     s = -q - r;
   return { q, r, s };
 }
