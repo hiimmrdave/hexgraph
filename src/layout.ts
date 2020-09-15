@@ -1,30 +1,30 @@
-import { HALF_PI, PI_OVER_SIX, SQRT_THREE, thousandthRound } from "./math.js";
+import { PI_OVER_SIX, SQRT_THREE, thousandthRound } from "./math.js";
 import { QRSVector, CellNode, vertices } from "./hex.js";
 
 /** a vector or coordinate in 2-space */
-export interface XYVector {
+export type XYVector = {
   /** the x component of the vector */
   readonly x: number;
   /** the y component of the coordinate/vector */
   readonly y: number;
-}
+};
 
-/** a matrix to convert from QRS to XY space */
-interface Orientation {
+/** a matrix to convert between QRS and XY space */
+type Orientation = {
   f: [number, number, number, number];
   b: [number, number, number, number];
-}
+};
 
 /**
  * a set of values to convert from CubeVector grid coordinates to
  * CartesianVector screen coodrinates
  */
-export interface LayoutConfig {
+export type LayoutConfig = {
   orientation: Orientation;
   radius: XYVector;
   origin: XYVector;
   size: XYVector;
-}
+};
 
 /**
  *
@@ -35,15 +35,15 @@ export function orientation(theta = 0): Orientation {
   return {
     f: [
       Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
-      -Math.cos(theta + HALF_PI) * SQRT_THREE,
+      Math.sin(theta) * SQRT_THREE,
       -Math.sin(theta - PI_OVER_SIX) * SQRT_THREE,
-      Math.sin(theta + HALF_PI) * SQRT_THREE,
+      Math.cos(theta) * SQRT_THREE,
     ],
     b: [
       Math.cos(theta) * (2 / 3),
-      -Math.cos(theta + 2 * PI_OVER_SIX) * (2 / 3),
+      Math.sin(theta - PI_OVER_SIX) * (2 / 3),
       -Math.sin(theta) * (2 / 3),
-      Math.sin(theta + 2 * PI_OVER_SIX) * (2 / 3),
+      Math.cos(theta - PI_OVER_SIX) * (2 / 3),
     ],
   };
 }
