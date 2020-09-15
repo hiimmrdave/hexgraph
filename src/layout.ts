@@ -11,8 +11,8 @@ export interface XYVector {
 
 /** a matrix to convert from QRS to XY space */
 interface Orientation {
-  f: { q: XYVector; r: XYVector };
-  b: { q: XYVector; r: XYVector };
+  f: [number, number, number, number];
+  b: [number, number, number, number];
 }
 
 /**
@@ -33,26 +33,18 @@ export interface LayoutConfig {
  */
 export function orientation(theta = 0): Orientation {
   return {
-    f: {
-      q: {
-        x: Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
-        y: Math.sin(theta + 5 * PI_OVER_SIX) * SQRT_THREE,
-      },
-      r: {
-        x: Math.cos(theta - HALF_PI) * SQRT_THREE,
-        y: Math.sin(theta + HALF_PI) * SQRT_THREE,
-      },
-    },
-    b: {
-      q: {
-        x: (Math.cos(theta) * 2) / 3,
-        y: (Math.sin(theta) * -2) / 3,
-      },
-      r: {
-        x: (Math.cos(theta + 2 * PI_OVER_SIX) * -2) / 3,
-        y: (Math.sin(theta + 2 * PI_OVER_SIX) * 2) / 3,
-      },
-    },
+    f: [
+      Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
+      -Math.cos(theta + HALF_PI) * SQRT_THREE,
+      -Math.sin(theta - PI_OVER_SIX) * SQRT_THREE,
+      Math.sin(theta + HALF_PI) * SQRT_THREE,
+    ],
+    b: [
+      Math.cos(theta) * (2 / 3),
+      -Math.cos(theta + 2 * PI_OVER_SIX) * (2 / 3),
+      -Math.sin(theta) * (2 / 3),
+      Math.sin(theta + 2 * PI_OVER_SIX) * (2 / 3),
+    ],
   };
 }
 
@@ -69,8 +61,8 @@ export function cubeToPoint(
   c: QRSVector,
   { orientation: o, radius, origin }: LayoutConfig
 ): XYVector {
-  const x = (o.f.q.x * c.q + o.f.r.x * c.r) * radius.x + origin.x,
-    y = (o.f.q.y * c.q + o.f.r.y * c.r) * radius.y + origin.y;
+  const x = (o.f[0] * c.q + o.f[1] * c.r) * radius.x + origin.x,
+    y = (o.f[2] * c.q + o.f[3] * c.r) * radius.y + origin.y;
   return { x: thousandthRound(x), y: thousandthRound(y) };
 }
 
@@ -82,8 +74,8 @@ export function pointToCube(
       x: (p.x - origin.x) / radius.x,
       y: (p.y - origin.y) / radius.y,
     },
-    q = o.b.q.x * pt.x + o.b.q.y * pt.y,
-    r = o.b.r.x * pt.x + o.b.r.y * pt.y,
+    q = o.b[0] * pt.x + o.b[1] * pt.y,
+    r = o.b[2] * pt.x + o.b[3] * pt.y,
     s = -q - r;
   return { q, r, s };
 }
