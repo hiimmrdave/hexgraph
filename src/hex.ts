@@ -15,47 +15,41 @@ import { thousandthRound } from "./math.js";
 export type NodeType = "Cell" | "Edge" | "Vertex";
 
 /**
- * the set of valid coordinate labels
- */
-type HexCoords = "q" | "r" | "s";
-/**
  * a vector or coordinate in qrs space. qrs is cubic space, which is confined
  * here to a plane q+r+s==0
  */
-export type QRSVector = Record<HexCoords, number>;
+export type QRSVector = {
+  [key in "q" | "r" | "s"]: number;
+};
 
-/** a Cell node of the hexagonal grid */
-export interface CellNode extends QRSVector {
+/** a node of the graph representation of the hexagonal grid */
+export interface HexNode extends QRSVector {
   /** the cube coordinates of the node as a comma-separated string */
   id: string;
   /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
   links: WeakSet<HexNode>;
+  /** arbitrary additional properties */
+  [prop: string]: unknown;
+}
+
+/** a Cell node of the hexagonal grid */
+export interface CellNode extends HexNode {
   /** the discriminant of the HexNode */
   kind: "Cell";
 }
 
 /** an Edge node of the hexagonal grid */
-export interface EdgeNode extends QRSVector {
-  /** the cube coordinates of the node as a comma-separated string */
-  id: string;
-  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
-  links: WeakSet<HexNode>;
+export interface EdgeNode extends HexNode {
   /** the discriminant of the HexNode */
   kind: "Edge";
 }
 
 /** a Vertex node of the hexagonal grid */
-export interface VertexNode extends QRSVector {
-  /** the cube coordinates of the node as a comma-separated string */
-  id: string;
-  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
-  links: WeakSet<HexNode>;
+export interface VertexNode extends HexNode {
   /** the discriminant of the HexNode */
   kind: "Vertex";
 }
 
-/** a node of the graph representation of the hexagonal grid */
-export type HexNode = CellNode | EdgeNode | VertexNode;
 /**
  * the coordinates of the cells sharing an edge and two vertices with the origin
  */
