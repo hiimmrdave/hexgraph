@@ -58,7 +58,7 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
     return [
       gridTarget,
       configureLayout(
-        (getFloatValue("orientation") * Math.PI) / 12,
+        getFloatValue("orientation") * (Math.PI / 12),
         { x: getIntValue("hsx"), y: getIntValue("hsy") },
         { x: getIntValue("orx"), y: getIntValue("ory") },
         { x: getIntValue("csx"), y: getIntValue("csy") }

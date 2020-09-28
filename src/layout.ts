@@ -13,7 +13,7 @@ export type XYVector = {
 };
 
 /** a matrix to convert between QRS and XY space */
-type Orientation = {
+type TransformMatrix = {
   f: [number, number, number, number];
   b: [number, number, number, number];
 };
@@ -23,18 +23,13 @@ type Orientation = {
  * CartesianVector screen coodrinates
  */
 export type LayoutConfig = {
-  orientation: Orientation;
+  cO: TransformMatrix;
   radius: XYVector;
   origin: XYVector;
   size: XYVector;
 };
 
-/**
- *
- * @param theta the angle from center to point 0, ccw in multiples of pi/12
- * @returns objectified transformation matricies for QRS->XY and XY->QRS
- */
-export function orientation(theta = 0): Orientation {
+function cellOrientationMatrixer(theta = 0): TransformMatrix {
   return {
     f: [
       Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
@@ -44,41 +39,42 @@ export function orientation(theta = 0): Orientation {
     ],
     b: [
       Math.cos(theta) * (2 / 3),
-      Math.sin(theta - PI_OVER_SIX) * (2 / 3),
       -Math.sin(theta) * (2 / 3),
+      Math.sin(theta - PI_OVER_SIX) * (2 / 3),
       Math.cos(theta - PI_OVER_SIX) * (2 / 3),
     ],
   };
 }
 
 export function configureLayout(
-  theta: number,
+  cellTheta: number,
   radius: XYVector,
   origin: XYVector,
   size: XYVector
 ): LayoutConfig {
-  return { orientation: orientation(theta), radius, origin, size };
+  const cO = cellOrientationMatrixer(cellTheta);
+  return { cO, radius, origin, size };
 }
 
 export function cubeToPoint(
   c: QRSVector,
-  { orientation: o, radius, origin }: LayoutConfig
+  { cO, radius, origin }: LayoutConfig
 ): XYVector {
-  const x = (o.f[0] * c.q + o.f[1] * c.r) * radius.x + origin.x,
-    y = (o.f[2] * c.q + o.f[3] * c.r) * radius.y + origin.y;
+  const x = (cO.f[0] * c.q + cO.f[1] * c.r) * radius.x + origin.x,
+    y = (cO.f[2] * c.q + cO.f[3] * c.r) * radius.y + origin.y;
   return { x: thousandthRound(x), y: thousandthRound(y) };
 }
 
 export function pointToCube(
   p: XYVector,
-  { orientation: o, radius, origin }: LayoutConfig
+  { cO, radius, origin }: LayoutConfig
 ): QRSVector {
   const pt = {
       x: (p.x - origin.x) / radius.x,
       y: (p.y - origin.y) / radius.y,
     },
-    q = o.b[0] * pt.x + o.b[1] * pt.y,
-    r = o.b[2] * pt.x + o.b[3] * pt.y,
+    q = cO.b[0] * pt.x + cO.b[1] * pt.y,
+    r = cO.b[2] * pt.x + cO.b[3] * pt.y,
     s = -q - r;
   return { q, r, s };
 }
