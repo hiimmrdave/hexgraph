@@ -1,7 +1,7 @@
 /**
  * provides methods for projecting a QRS grid into cartesian space
  */
-import { PI_OVER_SIX, SQRT_THREE, thousandthRound } from "./math.js";
+import { SQRT_THREE, thousandthRound } from "./math.js";
 import { QRSVector, CellNode, vertices } from "./hex.js";
 
 /** a vector or coordinate in 2-space */
@@ -23,58 +23,43 @@ type TransformMatrix = {
  * CartesianVector screen coodrinates
  */
 export type LayoutConfig = {
-  cO: TransformMatrix;
   radius: XYVector;
   origin: XYVector;
   size: XYVector;
 };
 
-function cellOrientationMatrixer(theta = 0): TransformMatrix {
-  return {
-    f: [
-      Math.cos(theta - PI_OVER_SIX) * SQRT_THREE,
-      Math.sin(theta) * SQRT_THREE,
-      -Math.sin(theta - PI_OVER_SIX) * SQRT_THREE,
-      Math.cos(theta) * SQRT_THREE,
-    ],
-    b: [
-      Math.cos(theta) * (2 / 3),
-      -Math.sin(theta) * (2 / 3),
-      Math.sin(theta - PI_OVER_SIX) * (2 / 3),
-      Math.cos(theta - PI_OVER_SIX) * (2 / 3),
-    ],
-  };
-}
+const qrxy: TransformMatrix = {
+  f: [3 / 2, 0, SQRT_THREE / 2, SQRT_THREE],
+  b: [2 / 3, 0, -1 / 3, SQRT_THREE / 3],
+};
 
 export function configureLayout(
-  cellTheta: number,
   radius: XYVector,
   origin: XYVector,
   size: XYVector
 ): LayoutConfig {
-  const cO = cellOrientationMatrixer(cellTheta);
-  return { cO, radius, origin, size };
+  return { radius, origin, size };
 }
 
 export function cubeToPoint(
   c: QRSVector,
-  { cO, radius, origin }: LayoutConfig
+  { radius, origin }: LayoutConfig
 ): XYVector {
-  const x = (cO.f[0] * c.q + cO.f[1] * c.r) * radius.x + origin.x,
-    y = (cO.f[2] * c.q + cO.f[3] * c.r) * radius.y + origin.y;
+  const x = (qrxy.f[0] * c.q + qrxy.f[1] * c.r) * radius.x + origin.x,
+    y = (qrxy.f[2] * c.q + qrxy.f[3] * c.r) * radius.y + origin.y;
   return { x: thousandthRound(x), y: thousandthRound(y) };
 }
 
 export function pointToCube(
   p: XYVector,
-  { cO, radius, origin }: LayoutConfig
+  { radius, origin }: LayoutConfig
 ): QRSVector {
   const pt = {
       x: (p.x - origin.x) / radius.x,
       y: (p.y - origin.y) / radius.y,
     },
-    q = cO.b[0] * pt.x + cO.b[1] * pt.y,
-    r = cO.b[2] * pt.x + cO.b[3] * pt.y,
+    q = qrxy.b[0] * pt.x + qrxy.b[1] * pt.y,
+    r = qrxy.b[2] * pt.x + qrxy.b[3] * pt.y,
     s = -q - r;
   return { q, r, s };
 }
