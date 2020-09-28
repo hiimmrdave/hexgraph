@@ -66,10 +66,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -79,14 +75,13 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_hex_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_hex_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_hex_.hexnode.html" class="tsd-kind-icon">Hex<wbr>Node</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_hex_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="_hex_.html#hexcoords" class="tsd-kind-icon">Hex<wbr>Coords</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_hex_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_hex_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_hex_.html#qrsvector" class="tsd-kind-icon">QRSVector</a></li>
 							</ul>
@@ -118,43 +113,13 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
-					<a name="hexcoords" class="tsd-anchor"></a>
-					<h3>Hex<wbr>Coords</h3>
-					<div class="tsd-signature tsd-kind-icon">Hex<wbr>Coords<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"q"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"r"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"s"</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L20">hex.ts:20</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the set of valid coordinate labels</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="hexnode" class="tsd-anchor"></a>
-					<h3>Hex<wbr>Node</h3>
-					<div class="tsd-signature tsd-kind-icon">Hex<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_hex_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_hex_.vertexnode.html" class="tsd-signature-type">VertexNode</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L58">hex.ts:58</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>a node of the graph representation of the hexagonal grid</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="nodetype" class="tsd-anchor"></a>
 					<h3>Node<wbr>Type</h3>
 					<div class="tsd-signature tsd-kind-icon">Node<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Cell"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Edge"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Vertex"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L15">hex.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L11">hex.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -167,10 +132,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="qrsvector" class="tsd-anchor"></a>
 					<h3>QRSVector</h3>
-					<div class="tsd-signature tsd-kind-icon">QRSVector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.html#hexcoords" class="tsd-signature-type">HexCoords</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">QRSVector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L25">hex.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L17">hex.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -178,6 +143,11 @@
 							<p>a vector or coordinate in qrs space. qrs is cubic space, which is confined
 							here to a plane q+r+s==0</p>
 						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
 					</div>
 				</section>
 			</section>
@@ -189,7 +159,7 @@
 					<div class="tsd-signature tsd-kind-icon">DIAGONALS<span class="tsd-signature-symbol">:</span> <a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{ q: 2, r: -1, s: -1 },{ q: 1, r: -2, s: 1 },{ q: -1, r: -1, s: 2 },{ q: -2, r: 1, s: 1 },{ q: -1, r: 2, s: -1 },{ q: 1, r: 1, s: -2 },]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L73">hex.ts:73</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L63">hex.ts:63</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -204,7 +174,7 @@
 					<div class="tsd-signature tsd-kind-icon">DIRECTIONS<span class="tsd-signature-symbol">:</span> <a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{ q: 1, r: -1, s: 0 },{ q: 0, r: -1, s: 1 },{ q: -1, r: 0, s: 1 },{ q: -1, r: 1, s: 0 },{ q: 0, r: 1, s: -1 },{ q: 1, r: 0, s: -1 },]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L62">hex.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L52">hex.ts:52</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -226,7 +196,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L228">hex.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L218">hex.ts:218</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -263,7 +233,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L219">hex.ts:219</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L209">hex.ts:209</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -295,13 +265,13 @@
 					<a name="cells" class="tsd-anchor"></a>
 					<h3>cells</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">cells<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">cells<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.cellnode.html" class="tsd-signature-type">CellNode</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L116">hex.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L106">hex.ts:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -309,7 +279,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
+									<h5>node: <a href="../interfaces/_hex_.hexnode.html" class="tsd-signature-type">HexNode</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the graph node of which to find adjacent cells</p>
 									</div>
@@ -329,7 +299,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L252">hex.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L242">hex.ts:242</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -354,13 +324,13 @@
 					<a name="edges" class="tsd-anchor"></a>
 					<h3>edges</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.edgenode.html" class="tsd-signature-type">EdgeNode</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L148">hex.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L138">hex.ts:138</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -368,7 +338,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
+									<h5>node: <a href="../interfaces/_hex_.hexnode.html" class="tsd-signature-type">HexNode</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the graph node of which to find adjacent edges</p>
 									</div>
@@ -388,7 +358,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L246">hex.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L236">hex.ts:236</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -421,13 +391,13 @@
 					<a name="makenode" class="tsd-anchor"></a>
 					<h3>make<wbr>Node</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">make<wbr>Node<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span>, kind<span class="tsd-signature-symbol">: </span><a href="_hex_.html#nodetype" class="tsd-signature-type">NodeType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></li>
+						<li class="tsd-signature tsd-kind-icon">make<wbr>Node<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span>, kind<span class="tsd-signature-symbol">: </span><a href="_hex_.html#nodetype" class="tsd-signature-type">NodeType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.hexnode.html" class="tsd-signature-type">HexNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L89">hex.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L79">hex.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -464,7 +434,7 @@
 									<h5>kind: <a href="_hex_.html#nodetype" class="tsd-signature-type">NodeType</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_hex_.hexnode.html" class="tsd-signature-type">HexNode</a></h4>
 							<p>the node of the specified type at the specified coordinates</p>
 						</li>
 					</ul>
@@ -479,7 +449,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L240">hex.ts:240</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L230">hex.ts:230</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -510,7 +480,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L234">hex.ts:234</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L224">hex.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -535,13 +505,13 @@
 					<a name="vertices" class="tsd-anchor"></a>
 					<h3>vertices</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">vertices<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">vertices<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_hex_.vertexnode.html" class="tsd-signature-type">VertexNode</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/hex.ts#L182">hex.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L172">hex.ts:172</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -549,7 +519,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <a href="_hex_.html#hexnode" class="tsd-signature-type">HexNode</a></h5>
+									<h5>node: <a href="../interfaces/_hex_.hexnode.html" class="tsd-signature-type">HexNode</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the graph node of which to find adjacent vertices</p>
 									</div>
@@ -602,13 +572,10 @@
 						<a href="../interfaces/_hex_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_hex_.hexnode.html" class="tsd-kind-icon">Hex<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_hex_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_hex_.html#hexcoords" class="tsd-kind-icon">Hex<wbr>Coords</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="_hex_.html#hexnode" class="tsd-kind-icon">Hex<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_hex_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a>

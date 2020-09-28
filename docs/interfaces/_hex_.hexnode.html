@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Orientation | yahgts</title>
+	<title>HexNode | yahgts</title>
 	<meta name="description" content="Documentation for yahgts">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_layout_.html">&quot;layout&quot;</a>
+					<a href="../modules/_hex_.html">&quot;hex&quot;</a>
 				</li>
 				<li>
-					<a href="_layout_.orientation.html">Orientation</a>
+					<a href="_hex_.hexnode.html">HexNode</a>
 				</li>
 			</ul>
-			<h1>Interface Orientation</h1>
+			<h1>Interface HexNode</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>a matrix to convert from QRS to XY space</p>
+						<p>a node of the graph representation of the hexagonal grid</p>
 					</div>
 				</div>
 			</section>
@@ -80,66 +80,79 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Orientation</span>
+						<span class="tsd-signature-symbol">{}</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">HexNode</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="_hex_.cellnode.html" class="tsd-signature-type">CellNode</a>
+									</li>
+									<li>
+										<a href="_hex_.edgenode.html" class="tsd-signature-type">EdgeNode</a>
+									</li>
+									<li>
+										<a href="_hex_.vertexnode.html" class="tsd-signature-type">VertexNode</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</li>
 				</ul>
+			</section>
+			<section class="tsd-panel tsd-kind-interface tsd-parent-kind-module">
+				<h3 class="tsd-before-signature">Indexable</h3>
+				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>prop: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">unknown</span></div>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>arbitrary additional properties</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_layout_.orientation.html#b" class="tsd-kind-icon">b</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_layout_.orientation.html#f" class="tsd-kind-icon">f</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_hex_.hexnode.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_hex_.hexnode.html#links" class="tsd-kind-icon">links</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="b" class="tsd-anchor"></a>
-					<h3>b</h3>
-					<div class="tsd-signature tsd-kind-icon">b<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><a href="_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><a href="_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/layout.ts#L15">layout.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L24">hex.ts:24</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>q<span class="tsd-signature-symbol">: </span><a href="_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>r<span class="tsd-signature-symbol">: </span><a href="_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-							</li>
-						</ul>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the cube coordinates of the node as a comma-separated string</p>
+						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="f" class="tsd-anchor"></a>
-					<h3>f</h3>
-					<div class="tsd-signature tsd-kind-icon">f<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>q<span class="tsd-signature-symbol">: </span><a href="_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><a href="_layout_.xyvector.html" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="links" class="tsd-anchor"></a>
+					<h3>links</h3>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WeakSet</span><span class="tsd-signature-symbol">&lt;</span><a href="_hex_.hexnode.html" class="tsd-signature-type">HexNode</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d575ff9/src/layout.ts#L14">layout.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/hex.ts#L26">hex.ts:26</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>q<span class="tsd-signature-symbol">: </span><a href="_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>r<span class="tsd-signature-symbol">: </span><a href="_layout_.xyvector.html" class="tsd-signature-type">XYVector</a></h5>
-							</li>
-						</ul>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the set of nodes adjacent to this node. &quot;Adjacency&quot; is arbitrary.</p>
+						</div>
 					</div>
 				</section>
 			</section>
@@ -156,10 +169,10 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_grid_.html">&quot;grid&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_hex_.html">&quot;hex&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_layout_.html">&quot;layout&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -179,40 +192,70 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_layout_.layoutconfig.html" class="tsd-kind-icon">Layout<wbr>Config</a>
+						<a href="_hex_.cellnode.html" class="tsd-kind-icon">Cell<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_hex_.edgenode.html" class="tsd-kind-icon">Edge<wbr>Node</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_layout_.orientation.html" class="tsd-kind-icon">Orientation</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
+						<a href="_hex_.hexnode.html" class="tsd-kind-icon">Hex<wbr>Node</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_layout_.orientation.html#b" class="tsd-kind-icon">b</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_hex_.hexnode.html#id" class="tsd-kind-icon">id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_layout_.orientation.html#f" class="tsd-kind-icon">f</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_hex_.hexnode.html#links" class="tsd-kind-icon">links</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_layout_.xyvector.html" class="tsd-kind-icon">XYVector</a>
+						<a href="_hex_.vertexnode.html" class="tsd-kind-icon">Vertex<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#qrsvector" class="tsd-kind-icon">QRSVector</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#diagonals" class="tsd-kind-icon">DIAGONALS</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#directions" class="tsd-kind-icon">DIRECTIONS</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_layout_.html#cellpoints" class="tsd-kind-icon">cell<wbr>Points</a>
+						<a href="../modules/_hex_.html#add" class="tsd-kind-icon">add</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_layout_.html#configurelayout" class="tsd-kind-icon">configure<wbr>Layout</a>
+						<a href="../modules/_hex_.html#areequal" class="tsd-kind-icon">are<wbr>Equal</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_layout_.html#cubetopoint" class="tsd-kind-icon">cube<wbr>ToPoint</a>
+						<a href="../modules/_hex_.html#cells" class="tsd-kind-icon">cells</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_layout_.html#orientation-1" class="tsd-kind-icon">orientation</a>
+						<a href="../modules/_hex_.html#distance" class="tsd-kind-icon">distance</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_layout_.html#pointtocube" class="tsd-kind-icon">point<wbr>ToCube</a>
+						<a href="../modules/_hex_.html#edges" class="tsd-kind-icon">edges</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#length" class="tsd-kind-icon">length</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#makenode" class="tsd-kind-icon">make<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#multiply" class="tsd-kind-icon">multiply</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#subtract" class="tsd-kind-icon">subtract</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_hex_.html#vertices" class="tsd-kind-icon">vertices</a>
 					</li>
 				</ul>
 			</nav>
