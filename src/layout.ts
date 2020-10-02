@@ -12,10 +12,12 @@ export type XYVector = {
   readonly y: number;
 };
 
+/** a 2x2 matrix */
+type Matrix2x2 = [[number, number], [number, number]];
 /** a matrix to convert between QRS and XY space */
 type TransformMatrix = {
-  f: [number, number, number, number];
-  b: [number, number, number, number];
+  f: Matrix2x2;
+  b: Matrix2x2;
 };
 
 /**
@@ -29,9 +31,53 @@ export type LayoutConfig = {
 };
 
 const qrxy: TransformMatrix = {
-  f: [3 / 2, 0, SQRT_THREE / 2, SQRT_THREE],
-  b: [2 / 3, 0, -1 / 3, SQRT_THREE / 3],
+  f: [
+    [3 / 2, 0],
+    [SQRT_THREE / 2, SQRT_THREE],
+  ],
+  b: [
+    [2 / 3, 0],
+    [-1 / 3, SQRT_THREE / 3],
+  ],
 };
+
+export function rotate(theta: number): TransformMatrix {
+  return {
+    f: [
+      [Math.cos(theta), -Math.sin(theta) + 0],
+      [Math.sin(theta), Math.cos(theta)],
+    ],
+    b: [
+      [Math.cos(theta), Math.sin(theta)],
+      [-Math.sin(theta) + 0, Math.cos(theta)],
+    ],
+  };
+}
+
+function invertMatrix([[A, B], [C, D]]: Matrix2x2): Matrix2x2 {
+  return [
+    [D / (A * D - B * C), B / (B * C - A * C)],
+    [C / (B * C - A * C), A / (A * D - B * C)],
+  ];
+}
+
+function composeMatrices(
+  { f: [[A, B], [C, D]] }: TransformMatrix,
+  { f: [[E, F], [G, H]] }: TransformMatrix
+): TransformMatrix {
+  return {
+    f: [
+      [A * E + B * G, A * F + B * H],
+      [C * E + D * G, C * F + D * H],
+    ],
+    b: invertMatrix([
+      [A * E + B * G, A * F + B * H],
+      [C * E + D * G, C * F + D * H],
+    ]),
+  };
+}
+
+console.log(composeMatrices(qrxy, rotate(Math.PI / 2)));
 
 export function configureLayout(
   radius: XYVector,
@@ -45,8 +91,8 @@ export function cubeToPoint(
   c: QRSVector,
   { radius, origin }: LayoutConfig
 ): XYVector {
-  const x = (qrxy.f[0] * c.q + qrxy.f[1] * c.r) * radius.x + origin.x,
-    y = (qrxy.f[2] * c.q + qrxy.f[3] * c.r) * radius.y + origin.y;
+  const x = (qrxy.f[0][0] * c.q + qrxy.f[0][1] * c.r) * radius.x + origin.x,
+    y = (qrxy.f[1][0] * c.q + qrxy.f[1][1] * c.r) * radius.y + origin.y;
   return { x: thousandthRound(x), y: thousandthRound(y) };
 }
 
@@ -58,8 +104,8 @@ export function pointToCube(
       x: (p.x - origin.x) / radius.x,
       y: (p.y - origin.y) / radius.y,
     },
-    q = qrxy.b[0] * pt.x + qrxy.b[1] * pt.y,
-    r = qrxy.b[2] * pt.x + qrxy.b[3] * pt.y,
+    q = qrxy.b[0][0] * pt.x + qrxy.b[0][1] * pt.y,
+    r = qrxy.b[1][0] * pt.x + qrxy.b[1][1] * pt.y,
     s = -q - r;
   return { q, r, s };
 }
