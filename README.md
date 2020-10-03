@@ -55,6 +55,7 @@ implications of keeping this vs converting to column-major
  - ~~cell group overlaps~~
  - rotation
  - rounding
+   - ~~nearest cell~~
    - nearest edge
    - nearest vertex
  - state
@@ -63,7 +64,7 @@ implications of keeping this vs converting to column-major
    - obstacles
    - range
  - storage
- - formatter for html and css
+ - formatter/linter(/minifier?) for html and css
 
 # ⬢⬣⬢⬣⬢⬣⬢⬣
 
