@@ -15,12 +15,12 @@ is to build -- rather than to use -- the library, so YAGNI doesn't apply.
 
 ## Getting Started
 
-Clone the repo, `npm run dist && npx http-server` to run the demo locally
+Clone the repo, `npm run deploy && npx http-server` to run the demo locally
 
 ## Documentation
 
-The concepts are [thoroughly discussed][hexgrid], so I will stick to the hows
-and whys of my implementation.
+The mathematical concepts are [thoroughly discussed][hexgrid], so I will stick
+to the hows and whys of my implementation.
 
 I wrote in TypeScript because that's what I'm trying to learn. Typedoc output
 is at [/docs][docs].
@@ -36,6 +36,9 @@ PascalCase, and `variables` and `functions` are in camelCase. I use automatic
 style linting on all my code, two space indentations, and hard wrap at 80
 characters; eslint, prettier, and typescript configuration are included. I am
 not married to these decisions, but being consistent improves readability.
+
+Matrices are currently stored in row-major form. I'm investigating the
+implications of keeping this vs converting to column-major
 
 
 <img src="/img/directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />

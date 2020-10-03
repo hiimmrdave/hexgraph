@@ -82,12 +82,12 @@
 				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
 					<h2>Getting Started</h2>
 				</a>
-				<p>Clone the repo, <code>npm run dist &amp;&amp; npx http-server</code> to run the demo locally</p>
+				<p>Clone the repo, <code>npm run deploy &amp;&amp; npx http-server</code> to run the demo locally</p>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 					<h2>Documentation</h2>
 				</a>
-				<p>The concepts are <a href="https://www.redblobgames.com/grids/hexagons/">thoroughly discussed</a>, so I will stick to the hows
-				and whys of my implementation.</p>
+				<p>The mathematical concepts are <a href="https://www.redblobgames.com/grids/hexagons/">thoroughly discussed</a>, so I will stick
+				to the hows and whys of my implementation.</p>
 				<p>I wrote in TypeScript because that&#39;s what I&#39;m trying to learn. Typedoc output
 				is at <a href="https://hiimmrdave.github.io/hexgraph/docs/">/docs</a>.</p>
 				<p>I&#39;ve chosen to use cube coordinates for algorithmic simplicity. All
@@ -101,6 +101,8 @@
 					style linting on all my code, two space indentations, and hard wrap at 80
 					characters; eslint, prettier, and typescript configuration are included. I am
 				not married to these decisions, but being consistent improves readability.</p>
+				<p>Matrices are currently stored in row-major form. I&#39;m investigating the
+				implications of keeping this vs converting to column-major</p>
 				<img src="/img/directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
 				<img src="/img/diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
 				<a href="#task-list" id="task-list" style="color: inherit; text-decoration: none;">
