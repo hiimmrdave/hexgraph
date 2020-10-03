@@ -26,7 +26,8 @@ const gridTarget = "hg",
   shapesHolder = "shapes",
   shapeLayoutConfig: LayoutConfig = configureLayout(
     { x: 45, y: 45 },
-    { x: 90, y: 90 }
+    { x: 90, y: 90 },
+    [scaleTransform(5, 5)]
   ),
   shapeGrid: GridMap = makeGrid({ size: 5 }),
   source = Hex.makeNode({ q: 1, r: -1, s: 0 }, "Cell") as Hex.CellNode,
