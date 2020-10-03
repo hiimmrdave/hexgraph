@@ -3,7 +3,7 @@
  * reveals weaknesses in usability and design
  * provides interface for visual testing
  */
-import { renderSvg } from "./renderer.js";
+import { buildCanvas, renderCanvasFrame, renderSvg } from "./renderer.js";
 import {
   LayoutConfig,
   configureLayout,
@@ -21,7 +21,8 @@ function getCheckbox(elementId: string): boolean {
   return input.checked;
 }
 */
-const gridTarget = "hg",
+const svgGridTarget = "svghg",
+  canvasGridTarget = "canvhg",
   shapes = ["line", "ring", "hexagon", "cone", "rhombbus"],
   shapesHolder = "shapes",
   shapeLayoutConfig: LayoutConfig = configureLayout(
@@ -39,7 +40,9 @@ const gridTarget = "hg",
     Subset.cone({ source, toward, size: 4 }),
     Subset.rhombus({ source, toward, size: 3 }),
   ];
-export const renderContext = document.getElementById(gridTarget) as HTMLElement,
+export const renderContext = document.getElementById(
+    svgGridTarget
+  ) as HTMLElement,
   inputs = document.querySelector('form[id="params"]') as HTMLFormElement,
   getFloatValue = (elementId: string): number => {
     const input = document.getElementById(elementId) as HTMLInputElement;
@@ -61,7 +64,7 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
   },
   getForm = (): [string, LayoutConfig, GridMap] => {
     return [
-      gridTarget,
+      svgGridTarget,
       configureLayout(
         { x: getIntValue("orx"), y: getIntValue("ory") },
         { x: getIntValue("csx"), y: getIntValue("csy") },
@@ -78,7 +81,7 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
       }),
     ];
   },
-  rend = (): void => {
+  rendSvg = (): void => {
     const config = getForm(),
       holder = document.getElementById("shapes") as HTMLDivElement;
     let last;
@@ -87,12 +90,28 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
       renderContext.removeChild(last);
     }
     renderSvg(...config);
+  },
+  makeCanv = (): CanvasRenderingContext2D => {
+    const [, layout, grid] = getForm(),
+      canvas = buildCanvas(canvasGridTarget, layout),
+      ctx = canvas.getContext("2d") as CanvasRenderingContext2D,
+      canvasHolder = document.getElementById(
+        canvasGridTarget
+      ) as HTMLDivElement;
+    canvasHolder.appendChild(canvas);
+    renderCanvasFrame(ctx, layout, grid);
+    return ctx;
+  },
+  rendCanv = (ctx: CanvasRenderingContext2D): void => {
+    renderCanvasFrame(ctx, getForm()[1], getForm()[2]);
   };
 
 /**/
-
+let ctx: CanvasRenderingContext2D;
 document.addEventListener("DOMContentLoaded", () => {
-  rend();
+  rendSvg();
+  ctx = makeCanv();
+  rendCanv(ctx);
   const holder = document.getElementById(shapesHolder) as HTMLDivElement;
   shapes.forEach((shape, index) => {
     const shapeContainer = document.createElement("div") as HTMLDivElement,
@@ -116,4 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-inputs.addEventListener("input", rend);
+inputs.addEventListener("input", () => {
+  rendSvg();
+  rendCanv(ctx);
+});
