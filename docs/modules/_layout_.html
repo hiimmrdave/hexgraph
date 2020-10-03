@@ -74,18 +74,30 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_layout_.html#layoutconfig" class="tsd-kind-icon">Layout<wbr>Config</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="_layout_.html#transformmatrix" class="tsd-kind-icon">Transform<wbr>Matrix</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="_layout_.html#matrix2x2" class="tsd-kind-icon">Matrix2x2</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_layout_.html#xyvector" class="tsd-kind-icon">XYVector</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_layout_.html#identity2x2" class="tsd-kind-icon">Identity2x2</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_layout_.html#qrxy" class="tsd-kind-icon">QRXY</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_layout_.html#cellorientationmatrixer" class="tsd-kind-icon">cell<wbr>Orientation<wbr>Matrixer</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#cellpoints" class="tsd-kind-icon">cell<wbr>Points</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_layout_.html#composematrices2x2" class="tsd-kind-icon">compose<wbr>Matrices2x2</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_layout_.html#composematrixarray" class="tsd-kind-icon">compose<wbr>Matrix<wbr>Array</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#configurelayout" class="tsd-kind-icon">configure<wbr>Layout</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#cubetopoint" class="tsd-kind-icon">cube<wbr>ToPoint</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#pointtocube" class="tsd-kind-icon">point<wbr>ToCube</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#cubetopoint-1" class="tsd-kind-icon">cube<wbr>ToPoint</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_layout_.html#invertmatrix2x2" class="tsd-kind-icon">invert<wbr>Matrix2x2</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#pointtocube-1" class="tsd-kind-icon">point<wbr>ToCube</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#rotatetransform" class="tsd-kind-icon">rotate<wbr>Transform</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#scaletransform" class="tsd-kind-icon">scale<wbr>Transform</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_layout_.html#sheartransform" class="tsd-kind-icon">shear<wbr>Transform</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,10 +108,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="layoutconfig" class="tsd-anchor"></a>
 					<h3>Layout<wbr>Config</h3>
-					<div class="tsd-signature tsd-kind-icon">Layout<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>cO<span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></div>
+					<div class="tsd-signature tsd-kind-icon">Layout<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>cubeToPoint<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>pointToCube<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/layout.ts#L25">layout.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L22">layout.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -112,44 +124,33 @@
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>cO<span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a></h5>
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> cube<wbr>ToPoint<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> point<wbr>ToCube<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>size<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> size<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
 							</li>
 						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
-					<a name="transformmatrix" class="tsd-anchor"></a>
-					<h3>Transform<wbr>Matrix</h3>
-					<div class="tsd-signature tsd-kind-icon">Transform<wbr>Matrix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">; </span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> }</span></div>
+					<a name="matrix2x2" class="tsd-anchor"></a>
+					<h3>Matrix2x2</h3>
+					<div class="tsd-signature tsd-kind-icon">Matrix2x2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/layout.ts#L16">layout.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L16">layout.ts:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>a matrix to convert between QRS and XY space</p>
+							<p>a 2x2 matrix</p>
 						</div>
-					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
-							</li>
-						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
@@ -158,7 +159,7 @@
 					<div class="tsd-signature tsd-kind-icon">XYVector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/layout.ts#L8">layout.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L8">layout.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,31 +190,31 @@
 					</div>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="identity2x2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Identity2x2</h3>
+					<div class="tsd-signature tsd-kind-icon">Identity2x2<span class="tsd-signature-symbol">:</span> <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol"> = [[1, 0],[0, 1],]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L37">layout.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="qrxy" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> QRXY</h3>
+					<div class="tsd-signature tsd-kind-icon">QRXY<span class="tsd-signature-symbol">:</span> <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol"> = [[3 / 2, 0],[SQRT_THREE / 2, SQRT_THREE],]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L29">layout.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="cellorientationmatrixer" class="tsd-anchor"></a>
-					<h3>cell<wbr>Orientation<wbr>Matrixer</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">cell<wbr>Orientation<wbr>Matrixer<span class="tsd-signature-symbol">(</span>theta<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/layout.ts#L32">layout.ts:32</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> theta: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="cellpoints" class="tsd-anchor"></a>
 					<h3>cell<wbr>Points</h3>
@@ -224,7 +225,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/layout.ts#L82">layout.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L122">layout.ts:122</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -245,32 +246,78 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="configurelayout" class="tsd-anchor"></a>
-					<h3>configure<wbr>Layout</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">configure<wbr>Layout<span class="tsd-signature-symbol">(</span>cellTheta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a>, origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a>, size<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#layoutconfig" class="tsd-signature-type">LayoutConfig</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="composematrices2x2" class="tsd-anchor"></a>
+					<h3>compose<wbr>Matrices2x2</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">compose<wbr>Matrices2x2<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/layout.ts#L49">layout.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L70">layout.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cellTheta: <span class="tsd-signature-type">number</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
 								</li>
 								<li>
-									<h5>radius: <a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
 								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="composematrixarray" class="tsd-anchor"></a>
+					<h3>compose<wbr>Matrix<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">compose<wbr>Matrix<wbr>Array<span class="tsd-signature-symbol">(</span>matrices<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L80">layout.ts:80</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>matrices: <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="configurelayout" class="tsd-anchor"></a>
+					<h3>configure<wbr>Layout</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">configure<wbr>Layout<span class="tsd-signature-symbol">(</span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a>, size<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a>, transforms<span class="tsd-signature-symbol">?: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#layoutconfig" class="tsd-signature-type">LayoutConfig</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L87">layout.ts:87</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
 								<li>
 									<h5>origin: <a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
 								</li>
 								<li>
 									<h5>size: <a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> transforms: <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_layout_.html#layoutconfig" class="tsd-signature-type">LayoutConfig</a></h4>
@@ -278,16 +325,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="cubetopoint" class="tsd-anchor"></a>
+					<a name="cubetopoint-1" class="tsd-anchor"></a>
 					<h3>cube<wbr>ToPoint</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">cube<wbr>ToPoint<span class="tsd-signature-symbol">(</span>c<span class="tsd-signature-symbol">: </span><a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>cO<span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></li>
+						<li class="tsd-signature tsd-kind-icon">cube<wbr>ToPoint<span class="tsd-signature-symbol">(</span>c<span class="tsd-signature-symbol">: </span><a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>M<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/layout.ts#L59">layout.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L102">layout.ts:102</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -296,16 +343,13 @@
 									<h5>c: <a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a></h5>
 								</li>
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>cO<span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>M<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
-											<h5>cO<span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a></h5>
+											<h5>M<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h5>
 										</li>
 										<li class="tsd-parameter">
 											<h5>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
 										</li>
 									</ul>
 								</li>
@@ -314,17 +358,40 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="pointtocube" class="tsd-anchor"></a>
-					<h3>point<wbr>ToCube</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">point<wbr>ToCube<span class="tsd-signature-symbol">(</span>p<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>cO<span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="invertmatrix2x2" class="tsd-anchor"></a>
+					<h3>invert<wbr>Matrix2x2</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">invert<wbr>Matrix2x2<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/01397b5/src/layout.ts#L68">layout.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L63">layout.ts:63</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="pointtocube-1" class="tsd-anchor"></a>
+					<h3>point<wbr>ToCube</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">point<wbr>ToCube<span class="tsd-signature-symbol">(</span>p<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>M<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L111">layout.ts:111</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -333,21 +400,93 @@
 									<h5>p: <a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
 								</li>
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>cO<span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>M<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a><span class="tsd-signature-symbol">; </span>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
-											<h5>cO<span class="tsd-signature-symbol">: </span><a href="_layout_.html#transformmatrix" class="tsd-signature-type">TransformMatrix</a></h5>
+											<h5>M<span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h5>
 										</li>
 										<li class="tsd-parameter">
 											<h5>origin<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>radius<span class="tsd-signature-symbol">: </span><a href="_layout_.html#xyvector" class="tsd-signature-type">XYVector</a></h5>
 										</li>
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_hex_.html#qrsvector" class="tsd-signature-type">QRSVector</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="rotatetransform" class="tsd-anchor"></a>
+					<h3>rotate<wbr>Transform</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">rotate<wbr>Transform<span class="tsd-signature-symbol">(</span>theta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L42">layout.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>theta: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="scaletransform" class="tsd-anchor"></a>
+					<h3>scale<wbr>Transform</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">scale<wbr>Transform<span class="tsd-signature-symbol">(</span>scaleX<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, scaleY<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L56">layout.ts:56</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>scaleX: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>scaleY: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="sheartransform" class="tsd-anchor"></a>
+					<h3>shear<wbr>Transform</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">shear<wbr>Transform<span class="tsd-signature-symbol">(</span>shearX<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, shearY<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/d3ab8e0/src/layout.ts#L49">layout.ts:49</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>shearX: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>shearY: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_layout_.html#matrix2x2" class="tsd-signature-type">Matrix2x2</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -391,25 +530,46 @@
 						<a href="_layout_.html#layoutconfig" class="tsd-kind-icon">Layout<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_layout_.html#transformmatrix" class="tsd-kind-icon">Transform<wbr>Matrix</a>
+						<a href="_layout_.html#matrix2x2" class="tsd-kind-icon">Matrix2x2</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_layout_.html#xyvector" class="tsd-kind-icon">XYVector</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_layout_.html#cellorientationmatrixer" class="tsd-kind-icon">cell<wbr>Orientation<wbr>Matrixer</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_layout_.html#identity2x2" class="tsd-kind-icon">Identity2x2</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_layout_.html#qrxy" class="tsd-kind-icon">QRXY</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_layout_.html#cellpoints" class="tsd-kind-icon">cell<wbr>Points</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_layout_.html#composematrices2x2" class="tsd-kind-icon">compose<wbr>Matrices2x2</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_layout_.html#composematrixarray" class="tsd-kind-icon">compose<wbr>Matrix<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_layout_.html#configurelayout" class="tsd-kind-icon">configure<wbr>Layout</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_layout_.html#cubetopoint" class="tsd-kind-icon">cube<wbr>ToPoint</a>
+						<a href="_layout_.html#cubetopoint-1" class="tsd-kind-icon">cube<wbr>ToPoint</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_layout_.html#invertmatrix2x2" class="tsd-kind-icon">invert<wbr>Matrix2x2</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_layout_.html#pointtocube" class="tsd-kind-icon">point<wbr>ToCube</a>
+						<a href="_layout_.html#pointtocube-1" class="tsd-kind-icon">point<wbr>ToCube</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_layout_.html#rotatetransform" class="tsd-kind-icon">rotate<wbr>Transform</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_layout_.html#scaletransform" class="tsd-kind-icon">scale<wbr>Transform</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_layout_.html#sheartransform" class="tsd-kind-icon">shear<wbr>Transform</a>
 					</li>
 				</ul>
 			</nav>
