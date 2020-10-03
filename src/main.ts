@@ -4,7 +4,13 @@
  * provides interface for visual testing
  */
 import { renderSvg } from "./renderer.js";
-import { LayoutConfig, configureLayout } from "./layout.js";
+import {
+  LayoutConfig,
+  configureLayout,
+  rotateTransform,
+  shearTransform,
+  scaleTransform,
+} from "./layout.js";
 import { GridMap, GridShape, makeGrid } from "./grid.js";
 import * as Subset from "./subset.js";
 import * as Hex from "./hex.js";
@@ -57,9 +63,14 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
     return [
       gridTarget,
       configureLayout(
-        { x: getIntValue("hsx"), y: getIntValue("hsy") },
+        { x: 1, y: 1 },
         { x: getIntValue("orx"), y: getIntValue("ory") },
-        { x: getIntValue("csx"), y: getIntValue("csy") }
+        { x: getIntValue("csx"), y: getIntValue("csy") },
+        [
+          rotateTransform((getFloatValue("orientation") * Math.PI) / 12),
+          shearTransform(getFloatValue("shx"), getFloatValue("shy")),
+          scaleTransform(getIntValue("hsx"), getIntValue("hsy")),
+        ]
       ),
       makeGrid({
         shape: getRadioValue("shape") as GridShape,
