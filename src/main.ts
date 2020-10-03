@@ -25,7 +25,6 @@ const gridTarget = "hg",
   shapes = ["line", "ring", "hexagon", "cone", "rhombbus"],
   shapesHolder = "shapes",
   shapeLayoutConfig: LayoutConfig = configureLayout(
-    { x: 5, y: 5 },
     { x: 45, y: 45 },
     { x: 90, y: 90 }
   ),
@@ -63,7 +62,6 @@ export const renderContext = document.getElementById(gridTarget) as HTMLElement,
     return [
       gridTarget,
       configureLayout(
-        { x: 1, y: 1 },
         { x: getIntValue("orx"), y: getIntValue("ory") },
         { x: getIntValue("csx"), y: getIntValue("csy") },
         [

@@ -20,7 +20,6 @@ type Matrix2x2 = [[number, number], [number, number]];
  * CartesianVector screen coodrinates
  */
 export type LayoutConfig = {
-  readonly radius: XYVector;
   readonly origin: XYVector;
   readonly size: XYVector;
   readonly cubeToPoint: Matrix2x2;
@@ -86,7 +85,6 @@ function composeMatrixArray(matrices: Matrix2x2[]): Matrix2x2 {
 }
 
 export function configureLayout(
-  radius: XYVector,
   origin: XYVector,
   size: XYVector,
   transforms: Matrix2x2[] = []
@@ -94,7 +92,6 @@ export function configureLayout(
   const cubeToPoint = composeMatrixArray([QRXY, ...transforms]),
     pointToCube = invertMatrix2x2(cubeToPoint);
   return {
-    radius,
     origin,
     size,
     cubeToPoint,
@@ -104,22 +101,18 @@ export function configureLayout(
 
 export function cubeToPoint(
   c: QRSVector,
-  { radius, origin, cubeToPoint: M }: LayoutConfig
+  { origin, cubeToPoint: M }: LayoutConfig
 ): XYVector {
-  const x =
-      thousandthRound(M[0][0] * c.q + M[0][1] * c.r) * radius.x + origin.x,
-    y = thousandthRound(M[1][0] * c.q + M[1][1] * c.r) * radius.y + origin.y;
+  const x = thousandthRound(M[0][0] * c.q + M[0][1] * c.r) + origin.x,
+    y = thousandthRound(M[1][0] * c.q + M[1][1] * c.r) + origin.y;
   return { x, y };
 }
 
 export function pointToCube(
   p: XYVector,
-  { radius, origin, pointToCube: M }: LayoutConfig
+  { origin, pointToCube: M }: LayoutConfig
 ): QRSVector {
-  const pt = {
-      x: (p.x - origin.x) / radius.x,
-      y: (p.y - origin.y) / radius.y,
-    },
+  const pt = { x: p.x - origin.x, y: p.y - origin.y },
     q = M[0][0] * pt.x + M[0][1] * pt.y,
     r = M[1][0] * pt.x + M[1][1] * pt.y,
     s = -q - r;
