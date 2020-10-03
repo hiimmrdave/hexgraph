@@ -40,10 +40,24 @@ const QRXY: Matrix2x2 = [
     [0, 1],
   ];
 
-export function rotate(theta: number): Matrix2x2 {
+export function rotateTransform(theta: number): Matrix2x2 {
   return [
     [Math.cos(theta) + 0, -Math.sin(theta) + 0],
     [Math.sin(theta) + 0, Math.cos(theta) + 0],
+  ];
+}
+
+export function shearTransform(shearX: number, shearY: number): Matrix2x2 {
+  return [
+    [1, -shearX],
+    [-shearY, 1],
+  ];
+}
+
+export function scaleTransform(scaleX: number, scaleY: number): Matrix2x2 {
+  return [
+    [-scaleX, 0],
+    [0, -scaleY],
   ];
 }
 
