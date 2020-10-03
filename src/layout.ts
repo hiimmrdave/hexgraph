@@ -80,7 +80,7 @@ function composeMatrices2x2(
 
 function composeMatrixArray(matrices: Matrix2x2[]): Matrix2x2 {
   return matrices.reduce(
-    (acc, cur) => composeMatrices2x2(acc, cur),
+    (acc, cur) => composeMatrices2x2(cur, acc),
     Identity2x2
   );
 }
