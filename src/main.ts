@@ -2,6 +2,7 @@
  * gathers the library together into a working demo
  * reveals weaknesses in usability and design
  * provides interface for visual testing
+ * ! this whole file is spaghetti.
  */
 import { buildCanvas, renderCanvasFrame, renderSvg } from "./renderer.js";
 import {
@@ -39,11 +40,11 @@ const svgGridTarget = "svghg",
     Subset.hexagon({ source, size: 3 }),
     Subset.cone({ source, toward, size: 4 }),
     Subset.rhombus({ source, toward, size: 3 }),
-  ];
-export const renderContext = document.getElementById(
-    svgGridTarget
-  ) as HTMLElement,
-  inputs = document.querySelector('form[id="params"]') as HTMLFormElement,
+  ],
+  svgRenderContext = document.getElementById(svgGridTarget) as HTMLElement;
+export const inputs = document.querySelector(
+    'form[id="params"]'
+  ) as HTMLFormElement,
   getFloatValue = (elementId: string): number => {
     const input = document.getElementById(elementId) as HTMLInputElement;
     return parseFloat(input.value);
@@ -62,9 +63,8 @@ export const renderContext = document.getElementById(
     const input = document.getElementById(elementId) as HTMLInputElement;
     return input.value;
   },
-  getForm = (): [string, LayoutConfig, GridMap] => {
+  getForm = (): [LayoutConfig, GridMap] => {
     return [
-      svgGridTarget,
       configureLayout(
         { x: getIntValue("orx"), y: getIntValue("ory") },
         { x: getIntValue("csx"), y: getIntValue("csy") },
@@ -86,13 +86,13 @@ export const renderContext = document.getElementById(
       holder = document.getElementById("shapes") as HTMLDivElement;
     let last;
     holder.style.width = `${getStringValue("csx")}px`;
-    while ((last = renderContext.lastChild)) {
-      renderContext.removeChild(last);
+    while ((last = svgRenderContext.lastChild)) {
+      svgRenderContext.removeChild(last);
     }
-    renderSvg(...config);
+    renderSvg(svgGridTarget, ...config);
   },
   makeCanv = (): CanvasRenderingContext2D => {
-    const [, layout, grid] = getForm(),
+    const [layout, grid] = getForm(),
       canvas = buildCanvas(canvasGridTarget, layout),
       ctx = canvas.getContext("2d") as CanvasRenderingContext2D,
       canvasHolder = document.getElementById(
@@ -103,7 +103,7 @@ export const renderContext = document.getElementById(
     return ctx;
   },
   rendCanv = (ctx: CanvasRenderingContext2D): void => {
-    renderCanvasFrame(ctx, getForm()[1], getForm()[2]);
+    renderCanvasFrame(ctx, ...getForm());
   };
 
 /**/
