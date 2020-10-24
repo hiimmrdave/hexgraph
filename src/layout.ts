@@ -30,11 +30,7 @@ const QRXY: Matrix2x2 = [
     [3 / 2, 0],
     [SQRT_THREE / 2, SQRT_THREE],
   ],
-  /*  XYQR: Matrix2x2 = [
-    [2 / 3, 0],
-    [-1 / 3, SQRT_THREE / 3],
-  ],*/
-  Identity2x2: Matrix2x2 = [
+  IDENTITY2: Matrix2x2 = [
     [1, 0],
     [0, 1],
   ];
@@ -55,15 +51,15 @@ export function shearTransform(shearX: number, shearY: number): Matrix2x2 {
 
 export function scaleTransform(scaleX: number, scaleY: number): Matrix2x2 {
   return [
-    [-scaleX, 0],
-    [0, -scaleY],
+    [scaleX, 0],
+    [0, scaleY],
   ];
 }
 
 function invertMatrix2x2([[a, b], [c, d]]: Matrix2x2): Matrix2x2 {
   return [
-    [d / (a * d - b * c), b / (b * c - a * c)],
-    [c / (b * c - a * c), a / (a * d - b * c)],
+    [d / (a * d - b * c), b / (b * c - a * d)],
+    [c / (b * c - a * d), a / (a * d - b * c)],
   ];
 }
 
@@ -78,10 +74,7 @@ function composeMatrices2x2(
 }
 
 function composeMatrixArray(matrices: Matrix2x2[]): Matrix2x2 {
-  return matrices.reduce(
-    (acc, cur) => composeMatrices2x2(cur, acc),
-    Identity2x2
-  );
+  return matrices.reduce((acc, cur) => composeMatrices2x2(cur, acc), IDENTITY2);
 }
 
 export function configureLayout(
