@@ -11,6 +11,7 @@ import {
   rotateTransform,
   shearTransform,
   scaleTransform,
+  pointToCube,
 } from "./layout.js";
 import { GridMap, GridShape, makeGrid } from "./grid.js";
 import * as Subset from "./subset.js";
@@ -41,7 +42,8 @@ const svgGridTarget = "svghg",
     Subset.cone({ source, toward, size: 4 }),
     Subset.rhombus({ source, toward, size: 3 }),
   ],
-  svgRenderContext = document.getElementById(svgGridTarget) as HTMLElement;
+  svgRenderContext = document.getElementById(svgGridTarget) as HTMLDivElement,
+  st = document.getElementById("st") as HTMLParagraphElement;
 export const inputs = document.querySelector(
     'form[id="params"]'
   ) as HTMLFormElement,
@@ -138,4 +140,13 @@ document.addEventListener("DOMContentLoaded", () => {
 inputs.addEventListener("input", () => {
   rendSvg();
   rendCanv(ctx);
+});
+svgRenderContext.addEventListener("mouseup", (ev) => {
+  if (!(ev.target as Element).matches(".cell")) return;
+  const [layout] = getForm(),
+    ptc = pointToCube({ x: ev.offsetX, y: ev.offsetY }, layout),
+    cell = (ev.target as Element).getAttribute("data-hex-node-id");
+  st.innerText = `pointToCube ${JSON.stringify(ptc)}
+  ${cell}
+  `;
 });
