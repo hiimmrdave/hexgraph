@@ -59,14 +59,13 @@ export function renderSvg(
 export function buildCanvas(
   targetId: string,
   layout: LayoutConfig
-): CanvasRenderingContext2D {
+): HTMLCanvasElement {
   const targetElem = document.getElementById(targetId) as HTMLElement,
-    canvasRoot = document.createElement("canvas") as HTMLCanvasElement,
-    ctx = canvasRoot.getContext("2d") as CanvasRenderingContext2D;
+    canvasRoot = document.createElement("canvas") as HTMLCanvasElement;
   canvasRoot.setAttribute("width", layout.size.x.toString(10));
   canvasRoot.setAttribute("height", layout.size.y.toString(10));
   targetElem.appendChild(canvasRoot);
-  return ctx;
+  return canvasRoot;
 }
 
 export function renderCanvasFrame(
@@ -74,6 +73,7 @@ export function renderCanvasFrame(
   layout: LayoutConfig,
   grid: GridMap
 ): void {
+  ctx.clearRect(0, 0, layout.size.x, layout.size.y);
   grid.forEach((node) => {
     if (node.kind === "Cell") {
       ctx.stroke(new Path2D(cellPath(node as CellNode, layout)));
