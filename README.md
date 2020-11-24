@@ -65,6 +65,7 @@ implications of keeping this vs converting to column-major
    - range
  - storage
  - formatter/linter(/minifier?) for html and css
+ - fix rectangle map (too wide by 1)
 
 # ⬢⬣⬢⬣⬢⬣⬢⬣
 
