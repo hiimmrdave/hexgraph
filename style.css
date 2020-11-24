@@ -1,3 +1,19 @@
+:root {
+  --basehue: 250;
+  --dark0: hsl(var(--basehue) 10% 10%);
+  --dark1: hsl(var(--basehue) 10% 25%);
+  --dark2: hsl(var(--basehue) 10% 40%);
+  --light2: hsl(var(--basehue) 10% 55%);
+  --light1: hsl(var(--basehue) 10% 70%);
+  --light0: hsl(var(--basehue) 10% 85);
+
+  --redhue: 10;
+  --bluehue: 220;
+  --red: hsl(var(--redhue) 70% 45%);
+  --blue: hsl(var(--bluehue) 70% 45%);
+  --black: hsl(0 0% 0%);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,29 +21,30 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: hsl(0, 0%, 93%);
+  background-color: var(--dark0);
+  color: var(--light1)
 }
 
 svg .cell {
-  stroke: hsl(0, 0%, 0%);
-  fill: hsl(0, 0%, 80%);
+  stroke: var(--dark2);
+  fill: var(--light1);
 }
 
 svg .cell.hilit {
-  fill: hsl(0, 100%, 50%);
+  fill: var(--red);
 }
 
 svg .cell.source {
-  fill: hsl(240, 100%, 50%);
+  fill: var(--blue);
 }
 
 fieldset {
-  background: hsl(0, 0%, 100%);
+  background: var(--dark1);
 }
 
 header {
   position: fixed;
-  background: hsl(0, 0%, 0%);
+  background: var(--black);
   width: 100%;
   margin: 0;
   padding: 0;
@@ -35,10 +52,16 @@ header {
 
 header a {
   text-decoration: none;
-  color: hsl(0, 0%, 100%);
+  color: var(--light0);
   display: block;
   float: left;
-  margin: 10px;
+  padding: 10px;
+  margin: 2px;
+}
+
+header a:hover {
+  text-decoration: underline;
+  background: var(--dark1);
 }
 
 main {
@@ -58,7 +81,8 @@ input[type="number"] {
 .note {
   font-style: italic;
   font-size: 0.8rem;
-  color: hsl(0, 0%, 30%);
+  color: var(--light1);
+  opacity: 0.8;
 }
 
 #shapes {
