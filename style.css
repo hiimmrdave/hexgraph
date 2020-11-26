@@ -5,7 +5,7 @@
   --dark2: hsl(var(--basehue) 10% 40%);
   --light2: hsl(var(--basehue) 10% 55%);
   --light1: hsl(var(--basehue) 10% 70%);
-  --light0: hsl(var(--basehue) 10% 85);
+  --light0: hsl(var(--basehue) 10% 85%);
 
   --redhue: 10;
   --bluehue: 220;
