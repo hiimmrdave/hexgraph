@@ -6,7 +6,6 @@
   --light2: hsl(var(--basehue) 10% 55%);
   --light1: hsl(var(--basehue) 10% 70%);
   --light0: hsl(var(--basehue) 10% 85%);
-
   --redhue: 10;
   --bluehue: 220;
   --red: hsl(var(--redhue) 70% 45%);
@@ -22,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--dark0);
-  color: var(--light1)
+  color: var(--light1);
 }
 
 svg .cell {
