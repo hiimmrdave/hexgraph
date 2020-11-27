@@ -78,7 +78,7 @@ export const inputs = document.querySelector(
       ),
       makeGrid({
         shape: getRadioValue("shape") as GridShape,
-        size: { a: getIntValue("gs1"), b: getIntValue("gs2") },
+        size: [getIntValue("gs1"), getIntValue("gs2")],
         populate: true,
       }),
     ];

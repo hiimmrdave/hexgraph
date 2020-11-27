@@ -8,10 +8,8 @@ import { CellNode, HexNode, vertices, edges, makeNode } from "./hex.js";
  */
 export type GridMap = Map<string, HexNode>;
 
-export type TwoSize = { a: number; b: number };
-
 interface GridPopParams {
-  size: TwoSize | number;
+  size: [number, number] | number;
   grid?: GridMap;
 }
 type GridPopulator = (arg0: GridPopParams) => GridMap;
@@ -34,20 +32,20 @@ export type GridShape =
  * @param populate determines whether to run the grid populator or return an
  * empty grid
  */
-export function makeTwoSize(size: number | TwoSize): TwoSize {
+export function makeTwoSize(size: number | [number, number]): [number, number] {
   if (typeof size === "number") {
-    size = { a: size, b: size };
+    size = [size, size];
   }
   return size;
 }
 
 export function makeGrid({
   shape = "Hexagon",
-  size = { a: 3, b: 1 } as TwoSize,
+  size = [3, 1],
   populate = true,
 }: {
   shape?: GridShape;
-  size?: TwoSize | number;
+  size?: [number, number] | number;
   populate?: boolean;
 } = {}): GridMap {
   const gridPopulator: Record<GridShape, GridPopulator> = {
@@ -93,11 +91,11 @@ function gridPush(
 }
 
 function populateHexagonGrid({ size, grid }: GridPopParams): GridMap {
-  size = makeTwoSize(size) as TwoSize;
+  size = makeTwoSize(size) as [number, number];
   let cellset = grid ? new Map(grid) : new Map();
-  for (let ia = -size.a; ia <= size.a; ia++) {
-    for (let ib = -size.a; ib <= size.a; ib++) {
-      if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size.a * 2) {
+  for (let ia = -size[0]; ia <= size[0]; ia++) {
+    for (let ib = -size[0]; ib <= size[0]; ib++) {
+      if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size[0] * 2) {
         cellset = gridPush(cellset, ia, ib);
       }
     }
@@ -106,10 +104,10 @@ function populateHexagonGrid({ size, grid }: GridPopParams): GridMap {
 }
 
 function populateTriangleGrid({ size, grid }: GridPopParams): GridMap {
-  size = makeTwoSize(size) as TwoSize;
+  size = makeTwoSize(size) as [number, number];
   let cellset = grid ? new Map(grid) : new Map();
-  for (let ia = 0; ia < size.a; ia++) {
-    for (let ib = 0; ib < size.a - ia; ib++) {
+  for (let ia = 0; ia < size[0]; ia++) {
+    for (let ib = 0; ib < size[0] - ia; ib++) {
       cellset = gridPush(cellset, ia, ib);
     }
   }
@@ -117,10 +115,10 @@ function populateTriangleGrid({ size, grid }: GridPopParams): GridMap {
 }
 
 function populateStarGrid({ size, grid }: GridPopParams): GridMap {
-  size = makeTwoSize(size) as TwoSize;
+  size = makeTwoSize(size) as [number, number];
   let cellset = grid ? new Map(grid) : new Map();
-  for (let ia = -size.a + 1; ia < size.a; ia++) {
-    for (let ib = -size.a + 1; ib < size.a; ib++) {
+  for (let ia = -size[0] + 1; ia < size[0]; ia++) {
+    for (let ib = -size[0] + 1; ib < size[0]; ib++) {
       const ic = -ia - ib;
       cellset = gridPush(cellset, ia, ib);
       cellset = gridPush(cellset, ic, ib);
@@ -131,10 +129,10 @@ function populateStarGrid({ size, grid }: GridPopParams): GridMap {
 }
 
 function populateParallelogramGrid({ size, grid }: GridPopParams): GridMap {
-  size = makeTwoSize(size) as TwoSize;
+  size = makeTwoSize(size) as [number, number];
   let cellset = grid ? new Map(grid) : new Map();
-  for (let ia = 0; ia < size.a; ia++) {
-    for (let ib = 0; ib < size.b; ib++) {
+  for (let ia = 0; ia < size[0]; ia++) {
+    for (let ib = 0; ib < size[1]; ib++) {
       cellset = gridPush(cellset, ia, ib);
     }
   }
@@ -142,11 +140,11 @@ function populateParallelogramGrid({ size, grid }: GridPopParams): GridMap {
 }
 
 function populateRectangleGrid({ size, grid }: GridPopParams): GridMap {
-  size = makeTwoSize(size) as TwoSize;
+  size = makeTwoSize(size) as [number, number];
   let cellset = grid ? new Map(grid) : new Map();
-  for (let ia = 0; ia <= size.a; ia++) {
+  for (let ia = 0; ia <= size[0]; ia++) {
     const off = Math.floor(ia / 2);
-    for (let ib = -off; ib < size.b - off; ib++) {
+    for (let ib = -off; ib < size[1] - off; ib++) {
       cellset = gridPush(cellset, ia, ib);
     }
   }

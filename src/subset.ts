@@ -5,12 +5,12 @@
 import * as Hex from "./hex.js";
 import { round } from "./cell.js";
 import { cubeLerp } from "./math.js";
-import { GridMap, TwoSize } from "./grid.js";
+import { GridMap } from "./grid.js";
 
 interface SubsetMakerParameters {
   source?: Hex.CellNode;
   toward?: Hex.QRSVector;
-  size?: number | TwoSize;
+  size?: number | [number, number];
 }
 
 const CELLZERO: Hex.CellNode = Object.freeze(
@@ -19,9 +19,11 @@ const CELLZERO: Hex.CellNode = Object.freeze(
   CELLONE: Hex.CellNode = Object.freeze(
     Hex.makeNode({ q: 2, r: -1, s: -1 }, "Cell") as Hex.CellNode
   ),
-  makeTwoSize = function xySize(size: number | TwoSize): TwoSize {
+  makeTwoSize = function xySize(
+    size: number | [number, number]
+  ): [number, number] {
     if (typeof size === "number") {
-      return { a: size, b: size };
+      return [size, size];
     }
     return size;
   },
@@ -85,14 +87,14 @@ export function ring({
   size = 2,
 }: SubsetMakerParameters): GridMap {
   size = makeTwoSize(size);
-  if (size.a < 1) return new Map().set(source.id, source);
+  if (size[0] < 1) return new Map().set(source.id, source);
   const ring = new Map();
   let ringCell = Hex.makeNode(
-    Hex.add(source, Hex.multiply(Hex.DIRECTIONS[4], size.a)),
+    Hex.add(source, Hex.multiply(Hex.DIRECTIONS[4], size[0])),
     "Cell"
   ) as Hex.CellNode;
   for (let ii = 0; ii < 6; ii++) {
-    for (let ij = 0; ij < size.a; ij++) {
+    for (let ij = 0; ij < size[0]; ij++) {
       ring.set(ringCell.id, ringCell);
       ringCell = Hex.cells(ringCell)[ii];
     }
@@ -113,8 +115,8 @@ export function cone({
   const cone: GridMap = new Map(),
     { dirs, sign } = findWedge({ source, toward });
   size = makeTwoSize(size);
-  for (let ia = 0; ia < size.a; ia++) {
-    for (let ib = 0; ib < size.a - ia; ib++) {
+  for (let ia = 0; ia < size[0]; ia++) {
+    for (let ib = 0; ib < size[0] - ia; ib++) {
       const ic = -(ia + ib),
         newCell = Hex.makeNode(
           Hex.add(
@@ -143,9 +145,9 @@ export function hexagon({
 }: SubsetMakerParameters): GridMap {
   const hexagon: GridMap = new Map();
   size = makeTwoSize(size);
-  for (let ia = -size.a; ia <= size.a; ia++) {
-    for (let ib = -size.a; ib <= size.a; ib++) {
-      if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size.a * 2) {
+  for (let ia = -size[0]; ia <= size[0]; ia++) {
+    for (let ib = -size[0]; ib <= size[0]; ib++) {
+      if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size[0] * 2) {
         const ic = -(ia + ib),
           newNode = Hex.makeNode(
             Hex.add(source, { q: ia, r: ib, s: ic }),
@@ -171,8 +173,8 @@ export function rhombus({
   const rhombus: GridMap = new Map(),
     { dirs, sign } = findWedge({ source, toward });
   size = makeTwoSize(size);
-  for (let ia = 0; ia < size.a; ia++) {
-    for (let ib = 0; ib < size.b; ib++) {
+  for (let ia = 0; ia < size[0]; ia++) {
+    for (let ib = 0; ib < size[0]; ib++) {
       const ic = -(ia + ib),
         newCell = Hex.makeNode(
           Hex.add(

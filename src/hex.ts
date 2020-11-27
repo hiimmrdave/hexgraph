@@ -21,7 +21,7 @@ export type QRSVector = {
 /** a node of the graph representation of the hexagonal grid */
 export interface HexNode extends QRSVector {
   /** the cube coordinates of the node as a comma-separated string */
-  id: string;
+  id: `${number},${number},${number}`;
   /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
   links: WeakSet<HexNode>;
   /** arbitrary additional properties */
