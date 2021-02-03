@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GridPopParams | yahgts</title>
+	<title>SizedSubsetParameters | yahgts</title>
 	<meta name="description" content="Documentation for yahgts">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_grid_.html">&quot;grid&quot;</a>
+					<a href="../modules/_subset_.html">&quot;subset&quot;</a>
 				</li>
 				<li>
-					<a href="_grid_.gridpopparams.html">GridPopParams</a>
+					<a href="_subset_.sizedsubsetparameters.html">SizedSubsetParameters</a>
 				</li>
 			</ul>
-			<h1>Interface GridPopParams</h1>
+			<h1>Interface SizedSubsetParameters</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">GridPopParams</span>
+						<a href="_subset_.subsetmakerparameters.html" class="tsd-signature-type">SubsetMakerParameters</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SizedSubsetParameters</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +89,8 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_grid_.gridpopparams.html#grid" class="tsd-kind-icon">grid</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_grid_.gridpopparams.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_subset_.sizedsubsetparameters.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_subset_.sizedsubsetparameters.html#source" class="tsd-kind-icon">source</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,22 +99,23 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="grid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> grid</h3>
-					<div class="tsd-signature tsd-kind-icon">grid<span class="tsd-signature-symbol">:</span> <a href="../modules/_grid_.html#gridmap" class="tsd-signature-type">GridMap</a></div>
+					<a name="size" class="tsd-anchor"></a>
+					<h3>size</h3>
+					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/585cc36/src/grid.ts#L13">grid.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/585cc36/src/subset.ts#L19">subset.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="size" class="tsd-anchor"></a>
-					<h3>size</h3>
-					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="source" class="tsd-anchor"></a>
+					<h3>source</h3>
+					<div class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">:</span> <a href="_hex_.cellnode.html" class="tsd-signature-type">CellNode</a></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_subset_.subsetmakerparameters.html">SubsetMakerParameters</a>.<a href="_subset_.subsetmakerparameters.html#source">source</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/585cc36/src/grid.ts#L12">grid.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/hiimmrdave/hexgraph/blob/585cc36/src/subset.ts#L11">subset.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -124,7 +130,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_cell_.html">&quot;cell&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_grid_.html">&quot;grid&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -142,7 +148,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_renderer_.html">&quot;renderer&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_subset_.html">&quot;subset&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -152,53 +158,59 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_subset_.directionalsubsetparameters.html" class="tsd-kind-icon">Directional<wbr>Subset<wbr>Parameters</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_grid_.gridpopparams.html" class="tsd-kind-icon">Grid<wbr>Pop<wbr>Params</a>
+						<a href="_subset_.sizedsubsetparameters.html" class="tsd-kind-icon">Sized<wbr>Subset<wbr>Parameters</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_grid_.gridpopparams.html#grid" class="tsd-kind-icon">grid</a>
+								<a href="_subset_.sizedsubsetparameters.html#size" class="tsd-kind-icon">size</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_grid_.gridpopparams.html#size" class="tsd-kind-icon">size</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_subset_.sizedsubsetparameters.html#source" class="tsd-kind-icon">source</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_grid_.html#gridmap" class="tsd-kind-icon">Grid<wbr>Map</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_subset_.subsetmakerparameters.html" class="tsd-kind-icon">Subset<wbr>Maker<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_grid_.html#gridpopulator" class="tsd-kind-icon">Grid<wbr>Populator</a>
+						<a href="../modules/_subset_.html#wedgesubsetparameters" class="tsd-kind-icon">Wedge<wbr>Subset<wbr>Parameters</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_grid_.html#gridshape" class="tsd-kind-icon">Grid<wbr>Shape</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_subset_.html#cellone" class="tsd-kind-icon">CELLONE</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_grid_.html#gridpush" class="tsd-kind-icon">grid<wbr>Push</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_grid_.html#makegrid" class="tsd-kind-icon">make<wbr>Grid</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_subset_.html#cellzero" class="tsd-kind-icon">CELLZERO</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_grid_.html#maketwosize" class="tsd-kind-icon">make<wbr>Two<wbr>Size</a>
+						<a href="../modules/_subset_.html#cone" class="tsd-kind-icon">cone</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_grid_.html#populatehexagongrid" class="tsd-kind-icon">populate<wbr>Hexagon<wbr>Grid</a>
+						<a href="../modules/_subset_.html#findwedge" class="tsd-kind-icon">find<wbr>Wedge</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_subset_.html#hexagon" class="tsd-kind-icon">hexagon</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_subset_.html#intersection" class="tsd-kind-icon">intersection</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_subset_.html#line" class="tsd-kind-icon">line</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_grid_.html#populateparallelogramgrid" class="tsd-kind-icon">populate<wbr>Parallelogram<wbr>Grid</a>
+						<a href="../modules/_subset_.html#maketwosize" class="tsd-kind-icon">make<wbr>Two<wbr>Size</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_grid_.html#populaterectanglegrid" class="tsd-kind-icon">populate<wbr>Rectangle<wbr>Grid</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_subset_.html#rhombus" class="tsd-kind-icon">rhombus</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_grid_.html#populatestargrid" class="tsd-kind-icon">populate<wbr>Star<wbr>Grid</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_grid_.html#populatetrianglegrid" class="tsd-kind-icon">populate<wbr>Triangle<wbr>Grid</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_subset_.html#ring" class="tsd-kind-icon">ring</a>
 					</li>
 				</ul>
 			</nav>
