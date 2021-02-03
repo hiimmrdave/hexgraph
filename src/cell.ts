@@ -1,4 +1,4 @@
-import { CellNode, makeNode, DIAGONALS, add } from "./hex.js";
+import { CellNode, makeNode, DIAGONALS, add, QRSVector } from "./hex.js";
 
 /**
  * @param q - the absolute q coordinate to round to nearest cell
@@ -7,7 +7,7 @@ import { CellNode, makeNode, DIAGONALS, add } from "./hex.js";
  * @returns a cell with integer q,r,s coordinates
  * nearest to the provided q,r,s point
  */
-export function round({ q, r, s }: CellNode): CellNode {
+export function round({ q, r, s }: QRSVector): CellNode {
   const approx = {
       q: Math.round(q),
       r: Math.round(r),

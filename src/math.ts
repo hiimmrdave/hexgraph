@@ -53,6 +53,18 @@ export function cubeLerp(a: QRSVector, b: QRSVector, t: number): QRSVector {
 }
 
 /**
+ * create an arrayy of numbers from start to end, inclusive
+ * really only works the way you'd want for integers, but I won't stop you
+ * @param start first number of the range
+ * @param end last number of the range
+ */
+export function range(start: number, end: number): number[] {
+  return new Array(end - start + 1).map((e, i) => {
+    return start + i;
+  });
+}
+
+/**
  * Returns a random integer in the range of [min, max] (inclusive).
  * @param min lowest possible number desired
  * @param max highest possible number desired

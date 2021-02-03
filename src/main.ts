@@ -12,17 +12,19 @@ import {
   shearTransform,
   scaleTransform,
   pointToCube,
+  XYVector,
 } from "./layout.js";
 import { GridMap, GridShape, makeGrid } from "./grid.js";
 import * as Subset from "./subset.js";
 import * as Hex from "./hex.js";
+import {
+  getFloatValue,
+  getIntValue,
+  getRadioValue,
+  getStringValue,
+} from "./utils.js";
+import { thousandthRound } from "./math.js";
 
-/*
-function getCheckbox(elementId: string): boolean {
-  const input = document.getElementById(elementId) as HTMLInputElement;
-  return input.checked;
-}
-*/
 const svgGridTarget = "svghg",
   canvasGridTarget = "canvhg",
   shapes = ["line", "ring", "hexagon", "cone", "rhombbus"],
@@ -33,8 +35,8 @@ const svgGridTarget = "svghg",
     [scaleTransform(5, 5)]
   ),
   shapeGrid: GridMap = makeGrid({ size: 5 }),
-  source = Hex.makeNode({ q: 1, r: -1, s: 0 }, "Cell") as Hex.CellNode,
-  toward = { q: -2, r: 4, s: -2 },
+  source = Hex.makeNode({ q: 6, r: -6, s: 0 }, "Cell") as Hex.CellNode,
+  toward = { q: -12, r: 24, s: -12 },
   subsets = [
     Subset.line({ source, toward }),
     Subset.ring({ source, size: 3 }),
@@ -47,24 +49,6 @@ const svgGridTarget = "svghg",
 export const inputs = document.querySelector(
     'form[id="params"]'
   ) as HTMLFormElement,
-  getFloatValue = (elementId: string): number => {
-    const input = document.getElementById(elementId) as HTMLInputElement;
-    return parseFloat(input.value);
-  },
-  getIntValue = (elementId: string): number => {
-    const input = document.getElementById(elementId) as HTMLInputElement;
-    return parseInt(input.value, 10);
-  },
-  getRadioValue = (elementName: string): string => {
-    const input = document.querySelector(
-      `input[name="${elementName}"]:checked`
-    ) as HTMLInputElement;
-    return input.value;
-  },
-  getStringValue = (elementId: string): string => {
-    const input = document.getElementById(elementId) as HTMLInputElement;
-    return input.value;
-  },
   getForm = (): [LayoutConfig, GridMap] => {
     return [
       configureLayout(
@@ -85,7 +69,7 @@ export const inputs = document.querySelector(
   },
   rendSvg = (): void => {
     const config = getForm(),
-      holder = document.getElementById("shapes") as HTMLDivElement;
+      holder = document.getElementById(shapesHolder) as HTMLDivElement;
     let last;
     holder.style.width = `${getStringValue("csx")}px`;
     while ((last = svgRenderContext.lastChild)) {
@@ -144,9 +128,14 @@ inputs.addEventListener("input", () => {
 svgRenderContext.addEventListener("mouseup", (ev) => {
   if (!(ev.target as Element).matches(".cell")) return;
   const [layout] = getForm(),
-    ptc = pointToCube({ x: ev.offsetX, y: ev.offsetY }, layout),
+    clickXY: XYVector = { x: ev.offsetX, y: ev.offsetY },
+    { q, r, s } = pointToCube(clickXY, layout),
+    xy = `x: ${ev.offsetX}, y: ${ev.offsetY}`,
+    ptc = `q: ${thousandthRound(q)}, r: ${thousandthRound(
+      r
+    )}, s: ${thousandthRound(s)}`,
     cell = (ev.target as Element).getAttribute("data-hex-node-id");
-  st.innerText = `pointToCube ${JSON.stringify(ptc)}
-  ${cell}
-  `;
+  st.innerText = `click coordinates: ${xy}
+  fractional qrs coordinates: ${ptc}
+  hex cell coordinates: ${cell}`;
 });

@@ -50,23 +50,23 @@ export interface VertexNode extends HexNode {
  * the coordinates of the cells sharing an edge and two vertices with the origin
  */
 export const DIRECTIONS: QRSVector[] = [
-  { q: 1, r: -1, s: 0 },
-  { q: 0, r: -1, s: 1 },
-  { q: -1, r: 0, s: 1 },
-  { q: -1, r: 1, s: 0 },
-  { q: 0, r: 1, s: -1 },
-  { q: 1, r: 0, s: -1 },
+  { q: 6, r: -6, s: 0 },
+  { q: 0, r: -6, s: 6 },
+  { q: -6, r: 0, s: 6 },
+  { q: -6, r: 6, s: 0 },
+  { q: 0, r: 6, s: -6 },
+  { q: 6, r: 0, s: -6 },
 ];
 /**
  * the coordinates of cells that share an edge only with the origin
  */
 export const DIAGONALS: QRSVector[] = [
-  { q: 2, r: -1, s: -1 },
-  { q: 1, r: -2, s: 1 },
-  { q: -1, r: -1, s: 2 },
-  { q: -2, r: 1, s: 1 },
-  { q: -1, r: 2, s: -1 },
-  { q: 1, r: 1, s: -2 },
+  { q: 12, r: -6, s: -6 },
+  { q: 6, r: -12, s: 6 },
+  { q: -6, r: -6, s: 12 },
+  { q: -12, r: 6, s: 6 },
+  { q: -6, r: 12, s: -6 },
+  { q: 6, r: 6, s: -12 },
 ];
 
 /**

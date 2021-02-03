@@ -8,29 +8,38 @@ import { cubeLerp } from "./math.js";
 import { GridMap } from "./grid.js";
 
 interface SubsetMakerParameters {
-  source?: Hex.CellNode;
-  toward?: Hex.QRSVector;
-  size?: number | [number, number];
+  source: Hex.CellNode;
 }
+
+interface DirectionalSubsetParameters extends SubsetMakerParameters {
+  toward: Hex.QRSVector;
+}
+
+interface SizedSubsetParameters extends SubsetMakerParameters {
+  size: number | [number, number];
+}
+
+type WedgeSubsetParameters = SizedSubsetParameters &
+  DirectionalSubsetParameters;
 
 const CELLZERO: Hex.CellNode = Object.freeze(
     Hex.makeNode({ q: 0, r: 0, s: 0 }, "Cell") as Hex.CellNode
   ),
   CELLONE: Hex.CellNode = Object.freeze(
-    Hex.makeNode({ q: 2, r: -1, s: -1 }, "Cell") as Hex.CellNode
+    Hex.makeNode({ q: 12, r: -6, s: -6 }, "Cell") as Hex.CellNode
   ),
-  makeTwoSize = function xySize(
+  makeTwoSize = function makeTwoSize(
     size: number | [number, number]
   ): [number, number] {
     if (typeof size === "number") {
-      return [size, size];
+      return [size * 6, size * 6];
     }
-    return size;
+    return [size[0] * 6, size[1] * 6];
   },
   findWedge = function findWedge({
     source = CELLZERO,
     toward = CELLONE,
-  }: SubsetMakerParameters): {
+  }: DirectionalSubsetParameters): {
     dirs: { ia: "q" | "r" | "s"; ib: "q" | "r" | "s"; ic: "q" | "r" | "s" };
     sign: -1 | 1;
   } {
@@ -60,7 +69,7 @@ const CELLZERO: Hex.CellNode = Object.freeze(
 export function line({
   source = CELLZERO,
   toward = CELLONE,
-}: SubsetMakerParameters): GridMap {
+}: DirectionalSubsetParameters): GridMap {
   if (Hex.areEqual(source, toward)) return new Map().set(source.id, source);
   const t = Hex.distance(source, toward);
   const line = new Map();
@@ -85,16 +94,16 @@ export function line({
 export function ring({
   source = CELLZERO,
   size = 2,
-}: SubsetMakerParameters): GridMap {
+}: SizedSubsetParameters): GridMap {
   size = makeTwoSize(size);
   if (size[0] < 1) return new Map().set(source.id, source);
   const ring = new Map();
   let ringCell = Hex.makeNode(
-    Hex.add(source, Hex.multiply(Hex.DIRECTIONS[4], size[0])),
+    Hex.add(source, Hex.multiply(Hex.DIRECTIONS[4], size[0] / 6)),
     "Cell"
   ) as Hex.CellNode;
   for (let ii = 0; ii < 6; ii++) {
-    for (let ij = 0; ij < size[0]; ij++) {
+    for (let ij = 0; ij < size[0] / 6; ij++) {
       ring.set(ringCell.id, ringCell);
       ringCell = Hex.cells(ringCell)[ii];
     }
@@ -111,7 +120,7 @@ export function cone({
   source = CELLZERO,
   toward = CELLONE,
   size = 4,
-}: SubsetMakerParameters): GridMap {
+}: WedgeSubsetParameters): GridMap {
   const cone: GridMap = new Map(),
     { dirs, sign } = findWedge({ source, toward });
   size = makeTwoSize(size);
@@ -142,9 +151,10 @@ export function cone({
 export function hexagon({
   source = CELLZERO,
   size = 2,
-}: SubsetMakerParameters): GridMap {
-  const hexagon: GridMap = new Map();
+}: SizedSubsetParameters): GridMap {
   size = makeTwoSize(size);
+  if (size[0] < 1) return new Map().set(source.id, source);
+  const hexagon: GridMap = new Map();
   for (let ia = -size[0]; ia <= size[0]; ia++) {
     for (let ib = -size[0]; ib <= size[0]; ib++) {
       if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size[0] * 2) {
@@ -169,7 +179,7 @@ export function rhombus({
   source = CELLZERO,
   toward = CELLONE,
   size = 2,
-}: SubsetMakerParameters): GridMap {
+}: WedgeSubsetParameters): GridMap {
   const rhombus: GridMap = new Map(),
     { dirs, sign } = findWedge({ source, toward });
   size = makeTwoSize(size);

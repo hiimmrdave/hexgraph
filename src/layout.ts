@@ -33,6 +33,10 @@ const QRXY: Matrix2x2 = [
   IDENTITY2: Matrix2x2 = [
     [1, 0],
     [0, 1],
+  ],
+  SIXTH_SCALE: Matrix2x2 = [
+    [1 / 6, 0],
+    [0, 1 / 6],
   ];
 
 export function rotateTransform(theta: number): Matrix2x2 {
@@ -82,7 +86,7 @@ export function configureLayout(
   size: XYVector,
   transforms: Matrix2x2[] = []
 ): LayoutConfig {
-  const cubeToPoint = composeMatrixArray([QRXY, ...transforms]),
+  const cubeToPoint = composeMatrixArray([QRXY, SIXTH_SCALE, ...transforms]),
     pointToCube = invertMatrix2x2(cubeToPoint);
   return {
     origin,
@@ -96,8 +100,8 @@ export function cubeToPoint(
   c: QRSVector,
   { origin, cubeToPoint: M }: LayoutConfig
 ): XYVector {
-  const x = thousandthRound(M[0][0] * c.q + M[0][1] * c.r) + origin.x,
-    y = thousandthRound(M[1][0] * c.q + M[1][1] * c.r) + origin.y;
+  const x = thousandthRound(M[0][0] * c.q + M[0][1] * c.r + origin.x),
+    y = thousandthRound(M[1][0] * c.q + M[1][1] * c.r + origin.y);
   return { x, y };
 }
 
