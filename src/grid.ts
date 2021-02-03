@@ -34,7 +34,7 @@ export type GridShape =
  */
 export function makeTwoSize(size: number | [number, number]): [number, number] {
   if (typeof size === "number") {
-    size = [size * 6, size * 6];
+    return [size * 6, size * 6];
   }
   return [size[0] * 6, size[1] * 6];
 }
