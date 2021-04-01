@@ -15,13 +15,17 @@ export type NodeType = "Cell" | "Edge" | "Vertex";
  * here to a plane q+r+s==0
  */
 export type QRSVector = {
-  [key in "q" | "r" | "s"]: number;
+  q: number;
+  r: number;
+  s: number;
 };
+
+export type QRSId = `${number},${number},${number}`;
 
 /** a node of the graph representation of the hexagonal grid */
 export interface HexNode extends QRSVector {
   /** the cube coordinates of the node as a comma-separated string */
-  id: `${number},${number},${number}`;
+  id: QRSId;
   /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
   links: WeakSet<HexNode>;
   /** arbitrary additional properties */

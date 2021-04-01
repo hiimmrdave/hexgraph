@@ -22,6 +22,8 @@ interface SizedSubsetParameters extends SubsetMakerParameters {
 type WedgeSubsetParameters = SizedSubsetParameters &
   DirectionalSubsetParameters;
 
+type qrs = "q" | "r" | "s";
+
 const CELLZERO: Hex.CellNode = Object.freeze(
     Hex.makeNode({ q: 0, r: 0, s: 0 }, "Cell") as Hex.CellNode
   ),
@@ -40,10 +42,10 @@ const CELLZERO: Hex.CellNode = Object.freeze(
     source = CELLZERO,
     toward = CELLONE,
   }: DirectionalSubsetParameters): {
-    dirs: { ia: "q" | "r" | "s"; ib: "q" | "r" | "s"; ic: "q" | "r" | "s" };
+    dirs: { ia: qrs; ib: qrs; ic: qrs };
     sign: -1 | 1;
   } {
-    const hexCoords: ("q" | "r" | "s")[] = ["q", "r", "s"],
+    const hexCoords: qrs[] = ["q", "r", "s"],
       dir = Hex.subtract(toward, source),
       max = Math.max(Math.abs(dir.q), Math.abs(dir.r), Math.abs(dir.s));
     for (const coord of hexCoords) {
@@ -54,7 +56,7 @@ const CELLZERO: Hex.CellNode = Object.freeze(
               ...hexCoords.slice(hexCoords.indexOf(coord)),
               ...hexCoords.slice(0, hexCoords.indexOf(coord)),
             ].map((e, i) => [["ic", "ia", "ib"][i], e])
-          ) as Record<"ia" | "ib" | "ic", "q" | "r" | "s">;
+          ) as Record<"ia" | "ib" | "ic", qrs>;
         return { dirs: directionCoords, sign: directionSign };
       }
     }
@@ -210,7 +212,7 @@ export function rhombus({
  */
 export function intersection(a: GridMap, b: GridMap): GridMap {
   const intersection: GridMap = new Map();
-  for (const [key, val] of a) {
+  for (const [key, val] of a.entries()) {
     if (b.has(key) && Hex.areEqual(b.get(key) as Hex.HexNode, val)) {
       intersection.set(key, val);
     }
