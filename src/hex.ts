@@ -23,31 +23,42 @@ export type QRSVector = {
 export type QRSId = `${number},${number},${number}`;
 
 /** a node of the graph representation of the hexagonal grid */
-export interface HexNode extends QRSVector {
+export type HexNode = CellNode | EdgeNode | VertexNode;
+
+/** a Cell node of the hexagonal grid */
+export interface CellNode extends QRSVector {
   /** the cube coordinates of the node as a comma-separated string */
   id: QRSId;
   /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
   links: WeakSet<HexNode>;
+  /** the discriminant of the HexNode */
+  kind: "Cell";
   /** arbitrary additional properties */
   [prop: string]: unknown;
 }
 
-/** a Cell node of the hexagonal grid */
-export interface CellNode extends HexNode {
-  /** the discriminant of the HexNode */
-  kind: "Cell";
-}
-
 /** an Edge node of the hexagonal grid */
-export interface EdgeNode extends HexNode {
+export interface EdgeNode extends QRSVector {
+  /** the cube coordinates of the node as a comma-separated string */
+  id: QRSId;
+  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
+  links: WeakSet<HexNode>;
   /** the discriminant of the HexNode */
   kind: "Edge";
+  /** arbitrary additional properties */
+  [prop: string]: unknown;
 }
 
 /** a Vertex node of the hexagonal grid */
-export interface VertexNode extends HexNode {
+export interface VertexNode extends QRSVector {
+  /** the cube coordinates of the node as a comma-separated string */
+  id: QRSId;
+  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
+  links: WeakSet<HexNode>;
   /** the discriminant of the HexNode */
   kind: "Vertex";
+  /** arbitrary additional properties */
+  [prop: string]: unknown;
 }
 
 /**

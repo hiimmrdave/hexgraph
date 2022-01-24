@@ -16,7 +16,7 @@ function cellPath(cell: CellNode, layout: LayoutConfig): string {
 }
 
 function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
-  const svgRoot = document.createElementNS(SVGNS, "svg") as SVGSVGElement;
+  const svgRoot = document.createElementNS(SVGNS, "svg");
   svgRoot.setAttribute("xmlns", SVGNS);
   svgRoot.setAttribute("viewBox", `0 0 ${size.x} ${size.y}`);
   svgRoot.setAttribute("width", size.x.toString(10));
@@ -31,7 +31,7 @@ function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
 }
 
 function buildSvgCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
-  const path = document.createElementNS(SVGNS, "path") as SVGPathElement,
+  const path = document.createElementNS(SVGNS, "path"),
     c: XYVector = cubeToPoint(cell, layout);
   path.classList.add("cell");
   path.style.transformOrigin = `${c.x}px ${c.y}px`;
@@ -46,11 +46,12 @@ export function renderSvg(
   layout: LayoutConfig,
   grid: GridMap
 ): void {
-  const targetElem = document.getElementById(targetId) as HTMLElement,
+  const targetElem = //TODO: don't lie to the compiler, dave. it's just trying to help you.
+      document.getElementById(targetId) ?? document.createElement("div"),
     svgRoot = buildSvgRoot(layout);
   grid.forEach((node): void => {
     if (node.kind === "Cell") {
-      svgRoot.appendChild(buildSvgCell(node as CellNode, layout));
+      svgRoot.appendChild(buildSvgCell(node, layout));
     }
   });
   targetElem.appendChild(svgRoot);
@@ -60,8 +61,9 @@ export function buildCanvas(
   targetId: string,
   layout: LayoutConfig
 ): HTMLCanvasElement {
-  const targetElem = document.getElementById(targetId) as HTMLElement,
-    canvasRoot = document.createElement("canvas") as HTMLCanvasElement;
+  const targetElem = //TODO: the kind thing would be to return some reference to targetElem
+      document.getElementById(targetId) ?? document.createElement("div"),
+    canvasRoot = document.createElement("canvas");
   canvasRoot.setAttribute("width", layout.size.x.toString(10));
   canvasRoot.setAttribute("height", layout.size.y.toString(10));
   targetElem.appendChild(canvasRoot);
@@ -76,7 +78,7 @@ export function renderCanvasFrame(
   ctx.clearRect(0, 0, layout.size.x, layout.size.y);
   grid.forEach((node) => {
     if (node.kind === "Cell") {
-      ctx.stroke(new Path2D(cellPath(node as CellNode, layout)));
+      ctx.stroke(new Path2D(cellPath(node, layout)));
     }
   });
 }
