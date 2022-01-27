@@ -5,13 +5,13 @@
     "node": true
   },
   "plugins": ["@typescript-eslint", "prettier"],
-  "rules": {},
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
+  "rules": { "max-len": ["error", 120] },
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
