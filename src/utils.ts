@@ -15,9 +15,7 @@ export const getFloatValue = (elementId: string): number => {
     throw "sorry, no";
   },
   getRadioValue = (elementName: string): string => {
-    const input = document.querySelector(
-      `input[name="${elementName}"]:checked`
-    );
+    const input = document.querySelector(`input[name="${elementName}"]:checked`);
     if (typeof input === "object") {
       return (input as HTMLInputElement).value;
     }

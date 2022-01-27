@@ -17,23 +17,16 @@ import {
 import { GridMap, GridShape, makeGrid } from "./grid.js";
 import * as Subset from "./subset.js";
 import * as Hex from "./hex.js";
-import {
-  getFloatValue,
-  getIntValue,
-  getRadioValue,
-  getStringValue,
-} from "./utils.js";
+import { getFloatValue, getIntValue, getRadioValue, getStringValue } from "./utils.js";
 import { thousandthRound } from "./math.js";
 
 const svgGridTarget = "svghg",
   canvasGridTarget = "canvhg",
   shapes = ["line", "ring", "hexagon", "cone", "rhombbus"],
   shapesHolder = "shapes",
-  shapeLayoutConfig: LayoutConfig = configureLayout(
-    { x: 45, y: 45 },
-    { x: 90, y: 90 },
-    [scaleTransform(5, 5)]
-  ),
+  shapeLayoutConfig: LayoutConfig = configureLayout({ x: 45, y: 45 }, { x: 90, y: 90 }, [
+    scaleTransform(5, 5),
+  ]),
   shapeGrid: GridMap = makeGrid({ size: 5 }),
   source = Hex.makeNode({ q: 1, r: -1, s: 0 }, "Cell") as Hex.CellNode,
   toward = { q: -2, r: 4, s: -2 },
@@ -46,9 +39,7 @@ const svgGridTarget = "svghg",
   ],
   svgRenderContext = document.getElementById(svgGridTarget) as HTMLDivElement,
   st = document.getElementById("st") as HTMLParagraphElement;
-export const inputs = document.querySelector(
-    'form[id="params"]'
-  ) as HTMLFormElement,
+export const inputs = document.querySelector('form[id="params"]') as HTMLFormElement,
   getForm = (): [LayoutConfig, GridMap] => {
     return [
       configureLayout(
@@ -81,9 +72,7 @@ export const inputs = document.querySelector(
     const [layout, grid] = getForm(),
       canvas = buildCanvas(canvasGridTarget, layout),
       ctx = canvas.getContext("2d") as CanvasRenderingContext2D,
-      canvasHolder = document.getElementById(
-        canvasGridTarget
-      ) as HTMLDivElement;
+      canvasHolder = document.getElementById(canvasGridTarget) as HTMLDivElement;
     canvasHolder.appendChild(canvas);
     renderCanvasFrame(ctx, layout, grid);
     return ctx;
@@ -131,9 +120,7 @@ svgRenderContext.addEventListener("mouseup", (ev) => {
     clickXY: XYVector = { x: ev.offsetX, y: ev.offsetY },
     { q, r, s } = pointToCube(clickXY, layout),
     xy = `x: ${ev.offsetX}, y: ${ev.offsetY}`,
-    ptc = `q: ${thousandthRound(q)}, r: ${thousandthRound(
-      r
-    )}, s: ${thousandthRound(s)}`,
+    ptc = `q: ${thousandthRound(q)}, r: ${thousandthRound(r)}, s: ${thousandthRound(s)}`,
     cell = (ev.target as Element).getAttribute("data-hex-node-id");
   st.innerText = `click coordinates: ${xy}
   fractional qrs coordinates: ${ptc}

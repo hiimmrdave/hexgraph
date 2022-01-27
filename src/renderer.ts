@@ -45,16 +45,19 @@ const nodeColors: Record<NodeType, ListColor> = {
 };
 
 function buildSvgMarker(point: HexNode, layout: LayoutConfig): SVGCircleElement {
-  const dot = document.createElementNS(SVGNS, "circle"),
-    spot = cubeToPoint(point, layout);
-  dot.classList.add(point.kind);
-  dot.style.transformOrigin = `${spot.x} ${spot.y}`;
-  dot.setAttribute("cx", `${spot.x}`);
-  dot.setAttribute("cy", `${spot.y}`);
+  const spot = cubeToPoint(point, layout);
+  return buildSvgDot(spot, point);
+}
+
+function buildSvgDot({ x, y }: XYVector, { q, r, s, id, kind }: HexNode): SVGCircleElement {
+  const dot = document.createElementNS(SVGNS, "circle");
+  dot.classList.add(kind);
+  dot.style.transformOrigin = `${x} ${y}`;
+  dot.setAttribute("cx", `${x}`);
+  dot.setAttribute("cy", `${y}`);
   dot.setAttribute("r", "2");
-  dot.setAttribute("fill", nodeColors[point.kind]);
-  dot.dataset.hexNodeId = point.id;
-  Object.assign(dot.dataset, { q: point.q, r: point.r, s: point.s });
+  dot.setAttribute("fill", nodeColors[kind]);
+  Object.assign(dot.dataset, { q, r, s, id });
   return dot;
 }
 

@@ -19,8 +19,7 @@ interface SizedSubsetParameters extends SubsetMakerParameters {
   size: number | [number, number];
 }
 
-type WedgeSubsetParameters = SizedSubsetParameters &
-  DirectionalSubsetParameters;
+type WedgeSubsetParameters = SizedSubsetParameters & DirectionalSubsetParameters;
 
 type qrs = "q" | "r" | "s";
 
@@ -30,9 +29,7 @@ const CELLZERO: Hex.CellNode = Object.freeze(
   CELLONE: Hex.CellNode = Object.freeze(
     Hex.makeNode({ q: 2, r: -1, s: -1 }, "Cell") as Hex.CellNode
   ),
-  makeTwoSize = function makeTwoSize(
-    size: number | [number, number]
-  ): [number, number] {
+  makeTwoSize = function makeTwoSize(size: number | [number, number]): [number, number] {
     if (typeof size === "number") {
       return [size, size];
     }
@@ -76,9 +73,7 @@ export function line({
   const t = Hex.distance(source, toward);
   const line = new Map();
   for (let ii = 0; ii <= t; ii++) {
-    const newCell: Hex.CellNode = round(
-      cubeLerp(source, toward, (1 / t) * ii) as Hex.CellNode
-    );
+    const newCell: Hex.CellNode = round(cubeLerp(source, toward, (1 / t) * ii) as Hex.CellNode);
     line.set(newCell.id, newCell);
   }
   return line;
@@ -93,10 +88,7 @@ export function line({
  * @param size the number of steps from the center to a cell on the ring
  * @returns an array of CellNodes that are a given radius from the center cell
  */
-export function ring({
-  source = CELLZERO,
-  size = 2,
-}: SizedSubsetParameters): GridMap {
+export function ring({ source = CELLZERO, size = 2 }: SizedSubsetParameters): GridMap {
   size = makeTwoSize(size);
   if (size[0] < 1) return new Map().set(source.id, source);
   const ring = new Map();
@@ -150,10 +142,7 @@ export function cone({
  * @param center the center of the hexagon
  * @param size the number of hex cells along each side of the hexagon
  */
-export function hexagon({
-  source = CELLZERO,
-  size = 2,
-}: SizedSubsetParameters): GridMap {
+export function hexagon({ source = CELLZERO, size = 2 }: SizedSubsetParameters): GridMap {
   size = makeTwoSize(size);
   if (size[0] < 1) return new Map().set(source.id, source);
   const hexagon: GridMap = new Map();
@@ -161,10 +150,7 @@ export function hexagon({
     for (let ib = -size[0]; ib <= size[0]; ib++) {
       if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size[0] * 2) {
         const ic = -(ia + ib),
-          newNode = Hex.makeNode(
-            Hex.add(source, { q: ia, r: ib, s: ic }),
-            "Cell"
-          ) as Hex.CellNode;
+          newNode = Hex.makeNode(Hex.add(source, { q: ia, r: ib, s: ic }), "Cell") as Hex.CellNode;
         hexagon.set(newNode.id, newNode);
       }
     }
