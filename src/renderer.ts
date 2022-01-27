@@ -30,6 +30,12 @@ function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
   return svgRoot;
 }
 
+/** build a HexNode shower here to mark where the points are
+ * for now that's just using the same old coordinate system
+ * then it will show (about) what the new coordinates would be
+ * then I'll bring them in to sync.
+ */
+
 function buildSvgCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
   const path = document.createElementNS(SVGNS, "path"),
     c: XYVector = cubeToPoint(cell, layout);
