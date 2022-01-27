@@ -28,15 +28,15 @@ const CELLZERO: Hex.CellNode = Object.freeze(
     Hex.makeNode({ q: 0, r: 0, s: 0 }, "Cell") as Hex.CellNode
   ),
   CELLONE: Hex.CellNode = Object.freeze(
-    Hex.makeNode({ q: 12, r: -6, s: -6 }, "Cell") as Hex.CellNode
+    Hex.makeNode({ q: 2, r: -1, s: -1 }, "Cell") as Hex.CellNode
   ),
   makeTwoSize = function makeTwoSize(
     size: number | [number, number]
   ): [number, number] {
     if (typeof size === "number") {
-      return [size * 6, size * 6];
+      return [size, size];
     }
-    return [size[0] * 6, size[1] * 6];
+    return [size[0], size[1]];
   },
   findWedge = function findWedge({
     source = CELLZERO,

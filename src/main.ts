@@ -35,8 +35,8 @@ const svgGridTarget = "svghg",
     [scaleTransform(5, 5)]
   ),
   shapeGrid: GridMap = makeGrid({ size: 5 }),
-  source = Hex.makeNode({ q: 6, r: -6, s: 0 }, "Cell") as Hex.CellNode,
-  toward = { q: -12, r: 24, s: -12 },
+  source = Hex.makeNode({ q: 1, r: -1, s: 0 }, "Cell") as Hex.CellNode,
+  toward = { q: -2, r: 4, s: -2 },
   subsets = [
     Subset.line({ source, toward }),
     Subset.ring({ source, size: 3 }),

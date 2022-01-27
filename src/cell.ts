@@ -9,9 +9,9 @@ import { CellNode, makeNode, DIAGONALS, add, QRSVector } from "./hex.js";
  */
 export function round({ q, r, s }: QRSVector): CellNode {
   const approx = {
-      q: Math.round(q / 6) * 6,
-      r: Math.round(r / 6) * 6,
-      s: Math.round(s / 6) * 6,
+      q: Math.round(q),
+      r: Math.round(r),
+      s: Math.round(s),
     },
     offset = {
       q: Math.abs(q - approx.q),

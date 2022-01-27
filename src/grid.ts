@@ -34,9 +34,9 @@ export type GridShape =
  */
 export function makeTwoSize(size: number | [number, number]): [number, number] {
   if (typeof size === "number") {
-    return [size * 6, size * 6];
+    return [size, size];
   }
-  return [size[0] * 6, size[1] * 6];
+  return [size[0], size[1]];
 }
 
 export function makeGrid({
@@ -93,8 +93,8 @@ function gridPush(
 function populateHexagonGrid({ size, grid }: GridPopParams): GridMap {
   size = makeTwoSize(size) as [number, number];
   let cellset = grid ? new Map(grid) : new Map();
-  for (let ia = -size[0]; ia <= size[0]; ia += 6) {
-    for (let ib = -size[0]; ib <= size[0]; ib += 6) {
+  for (let ia = -size[0]; ia <= size[0]; ia++) {
+    for (let ib = -size[0]; ib <= size[0]; ib++) {
       if (Math.abs(ia) + Math.abs(ib) + Math.abs(-ia - ib) < size[0] * 2) {
         cellset = gridPush(cellset, ia, ib);
       }
