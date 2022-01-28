@@ -44,21 +44,35 @@ const nodeColors: Record<NodeType, ListColor> = {
   Edge: "blue",
 };
 
-function buildSvgMarker(point: HexNode, layout: LayoutConfig): SVGCircleElement {
-  const spot = cubeToPoint(point, layout);
-  return buildSvgDot(spot, point);
+function buildSvgMarker(point: HexNode, layout: LayoutConfig): SVGGElement {
+  const spot = cubeToPoint(point, layout),
+    group = document.createElementNS(SVGNS, "g");
+  group.appendChild(buildSvgDot(spot, point));
+  group.appendChild(buildSvgLabel(spot, point));
+  return group;
 }
 
 function buildSvgDot({ x, y }: XYVector, { q, r, s, id, kind }: HexNode): SVGCircleElement {
   const dot = document.createElementNS(SVGNS, "circle");
   dot.classList.add(kind);
   dot.style.transformOrigin = `${x} ${y}`;
+  dot.style.fill = nodeColors[kind];
   dot.setAttribute("cx", `${x}`);
   dot.setAttribute("cy", `${y}`);
   dot.setAttribute("r", "2");
-  dot.setAttribute("fill", nodeColors[kind]);
   Object.assign(dot.dataset, { q, r, s, id });
   return dot;
+}
+
+function buildSvgLabel({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
+  const label = document.createElementNS(SVGNS, "text");
+  label.textContent = `${q * 6}, ${r * 6}, ${s * 6}`;
+  label.style.fill = nodeColors[kind];
+  label.setAttribute("x", `${x}`);
+  label.setAttribute("y", `${y}`);
+  label.setAttribute("text-anchor", "middle");
+  label.setAttribute("font-size", "0.75em");
+  return label;
 }
 
 function buildSvgCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
