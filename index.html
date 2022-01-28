@@ -3,28 +3,10 @@
   <head>
     <title>test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="A demonstration of Yet Another Hex Grid"
-    />
-    <link
-      rel="preload"
-      href="./js/grid.js"
-      as="script"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="./js/renderer.js"
-      as="script"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/js/layout.js"
-      as="script"
-      crossorigin="anonymous"
-    />
+    <meta name="description" content="A demonstration of Yet Another Hex Grid" />
+    <link rel="preload" href="./js/grid.js" as="script" crossorigin="anonymous" />
+    <link rel="preload" href="./js/renderer.js" as="script" crossorigin="anonymous" />
+    <link rel="preload" href="/js/layout.js" as="script" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
     <script type="module" src="./js/main.js"></script>
@@ -43,13 +25,7 @@
       <form id="params" method="get">
         <fieldset>
           <legend>Map properties</legend>
-          <input
-            type="radio"
-            id="hex"
-            value="Hexagon"
-            name="shape"
-            checked="checked"
-          />
+          <input type="radio" id="hex" value="Hexagon" name="shape" checked="checked" />
           <label for="hex">Hexagon</label>
           <input type="radio" id="tri" value="Triangle" name="shape" />
           <label for="tri">Triangle</label>
@@ -63,28 +39,14 @@
             <tr>
               <td><label for="gs1">Size</label></td>
               <td>
-                <input
-                  type="number"
-                  name="gs1"
-                  id="gs1"
-                  min="0"
-                  step="1"
-                  value="5"
-                />
+                <input type="number" name="gs1" id="gs1" min="0" step="1" value="3" />
               </td>
               <td></td>
             </tr>
             <tr>
               <td><label for="gs2">Size 2</label></td>
               <td>
-                <input
-                  type="number"
-                  name="gs2"
-                  id="gs2"
-                  min="0"
-                  step="1"
-                  value="5"
-                />
+                <input type="number" name="gs2" id="gs2" min="0" step="1" value="5" />
               </td>
               <td class="note">only applies to Parallelogram and Rectangle</td>
             </tr>
@@ -98,7 +60,7 @@
             name="orientation"
             id="orientation"
             value="0"
-            min="0"
+            min="-24"
             max="24"
             step="0.1"
           />
@@ -107,57 +69,31 @@
             <tr>
               <td><label for="hsx">Hex Width</label></td>
               <td>
-                <input type="number" name="hsx" id="hsx" step="1" value="36" />
+                <input type="number" name="hsx" id="hsx" step="1" value="100" />
               </td>
               <td><label for="hsy">Hex Height</label></td>
               <td>
-                <input type="number" name="hsy" id="hsy" step="1" value="36" />
+                <input type="number" name="hsy" id="hsy" step="1" value="100" />
               </td>
             </tr>
             <tr>
               <td><label for="orx">Origin X</label></td>
               <td>
-                <input
-                  type="number"
-                  name="orx"
-                  id="orx"
-                  min="1"
-                  step="1"
-                  value="360"
-                />
+                <input type="number" name="orx" id="orx" min="1" step="1" value="500" />
               </td>
               <td><label for="ory">Origin Y</label></td>
               <td>
-                <input
-                  type="number"
-                  name="ory"
-                  id="ory"
-                  min="1"
-                  step="1"
-                  value="360"
-                />
+                <input type="number" name="ory" id="ory" min="1" step="1" value="500" />
               </td>
             </tr>
             <tr>
               <td><label for="shx">Shear X</label></td>
               <td>
-                <input
-                  type="number"
-                  name="shx"
-                  id="shx"
-                  step="0.01"
-                  value="0"
-                />
+                <input type="number" name="shx" id="shx" step="0.01" value="0" />
               </td>
               <td><label for="shy">Shear Y</label></td>
               <td>
-                <input
-                  type="number"
-                  name="shy"
-                  id="shy"
-                  step="0.01"
-                  value="0"
-                />
+                <input type="number" name="shy" id="shy" step="0.01" value="0" />
               </td>
             </tr>
           </table>
@@ -165,23 +101,9 @@
         <fieldset>
           <legend>Canvas properties</legend>
           <label for="csx">Canvas Width</label>
-          <input
-            type="number"
-            name="csx"
-            id="csx"
-            min="1"
-            step="1"
-            value="720"
-          />
+          <input type="number" name="csx" id="csx" min="1" step="1" value="1000" />
           <label for="csy">Canvas Height</label>
-          <input
-            type="number"
-            name="csy"
-            id="csy"
-            min="1"
-            step="1"
-            value="720"
-          />
+          <input type="number" name="csy" id="csy" min="1" step="1" value="1000" />
         </fieldset>
       </form>
       <div id="canvhg"></div>
