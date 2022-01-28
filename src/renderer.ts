@@ -49,10 +49,13 @@ function buildSvgMarker(point: HexNode, layout: LayoutConfig): SVGGElement {
     group = document.createElementNS(SVGNS, "g");
   group.appendChild(buildSvgDot(spot, point));
   group.appendChild(buildSvgLabel(spot, point));
+  if (point.kind === "Edge" || point.kind === "Cell") {
+    group.appendChild(buildSvgBottomText(spot, point));
+  }
   return group;
 }
 
-function buildSvgDot({ x, y }: XYVector, { q, r, s, id, kind }: HexNode): SVGCircleElement {
+function buildSvgDot({ x, y }: XYVector, { q, r, s, id, kind }: HexNode) {
   const dot = document.createElementNS(SVGNS, "circle");
   dot.classList.add(kind);
   dot.style.transformOrigin = `${x} ${y}`;
@@ -69,13 +72,25 @@ function buildSvgLabel({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
   label.textContent = `${q * 6}, ${r * 6}, ${s * 6}`;
   label.style.fill = nodeColors[kind];
   label.setAttribute("x", `${x}`);
-  label.setAttribute("y", `${y}`);
+  label.setAttribute("y", `${y - 1}`);
   label.setAttribute("text-anchor", "middle");
   label.setAttribute("font-size", "0.75em");
   return label;
 }
 
-function buildSvgCell(cell: CellNode, layout: LayoutConfig): SVGPathElement {
+function buildSvgBottomText({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
+  const label = document.createElementNS(SVGNS, "text");
+  label.textContent = `${q}, ${r}, ${s}`;
+  label.style.fill = nodeColors[kind];
+  label.setAttribute("x", `${x}`);
+  label.setAttribute("y", `${y + 12}`);
+  label.setAttribute("text-anchor", "middle");
+  label.setAttribute("font-size", "0.75em");
+  label.setAttribute("alignment-baseline", "top");
+  return label;
+}
+
+function buildSvgCell(cell: CellNode, layout: LayoutConfig) {
   const path = document.createElementNS(SVGNS, "path"),
     c: XYVector = cubeToPoint(cell, layout);
   path.classList.add("cell");
