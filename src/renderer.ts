@@ -1,6 +1,7 @@
 import { XYVector, LayoutConfig, cellPoints, cubeToPoint } from "./layout.js";
 import { CellNode, HexNode, NodeType } from "./hex.js";
 import { GridMap } from "./grid.js";
+import { makeVulgar } from "./utils.js";
 
 const SVGNS = "http://www.w3.org/2000/svg";
 
@@ -49,9 +50,7 @@ function buildSvgMarker(point: HexNode, layout: LayoutConfig): SVGGElement {
     group = document.createElementNS(SVGNS, "g");
   group.appendChild(buildSvgDot(spot, point));
   group.appendChild(buildSvgLabel(spot, point));
-  if (point.kind === "Edge" || point.kind === "Cell") {
-    group.appendChild(buildSvgBottomText(spot, point));
-  }
+  group.appendChild(buildSvgBottomText(spot, point));
   return group;
 }
 
@@ -72,20 +71,18 @@ function buildSvgLabel({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
   label.textContent = `${q * 6}, ${r * 6}, ${s * 6}`;
   label.style.fill = nodeColors[kind];
   label.setAttribute("x", `${x}`);
-  label.setAttribute("y", `${y - 1}`);
+  label.setAttribute("y", `${y - 5}`);
   label.setAttribute("text-anchor", "middle");
-  label.setAttribute("font-size", "0.75em");
   return label;
 }
 
 function buildSvgBottomText({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
   const label = document.createElementNS(SVGNS, "text");
-  label.textContent = `${q}, ${r}, ${s}`;
+  label.textContent = `${makeVulgar(q)}, ${makeVulgar(r)}, ${makeVulgar(s)}`;
   label.style.fill = nodeColors[kind];
   label.setAttribute("x", `${x}`);
-  label.setAttribute("y", `${y + 12}`);
+  label.setAttribute("y", `${y + 15}`);
   label.setAttribute("text-anchor", "middle");
-  label.setAttribute("font-size", "0.75em");
   label.setAttribute("alignment-baseline", "top");
   return label;
 }
