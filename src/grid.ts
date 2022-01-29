@@ -17,12 +17,7 @@ type GridPopulator = (arg0: GridPopParams) => GridMap;
 /**
  * the shape of the hexagon grid, which determines the grid generator function
  */
-export type GridShape =
-  | "Hexagon"
-  | "Triangle"
-  | "Star"
-  | "Parallelogram"
-  | "Rectangle";
+export type GridShape = "Hexagon" | "Triangle" | "Star" | "Parallelogram" | "Rectangle";
 
 /**
  * Creates a GridMap and (optionally) adds the nodes
@@ -68,12 +63,7 @@ export function makeGrid({
  * @param r r coordinate of cell to add
  * @param s s coordinate of cell to add
  */
-function gridPush(
-  grid: GridMap = new Map(),
-  q: number,
-  r: number,
-  s: number = -q - r
-): GridMap {
+function gridPush(grid: GridMap = new Map(), q: number, r: number, s: number = -q - r): GridMap {
   const cellset = new Map(grid),
     cell = makeNode({ q, r, s }, "Cell") as CellNode;
   cellset.set(cell.id, cell);
