@@ -98,7 +98,12 @@ function buildSvgCell(cell: CellNode, layout: LayoutConfig) {
   return path;
 }
 
-export function renderSvg(targetId: string, layout: LayoutConfig, grid: GridMap): void {
+export function renderSvg(
+  targetId: string,
+  layout: LayoutConfig,
+  grid: GridMap,
+  debug = false
+): void {
   //TODO: don't lie to the compiler, dave. it's just trying to help you.
   const targetElem = document.getElementById(targetId) ?? document.createElement("div"),
     svgRoot = buildSvgRoot(layout);
@@ -107,9 +112,10 @@ export function renderSvg(targetId: string, layout: LayoutConfig, grid: GridMap)
       svgRoot.appendChild(buildSvgCell(node, layout));
     }
   });
-  grid.forEach((node): void => {
-    svgRoot.appendChild(buildSvgMarker(node, layout));
-  });
+  if (debug) {
+    grid.forEach((node): void => {
+      svgRoot.appendChild(buildSvgMarker(node, layout));
+    });
   targetElem.appendChild(svgRoot);
 }
 
