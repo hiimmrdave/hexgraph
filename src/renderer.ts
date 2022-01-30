@@ -112,10 +112,11 @@ export function renderSvg(
       svgRoot.appendChild(buildSvgCell(node, layout));
     }
   });
-  if (debug) {
+  if (debug === true) {
     grid.forEach((node): void => {
       svgRoot.appendChild(buildSvgMarker(node, layout));
     });
+  }
   targetElem.appendChild(svgRoot);
 }
 
