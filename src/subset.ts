@@ -93,11 +93,11 @@ export function ring({ source = CELLZERO, size = 2 }: SizedSubsetParameters): Gr
   if (size[0] < 1) return new Map().set(source.id, source);
   const ring = new Map();
   let ringCell = Hex.makeNode(
-    Hex.add(source, Hex.multiply(Hex.DIRECTIONS[4], size[0] / 6)),
+    Hex.add(source, Hex.multiply(Hex.DIRECTIONS[4], size[0])),
     "Cell"
   ) as Hex.CellNode;
   for (let ii = 0; ii < 6; ii++) {
-    for (let ij = 0; ij < size[0] / 6; ij++) {
+    for (let ij = 0; ij < size[0]; ij++) {
       ring.set(ringCell.id, ringCell);
       ringCell = Hex.cells(ringCell)[ii];
     }
