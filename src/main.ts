@@ -4,6 +4,8 @@
  * provides interface for visual testing
  * ! this whole file is spaghetti.
  */
+
+// ? should buildCanvas return an object with renderCanvasFrame on it? Yes?
 import { buildCanvas, renderCanvasFrame, renderSvg } from "./renderer.js";
 import {
   LayoutConfig,
@@ -66,7 +68,7 @@ export const inputs = document.querySelector('form[id="params"]') as HTMLFormEle
     while ((last = svgRenderContext.lastChild)) {
       svgRenderContext.removeChild(last);
     }
-    renderSvg(svgGridTarget, ...config);
+    renderSvg(svgGridTarget, ...config, true);
   },
   makeCanv = (): CanvasRenderingContext2D => {
     const [layout, grid] = getForm(),
