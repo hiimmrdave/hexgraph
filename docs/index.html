@@ -1,0 +1,85 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>yahgts</title><meta name="description" content="Documentation for yahgts"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">yahgts</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1> yahgts</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#yet-another-hex-graph-in-typescript" id="yet-another-hex-graph-in-typescript" style="color: inherit; text-decoration: none;">
+  <h1>Yet Another Hex Graph, in typescript</h1>
+</a>
+<p>hexgraph is an implementation of <a href="https://www.redblobgames.com/">Amit Patel</a>&#39;s 
+<a href="https://www.redblobgames.com/grids/hexagons/">Hexagonal Grids</a> in TypeScript. I have built on the 
+<a href="https://www.redblobgames.com/grids/hexagons/implementation.html">implementation</a> with other ideas, including relationship graphs between
+grid parts.</p>
+
+<a href="#motivation" id="motivation" style="color: inherit; text-decoration: none;">
+  <h2>Motivation</h2>
+</a>
+<p>I love turn-based roleplaying and strategy games, and I wanted to learn a whole
+bunch of things about programming and math all at once, so I thought &quot;let&#39;s
+build a game library!&quot; I was intrigued by the hexagonal grid concept in Sid
+Meier games and thought to use it to learn a language. The point of the exercise
+is to build -- rather than to use -- the library, so YAGNI doesn&#39;t apply.</p>
+
+<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+  <h2>Getting Started</h2>
+</a>
+<p>Clone the repo, <code>npm run deploy &amp;&amp; npx http-server</code> to run the demo locally</p>
+
+<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+  <h2>Documentation</h2>
+</a>
+<p>The mathematical concepts are <a href="https://www.redblobgames.com/grids/hexagons/">thoroughly discussed</a>, so I will stick
+to the hows and whys of my implementation.</p>
+<p>I wrote in TypeScript because that&#39;s what I&#39;m trying to learn. Typedoc output
+is at <a href="https://hiimmrdave.github.io/hexgraph/docs/">/docs</a>.</p>
+<p>I&#39;ve chosen to use cube coordinates for algorithmic simplicity. All
+coordinate-based functions accept cube coordinates, which allows passing
+<code>HexNode</code>s around as parameters.</p>
+
+<a href="#conventions" id="conventions" style="color: inherit; text-decoration: none;">
+  <h3>Conventions</h3>
+</a>
+<p><code>CONSTANTS</code> are in all caps. <code>Classes</code>, <code>Interfaces</code>, and <code>Enums</code> are in
+PascalCase, and <code>variables</code> and <code>functions</code> are in camelCase. I use automatic
+style linting on all my code, two space indentations, and hard wrap at 80
+characters; eslint, prettier, and typescript configuration are included. I am
+not married to these decisions, but being consistent improves readability.</p>
+<p>Matrices are currently stored in row-major form. I&#39;m investigating the
+implications of keeping this vs converting to column-major</p>
+<img src="/img/directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
+<img src="/img/diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
+
+
+<a href="#task-list" id="task-list" style="color: inherit; text-decoration: none;">
+  <h2>Task List</h2>
+</a>
+<ul>
+<li>tests</li>
+<li>cell labelling</li>
+<li><del>cell groups</del><ul>
+<li><del>line</del></li>
+<li><del>ring</del></li>
+<li><del>hexagon</del></li>
+<li><del>cone (triangle with origin and direction)</del></li>
+</ul>
+</li>
+<li><del>cell group overlaps</del></li>
+<li>rotation</li>
+<li>rounding<ul>
+<li><del>nearest cell</del></li>
+<li>nearest edge</li>
+<li>nearest vertex</li>
+</ul>
+</li>
+<li>state</li>
+<li>pathing<ul>
+<li>field of view</li>
+<li>obstacles</li>
+<li>range</li>
+</ul>
+</li>
+<li>storage</li>
+<li>formatter/linter(/minifier?) for html and css</li>
+<li>fix rectangle map (too wide by 1)</li>
+</ul>
+
+<a href="#⬢⬣⬢⬣⬢⬣⬢⬣" id="⬢⬣⬢⬣⬢⬣⬢⬣" style="color: inherit; text-decoration: none;">
+  <h1>⬢⬣⬢⬣⬢⬣⬢⬣</h1>
+</a>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Modules</a></li><li class=" tsd-kind-module"><a href="modules/cell.html">cell</a></li><li class=" tsd-kind-module"><a href="modules/grid.html">grid</a></li><li class=" tsd-kind-module"><a href="modules/hex.html">hex</a></li><li class=" tsd-kind-module"><a href="modules/layout.html">layout</a></li><li class=" tsd-kind-module"><a href="modules/main.html">main</a></li><li class=" tsd-kind-module"><a href="modules/math.html">math</a></li><li class=" tsd-kind-module"><a href="modules/renderer.html">renderer</a></li><li class=" tsd-kind-module"><a href="modules/subset.html">subset</a></li><li class=" tsd-kind-module"><a href="modules/utils.html">utils</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li><li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li><li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li><li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>

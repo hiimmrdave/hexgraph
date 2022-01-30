@@ -11,7 +11,7 @@
     "test": "mocha -r ts-node/register test/**/*.ts",
     "lint": "eslint --fix ./src/*",
     "prebuild:docs": "npm run clean:docs",
-    "build:docs": "typedoc --out ./docs ./src",
+    "build:docs": "typedoc --entryPointStrategy expand --out ./docs ./src",
     "build:types": "tsc --declaration --emitDeclarationsOnly --outdir ./types",
     "prebuild": "npm run lint",
     "build": "tsc",
