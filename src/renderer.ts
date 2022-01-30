@@ -116,7 +116,6 @@ export function renderSvg(
     grid.forEach((node): void => {
       svgRoot.appendChild(buildSvgMarker(node, layout));
     });
-  }
   targetElem.appendChild(svgRoot);
 }
 
