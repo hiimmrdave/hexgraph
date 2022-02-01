@@ -197,25 +197,25 @@ export function add(a: QRSVector, b: QRSVector): QRSVector {
 }
 
 /**
- * ! explain every export */
+ * TODO: explain every export */
 export function subtract(a: QRSVector, b: QRSVector): QRSVector {
   return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 
 /**
- * ! explain every export */
+ * TODO: explain every export */
 export function multiply(cell: QRSVector, k: number): QRSVector {
   return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
 }
 
 /**
- * ! explain every export */
+ * TODO: explain every export */
 export function length({ q, r, s }: QRSVector): number {
   return Math.max(Math.abs(q), Math.abs(r), Math.abs(s));
 }
 
 /**
- * ! explain every export */
+ * TODO: explain every export */
 export function distance(a: QRSVector, b: QRSVector): number {
   return length(subtract(a, b));
 }

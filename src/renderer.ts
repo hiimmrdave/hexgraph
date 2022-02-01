@@ -133,7 +133,8 @@ export function buildCanvas(targetId: string, layout: LayoutConfig): HTMLCanvasE
 export function renderCanvasFrame(
   ctx: CanvasRenderingContext2D,
   layout: LayoutConfig,
-  grid: GridMap
+  grid: GridMap,
+  _ = false
 ): void {
   ctx.clearRect(0, 0, layout.size.x, layout.size.y);
   grid.forEach((node) => {

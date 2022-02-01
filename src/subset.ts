@@ -61,6 +61,7 @@ const CELLZERO: Hex.CellNode = Object.freeze(
   };
 
 /**
+ * TODO: link to svg for documentation
  * @param start the Cell at the start of the line (inclusive)
  * @param end the Cell at the end of the line (inclusive)
  * @returns a GridMap of the cells along a line
@@ -82,7 +83,7 @@ export function line({
 /**
  *
  * ! magic number: DIRECTIONS[4]
- *
+ * TODO: link to svg for documentation
  * ? why does this work? Why do other indices not?
  * @param source the center of the ring
  * @param size the number of steps from the center to a cell on the ring
@@ -106,6 +107,7 @@ export function ring({ source = CELLZERO, size = 2 }: SizedSubsetParameters): Gr
 }
 
 /**
+ * TODO: link to svg for documentation
  * @param source the CellNode where the cone sourceates
  * @param toward a QRSVector within the cone
  * @param size the number of cells along a side of the triangle
@@ -139,6 +141,7 @@ export function cone({
 }
 
 /**
+ * TODO: link to svg for documentation
  * @param center the center of the hexagon
  * @param size the number of hex cells along each side of the hexagon
  */
@@ -159,6 +162,7 @@ export function hexagon({ source = CELLZERO, size = 2 }: SizedSubsetParameters):
 }
 
 /**
+ * TODO: link to svg for documentation
  * @param source cell forming one of the acute angles of the rhombus
  * @param toward a qrs vector within the desired rhombus "wedge"
  * @param size the number of cells along one edge of the rhombus
@@ -192,6 +196,8 @@ export function rhombus({
 }
 
 /**
+ * TODO: create a demo
+ * TODO: link to svg for documentation.
  * @param a a GridMap
  * @param b a GridMap
  * @returns the set of HexNodes contained in both GridMaps
