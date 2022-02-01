@@ -11,7 +11,13 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
-  "rules": { "max-len": ["error", 120] },
+  "rules": {
+    "max-len": ["error", 120],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_", "caughtErrorsIgnorePattern": "^_" }
+    ]
+  },
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
