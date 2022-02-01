@@ -19,7 +19,7 @@ import {
 import { GridMap, GridShape, makeGrid } from "./grid.js";
 import * as Subset from "./subset.js";
 import * as Hex from "./hex.js";
-import { getFloatValue, getIntValue, getRadioValue, getStringValue } from "./utils.js";
+import { getFloatValue, getIntValue, getRadioValue, getStringValue, getCheckbox } from "./utils.js";
 import { thousandthRound } from "./math.js";
 
 const svgGridTarget = "svghg",
@@ -42,7 +42,7 @@ const svgGridTarget = "svghg",
   svgRenderContext = document.getElementById(svgGridTarget) as HTMLDivElement,
   st = document.getElementById("st") as HTMLParagraphElement;
 export const inputs = document.querySelector('form[id="params"]') as HTMLFormElement,
-  getForm = (): [LayoutConfig, GridMap] => {
+  getForm = (): [LayoutConfig, GridMap, boolean] => {
     return [
       configureLayout(
         { x: getIntValue("orx"), y: getIntValue("ory") },
@@ -58,6 +58,7 @@ export const inputs = document.querySelector('form[id="params"]') as HTMLFormEle
         size: [getIntValue("gs1"), getIntValue("gs2")],
         populate: true,
       }),
+      getCheckbox("debug"),
     ];
   },
   rendSvg = (): void => {
@@ -68,7 +69,7 @@ export const inputs = document.querySelector('form[id="params"]') as HTMLFormEle
     while ((last = svgRenderContext.lastChild)) {
       svgRenderContext.removeChild(last);
     }
-    renderSvg(svgGridTarget, ...config, true);
+    renderSvg(svgGridTarget, ...config);
   },
   makeCanv = (): CanvasRenderingContext2D => {
     const [layout, grid] = getForm(),
