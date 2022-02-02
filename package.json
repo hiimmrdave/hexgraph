@@ -10,8 +10,8 @@
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.ts",
     "lint": "eslint --fix ./src/*",
-    "prebuild:docs": "npm run clean:docs",
-    "build:docs": "typedoc --entryPointStrategy expand --out ./docs ./src",
+    "prebuild:docs": "npm run clean:docs && mkdir ./docs/img",
+    "build:docs": "typedoc --entryPointStrategy expand --out ./docs ./src && cp -R ./img ./docs/img/",
     "build:types": "tsc --declaration --emitDeclarationsOnly --outdir ./types",
     "prebuild": "npm run lint",
     "build": "tsc",

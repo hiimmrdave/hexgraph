@@ -40,6 +40,8 @@ export const getFloatValue = (elementId: string): number => {
 /**
  * formats a number as a mixed fraction string if the decimal can be replaced with ⅓, ½, or ⅔
  * It's not that useful if your numbers aren't in increments of 1/6!
+ * * this could be built out to cover the whole unicode vulgar fractions area, I guess. I'd want to
+ * * restructure the function at that point.
  * @param n A number to be represented as a string in mixed fraction form
  * @returns a string with a vulgar fraction, or a string of the number
  */

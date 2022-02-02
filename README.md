@@ -1,7 +1,7 @@
 # Yet Another Hex Graph, in typescript
 
-hexgraph is an implementation of [Amit Patel][redblob]'s 
-[Hexagonal Grids][hexgrid] in TypeScript. I have built on the 
+hexgraph is an implementation of [Amit Patel][redblob]'s
+[Hexagonal Grids][hexgrid] in TypeScript. I have built on the
 [implementation][heximp] with other ideas, including relationship graphs between
 grid parts.
 
@@ -33,41 +33,39 @@ coordinate-based functions accept cube coordinates, which allows passing
 
 `CONSTANTS` are in all caps. `Classes`, `Interfaces`, and `Enums` are in
 PascalCase, and `variables` and `functions` are in camelCase. I use automatic
-style linting on all my code, two space indentations, and hard wrap at 80
-characters; eslint, prettier, and typescript configuration are included. I am
+style linting on all my code; seslint, prettier, and typescript configuration are included. I am
 not married to these decisions, but being consistent improves readability.
 
 Matrices are currently stored in row-major form. I'm investigating the
 implications of keeping this vs converting to column-major
 
-
-<img src="/img/directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
-<img src="/img/diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
+<img src="./img/directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
+<img src="./img/diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
 
 ## Task List
- - tests
- - cell labelling
- - ~~cell groups~~
-   - ~~line~~
-   - ~~ring~~
-   - ~~hexagon~~
-   - ~~cone (triangle with origin and direction)~~
- - ~~cell group overlaps~~
- - rotation
- - rounding
-   - ~~nearest cell~~
-   - nearest edge
-   - nearest vertex
- - state
- - pathing
-   - field of view
-   - obstacles
-   - range
- - storage
- - formatter/linter(/minifier?) for html and css
- - fix rectangle map (too wide by 1)
 
-# ⬢⬣⬢⬣⬢⬣⬢⬣
+- tests
+- ~~cell labelling~~
+- ~~cell groups~~
+  - ~~line~~
+  - ~~ring~~
+  - ~~hexagon~~
+  - ~~cone (triangle with origin and direction)~~
+- ~~cell group overlaps~~
+- rotation - fixed it with orientation transforms?
+- rounding
+  - ~~nearest cell~~
+  - nearest edge - common edge between nearest and second-nearest cell?
+  - nearest vertex - common vertex between two nearest edges?
+- pathing
+  - field of view
+  - obstacles
+  - range
+- storage
+- formatter/linter(/minifier?) for html and css
+- BUG: fix rectangle map (too wide by 1)
+
+## ⬢⬣⬢⬣⬢⬣⬢⬣
 
 [redblob]: https://www.redblobgames.com/
 [hexgrid]: https://www.redblobgames.com/grids/hexagons/
