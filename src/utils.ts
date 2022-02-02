@@ -67,6 +67,5 @@ export const makeVulgar = (n: number): string => {
  * @returns The string `"-0"` if `n` is between 0 and -1, or the string representation of n
  */
 const truncToSignedString = (n: number): string => {
-  if (Math.abs(Math.trunc(n)) > 0 || n > 0) return `${Math.trunc(n)}`;
-  return "-0";
+  return `${n < 0 ? "-" : ""}${Math.abs(Math.trunc(n))}`;
 };
