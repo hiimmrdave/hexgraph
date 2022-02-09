@@ -26,21 +26,10 @@ is to build -- rather than to use -- the library, so YAGNI doesn&#39;t apply.</p
 </a>
 <p>The mathematical concepts are <a href="https://www.redblobgames.com/grids/hexagons/">thoroughly discussed</a>, so I will stick
 to the hows and whys of my implementation.</p>
-<p>I wrote in TypeScript because that&#39;s what I&#39;m trying to learn. Typedoc output
-is at <a href="https://hiimmrdave.github.io/hexgraph/docs/">/docs</a>.</p>
+<p>I wrote in TypeScript because that&#39;s what I&#39;m trying to learn.</p>
 <p>I&#39;ve chosen to use cube coordinates for algorithmic simplicity. All
 coordinate-based functions accept cube coordinates, which allows passing
 <code>HexNode</code>s around as parameters.</p>
-
-<a href="#conventions" id="conventions" style="color: inherit; text-decoration: none;">
-  <h3>Conventions</h3>
-</a>
-<p><code>CONSTANTS</code> are in all caps. <code>Classes</code>, <code>Interfaces</code>, and <code>Enums</code> are in
-PascalCase, and <code>variables</code> and <code>functions</code> are in camelCase. I use automatic
-style linting on all my code; seslint, prettier, and typescript configuration are included. I am
-not married to these decisions, but being consistent improves readability.</p>
-<p>Matrices are currently stored in row-major form. I&#39;m investigating the
-implications of keeping this vs converting to column-major</p>
 <img src="./img/directions.svg" width="300" height="300" alt="0,0,0 and its neighbors" />
 <img src="./img/diagonals.svg" width="400" height="400" alt="0,0,0 and the cells diagonal to it" />
 
@@ -49,32 +38,56 @@ implications of keeping this vs converting to column-major</p>
   <h2>Task List</h2>
 </a>
 <ul>
-<li>tests</li>
-<li><del>cell labelling</del></li>
-<li><del>cell groups</del><ul>
+<li><p>tests</p>
+</li>
+<li><p><del>cell labelling</del></p>
+</li>
+<li><p><del>cell groups</del></p>
+<ul>
 <li><del>line</del></li>
 <li><del>ring</del></li>
 <li><del>hexagon</del></li>
 <li><del>cone (triangle with origin and direction)</del></li>
 </ul>
 </li>
-<li><del>cell group overlaps</del></li>
-<li>rotation - fixed it with orientation transforms?</li>
-<li>rounding<ul>
-<li><del>nearest cell</del></li>
-<li>nearest edge - common edge between nearest and second-nearest cell?</li>
-<li>nearest vertex - common vertex between two nearest edges?</li>
+<li><p><del>cell group overlaps</del></p>
+</li>
+<li><p>rotation (next node in a cycle around a node)</p>
+<p>  redblobgames has code for this for cells, how hard to generalize for nodes?</p>
+</li>
+<li><p>rounding</p>
+<ul>
+<li><p><del>nearest cell</del></p>
+</li>
+<li><p>nearest edge, nearest vertex</p>
+<pre><code class="language-ts"><span class="hl-0">let</span><span class="hl-1"> </span><span class="hl-2">spot</span><span class="hl-1">: </span><span class="hl-3">QRSVector</span><span class="hl-1">; </span><span class="hl-4">// this is the location on the grid we&#39;re trying to round</span><br/><span class="hl-0">let</span><span class="hl-1"> </span><span class="hl-2">cell</span><span class="hl-1">: </span><span class="hl-3">HexNode</span><span class="hl-1"> = </span><span class="hl-2">Hex</span><span class="hl-1">.</span><span class="hl-5">round</span><span class="hl-1">(</span><span class="hl-2">spot</span><span class="hl-1">);</span><br/><span class="hl-0">let</span><span class="hl-1"> </span><span class="hl-2">offset</span><span class="hl-1">: </span><span class="hl-3">QRSVector</span><span class="hl-1"> = </span><span class="hl-2">Hex</span><span class="hl-1">.</span><span class="hl-5">subtract</span><span class="hl-1">(</span><span class="hl-2">spot</span><span class="hl-1">, </span><span class="hl-2">cell</span><span class="hl-1">);</span>
+</code></pre>
+<p>  and then with <a href="https://www.redblobgames.com/grids/hexagons/directions.html">https://www.redblobgames.com/grids/hexagons/directions.html</a> we have the vertex
+  toward the direction (including sign) of the largest offset magnitude, bob&#39;s your uncle.
+  these line up with the diagonal directions, and by the same idea we address the neighbor
+  directions, or pairs of vertex directions.</p>
+<pre><code class="language-ts"><span class="hl-4">// vertex directions cycle</span><br/><span class="hl-1">[</span><span class="hl-2">q</span><span class="hl-1">, -</span><span class="hl-2">r</span><span class="hl-1">, </span><span class="hl-2">s</span><span class="hl-1">, -</span><span class="hl-2">q</span><span class="hl-1">, </span><span class="hl-2">r</span><span class="hl-1">, -</span><span class="hl-2">s</span><span class="hl-1">] </span><span class="hl-4">/* or */</span><span class="hl-1"> [</span><span class="hl-2">q</span><span class="hl-1">, -</span><span class="hl-2">s</span><span class="hl-1">, </span><span class="hl-2">r</span><span class="hl-1">, -</span><span class="hl-2">q</span><span class="hl-1">, </span><span class="hl-2">s</span><span class="hl-1">, -</span><span class="hl-2">r</span><span class="hl-1">]</span>
+</code></pre>
+<pre><code class="language-ts"><span class="hl-4">// edge direction cycle</span><br/><span class="hl-1">[(</span><span class="hl-2">q</span><span class="hl-1">,-</span><span class="hl-2">r</span><span class="hl-1">), (-</span><span class="hl-2">r</span><span class="hl-1">,</span><span class="hl-2">s</span><span class="hl-1">), (</span><span class="hl-2">s</span><span class="hl-1">,-</span><span class="hl-2">q</span><span class="hl-1">), (-</span><span class="hl-2">q</span><span class="hl-1">,</span><span class="hl-2">r</span><span class="hl-1">), (</span><span class="hl-2">r</span><span class="hl-1">,-</span><span class="hl-2">s</span><span class="hl-1">), (-</span><span class="hl-2">s</span><span class="hl-1">,</span><span class="hl-2">q</span><span class="hl-1">)]</span><br/><span class="hl-4">// or in the other direction</span><br/><span class="hl-1">[(</span><span class="hl-2">q</span><span class="hl-1">,-</span><span class="hl-2">s</span><span class="hl-1">), (-</span><span class="hl-2">s</span><span class="hl-1">,</span><span class="hl-2">r</span><span class="hl-1">), (</span><span class="hl-2">r</span><span class="hl-1">,-</span><span class="hl-2">q</span><span class="hl-1">), (-</span><span class="hl-2">q</span><span class="hl-1">,</span><span class="hl-2">s</span><span class="hl-1">), (</span><span class="hl-2">s</span><span class="hl-1">,-</span><span class="hl-2">r</span><span class="hl-1">), (-</span><span class="hl-2">r</span><span class="hl-1">,</span><span class="hl-2">q</span><span class="hl-1">)]</span>
+</code></pre>
+<p>  How much do I care about offering both directions? and starting from different nodes? Those
+  things are basically arbitrary, though the order is significant.</p>
+</li>
 </ul>
 </li>
-<li>pathing<ul>
+<li><p>pathing</p>
+<ul>
 <li>field of view</li>
 <li>obstacles</li>
 <li>range</li>
 </ul>
 </li>
-<li>storage</li>
-<li>formatter/linter(/minifier?) for html and css</li>
-<li>BUG: fix rectangle map (too wide by 1)</li>
+<li><p>storage</p>
+</li>
+<li><p>formatter/linter(/minifier?) for html and css</p>
+</li>
+<li><p><del>BUG: fix rectangle map (too wide by 1)</del></p>
+</li>
 </ul>
 
 <a href="#⬢⬣⬢⬣⬢⬣⬢⬣" id="⬢⬣⬢⬣⬢⬣⬢⬣" style="color: inherit; text-decoration: none;">
