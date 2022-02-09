@@ -85,11 +85,11 @@ export const inputs = document.querySelector('form[id="params"]') as HTMLFormEle
   };
 
 /**/
-let ctx: CanvasRenderingContext2D;
+//let ctx: CanvasRenderingContext2D;
 document.addEventListener("DOMContentLoaded", () => {
   rendSvg();
-  ctx = makeCanv();
-  rendCanv(ctx);
+  //ctx = makeCanv();
+  //rendCanv(ctx);
   const holder = document.getElementById(shapesHolder) as HTMLDivElement;
   shapes.forEach((shape, index) => {
     const shapeContainer = document.createElement("div") as HTMLDivElement,
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 inputs.addEventListener("input", () => {
   rendSvg();
-  rendCanv(ctx);
+  //rendCanv(ctx);
 });
 svgRenderContext.addEventListener("mouseup", (ev) => {
   if (!(ev.target as Element).matches(".cell")) return;
