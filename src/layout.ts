@@ -1,5 +1,8 @@
 /**
  * provides methods for projecting a QRS grid into cartesian space
+ * I could definitely be using a library for matrix manipulations
+ * but I was trying to understand simple linear algebra so here we are.
+ * TODO: document every export
  */
 import { SQRT_THREE, thousandthRound } from "./math.js";
 import { QRSVector, CellNode, vertices } from "./hex.js";
