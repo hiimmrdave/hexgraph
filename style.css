@@ -1,16 +1,16 @@
 :root {
-  --basehue: 250;
+  --basehue: 250deg;
   --dark0: hsl(var(--basehue) 10% 10%);
   --dark1: hsl(var(--basehue) 10% 25%);
   --dark2: hsl(var(--basehue) 10% 40%);
   --light2: hsl(var(--basehue) 10% 55%);
   --light1: hsl(var(--basehue) 10% 70%);
   --light0: hsl(var(--basehue) 10% 85%);
-  --redhue: 10;
-  --bluehue: 220;
+  --redhue: 10deg;
+  --bluehue: 220deg;
   --red: hsl(var(--redhue) 70% 45%);
   --blue: hsl(var(--bluehue) 70% 45%);
-  --black: hsl(0 0% 0%);
+  --black: hsl(0deg 0% 0%);
 }
 
 * {
