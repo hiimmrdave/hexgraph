@@ -130,8 +130,6 @@ export function cells(node: HexNode): CellNode[] {
       return DIAGONALS.map((e) => makeNode(add(node, multiply(e, 1 / 3)), "Cell")).filter(
         (e) => Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s)
       ) as CellNode[];
-    default:
-      return node as never;
   }
 }
 
@@ -150,8 +148,6 @@ export function edges(node: HexNode): EdgeNode[] {
       return DIAGONALS.map((e) => makeNode(add(node, multiply(e, 1 / 6)), "Edge")).filter(
         (e) => Number.isInteger(e.q * 2) && Number.isInteger(e.r * 2) && Number.isInteger(e.s * 2)
       ) as EdgeNode[];
-    default:
-      return node as never;
   }
 }
 
@@ -172,8 +168,6 @@ export function vertices(node: HexNode): VertexNode[] {
       return DIAGONALS.map((e) => makeNode(add(node, multiply(e, 1 / 3)), "Vertex")).filter(
         (e) => !(Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s))
       ) as VertexNode[];
-    default:
-      return node as never;
   }
 }
 
