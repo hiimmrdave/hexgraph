@@ -8,7 +8,7 @@ const SVGNS = "http://www.w3.org/2000/svg";
 /**
  * construct an SVG path describing the borders of a cell
  * @param cell - the hexagon to draw.
- * @param layoutParams - the Layout object describing the world to draw in
+ * @param layout - the Layout object describing the world to draw in
  */
 function cellPath(cell: CellNode, layout: LayoutConfig): string {
   return `M${cellPoints({ cell, layout })
