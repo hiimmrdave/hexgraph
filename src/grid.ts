@@ -19,6 +19,13 @@ type GridPopulator = (arg0: GridPopParams) => GridMap;
  */
 export type GridShape = "Hexagon" | "Triangle" | "Star" | "Parallelogram" | "Rectangle";
 
+export function makeTwoSize(size: number | [number, number]): [number, number] {
+  if (typeof size === "number") {
+    return [size, size];
+  }
+  return size;
+}
+
 /**
  * Creates a GridMap and (optionally) adds the nodes
  * @param shape determines which grid populator function is used build the grid
@@ -27,13 +34,6 @@ export type GridShape = "Hexagon" | "Triangle" | "Star" | "Parallelogram" | "Rec
  * @param populate determines whether to run the grid populator or return an
  * empty grid
  */
-export function makeTwoSize(size: number | [number, number]): [number, number] {
-  if (typeof size === "number") {
-    return [size, size];
-  }
-  return size;
-}
-
 export function makeGrid({
   shape = "Hexagon",
   size = [3, 1],
