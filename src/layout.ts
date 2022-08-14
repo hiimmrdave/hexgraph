@@ -38,6 +38,14 @@ const QRXY: Matrix2x2 = [
     [0, 1],
   ];
 
+/**
+ *
+ * @param theta rotation in radians
+ * @returns the rotation matrix to rotate the plane by that amount
+ *
+ * +0 is used to force negative zero to positive zoro for reasons I'll remember when I wake up
+ * I hope
+ */
 export function rotateTransform(theta: number): Matrix2x2 {
   return [
     [Math.cos(theta) + 0, -Math.sin(theta) + 0],
