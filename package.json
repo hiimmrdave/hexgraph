@@ -2,7 +2,7 @@
   "name": "yahgts",
   "type": "module",
   "version": "0.0.1",
-  "description": "yet another hex grid library in typescript",
+  "description": "yet another hex grid library, in typescript",
   "private": true,
   "directories": {
     "test": "test"
@@ -29,19 +29,19 @@
     "url": "git+https://github.com/hiimmrdave/hexgraph.git"
   },
   "devDependencies": {
-    "@types/node": "^17.0.38",
-    "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "@types/node": "^20.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "nyc": "^15.1.0",
-    "prettier": "^2.6.2",
-    "rimraf": "^3.0.2",
-    "stylelint": "^14.8.5",
-    "stylelint-config-standard": "^25.0.0",
-    "terser": "^5.14.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "terser": "^5.19.4",
     "ts-node": "^10.8.0",
-    "typedoc": "^0.22.16",
-    "typescript": "^4.7.2"
+    "typedoc": "^0.25.1",
+    "typescript": "^5.2.2"
   }
 }

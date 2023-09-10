@@ -8,7 +8,7 @@ export type ChanceTable<T> = ChanceItem<T>[];
 
 /**
  * `Math.PI / 2` ≈ 1.5708
- * π/2 radians is 180°, which is useful for turning around.
+ * π/2 radians is 90°, which is useful for rotating.
  */
 export const HALF_PI = Math.PI / 2,
   /**
