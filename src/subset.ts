@@ -62,8 +62,8 @@ const CELLZERO: Hex.CellNode = Object.freeze(
 
 /**
  * TODO: link to svg for documentation
- * @param start the Cell at the start of the line (inclusive)
- * @param end the Cell at the end of the line (inclusive)
+ * @param source the Cell at the start of the line (inclusive)
+ * @param toward the Cell at the end of the line (inclusive)
  * @returns a GridMap of the cells along a line
  */
 export function line({
