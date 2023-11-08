@@ -5,60 +5,53 @@
 import { thousandthRound } from "./math.js";
 
 /**
- * the type of node of the hex graph, corresponding to which portion of the hex
+ * the kind of node of the hex graph, corresponding to which portion of the hex
  * grid the node represents
  */
-export type NodeType = "Cell" | "Edge" | "Vertex";
+export type NodeKind = "Cell" | "Edge" | "Vertex";
+
+/**
+ * a string representing a QRSVector as a comma-separated string
+ */
+export type QRSId = `${number},${number},${number}`;
 
 /**
  * a vector or coordinate in qrs space. qrs is cubic space, which is confined
  * here to a plane q+r+s==0
  */
-export type QRSVector = {
+export interface QRSVector {
   q: number;
   r: number;
   s: number;
-};
-
-export type QRSId = `${number},${number},${number}`;
+}
 
 /** a node of the graph representation of the hexagonal grid */
-export type HexNode = CellNode | EdgeNode | VertexNode;
-
-/** a Cell node of the hexagonal grid */
-export interface CellNode extends QRSVector {
-  /** the cube coordinates of the node as a comma-separated string */
+export interface HexNode extends QRSVector {
+  /** the comma-separated coordinates of the HexNode */
   id: QRSId;
   /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
   links: WeakSet<HexNode>;
   /** the discriminant of the HexNode */
-  kind: "Cell";
+  kind: NodeKind;
   /** arbitrary additional properties */
   [prop: string]: unknown;
+}
+
+/** a Cell node of the hexagonal grid */
+export interface CellNode extends HexNode {
+  kind: "Cell";
 }
 
 /** an Edge node of the hexagonal grid */
-export interface EdgeNode extends QRSVector {
-  /** the cube coordinates of the node as a comma-separated string */
-  id: QRSId;
-  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
-  links: WeakSet<HexNode>;
+export interface EdgeNode extends HexNode {
   /** the discriminant of the HexNode */
   kind: "Edge";
-  /** arbitrary additional properties */
-  [prop: string]: unknown;
 }
 
 /** a Vertex node of the hexagonal grid */
-export interface VertexNode extends QRSVector {
-  /** the cube coordinates of the node as a comma-separated string */
-  id: QRSId;
-  /** the set of nodes adjacent to this node. "Adjacency" is arbitrary. */
-  links: WeakSet<HexNode>;
+export interface VertexNode extends HexNode {
   /** the discriminant of the HexNode */
   kind: "Vertex";
-  /** arbitrary additional properties */
-  [prop: string]: unknown;
 }
 
 /**
@@ -89,9 +82,9 @@ export const DIAGONALS: QRSVector[] = [
  * @param q - the `q` coordinate of the node
  * @param r - the `r` coordinate of the node
  * @param s - the `s` coordinate of the node
- * @returns the node of the specified type at the specified coordinates
+ * @returns the node of the specified kind at the specified coordinates
  */
-export function makeNode({ q, r, s }: QRSVector, kind: NodeType): HexNode {
+export function makeNode({ q, r, s }: QRSVector, kind: NodeKind): HexNode {
   if (q + r + s > 1e-3) {
     throw new TypeError("q+r+s must sum to zero");
   }
@@ -151,6 +144,10 @@ export function edges(node: HexNode): EdgeNode[] {
   }
 }
 
+export function wideEdges(cell: CellNode): EdgeNode[] {
+  return DIRECTIONS.map((e) => makeNode(add(multiply(e, 3), cell), "Edge")) as EdgeNode[];
+}
+
 /**
  * @param node - the graph node of which to find adjacent vertices
  */
@@ -169,6 +166,10 @@ export function vertices(node: HexNode): VertexNode[] {
         (e) => !(Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s))
       ) as VertexNode[];
   }
+}
+
+export function wideVertices(cell: CellNode): VertexNode[] {
+  return DIAGONALS.map((e) => makeNode(add(cell, multiply(e, 2)), "Vertex")) as VertexNode[];
 }
 
 /**
@@ -212,4 +213,16 @@ export function length({ q, r, s }: QRSVector): number {
  * TODO: explain every export */
 export function distance(a: QRSVector, b: QRSVector): number {
   return length(subtract(a, b));
+}
+
+export function isWideVertext({ q, r, s }: QRSVector): boolean {
+  return q % 2 == 0 && r % 2 == 0 && s % 2 == 0 && !(q % 6 == 0 && r % 6 == 0 && s % 6 == 0);
+}
+
+export function isWideEdge({ q, r, s }: QRSVector): boolean {
+  return q % 3 == 0 && r % 3 == 0 && s % 3 == 0 && !(q % 6 == 0 && r % 6 == 0 && s % 6 == 0);
+}
+
+export function isWideCell({ q, r, s }: QRSVector): boolean {
+  return q % 6 == 0 && r % 6 == 0 && s % 6 == 0;
 }

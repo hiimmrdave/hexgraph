@@ -2,13 +2,14 @@
   "compilerOptions": {
     "strict": true,
     "noImplicitAny": true,
-    "target": "es2021",
-    "module": "ES2022",
+    "target": "ESNext",
+    "module": "NodeNext",
     "removeComments": true,
     "pretty": true,
     "inlineSourceMap": true,
     "outDir": "./build/",
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "NodeNext"
   },
   "compileOnSave": true,
   "include": ["src/**/*"],

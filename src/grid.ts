@@ -1,7 +1,7 @@
 /**
  * builds underlying grid areas
  */
-import { CellNode, HexNode, vertices, edges, makeNode } from "./hex.js";
+import { CellNode, HexNode, vertices, edges, makeNode, wideEdges, wideVertices } from "./hex.js";
 
 /**
  * hash HexNode by id = `${q},${r},${s}`
@@ -139,4 +139,43 @@ function populateRectangleGrid({ size, grid }: GridPopParams): GridMap {
     }
   }
   return cellset;
+}
+
+/**
+ * Add a cell to a grid, generate and link the corresponding nodes
+ * @param grid grid to which to append cell
+ * @param q q coordinate of cell to add
+ * @param r r coordinate of cell to add
+ * @param s s coordinate of cell to add
+ */
+export function wideGridPush(
+  grid: GridMap = new Map(),
+  q: number,
+  r: number,
+  s: number = -q - r
+): GridMap {
+  const cellset = new Map(grid),
+    cell = makeNode({ q, r, s }, "Cell") as CellNode;
+  cellset.set(cell.id, cell);
+  wideVertices(cell).forEach((vertex) => {
+    cell.links.add(vertex);
+    vertex.links.add(cell);
+    cellset.set(vertex.id, vertex);
+  });
+  wideEdges(cell).forEach((edge) => {
+    cell.links.add(edge);
+    edge.links.add(cell);
+    cellset.set(edge.id, edge);
+  });
+  return cellset;
+}
+
+export function populateWideGrid(grid: GridMap): GridMap {
+  let nodeset = new Map();
+  grid.forEach((node) => {
+    if (node.kind === "Cell") {
+      nodeset = wideGridPush(nodeset, node.q * 6, node.r * 6);
+    }
+  });
+  return nodeset;
 }

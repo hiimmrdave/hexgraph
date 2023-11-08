@@ -1,5 +1,5 @@
 import { XYVector, LayoutConfig, cellPoints, cubeToPoint } from "./layout.js";
-import { CellNode, HexNode, NodeType } from "./hex.js";
+import { CellNode, HexNode, NodeKind } from "./hex.js";
 import { GridMap } from "./grid.js";
 import { makeVulgar } from "./utils.js";
 
@@ -14,6 +14,35 @@ function cellPath(cell: CellNode, layout: LayoutConfig): string {
   return `M${cellPoints({ cell, layout })
     .map((e) => `${e.x},${e.y}`)
     .join(" L")}z`;
+}
+
+function makeMarker(node: HexNode): string {
+  function ngon(sides: number, size: number) {
+    /** return a circle if there aren't enough sides for a polygon */
+    if (sides < 3) {
+      return `m${size},0
+      a ${size},${size} 0 1,1 ${size * -2},0
+      a ${size},${size} 0 1,1 ${size * 2},0`;
+    }
+    const verts = [];
+    for (let i = 0; i++; i < sides) {
+      verts.push({
+        x: Math.cos((2 * Math.PI) / sides) * size,
+        y: Math.sin((2 * Math.PI) / sides) * size,
+      });
+    }
+    return `m${verts.map((e) => `${e.x * 5},${e.y * 5}`).join(" l")}z`;
+  }
+  switch (node.kind) {
+    case "Cell":
+      return ngon(6, 5);
+    case "Vertex":
+      return ngon(3, 5);
+    case "Edge":
+      return ngon(4, 5);
+    default:
+      return ngon(0, 3);
+  }
 }
 
 function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
@@ -39,7 +68,7 @@ function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
 
 type ListColor = "red" | "green" | "blue";
 
-const nodeColors: Record<NodeType, ListColor> = {
+const nodeColors: Record<NodeKind, ListColor> = {
   Cell: "red",
   Vertex: "green",
   Edge: "blue",
@@ -70,6 +99,7 @@ function buildSvgLabel({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
   const label = document.createElementNS(SVGNS, "text");
   label.textContent = `${q * 6}, ${r * 6}, ${s * 6}`;
   label.style.fill = nodeColors[kind];
+  label.style.fontSize = "8px";
   label.setAttribute("x", `${x}`);
   label.setAttribute("y", `${y - 5}`);
   label.setAttribute("text-anchor", "middle");
@@ -80,6 +110,7 @@ function buildSvgBottomText({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
   const label = document.createElementNS(SVGNS, "text");
   label.textContent = `${makeVulgar(q)}, ${makeVulgar(r)}, ${makeVulgar(s)}`;
   label.style.fill = nodeColors[kind];
+  label.style.fontSize = "8px";
   label.setAttribute("x", `${x}`);
   label.setAttribute("y", `${y + 15}`);
   label.setAttribute("text-anchor", "middle");
@@ -109,7 +140,7 @@ export function renderSvg(
     svgRoot = buildSvgRoot(layout);
   grid.forEach((node): void => {
     if (node.kind === "Cell") {
-      svgRoot.appendChild(buildSvgCell(node, layout));
+      svgRoot.appendChild(buildSvgCell(node as CellNode, layout));
     }
   });
   if (debug === true) {
@@ -139,7 +170,8 @@ export function renderCanvasFrame(
   ctx.clearRect(0, 0, layout.size.x, layout.size.y);
   grid.forEach((node) => {
     if (node.kind === "Cell") {
-      ctx.stroke(new Path2D(cellPath(node, layout)));
+      ctx.stroke(new Path2D(cellPath(node as CellNode, layout)));
+      ctx.fill(new Path2D(makeMarker(node)));
     }
   });
 }

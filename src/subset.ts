@@ -19,7 +19,7 @@ interface SizedSubsetParameters extends SubsetMakerParameters {
   size: number | [number, number];
 }
 
-type WedgeSubsetParameters = SizedSubsetParameters & DirectionalSubsetParameters;
+interface WedgeSubsetParameters extends SizedSubsetParameters, DirectionalSubsetParameters {}
 
 type qrs = "q" | "r" | "s";
 
@@ -83,8 +83,8 @@ export function line({
 /**
  *
  * ! magic number: DIRECTIONS[4]
- * TODO: link to svg for documentation
  * ? why does this work? Why do other indices not?
+ * TODO: link to svg for documentation
  * @param source the center of the ring
  * @param size the number of steps from the center to a cell on the ring
  * @returns an array of CellNodes that are a given radius from the center cell
@@ -129,7 +129,7 @@ export function cone({
               [dirs.ia]: sign * ia,
               [dirs.ib]: sign * ib,
               [dirs.ic]: sign * ic,
-            } as Hex.QRSVector,
+            } as unknown as Hex.QRSVector,
             source
           ),
           "Cell"
@@ -184,7 +184,7 @@ export function rhombus({
               [dirs.ia]: sign * ia,
               [dirs.ib]: sign * ib,
               [dirs.ic]: sign * ic,
-            } as Hex.QRSVector,
+            } as unknown as Hex.QRSVector,
             source
           ),
           "Cell"
