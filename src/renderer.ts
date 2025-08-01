@@ -66,14 +66,16 @@ function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
  * then I'll bring them in to sync.
  */
 
-type ListColor = "red" | "green" | "blue";
+type ListColor = "red" | "green" | "blue" | "dimgray";
 
 const nodeColors: Record<NodeKind, ListColor> = {
   Cell: "red",
   Vertex: "green",
   Edge: "blue",
+  Hexule: "dimgray",
 };
 
+/** TODO naming things is hard but this was not well done, Dave. */
 function buildSvgMarker(point: HexNode, layout: LayoutConfig): SVGGElement {
   const spot = cubeToPoint(point, layout),
     group = document.createElementNS(SVGNS, "g");
@@ -118,6 +120,9 @@ function buildSvgBottomText({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
   return label;
 }
 
+/** TODO this does way more than we want it to. Eventually individual vertices and edges will draw
+ * themselves
+ */
 function buildSvgCell(cell: CellNode, layout: LayoutConfig) {
   const path = document.createElementNS(SVGNS, "path"),
     c: XYVector = cubeToPoint(cell, layout);

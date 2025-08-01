@@ -48,11 +48,11 @@ export const getFloatValue = (elementId: string): number => {
 export const makeVulgar = (n: number): string => {
   switch (Math.abs(thousandthRound(n - Math.trunc(n)))) {
     case 0.333:
-      return `${truncToSignedString(n)}⅓`;
+      return `${truncateToSignedString(n)}⅓`;
     case 0.666:
-      return `${truncToSignedString(n)}⅔`;
+      return `${truncateToSignedString(n)}⅔`;
     case 0.5:
-      return `${truncToSignedString(n)}½`;
+      return `${truncateToSignedString(n)}½`;
     default:
       return `${n}`;
   }
@@ -68,6 +68,6 @@ export const makeVulgar = (n: number): string => {
  * @param n A number
  * @returns The string `"-0"` if `n` is between 0 and -1, or the string representation of n
  */
-const truncToSignedString = (n: number): string => {
+const truncateToSignedString = (n: number): string => {
   return `${n < 0 ? "-" : ""}${Math.abs(Math.trunc(n))}`;
 };

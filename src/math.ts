@@ -20,7 +20,7 @@ export const HALF_PI = Math.PI / 2,
   /**
    * `Math.sqrt(3)` ≈ 1.7321
    * √3 is the diagonal length of a unit cube, or more directly, the distance
-   * between opposite sides of a unit hexagon.
+   * between the midpoints of opposite sides of a unit hexagon.
    */
   SQRT_THREE = Math.sqrt(3);
 

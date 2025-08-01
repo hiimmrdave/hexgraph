@@ -20,7 +20,6 @@ import { GridMap, GridShape, makeGrid } from "./grid.js";
 import * as Subset from "./subset.js";
 import * as Hex from "./hex.js";
 import { getFloatValue, getIntValue, getRadioValue, getStringValue, getCheckbox } from "./utils.js";
-import { thousandthRound } from "./math.js";
 
 const svgGridTarget = "svghg",
   canvasGridTarget = "canvhg",
@@ -117,13 +116,14 @@ inputs.addEventListener("input", () => {
   rendSvg();
   //rendCanv(ctx);
 });
+
 svgRenderContext.addEventListener("mouseup", (ev) => {
   if (!(ev.target as Element).matches(".cell")) return;
   const [layout] = getForm(),
     clickXY: XYVector = { x: ev.offsetX, y: ev.offsetY },
     { q, r, s } = pointToCube(clickXY, layout),
     xy = `x: ${ev.offsetX}, y: ${ev.offsetY}`,
-    ptc = `q: ${thousandthRound(q)}, r: ${thousandthRound(r)}, s: ${thousandthRound(s)}`,
+    ptc = `q: ${q.toFixed(3)}, r: ${r.toFixed(3)}, s: ${s.toFixed(3)}`,
     cell = (ev.target as Element).getAttribute("data-hex-node-id");
   st.innerText = `click coordinates: ${xy}
   fractional qrs coordinates: ${ptc}

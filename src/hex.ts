@@ -8,7 +8,7 @@ import { thousandthRound } from "./math.js";
  * the kind of node of the hex graph, corresponding to which portion of the hex
  * grid the node represents
  */
-export type NodeKind = "Cell" | "Edge" | "Vertex";
+export type NodeKind = "Cell" | "Edge" | "Vertex" | "Hexule";
 
 /**
  * a string representing a QRSVector as a comma-separated string
@@ -39,6 +39,7 @@ export interface HexNode extends QRSVector {
 
 /** a Cell node of the hexagonal grid */
 export interface CellNode extends HexNode {
+  /** the discriminant of the HexNode */
   kind: "Cell";
 }
 
@@ -78,6 +79,9 @@ export const DIAGONALS: QRSVector[] = [
 ];
 
 /**
+ * TODO uses thousandthRound() as text
+ */
+/**
  * Creates a HexNode with the specified coordinates and generates properties
  * @param q - the `q` coordinate of the node
  * @param r - the `r` coordinate of the node
@@ -86,7 +90,7 @@ export const DIAGONALS: QRSVector[] = [
  */
 export function makeNode({ q, r, s }: QRSVector, kind: NodeKind): HexNode {
   if (q + r + s > 1e-3) {
-    throw new TypeError("q+r+s must sum to zero");
+    throw new TypeError("Out of Plane Error: q+r+s must sum to zero");
   }
   const result = {
     q,
@@ -124,6 +128,7 @@ export function cells(node: HexNode): CellNode[] {
         (e) => Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s)
       ) as CellNode[];
   }
+  return node as never;
 }
 
 /**
@@ -142,6 +147,7 @@ export function edges(node: HexNode): EdgeNode[] {
         (e) => Number.isInteger(e.q * 2) && Number.isInteger(e.r * 2) && Number.isInteger(e.s * 2)
       ) as EdgeNode[];
   }
+  return node as never;
 }
 
 export function wideEdges(cell: CellNode): EdgeNode[] {
@@ -166,6 +172,7 @@ export function vertices(node: HexNode): VertexNode[] {
         (e) => !(Number.isInteger(e.q) && Number.isInteger(e.r) && Number.isInteger(e.s))
       ) as VertexNode[];
   }
+  return node as never;
 }
 
 export function wideVertices(cell: CellNode): VertexNode[] {
