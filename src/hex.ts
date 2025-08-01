@@ -195,14 +195,21 @@ export function add(a: QRSVector, b: QRSVector): QRSVector {
 }
 
 /**
- * TODO: explain every export */
+ * find the vector between two nodes
+ *
+ * essential for length and distance functions
+ * @param a - source node
+ * @param b - destination node
+ * @returns - QRSVector of the connecting vector
+ */
 export function subtract(a: QRSVector, b: QRSVector): QRSVector {
   return { q: a.q - b.q, r: a.r - b.r, s: a.s - b.s };
 }
 
 /**
  * apply a scaling factor $k$ to a QRSVector
- * find graph nodes
+ *
+ * find graph nodes from cell coordinates
  * @param vector - the QRSVector to be scaled
  * @param k - scaling factor
  * @returns - the scaled QRSVector
