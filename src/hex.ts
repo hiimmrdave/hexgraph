@@ -79,9 +79,6 @@ export const DIAGONALS: QRSVector[] = [
 ];
 
 /**
- * TODO uses thousandthRound() as text
- */
-/**
  * Creates a HexNode with the specified coordinates and generates properties
  * @param q - the `q` coordinate of the node
  * @param r - the `r` coordinate of the node
@@ -96,7 +93,7 @@ export function makeNode({ q, r, s }: QRSVector, kind: NodeKind): HexNode {
     q,
     r,
     s,
-    id: `${thousandthRound(q)},${thousandthRound(r)},${thousandthRound(s)}`,
+    id: `${q.toFixed(3)},${r.toFixed(3)},${s.toFixed(3)}`,
     links: new WeakSet(),
     kind,
   };
