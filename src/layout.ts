@@ -16,7 +16,12 @@ export type XYVector = {
 };
 
 /** a 2x2 matrix */
-type Matrix2x2 = [[number, number], [number, number]];
+type Matrix2x2 = [
+  /** the basis vector of the first axis */
+  [number, number],
+  /** the basis vector of the second axis */
+  [number, number],
+];
 
 /**
  * a set of values to convert from CubeVector grid coordinates to

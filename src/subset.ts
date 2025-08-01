@@ -11,14 +11,17 @@ interface SubsetMakerParameters {
   source: Hex.CellNode;
 }
 
+/** the extra parameters of a subset that extends toward a target cell (line, cone, rhombus) */
 interface DirectionalSubsetParameters extends SubsetMakerParameters {
   toward: Hex.QRSVector;
 }
 
+/** the extra parameters of a subset that has a size (hexagon, star, rhombus, cone, ring) */
 interface SizedSubsetParameters extends SubsetMakerParameters {
   size: number | [number, number];
 }
 
+/**  */
 interface WedgeSubsetParameters extends SizedSubsetParameters, DirectionalSubsetParameters {}
 
 type qrs = "q" | "r" | "s";
@@ -82,9 +85,11 @@ export function line({
 
 /**
  *
- * ! magic number: DIRECTIONS[4]
+ * ! magic number: `DIRECTIONS[4]`
  * ? why does this work? Why do other indices not?
  * TODO: link to svg for documentation
+ * 
+ * a ring of radius `$r$` has $$6r$$ cells
  * @param source the center of the ring
  * @param size the number of steps from the center to a cell on the ring
  * @returns an array of CellNodes that are a given radius from the center cell
@@ -142,6 +147,8 @@ export function cone({
 
 /**
  * TODO: link to svg for documentation
+ * 
+ * a hexagon of size $$r$$ has $$3r^{2}+3r+1$$ cells
  * @param center the center of the hexagon
  * @param size the number of hex cells along each side of the hexagon
  */
