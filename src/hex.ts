@@ -2,8 +2,6 @@
  * ⬢⬣
  */
 
-import { thousandthRound } from "./math.js";
-
 /**
  * the kind of node of the hex graph, corresponding to which portion of the hex
  * grid the node represents
@@ -188,8 +186,9 @@ export function areEqual(a: QRSVector, b: QRSVector): boolean {
 
 /**
  * The sum of two cube vectors is the sum of their coordinates
- * @param a  - a QRS vector (or Hex Node)
+ * @param a - a QRS vector (or Hex Node)
  * @param b - another QRS vector
+ * @returns - a QRSVector representing the sum of the vectors or the destination node
  */
 export function add(a: QRSVector, b: QRSVector): QRSVector {
   return { q: a.q + b.q, r: a.r + b.r, s: a.s + b.s };
@@ -202,9 +201,14 @@ export function subtract(a: QRSVector, b: QRSVector): QRSVector {
 }
 
 /**
- * TODO: explain every export */
-export function multiply(cell: QRSVector, k: number): QRSVector {
-  return { q: cell.q * k, r: cell.r * k, s: cell.s * k };
+ * apply a scaling factor $k$ to a QRSVector
+ * find graph nodes
+ * @param vector - the QRSVector to be scaled
+ * @param k - scaling factor
+ * @returns - the scaled QRSVector
+ */
+export function multiply(vector: QRSVector, k: number): QRSVector {
+  return { q: vector.q * k, r: vector.r * k, s: vector.s * k };
 }
 
 /**

@@ -29,10 +29,10 @@
     "url": "git+https://github.com/hiimmrdave/hexgraph.git"
   },
   "devDependencies": {
-    "@eslint/config-array": "^0.20.0",
+    "@eslint/config-array": "^0.21.0",
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.22.0",
-    "@types/node": "^22.17.0",
+    "@types/node": "^24.1.0",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
@@ -41,7 +41,7 @@
     "nyc": "^17.1.0",
     "prettier": "^3.6.2",
     "stylelint": "^16.16.0",
-    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-standard": "^39.0.0",
     "terser": "^5.43.1",
     "ts-node": "^10.9.2",
     "typedoc": "^0.28.8",

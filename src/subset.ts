@@ -88,7 +88,7 @@ export function line({
  * ! magic number: `DIRECTIONS[4]`
  * ? why does this work? Why do other indices not?
  * TODO: link to svg for documentation
- * 
+ *
  * a ring of radius `$r$` has $$6r$$ cells
  * @param source the center of the ring
  * @param size the number of steps from the center to a cell on the ring
@@ -147,7 +147,7 @@ export function cone({
 
 /**
  * TODO: link to svg for documentation
- * 
+ *
  * a hexagon of size $$r$$ has $$3r^{2}+3r+1$$ cells
  * @param center the center of the hexagon
  * @param size the number of hex cells along each side of the hexagon
