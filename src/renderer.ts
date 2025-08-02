@@ -11,53 +11,53 @@ const SVGNS = "http://www.w3.org/2000/svg";
  * @param layout - the Layout object describing the world to draw in
  */
 function cellPath(cell: CellNode, layout: LayoutConfig): string {
-  return `M${cellPoints({ cell, layout })
-    .map((e) => `${e.x},${e.y}`)
-    .join(" L")}z`;
+	return `M${cellPoints({ cell, layout })
+		.map((e) => `${e.x},${e.y}`)
+		.join(" L")}z`;
 }
 
 function makeMarker(node: HexNode): string {
-  function ngon(sides: number, size: number) {
-    /** return a circle if there aren't enough sides for a polygon */
-    if (sides < 3) {
-      return `m${size},0
+	function ngon(sides: number, size: number) {
+		/** return a circle if there aren't enough sides for a polygon */
+		if (sides < 3) {
+			return `m${size},0
       a ${size},${size} 0 1,1 ${size * -2},0
       a ${size},${size} 0 1,1 ${size * 2},0`;
-    }
-    const verts = [];
-    for (let i = 0; i++; i < sides) {
-      verts.push({
-        x: Math.cos((2 * Math.PI) / sides) * size,
-        y: Math.sin((2 * Math.PI) / sides) * size,
-      });
-    }
-    return `m${verts.map((e) => `${e.x * 5},${e.y * 5}`).join(" l")}z`;
-  }
-  switch (node.kind) {
-    case "Cell":
-      return ngon(6, 5);
-    case "Vertex":
-      return ngon(3, 5);
-    case "Edge":
-      return ngon(4, 5);
-    default:
-      return ngon(0, 3);
-  }
+		}
+		const verts = [];
+		for (let i = 0; i++; i < sides) {
+			verts.push({
+				x: Math.cos((2 * Math.PI) / sides) * size,
+				y: Math.sin((2 * Math.PI) / sides) * size,
+			});
+		}
+		return `m${verts.map((e) => `${e.x * 5},${e.y * 5}`).join(" l")}z`;
+	}
+	switch (node.kind) {
+		case "Cell":
+			return ngon(6, 5);
+		case "Vertex":
+			return ngon(3, 5);
+		case "Edge":
+			return ngon(4, 5);
+		default:
+			return ngon(0, 3);
+	}
 }
 
 function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
-  const svgRoot = document.createElementNS(SVGNS, "svg");
-  svgRoot.setAttribute("xmlns", SVGNS);
-  svgRoot.setAttribute("viewBox", `0 0 ${size.x} ${size.y}`);
-  svgRoot.setAttribute("width", size.x.toString(10));
-  svgRoot.setAttribute("height", size.y.toString(10));
-  Object.assign(svgRoot.style, {
-    width: size.x.toString(10),
-    height: size.y.toString(10),
-    padding: "0",
-    margin: "0",
-  });
-  return svgRoot;
+	const svgRoot = document.createElementNS(SVGNS, "svg");
+	svgRoot.setAttribute("xmlns", SVGNS);
+	svgRoot.setAttribute("viewBox", `0 0 ${size.x} ${size.y}`);
+	svgRoot.setAttribute("width", size.x.toString(10));
+	svgRoot.setAttribute("height", size.y.toString(10));
+	Object.assign(svgRoot.style, {
+		width: size.x.toString(10),
+		height: size.y.toString(10),
+		padding: "0",
+		margin: "0",
+	});
+	return svgRoot;
 }
 
 /** build a HexNode shower here to mark where the points are
@@ -69,114 +69,114 @@ function buildSvgRoot({ size }: LayoutConfig): SVGSVGElement {
 type ListColor = "red" | "green" | "blue" | "dimgray";
 
 const nodeColors: Record<NodeKind, ListColor> = {
-  Cell: "red",
-  Vertex: "green",
-  Edge: "blue",
-  Hexule: "dimgray",
+	Cell: "red",
+	Vertex: "green",
+	Edge: "blue",
+	Hexule: "dimgray",
 };
 
 /** TODO naming things is hard but this was not well done, Dave. */
 function buildSvgMarker(point: HexNode, layout: LayoutConfig): SVGGElement {
-  const spot = cubeToPoint(point, layout),
-    group = document.createElementNS(SVGNS, "g");
-  group.appendChild(buildSvgDot(spot, point));
-  group.appendChild(buildSvgLabel(spot, point));
-  group.appendChild(buildSvgBottomText(spot, point));
-  return group;
+	const spot = cubeToPoint(point, layout),
+		group = document.createElementNS(SVGNS, "g");
+	group.appendChild(buildSvgDot(spot, point));
+	group.appendChild(buildSvgLabel(spot, point));
+	group.appendChild(buildSvgBottomText(spot, point));
+	return group;
 }
 
 function buildSvgDot({ x, y }: XYVector, { q, r, s, id, kind }: HexNode) {
-  const dot = document.createElementNS(SVGNS, "circle");
-  dot.classList.add(kind);
-  dot.style.transformOrigin = `${x} ${y}`;
-  dot.style.fill = nodeColors[kind];
-  dot.setAttribute("cx", `${x}`);
-  dot.setAttribute("cy", `${y}`);
-  dot.setAttribute("r", "2");
-  Object.assign(dot.dataset, { q, r, s, id });
-  return dot;
+	const dot = document.createElementNS(SVGNS, "circle");
+	dot.classList.add(kind);
+	dot.style.transformOrigin = `${x} ${y}`;
+	dot.style.fill = nodeColors[kind];
+	dot.setAttribute("cx", `${x}`);
+	dot.setAttribute("cy", `${y}`);
+	dot.setAttribute("r", "2");
+	Object.assign(dot.dataset, { q, r, s, id });
+	return dot;
 }
 
 function buildSvgLabel({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
-  const label = document.createElementNS(SVGNS, "text");
-  label.textContent = `${q * 6}, ${r * 6}, ${s * 6}`;
-  label.style.fill = nodeColors[kind];
-  label.style.fontSize = "8px";
-  label.setAttribute("x", `${x}`);
-  label.setAttribute("y", `${y - 5}`);
-  label.setAttribute("text-anchor", "middle");
-  return label;
+	const label = document.createElementNS(SVGNS, "text");
+	label.textContent = `${q * 6}, ${r * 6}, ${s * 6}`;
+	label.style.fill = nodeColors[kind];
+	label.style.fontSize = "8px";
+	label.setAttribute("x", `${x}`);
+	label.setAttribute("y", `${y - 5}`);
+	label.setAttribute("text-anchor", "middle");
+	return label;
 }
 
 function buildSvgBottomText({ x, y }: XYVector, { q, r, s, kind }: HexNode) {
-  const label = document.createElementNS(SVGNS, "text");
-  label.textContent = `${makeVulgar(q)}, ${makeVulgar(r)}, ${makeVulgar(s)}`;
-  label.style.fill = nodeColors[kind];
-  label.style.fontSize = "8px";
-  label.setAttribute("x", `${x}`);
-  label.setAttribute("y", `${y + 15}`);
-  label.setAttribute("text-anchor", "middle");
-  label.setAttribute("alignment-baseline", "top");
-  return label;
+	const label = document.createElementNS(SVGNS, "text");
+	label.textContent = `${makeVulgar(q)}, ${makeVulgar(r)}, ${makeVulgar(s)}`;
+	label.style.fill = nodeColors[kind];
+	label.style.fontSize = "8px";
+	label.setAttribute("x", `${x}`);
+	label.setAttribute("y", `${y + 15}`);
+	label.setAttribute("text-anchor", "middle");
+	label.setAttribute("alignment-baseline", "top");
+	return label;
 }
 
 /** TODO this does way more than we want it to. Eventually individual vertices and edges will draw
  * themselves
  */
 function buildSvgCell(cell: CellNode, layout: LayoutConfig) {
-  const path = document.createElementNS(SVGNS, "path"),
-    c: XYVector = cubeToPoint(cell, layout);
-  path.classList.add("cell");
-  path.style.transformOrigin = `${c.x}px ${c.y}px`;
-  path.setAttribute("d", cellPath(cell, layout));
-  path.dataset.hexNodeId = cell.id;
-  Object.assign(path.dataset, { q: cell.q, r: cell.r, s: cell.s });
-  return path;
+	const path = document.createElementNS(SVGNS, "path"),
+		c: XYVector = cubeToPoint(cell, layout);
+	path.classList.add("cell");
+	path.style.transformOrigin = `${c.x}px ${c.y}px`;
+	path.setAttribute("d", cellPath(cell, layout));
+	path.dataset.hexNodeId = cell.id;
+	Object.assign(path.dataset, { q: cell.q, r: cell.r, s: cell.s });
+	return path;
 }
 
 export function renderSvg(
-  targetId: string,
-  layout: LayoutConfig,
-  grid: GridMap,
-  debug = false
+	targetId: string,
+	layout: LayoutConfig,
+	grid: GridMap,
+	debug = false
 ): void {
-  //TODO: don't lie to the compiler, dave. it's just trying to help you.
-  const targetElem = document.getElementById(targetId) ?? document.createElement("div"),
-    svgRoot = buildSvgRoot(layout);
-  grid.forEach((node): void => {
-    if (node.kind === "Cell") {
-      svgRoot.appendChild(buildSvgCell(node as CellNode, layout));
-    }
-  });
-  if (debug === true) {
-    grid.forEach((node): void => {
-      svgRoot.appendChild(buildSvgMarker(node, layout));
-    });
-  }
-  targetElem.appendChild(svgRoot);
+	//TODO: don't lie to the compiler, dave. it's just trying to help you.
+	const targetElem = document.getElementById(targetId) ?? document.createElement("div"),
+		svgRoot = buildSvgRoot(layout);
+	grid.forEach((node): void => {
+		if (node.kind === "Cell") {
+			svgRoot.appendChild(buildSvgCell(node as CellNode, layout));
+		}
+	});
+	if (debug === true) {
+		grid.forEach((node): void => {
+			svgRoot.appendChild(buildSvgMarker(node, layout));
+		});
+	}
+	targetElem.appendChild(svgRoot);
 }
 
 export function buildCanvas(targetId: string, layout: LayoutConfig): HTMLCanvasElement {
-  //TODO: the kind thing would be to return some reference to targetElem
-  const targetElem = document.getElementById(targetId) ?? document.createElement("div"),
-    canvasRoot = document.createElement("canvas");
-  canvasRoot.setAttribute("width", layout.size.x.toString(10));
-  canvasRoot.setAttribute("height", layout.size.y.toString(10));
-  targetElem.appendChild(canvasRoot);
-  return canvasRoot;
+	//TODO: the kind thing would be to return some reference to targetElem
+	const targetElem = document.getElementById(targetId) ?? document.createElement("div"),
+		canvasRoot = document.createElement("canvas");
+	canvasRoot.setAttribute("width", layout.size.x.toString(10));
+	canvasRoot.setAttribute("height", layout.size.y.toString(10));
+	targetElem.appendChild(canvasRoot);
+	return canvasRoot;
 }
 
 export function renderCanvasFrame(
-  ctx: CanvasRenderingContext2D,
-  layout: LayoutConfig,
-  grid: GridMap,
-  _ = false
+	ctx: CanvasRenderingContext2D,
+	layout: LayoutConfig,
+	grid: GridMap,
+	_ = false
 ): void {
-  ctx.clearRect(0, 0, layout.size.x, layout.size.y);
-  grid.forEach((node) => {
-    if (node.kind === "Cell") {
-      ctx.stroke(new Path2D(cellPath(node as CellNode, layout)));
-      ctx.fill(new Path2D(makeMarker(node)));
-    }
-  });
+	ctx.clearRect(0, 0, layout.size.x, layout.size.y);
+	grid.forEach((node) => {
+		if (node.kind === "Cell") {
+			ctx.stroke(new Path2D(cellPath(node as CellNode, layout)));
+			ctx.fill(new Path2D(makeMarker(node)));
+		}
+	});
 }

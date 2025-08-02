@@ -8,24 +8,24 @@ import { CellNode, makeNode, DIAGONALS, add, QRSVector } from "./hex.js";
  * nearest to the provided q,r,s point
  */
 export function round({ q, r, s }: QRSVector): CellNode {
-  const approx = {
-      q: Math.round(q),
-      r: Math.round(r),
-      s: Math.round(s),
-    },
-    offset = {
-      q: Math.abs(q - approx.q),
-      r: Math.abs(r - approx.r),
-      s: Math.abs(s - approx.s),
-    };
-  if (offset.q > offset.r && offset.q > offset.s) {
-    approx.q = -1 * approx.r - approx.s;
-  } else if (offset.r > offset.s) {
-    approx.r = -1 * approx.q - approx.s;
-  } else {
-    approx.s = -1 * approx.q - approx.r;
-  }
-  return makeNode(approx, "Cell") as CellNode;
+	const approx = {
+			q: Math.round(q),
+			r: Math.round(r),
+			s: Math.round(s),
+		},
+		offset = {
+			q: Math.abs(q - approx.q),
+			r: Math.abs(r - approx.r),
+			s: Math.abs(s - approx.s),
+		};
+	if (offset.q > offset.r && offset.q > offset.s) {
+		approx.q = -1 * approx.r - approx.s;
+	} else if (offset.r > offset.s) {
+		approx.r = -1 * approx.q - approx.s;
+	} else {
+		approx.s = -1 * approx.q - approx.r;
+	}
+	return makeNode(approx, "Cell") as CellNode;
 }
 
 /**
@@ -33,5 +33,5 @@ export function round({ q, r, s }: QRSVector): CellNode {
  * @returns an array of 6 cells
  */
 export function diagonals(cell: CellNode): CellNode[] {
-  return DIAGONALS.map((e) => makeNode(add(cell, e), "Cell") as CellNode);
+	return DIAGONALS.map((e) => makeNode(add(cell, e), "Cell") as CellNode);
 }

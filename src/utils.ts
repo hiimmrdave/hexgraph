@@ -2,40 +2,40 @@ import { thousandthRound } from "./math.js";
 /* get a value from a form */
 
 export const getFloatValue = (elementId: string): number => {
-    const input = document.getElementById(elementId);
-    if (typeof input === "object") {
-      return parseFloat((input as HTMLInputElement).value);
-    }
-    throw "sorry, no";
-  },
-  getIntValue = (elementId: string): number => {
-    const input = document.getElementById(elementId);
-    if (typeof input === "object") {
-      return parseInt((input as HTMLInputElement).value, 10);
-    }
-    throw "sorry, no";
-  },
-  getRadioValue = (elementName: string): string => {
-    const input = document.querySelector(`input[name="${elementName}"]:checked`);
-    if (typeof input === "object") {
-      return (input as HTMLInputElement).value;
-    }
-    throw "sorry, no";
-  },
-  getStringValue = (elementId: string): string => {
-    const input = document.getElementById(elementId);
-    if (typeof input === "object") {
-      return (input as HTMLInputElement).value;
-    }
-    throw "sorry, no";
-  },
-  getCheckbox = (elementId: string): boolean => {
-    const input = document.getElementById(elementId);
-    if (typeof input === "object") {
-      return (input as HTMLInputElement).checked;
-    }
-    throw "sorry, no";
-  };
+		const input = document.getElementById(elementId);
+		if (typeof input === "object") {
+			return parseFloat((input as HTMLInputElement).value);
+		}
+		throw "sorry, no";
+	},
+	getIntValue = (elementId: string): number => {
+		const input = document.getElementById(elementId);
+		if (typeof input === "object") {
+			return parseInt((input as HTMLInputElement).value, 10);
+		}
+		throw "sorry, no";
+	},
+	getRadioValue = (elementName: string): string => {
+		const input = document.querySelector(`input[name="${elementName}"]:checked`);
+		if (typeof input === "object") {
+			return (input as HTMLInputElement).value;
+		}
+		throw "sorry, no";
+	},
+	getStringValue = (elementId: string): string => {
+		const input = document.getElementById(elementId);
+		if (typeof input === "object") {
+			return (input as HTMLInputElement).value;
+		}
+		throw "sorry, no";
+	},
+	getCheckbox = (elementId: string): boolean => {
+		const input = document.getElementById(elementId);
+		if (typeof input === "object") {
+			return (input as HTMLInputElement).checked;
+		}
+		throw "sorry, no";
+	};
 
 /**
  * formats a number as a mixed fraction string if the decimal can be replaced with ⅓, ½, or ⅔
@@ -46,16 +46,16 @@ export const getFloatValue = (elementId: string): number => {
  * @returns a string with a vulgar fraction, or a string of the number
  */
 export const makeVulgar = (n: number): string => {
-  switch (Math.abs(thousandthRound(n - Math.trunc(n)))) {
-    case 0.333:
-      return `${truncateToSignedString(n)}⅓`;
-    case 0.666:
-      return `${truncateToSignedString(n)}⅔`;
-    case 0.5:
-      return `${truncateToSignedString(n)}½`;
-    default:
-      return `${n}`;
-  }
+	switch (Math.abs(thousandthRound(n - Math.trunc(n)))) {
+		case 0.333:
+			return `${truncateToSignedString(n)}⅓`;
+		case 0.666:
+			return `${truncateToSignedString(n)}⅔`;
+		case 0.5:
+			return `${truncateToSignedString(n)}½`;
+		default:
+			return `${n}`;
+	}
 };
 
 /**
@@ -69,5 +69,5 @@ export const makeVulgar = (n: number): string => {
  * @returns The string `"-0"` if `n` is between 0 and -1, or the string representation of n
  */
 const truncateToSignedString = (n: number): string => {
-  return `${n < 0 ? "-" : ""}${Math.abs(Math.trunc(n))}`;
+	return `${n < 0 ? "-" : ""}${Math.abs(Math.trunc(n))}`;
 };
